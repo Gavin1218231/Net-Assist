@@ -1,0 +1,19 @@
+{
+  "name": "NetAssist - Internet Setup Assistant",
+  "short_name": "NetAssist",
+  "description": "AI-powered internet placement and setup assistant",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"]
+}
