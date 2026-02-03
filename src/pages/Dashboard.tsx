@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import {
-  getNetworkStatus, getRecommendations, runSpeedTest,
+  getNetworkStatus, getRecommendations, runSpeedTest, getQualityFromSpeed,
   getQualityColor, getQualityLabel, getBandLabel, formatSpeed, formatLatency,
 } from '../services/network';
 import type { NetworkStatus, Recommendation, SpeedTestResult, WifiBand } from '../types';
@@ -44,6 +44,15 @@ export default function Dashboard() {
     setSpeedResult(null);
     const result = await runSpeedTest(setProgress, selectedBand);
     setSpeedResult(result);
+    // Update the network status card with fresh results
+    setNetworkStatus(prev => prev ? {
+      ...prev,
+      band: result.band,
+      downloadSpeed: result.downloadSpeed,
+      uploadSpeed: result.uploadSpeed,
+      latency: result.latency,
+      quality: getQualityFromSpeed(result.downloadSpeed),
+    } : prev);
     setIsRunning(false);
   };
 

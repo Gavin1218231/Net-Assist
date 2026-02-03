@@ -1,6 +1,6 @@
 import type { NetworkStatus, SpeedTestResult, NetworkQuality, Recommendation, WifiBand } from '../types';
 
-function getQualityFromSpeed(download: number): NetworkQuality {
+export function getQualityFromSpeed(download: number): NetworkQuality {
   if (download >= 100) return 'excellent';
   if (download >= 50) return 'good';
   if (download >= 25) return 'fair';

@@ -154,7 +154,10 @@ export default function SetupGuides() {
     const contextHint = step
       ? `The user is on step ${currentStep + 1} ("${step.title}") of setting up ${selectedGuide?.title} internet. `
       : '';
-    const response = await sendMessage(contextHint + userMsg.content, messages, { provider: 'claude' });
+    const response = await sendMessage(contextHint + userMsg.content, messages, {
+      provider: 'claude',
+      connectionType: selectedGuide?.connectionType,
+    });
 
     setMessages(prev => [...prev, {
       id: (Date.now() + 1).toString(),
