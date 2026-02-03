@@ -1,12 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, MapPin, Activity, User, Settings } from 'lucide-react';
+import { LayoutDashboard, MapPin, Activity, BookOpen, User } from 'lucide-react';
 
 const navItems = [
   { path: '/dashboard', label: 'Home', icon: LayoutDashboard },
   { path: '/placement', label: 'Placement', icon: MapPin },
+  { path: '/guides', label: 'Guides', icon: BookOpen },
   { path: '/network', label: 'Network', icon: Activity },
   { path: '/profile', label: 'Profile', icon: User },
-  { path: '/settings', label: 'Settings', icon: Settings },
 ];
 
 export default function BottomNav() {

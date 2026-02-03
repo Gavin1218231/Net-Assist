@@ -1,91 +1,29 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Wifi, Activity, MapPin, Shield, ChevronRight,
-  ArrowDown, ArrowUp, Clock, CheckCircle2, AlertTriangle, Zap,
+  Wifi, MapPin, ChevronRight, ArrowDown, ArrowUp, Clock,
+  Play, RotateCcw, BookOpen, Radio,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import { getNetworkStatus, getRecommendations, getQualityColor, formatSpeed, formatLatency } from '../services/network';
-import type { NetworkStatus, Recommendation } from '../types';
+import {
+  getNetworkStatus, getRecommendations, runSpeedTest,
+  getQualityColor, getQualityLabel, getBandLabel, formatSpeed, formatLatency,
+} from '../services/network';
+import type { NetworkStatus, Recommendation, SpeedTestResult, WifiBand } from '../types';
 
-function QualityBadge({ quality }: { quality: string }) {
-  const color = getQualityColor(quality as any);
-  return (
-    <span
-      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold"
-      style={{ backgroundColor: `${color}20`, color }}
-    >
-      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: color }} />
-      {quality.charAt(0).toUpperCase() + quality.slice(1)}
-    </span>
-  );
-}
-
-function StatCard({ icon: Icon, label, value, subtext, color }: {
-  icon: any;
-  label: string;
-  value: string;
-  subtext?: string;
-  color: string;
-}) {
-  return (
-    <div className="card">
-      <div className="flex items-start justify-between mb-3">
-        <div className="p-2 rounded-xl" style={{ backgroundColor: `${color}15` }}>
-          <Icon className="w-5 h-5" style={{ color }} />
-        </div>
-      </div>
-      <p className="text-sm text-[var(--color-text-secondary)] mb-1">{label}</p>
-      <p className="text-2xl font-bold text-[var(--color-text)]">{value}</p>
-      {subtext && <p className="text-xs text-[var(--color-text-muted)] mt-1">{subtext}</p>}
-    </div>
-  );
-}
-
-function RecommendationItem({ rec }: { rec: Recommendation }) {
-  const priorityColors = {
-    high: '#ef4444',
-    medium: '#f59e0b',
-    low: '#3b82f6',
-  };
-  const color = priorityColors[rec.priority];
-  const categoryIcons = {
-    placement: MapPin,
-    security: Shield,
-    performance: Zap,
-    general: Activity,
-  };
-  const Icon = categoryIcons[rec.category];
-
-  return (
-    <div className={`flex items-start gap-3 p-4 rounded-xl border border-[var(--color-border)] ${rec.isCompleted ? 'opacity-60' : ''}`}>
-      <div className="p-2 rounded-lg" style={{ backgroundColor: `${color}15` }}>
-        <Icon className="w-4 h-4" style={{ color }} />
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-1">
-          <p className={`text-sm font-medium text-[var(--color-text)] ${rec.isCompleted ? 'line-through' : ''}`}>
-            {rec.title}
-          </p>
-          {rec.isCompleted && <CheckCircle2 className="w-4 h-4 text-[var(--color-success)] shrink-0" />}
-        </div>
-        <p className="text-xs text-[var(--color-text-secondary)] line-clamp-2">{rec.description}</p>
-      </div>
-      <span
-        className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded-full shrink-0"
-        style={{ backgroundColor: `${color}15`, color }}
-      >
-        {rec.priority}
-      </span>
-    </div>
-  );
-}
+const BANDS: WifiBand[] = ['2.4ghz', '5ghz', '6ghz'];
 
 export default function Dashboard() {
   const { user } = useAuth();
   const [networkStatus, setNetworkStatus] = useState<NetworkStatus | null>(null);
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Speed test state
+  const [isRunning, setIsRunning] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [selectedBand, setSelectedBand] = useState<WifiBand>('5ghz');
+  const [speedResult, setSpeedResult] = useState<SpeedTestResult | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -99,6 +37,15 @@ export default function Dashboard() {
     }
     load();
   }, []);
+
+  const handleSpeedTest = async () => {
+    setIsRunning(true);
+    setProgress(0);
+    setSpeedResult(null);
+    const result = await runSpeedTest(setProgress, selectedBand);
+    setSpeedResult(result);
+    setIsRunning(false);
+  };
 
   if (loading) {
     return (
@@ -118,125 +65,195 @@ export default function Dashboard() {
     return 'Good evening';
   })();
 
+  const pendingRecs = recommendations.filter(r => !r.isCompleted);
+
   return (
     <div className="page-container">
-      {/* Header */}
-      <div className="mb-8">
+      {/* Greeting */}
+      <div className="mb-6">
         <h1 className="text-2xl font-bold text-[var(--color-text)]">
           {greeting}, {user?.displayName?.split(' ')[0] || 'there'}
         </h1>
-        <p className="text-[var(--color-text-secondary)] mt-1">Here's your network overview</p>
       </div>
 
-      {/* Network status banner */}
+      {/* ── Network status card ── */}
       {networkStatus && (
-        <div className="card mb-6 !p-5">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl gradient-bg">
-                <Wifi className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold text-[var(--color-text)]">{networkStatus.ssid || 'Not Connected'}</p>
-                <p className="text-xs text-[var(--color-text-muted)]">Current Network</p>
-              </div>
+        <div className="card mb-4">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-xl gradient-bg">
+              <Wifi className="w-5 h-5 text-white" />
             </div>
-            <QualityBadge quality={networkStatus.quality} />
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-[var(--color-text)] truncate">{networkStatus.ssid}</p>
+              <p className="text-xs text-[var(--color-text-muted)]">{getBandLabel(networkStatus.band)} band</p>
+            </div>
+            <span
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold shrink-0"
+              style={{ backgroundColor: `${getQualityColor(networkStatus.quality)}20`, color: getQualityColor(networkStatus.quality) }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: getQualityColor(networkStatus.quality) }} />
+              {getQualityLabel(networkStatus.quality)}
+            </span>
           </div>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-1 text-[var(--color-text-secondary)] mb-1">
-                <ArrowDown className="w-3.5 h-3.5" />
-                <span className="text-xs">Download</span>
-              </div>
-              <p className="text-lg font-bold text-[var(--color-text)]">{formatSpeed(networkStatus.downloadSpeed)}</p>
+
+          <div className="grid grid-cols-3 gap-3">
+            <div className="rounded-xl bg-[var(--color-bg-secondary)] p-3 text-center">
+              <ArrowDown className="w-4 h-4 text-blue-500 mx-auto mb-1" />
+              <p className="text-xs text-[var(--color-text-muted)] mb-0.5">Down</p>
+              <p className="text-sm font-bold text-[var(--color-text)]">{formatSpeed(networkStatus.downloadSpeed)}</p>
             </div>
-            <div className="text-center border-x border-[var(--color-border)]">
-              <div className="flex items-center justify-center gap-1 text-[var(--color-text-secondary)] mb-1">
-                <ArrowUp className="w-3.5 h-3.5" />
-                <span className="text-xs">Upload</span>
-              </div>
-              <p className="text-lg font-bold text-[var(--color-text)]">{formatSpeed(networkStatus.uploadSpeed)}</p>
+            <div className="rounded-xl bg-[var(--color-bg-secondary)] p-3 text-center">
+              <ArrowUp className="w-4 h-4 text-purple-500 mx-auto mb-1" />
+              <p className="text-xs text-[var(--color-text-muted)] mb-0.5">Up</p>
+              <p className="text-sm font-bold text-[var(--color-text)]">{formatSpeed(networkStatus.uploadSpeed)}</p>
             </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-1 text-[var(--color-text-secondary)] mb-1">
-                <Clock className="w-3.5 h-3.5" />
-                <span className="text-xs">Latency</span>
-              </div>
-              <p className="text-lg font-bold text-[var(--color-text)]">{formatLatency(networkStatus.latency)}</p>
+            <div className="rounded-xl bg-[var(--color-bg-secondary)] p-3 text-center">
+              <Clock className="w-4 h-4 text-cyan-500 mx-auto mb-1" />
+              <p className="text-xs text-[var(--color-text-muted)] mb-0.5">Ping</p>
+              <p className="text-sm font-bold text-[var(--color-text)]">{formatLatency(networkStatus.latency)}</p>
             </div>
           </div>
         </div>
       )}
 
-      {/* Quick actions */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-        <Link to="/placement" className="card !p-4 flex flex-col items-center text-center hover:scale-[1.02] transition-transform no-underline">
-          <div className="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-900/20 mb-2">
-            <MapPin className="w-5 h-5 text-blue-500" />
-          </div>
-          <span className="text-sm font-medium text-[var(--color-text)]">Placement</span>
-          <span className="text-xs text-[var(--color-text-muted)]">AI Assistant</span>
-        </Link>
-        <Link to="/network" className="card !p-4 flex flex-col items-center text-center hover:scale-[1.02] transition-transform no-underline">
-          <div className="p-2.5 rounded-xl bg-green-50 dark:bg-green-900/20 mb-2">
-            <Activity className="w-5 h-5 text-green-500" />
-          </div>
-          <span className="text-sm font-medium text-[var(--color-text)]">Speed Test</span>
-          <span className="text-xs text-[var(--color-text-muted)]">Check Quality</span>
-        </Link>
-        <Link to="/placement" className="card !p-4 flex flex-col items-center text-center hover:scale-[1.02] transition-transform no-underline">
-          <div className="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-900/20 mb-2">
-            <Wifi className="w-5 h-5 text-purple-500" />
-          </div>
-          <span className="text-sm font-medium text-[var(--color-text)]">Connect</span>
-          <span className="text-xs text-[var(--color-text-muted)]">BLE / NFC</span>
-        </Link>
-        <Link to="/settings" className="card !p-4 flex flex-col items-center text-center hover:scale-[1.02] transition-transform no-underline">
-          <div className="p-2.5 rounded-xl bg-orange-50 dark:bg-orange-900/20 mb-2">
-            <Shield className="w-5 h-5 text-orange-500" />
-          </div>
-          <span className="text-sm font-medium text-[var(--color-text)]">Security</span>
-          <span className="text-xs text-[var(--color-text-muted)]">Check & Fix</span>
-        </Link>
-      </div>
-
-      {/* Stats grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-        <StatCard icon={ArrowDown} label="Download" value={networkStatus ? formatSpeed(networkStatus.downloadSpeed) : '--'} color="#3b82f6" />
-        <StatCard icon={ArrowUp} label="Upload" value={networkStatus ? formatSpeed(networkStatus.uploadSpeed) : '--'} color="#8b5cf6" />
-        <StatCard icon={Clock} label="Latency" value={networkStatus ? formatLatency(networkStatus.latency) : '--'} color="#06b6d4" />
-        <StatCard icon={Wifi} label="Signal" value={networkStatus ? `${Math.round(networkStatus.signalStrength)} dBm` : '--'} color="#10b981" />
-      </div>
-
-      {/* Recommendations */}
-      <div className="mb-8">
+      {/* ── Quick speed test ── */}
+      <div className="card mb-4">
         <div className="flex items-center justify-between mb-4">
-          <div>
-            <h2 className="text-lg font-semibold text-[var(--color-text)]">Recommendations</h2>
-            <p className="text-sm text-[var(--color-text-secondary)]">
-              {recommendations.filter(r => !r.isCompleted).length} items need attention
-            </p>
-          </div>
-          <AlertTriangle className="w-5 h-5 text-[var(--color-warning)]" />
+          <h2 className="font-semibold text-[var(--color-text)]">Speed Test</h2>
+          <Link to="/network" className="text-xs text-[var(--color-primary)] font-medium hover:underline no-underline">
+            Full details
+          </Link>
         </div>
-        <div className="space-y-3">
-          {recommendations.map(rec => (
-            <RecommendationItem key={rec.id} rec={rec} />
+
+        {/* Band selector */}
+        <div className="flex gap-1 p-1 bg-[var(--color-bg-secondary)] rounded-xl mb-4">
+          {BANDS.map(band => (
+            <button
+              key={band}
+              onClick={() => setSelectedBand(band)}
+              className={`flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-medium transition-all ${
+                selectedBand === band
+                  ? 'bg-[var(--color-bg)] text-[var(--color-text)] shadow-sm'
+                  : 'text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)]'
+              }`}
+            >
+              <Radio className="w-3 h-3" />
+              {getBandLabel(band)}
+            </button>
           ))}
         </div>
+
+        {/* Progress bar while running */}
+        {isRunning && (
+          <div className="mb-4">
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="text-xs text-[var(--color-text-secondary)]">
+                {progress < 50 ? 'Testing download...' : progress < 90 ? 'Testing upload...' : 'Measuring latency...'}
+              </span>
+              <span className="text-xs font-medium text-[var(--color-primary)]">{progress}%</span>
+            </div>
+            <div className="w-full h-1.5 rounded-full bg-[var(--color-bg-tertiary)] overflow-hidden">
+              <div className="h-full rounded-full gradient-bg transition-all duration-300" style={{ width: `${progress}%` }} />
+            </div>
+          </div>
+        )}
+
+        {/* Result summary */}
+        {speedResult && !isRunning && (
+          <div className="grid grid-cols-3 gap-3 mb-4">
+            <div className="text-center">
+              <p className="text-lg font-bold text-[var(--color-text)]">{formatSpeed(speedResult.downloadSpeed)}</p>
+              <p className="text-[10px] text-[var(--color-text-muted)]">Download</p>
+            </div>
+            <div className="text-center border-x border-[var(--color-border)]">
+              <p className="text-lg font-bold text-[var(--color-text)]">{formatSpeed(speedResult.uploadSpeed)}</p>
+              <p className="text-[10px] text-[var(--color-text-muted)]">Upload</p>
+            </div>
+            <div className="text-center">
+              <p className="text-lg font-bold text-[var(--color-text)]">{formatLatency(speedResult.latency)}</p>
+              <p className="text-[10px] text-[var(--color-text-muted)]">Latency</p>
+            </div>
+          </div>
+        )}
+
+        <button
+          onClick={handleSpeedTest}
+          disabled={isRunning}
+          className="btn-primary w-full flex items-center justify-center gap-2 !py-2.5 text-sm"
+        >
+          {isRunning ? (
+            <>
+              <RotateCcw className="w-4 h-4 animate-spin" />
+              Running on {getBandLabel(selectedBand)}...
+            </>
+          ) : (
+            <>
+              <Play className="w-4 h-4" />
+              {speedResult ? 'Run Again' : 'Run Speed Test'}
+            </>
+          )}
+        </button>
       </div>
 
-      {/* CTA */}
+      {/* ── Quick links row ── */}
+      <div className="grid grid-cols-3 gap-3 mb-4">
+        <Link to="/placement" className="card !p-3 flex flex-col items-center text-center hover:scale-[1.02] transition-transform no-underline">
+          <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 mb-1.5">
+            <MapPin className="w-5 h-5 text-blue-500" />
+          </div>
+          <span className="text-xs font-medium text-[var(--color-text)]">Placement</span>
+        </Link>
+        <Link to="/guides" className="card !p-3 flex flex-col items-center text-center hover:scale-[1.02] transition-transform no-underline">
+          <div className="p-2 rounded-xl bg-green-50 dark:bg-green-900/20 mb-1.5">
+            <BookOpen className="w-5 h-5 text-green-500" />
+          </div>
+          <span className="text-xs font-medium text-[var(--color-text)]">Setup Guides</span>
+        </Link>
+        <Link to="/network" className="card !p-3 flex flex-col items-center text-center hover:scale-[1.02] transition-transform no-underline">
+          <div className="p-2 rounded-xl bg-purple-50 dark:bg-purple-900/20 mb-1.5">
+            <Wifi className="w-5 h-5 text-purple-500" />
+          </div>
+          <span className="text-xs font-medium text-[var(--color-text)]">Network</span>
+        </Link>
+      </div>
+
+      {/* ── Top recommendations (max 3) ── */}
+      {pendingRecs.length > 0 && (
+        <div className="card mb-4">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="font-semibold text-[var(--color-text)]">Recommendations</h2>
+            <span className="text-xs text-[var(--color-text-muted)]">{pendingRecs.length} items</span>
+          </div>
+          <div className="space-y-2.5">
+            {pendingRecs.slice(0, 3).map(rec => {
+              const color = rec.priority === 'high' ? '#ef4444' : rec.priority === 'medium' ? '#f59e0b' : '#3b82f6';
+              return (
+                <div key={rec.id} className="flex items-start gap-3">
+                  <span className="mt-1 w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: color }} />
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-[var(--color-text)]">{rec.title}</p>
+                    <p className="text-xs text-[var(--color-text-muted)] line-clamp-1">{rec.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {pendingRecs.length > 3 && (
+            <p className="text-xs text-[var(--color-primary)] mt-3 font-medium">+{pendingRecs.length - 3} more</p>
+          )}
+        </div>
+      )}
+
+      {/* ── CTA banner ── */}
       <Link
-        to="/placement"
-        className="card flex items-center justify-between !p-5 gradient-bg !border-0 group no-underline"
+        to="/guides"
+        className="card flex items-center justify-between !p-4 gradient-bg !border-0 group no-underline"
       >
         <div>
-          <h3 className="text-white font-semibold text-lg">Need help with setup?</h3>
-          <p className="text-white/80 text-sm mt-1">Our AI assistant can guide you step by step</p>
+          <h3 className="text-white font-semibold">New to internet setup?</h3>
+          <p className="text-white/80 text-xs mt-0.5">Follow our step-by-step guides for your connection type</p>
         </div>
-        <ChevronRight className="w-6 h-6 text-white group-hover:translate-x-1 transition-transform" />
+        <ChevronRight className="w-5 h-5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
       </Link>
     </div>
   );

@@ -24,9 +24,12 @@ export interface AuthState {
   error: string | null;
 }
 
+export type WifiBand = '2.4ghz' | '5ghz' | '6ghz';
+
 export interface NetworkStatus {
   isConnected: boolean;
   ssid: string | null;
+  band: WifiBand;
   signalStrength: number;
   downloadSpeed: number;
   uploadSpeed: number;
@@ -35,6 +38,24 @@ export interface NetworkStatus {
 }
 
 export type NetworkQuality = 'excellent' | 'good' | 'fair' | 'poor' | 'none';
+
+export type ConnectionType = 'fiber' | '5g_home' | 'cable' | 'dsl' | 'satellite';
+
+export interface SetupGuide {
+  id: string;
+  connectionType: ConnectionType;
+  title: string;
+  description: string;
+  icon: string;
+  steps: SetupStep[];
+}
+
+export interface SetupStep {
+  id: string;
+  title: string;
+  description: string;
+  tip?: string;
+}
 
 export interface Room {
   id: string;
@@ -86,6 +107,7 @@ export interface ChatMessage {
 export interface SpeedTestResult {
   id: string;
   timestamp: string;
+  band: WifiBand;
   downloadSpeed: number;
   uploadSpeed: number;
   latency: number;

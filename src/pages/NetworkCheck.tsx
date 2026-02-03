@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
 import {
   Activity, ArrowDown, ArrowUp, Clock, Gauge, Play,
-  RotateCcw, Wifi, TrendingUp, BarChart3,
+  RotateCcw, Wifi, TrendingUp, BarChart3, Radio, Info,
 } from 'lucide-react';
-import { runSpeedTest, getNetworkStatus, getQualityColor, getQualityLabel, formatSpeed, formatLatency } from '../services/network';
-import type { NetworkStatus, SpeedTestResult, NetworkQuality } from '../types';
+import {
+  runSpeedTest, getNetworkStatus, getQualityColor, getQualityLabel,
+  getBandLabel, getBandDescription, formatSpeed, formatLatency,
+} from '../services/network';
+import type { NetworkStatus, SpeedTestResult, NetworkQuality, WifiBand } from '../types';
+
+const BANDS: WifiBand[] = ['2.4ghz', '5ghz', '6ghz'];
 
 function GaugeChart({ value, max, label, color }: { value: number; max: number; label: string; color: string }) {
   const percentage = Math.min((value / max) * 100, 100);
@@ -14,34 +19,19 @@ function GaugeChart({ value, max, label, color }: { value: number; max: number; 
   return (
     <div className="flex flex-col items-center">
       <svg width="160" height="120" viewBox="0 0 160 160">
-        {/* Background arc */}
         <circle
-          cx="80"
-          cy="80"
-          r="70"
-          fill="none"
-          stroke="var(--color-border)"
-          strokeWidth="10"
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={circumference * 0.25}
+          cx="80" cy="80" r="70" fill="none"
+          stroke="var(--color-border)" strokeWidth="10" strokeLinecap="round"
+          strokeDasharray={circumference} strokeDashoffset={circumference * 0.25}
           transform="rotate(135 80 80)"
         />
-        {/* Value arc */}
         <circle
-          cx="80"
-          cy="80"
-          r="70"
-          fill="none"
-          stroke={color}
-          strokeWidth="10"
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={strokeDashoffset}
+          cx="80" cy="80" r="70" fill="none"
+          stroke={color} strokeWidth="10" strokeLinecap="round"
+          strokeDasharray={circumference} strokeDashoffset={strokeDashoffset}
           transform="rotate(135 80 80)"
           className="transition-all duration-1000 ease-out"
         />
-        {/* Value text */}
         <text x="80" y="75" textAnchor="middle" className="fill-[var(--color-text)]" fontSize="28" fontWeight="700">
           {value.toFixed(1)}
         </text>
@@ -82,6 +72,7 @@ export default function NetworkCheck() {
   const [speedResult, setSpeedResult] = useState<SpeedTestResult | null>(null);
   const [isRunning, setIsRunning] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [selectedBand, setSelectedBand] = useState<WifiBand>('5ghz');
   const [history, setHistory] = useState<SpeedTestResult[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -97,7 +88,7 @@ export default function NetworkCheck() {
     setProgress(0);
     setSpeedResult(null);
 
-    const result = await runSpeedTest(setProgress);
+    const result = await runSpeedTest(setProgress, selectedBand);
     setSpeedResult(result);
     setHistory(prev => [result, ...prev].slice(0, 10));
     setIsRunning(false);
@@ -131,7 +122,7 @@ export default function NetworkCheck() {
             </div>
             <div>
               <p className="font-semibold text-[var(--color-text)]">{networkStatus.ssid}</p>
-              <p className="text-xs text-[var(--color-text-muted)]">Connected</p>
+              <p className="text-xs text-[var(--color-text-muted)]">Connected &middot; {getBandLabel(networkStatus.band)}</p>
             </div>
             <div className="ml-auto">
               <span
@@ -153,7 +144,7 @@ export default function NetworkCheck() {
 
       {/* Speed test */}
       <div className="card mb-6">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold text-[var(--color-text)]">Speed Test</h2>
           <button
             onClick={handleSpeedTest}
@@ -172,6 +163,28 @@ export default function NetworkCheck() {
               </>
             )}
           </button>
+        </div>
+
+        {/* Band selector */}
+        <div className="flex gap-1 p-1 bg-[var(--color-bg-secondary)] rounded-xl mb-2">
+          {BANDS.map(band => (
+            <button
+              key={band}
+              onClick={() => setSelectedBand(band)}
+              className={`flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-medium transition-all ${
+                selectedBand === band
+                  ? 'bg-[var(--color-bg)] text-[var(--color-text)] shadow-sm'
+                  : 'text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)]'
+              }`}
+            >
+              <Radio className="w-3 h-3" />
+              {getBandLabel(band)}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-start gap-1.5 mb-5">
+          <Info className="w-3.5 h-3.5 text-[var(--color-text-muted)] mt-0.5 shrink-0" />
+          <p className="text-[11px] text-[var(--color-text-muted)]">{getBandDescription(selectedBand)}</p>
         </div>
 
         {/* Progress bar */}
@@ -196,18 +209,8 @@ export default function NetworkCheck() {
         {speedResult && !isRunning && (
           <div>
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <GaugeChart
-                value={speedResult.downloadSpeed}
-                max={200}
-                label="Mbps Download"
-                color="#3b82f6"
-              />
-              <GaugeChart
-                value={speedResult.uploadSpeed}
-                max={100}
-                label="Mbps Upload"
-                color="#8b5cf6"
-              />
+              <GaugeChart value={speedResult.downloadSpeed} max={300} label="Mbps Download" color="#3b82f6" />
+              <GaugeChart value={speedResult.uploadSpeed} max={150} label="Mbps Upload" color="#8b5cf6" />
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -241,7 +244,7 @@ export default function NetworkCheck() {
               <Gauge className="w-8 h-8 text-[var(--color-text-muted)]" />
             </div>
             <p className="text-[var(--color-text-secondary)] mb-1">Ready to test your speed</p>
-            <p className="text-sm text-[var(--color-text-muted)]">Tap "Run Test" to measure your connection</p>
+            <p className="text-sm text-[var(--color-text-muted)]">Select a band above and tap &quot;Run Test&quot;</p>
           </div>
         )}
       </div>
@@ -263,7 +266,7 @@ export default function NetworkCheck() {
                       {formatSpeed(test.downloadSpeed)} / {formatSpeed(test.uploadSpeed)}
                     </p>
                     <p className="text-xs text-[var(--color-text-muted)]">
-                      {new Date(test.timestamp).toLocaleString()}
+                      {getBandLabel(test.band)} &middot; {new Date(test.timestamp).toLocaleString()}
                     </p>
                   </div>
                 </div>

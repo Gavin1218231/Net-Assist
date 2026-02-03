@@ -1,4 +1,4 @@
-import type { NetworkStatus, SpeedTestResult, NetworkQuality, Recommendation } from '../types';
+import type { NetworkStatus, SpeedTestResult, NetworkQuality, Recommendation, WifiBand } from '../types';
 
 function getQualityFromSpeed(download: number): NetworkQuality {
   if (download >= 100) return 'excellent';
@@ -8,16 +8,12 @@ function getQualityFromSpeed(download: number): NetworkQuality {
   return 'none';
 }
 
-function getQualityFromSignal(strength: number): NetworkQuality {
+export function getSignalQuality(strength: number): NetworkQuality {
   if (strength >= -50) return 'excellent';
   if (strength >= -60) return 'good';
   if (strength >= -70) return 'fair';
   if (strength >= -80) return 'poor';
   return 'none';
-}
-
-export function getSignalQuality(strength: number): NetworkQuality {
-  return getQualityFromSignal(strength);
 }
 
 export function getQualityLabel(quality: NetworkQuality): string {
@@ -42,6 +38,24 @@ export function getQualityColor(quality: NetworkQuality): string {
   return colors[quality];
 }
 
+export function getBandLabel(band: WifiBand): string {
+  const labels: Record<WifiBand, string> = {
+    '2.4ghz': '2.4 GHz',
+    '5ghz': '5 GHz',
+    '6ghz': '6 GHz',
+  };
+  return labels[band];
+}
+
+export function getBandDescription(band: WifiBand): string {
+  const descriptions: Record<WifiBand, string> = {
+    '2.4ghz': 'Best range, slower speed. Good for IoT devices and distant rooms.',
+    '5ghz': 'Fast speed, moderate range. Ideal for streaming and gaming.',
+    '6ghz': 'Fastest speed, shortest range. Best for high-bandwidth tasks near the router.',
+  };
+  return descriptions[band];
+}
+
 export async function getNetworkStatus(): Promise<NetworkStatus> {
   await new Promise(resolve => setTimeout(resolve, 500));
 
@@ -49,6 +63,7 @@ export async function getNetworkStatus(): Promise<NetworkStatus> {
   return {
     isConnected: true,
     ssid: 'HomeNetwork_5G',
+    band: '5ghz',
     signalStrength: -(40 + Math.random() * 30),
     downloadSpeed,
     uploadSpeed: 10 + Math.random() * 30,
@@ -58,7 +73,8 @@ export async function getNetworkStatus(): Promise<NetworkStatus> {
 }
 
 export async function runSpeedTest(
-  onProgress: (progress: number) => void
+  onProgress: (progress: number) => void,
+  band: WifiBand = '5ghz',
 ): Promise<SpeedTestResult> {
   const stages = [
     { progress: 10, delay: 400 },
@@ -76,13 +92,17 @@ export async function runSpeedTest(
     onProgress(stage.progress);
   }
 
+  // Speed varies by band
+  const bandMultiplier = band === '6ghz' ? 1.6 : band === '5ghz' ? 1.0 : 0.4;
+
   return {
     id: `test-${Date.now()}`,
     timestamp: new Date().toISOString(),
-    downloadSpeed: 50 + Math.random() * 100,
-    uploadSpeed: 10 + Math.random() * 40,
-    latency: 5 + Math.random() * 20,
-    jitter: 1 + Math.random() * 5,
+    band,
+    downloadSpeed: (50 + Math.random() * 100) * bandMultiplier,
+    uploadSpeed: (10 + Math.random() * 40) * bandMultiplier,
+    latency: (5 + Math.random() * 20) / bandMultiplier,
+    jitter: (1 + Math.random() * 5) / bandMultiplier,
     server: 'speedtest-server-01.netassist.app',
   };
 }
@@ -109,34 +129,18 @@ export async function getRecommendations(): Promise<Recommendation[]> {
     },
     {
       id: 'rec-3',
-      title: 'Switch to 5GHz band',
-      description: 'You\'re currently on the 2.4GHz band. Switching to 5GHz will give you faster speeds for devices that are close to the router.',
+      title: 'Try the 6 GHz band',
+      description: 'If your router supports Wi-Fi 6E, the 6 GHz band offers the fastest speeds and least interference for nearby devices.',
       priority: 'medium',
       category: 'performance',
       isCompleted: false,
     },
     {
       id: 'rec-4',
-      title: 'Change Wi-Fi password',
-      description: 'It\'s a good practice to change your Wi-Fi password every few months to maintain security.',
-      priority: 'medium',
-      category: 'security',
-      isCompleted: true,
-    },
-    {
-      id: 'rec-5',
       title: 'Elevate your router',
       description: 'Place your router on a high shelf or mount it on the wall. Wi-Fi signals spread outward and downward from the antenna.',
       priority: 'low',
       category: 'placement',
-      isCompleted: false,
-    },
-    {
-      id: 'rec-6',
-      title: 'Reduce interference',
-      description: 'Keep your router away from microwaves, baby monitors, and Bluetooth devices that operate on the same 2.4GHz frequency.',
-      priority: 'low',
-      category: 'general',
       isCompleted: false,
     },
   ];

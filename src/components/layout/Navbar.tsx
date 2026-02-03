@@ -30,6 +30,9 @@ export default function Navbar() {
             <Link to="/network" className="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors text-sm font-medium no-underline">
               Network
             </Link>
+            <Link to="/guides" className="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors text-sm font-medium no-underline">
+              Guides
+            </Link>
           </nav>
 
           {/* Right side */}
@@ -81,6 +84,13 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Network Check
+            </Link>
+            <Link
+              to="/guides"
+              className="block px-4 py-2 text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] rounded-xl no-underline"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Setup Guides
             </Link>
             <Link
               to="/profile"
