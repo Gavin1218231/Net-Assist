@@ -38,21 +38,25 @@ export default function Dashboard() {
     load();
   }, []);
 
+  // Sync the network status card whenever a speed test finishes
+  useEffect(() => {
+    if (!speedResult) return;
+    setNetworkStatus(prev => prev ? {
+      ...prev,
+      band: speedResult.band,
+      downloadSpeed: speedResult.downloadSpeed,
+      uploadSpeed: speedResult.uploadSpeed,
+      latency: speedResult.latency,
+      quality: getQualityFromSpeed(speedResult.downloadSpeed),
+    } : prev);
+  }, [speedResult]);
+
   const handleSpeedTest = async () => {
     setIsRunning(true);
     setProgress(0);
     setSpeedResult(null);
     const result = await runSpeedTest(setProgress, selectedBand);
     setSpeedResult(result);
-    // Update the network status card with fresh results
-    setNetworkStatus(prev => prev ? {
-      ...prev,
-      band: result.band,
-      downloadSpeed: result.downloadSpeed,
-      uploadSpeed: result.uploadSpeed,
-      latency: result.latency,
-      quality: getQualityFromSpeed(result.downloadSpeed),
-    } : prev);
     setIsRunning(false);
   };
 
