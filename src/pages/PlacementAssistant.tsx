@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import {
   MapPin, Plus, Trash2, Wifi, MessageSquare, Send, Bot,
-  Bluetooth, Nfc, ChevronDown, Lightbulb, Home, X,
+  Bluetooth, Nfc, ChevronDown, Lightbulb, Home, X, Globe, ExternalLink,
 } from 'lucide-react';
 import { sendMessage } from '../services/ai';
 import { scanForDevices, connectToDevice, disconnectDevice, type BLEConnectionState } from '../services/ble';
-import type { Room, RoomType, ChatMessage, DeviceInfo, PlacementRecommendation } from '../types';
+import { getProvidersByType, getMetricsByType, getConnectionTypeLabel } from '../services/providers';
+import type { Room, RoomType, ChatMessage, DeviceInfo, PlacementRecommendation, ConnectionType, ISPProvider } from '../types';
 
 const ROOM_TYPES: { value: RoomType; label: string }[] = [
   { value: 'living_room', label: 'Living Room' },
@@ -64,6 +65,10 @@ export default function PlacementAssistant() {
   const [discoveredDevices, setDiscoveredDevices] = useState<DeviceInfo[]>([]);
   const [connectedDevice, setConnectedDevice] = useState<DeviceInfo | null>(null);
 
+  // Provider state
+  const [connectionType, setConnectionType] = useState<ConnectionType | null>(null);
+  const [selectedProvider, setSelectedProvider] = useState<ISPProvider | null>(null);
+
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
@@ -82,8 +87,14 @@ export default function PlacementAssistant() {
     setChatInput('');
     setIsSending(true);
 
-    const response = await sendMessage(userMessage.content, messages, {
+    const providerHint = selectedProvider
+      ? `The user has ${selectedProvider.name} (${getConnectionTypeLabel(selectedProvider.connectionType)}). `
+      : connectionType
+        ? `The user has ${getConnectionTypeLabel(connectionType)} internet. `
+        : '';
+    const response = await sendMessage(providerHint + userMessage.content, messages, {
       provider: 'claude',
+      connectionType: connectionType ?? undefined,
     });
 
     const assistantMessage: ChatMessage = {
@@ -315,6 +326,122 @@ export default function PlacementAssistant() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Provider-specific placement tips */}
+          <div className="card mt-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 rounded-xl bg-green-50 dark:bg-green-900/20">
+                <Globe className="w-5 h-5 text-green-500" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-[var(--color-text)]">Your Internet Provider</h3>
+                <p className="text-xs text-[var(--color-text-muted)]">Get placement tips specific to your provider</p>
+              </div>
+            </div>
+
+            {/* Connection type selector */}
+            <p className="text-xs font-medium text-[var(--color-text-secondary)] mb-2">Connection type</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {(['fiber', '5g_home', 'cable', 'dsl', 'satellite'] as ConnectionType[]).map(ct => (
+                <button
+                  key={ct}
+                  onClick={() => { setConnectionType(ct); setSelectedProvider(null); }}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                    connectionType === ct
+                      ? 'bg-[var(--color-primary)] text-white'
+                      : 'bg-[var(--color-bg-secondary)] text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-tertiary)]'
+                  }`}
+                >
+                  {getConnectionTypeLabel(ct)}
+                </button>
+              ))}
+            </div>
+
+            {/* Provider selector */}
+            {connectionType && (
+              <>
+                <p className="text-xs font-medium text-[var(--color-text-secondary)] mb-2">Your provider</p>
+                <div className="space-y-2 mb-4">
+                  {getProvidersByType(connectionType).map(provider => (
+                    <button
+                      key={provider.id}
+                      onClick={() => setSelectedProvider(selectedProvider?.id === provider.id ? null : provider)}
+                      className={`w-full text-left p-3 rounded-xl border transition-all ${
+                        selectedProvider?.id === provider.id
+                          ? 'border-[var(--color-primary)] bg-[var(--color-primary)]/5'
+                          : 'border-[var(--color-border)] hover:border-[var(--color-primary)]/40'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-[var(--color-text)]">{provider.name}</span>
+                        <span className="text-[10px] text-[var(--color-text-muted)]">{provider.typicalDown} down</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Metrics for connection type */}
+                {(() => {
+                  const metrics = getMetricsByType(connectionType);
+                  if (!metrics) return null;
+                  return (
+                    <div className="grid grid-cols-3 gap-2 mb-4">
+                      <div className="rounded-xl bg-[var(--color-bg-secondary)] p-2.5 text-center">
+                        <p className="text-[10px] text-[var(--color-text-muted)] mb-0.5">Avg Down</p>
+                        <p className="text-xs font-bold text-[var(--color-text)]">{metrics.avgDown}</p>
+                      </div>
+                      <div className="rounded-xl bg-[var(--color-bg-secondary)] p-2.5 text-center">
+                        <p className="text-[10px] text-[var(--color-text-muted)] mb-0.5">Avg Up</p>
+                        <p className="text-xs font-bold text-[var(--color-text)]">{metrics.avgUp}</p>
+                      </div>
+                      <div className="rounded-xl bg-[var(--color-bg-secondary)] p-2.5 text-center">
+                        <p className="text-[10px] text-[var(--color-text-muted)] mb-0.5">Latency</p>
+                        <p className="text-xs font-bold text-[var(--color-text)]">{metrics.avgLatency}</p>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </>
+            )}
+
+            {/* Provider-specific tips */}
+            {selectedProvider && (
+              <div className="border-t border-[var(--color-border)] pt-4 mt-2">
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="text-sm font-semibold text-[var(--color-text)]">{selectedProvider.name} Placement Tips</h4>
+                  <a
+                    href={`https://${selectedProvider.website}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-[10px] text-[var(--color-primary)] hover:underline"
+                  >
+                    {selectedProvider.website}
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+                <div className="space-y-2">
+                  {selectedProvider.placementTips.map((tip, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <Lightbulb className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                      <span className="text-sm text-[var(--color-text-secondary)]">{tip}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3 p-3 rounded-xl bg-[var(--color-bg-secondary)]">
+                  <p className="text-xs text-[var(--color-text-secondary)]">
+                    <span className="font-medium text-[var(--color-text)]">Typical speeds: </span>
+                    {selectedProvider.typicalDown} down / {selectedProvider.typicalUp} up / {selectedProvider.typicalLatency} latency
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {!connectionType && (
+              <p className="text-sm text-[var(--color-text-muted)] text-center py-4">
+                Select your connection type above to see provider-specific placement advice
+              </p>
+            )}
           </div>
         </div>
       )}

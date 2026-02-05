@@ -123,3 +123,26 @@ export interface Recommendation {
   category: 'placement' | 'security' | 'performance' | 'general';
   isCompleted: boolean;
 }
+
+// ── Provider / ISP types ──
+
+export interface ISPProvider {
+  id: string;
+  name: string;
+  connectionType: ConnectionType;
+  typicalDown: string;
+  typicalUp: string;
+  typicalLatency: string;
+  placementTips: string[];
+  setupNotes: string;
+  website: string;
+}
+
+export interface CarrierMetrics {
+  connectionType: ConnectionType;
+  label: string;
+  avgDown: string;
+  avgUp: string;
+  avgLatency: string;
+  coverage: string;
+}

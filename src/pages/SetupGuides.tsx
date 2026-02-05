@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import {
   ChevronLeft, Check, Lightbulb, MessageSquare, Send, Bot,
-  Zap, Radio, Cable, Phone, Satellite, ArrowRight,
+  Zap, Radio, Cable, Phone, Satellite, ArrowRight, Globe, ExternalLink,
+  ChevronDown as ChevronDownIcon,
 } from 'lucide-react';
 import { sendMessage } from '../services/ai';
-import type { ConnectionType, SetupGuide, ChatMessage } from '../types';
+import { getProvidersByType, getMetricsByType } from '../services/providers';
+import type { ConnectionType, SetupGuide, ChatMessage, ISPProvider } from '../types';
 
 const GUIDES: SetupGuide[] = [
   {
@@ -106,6 +108,10 @@ export default function SetupGuides() {
   const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set());
   const [showChat, setShowChat] = useState(false);
 
+  // Provider selection
+  const [selectedProvider, setSelectedProvider] = useState<ISPProvider | null>(null);
+  const [showProviders, setShowProviders] = useState(false);
+
   // AI chat
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [chatInput, setChatInput] = useState('');
@@ -120,6 +126,8 @@ export default function SetupGuides() {
     setSelectedGuide(guide);
     setCurrentStep(0);
     setCompletedSteps(new Set());
+    setSelectedProvider(null);
+    setShowProviders(false);
     setMessages([{
       id: '1',
       role: 'assistant',
@@ -151,8 +159,9 @@ export default function SetupGuides() {
     setIsSending(true);
 
     const step = selectedGuide?.steps[currentStep];
+    const providerHint = selectedProvider ? ` Their provider is ${selectedProvider.name}.` : '';
     const contextHint = step
-      ? `The user is on step ${currentStep + 1} ("${step.title}") of setting up ${selectedGuide?.title} internet. `
+      ? `The user is on step ${currentStep + 1} ("${step.title}") of setting up ${selectedGuide?.title} internet.${providerHint} `
       : '';
     const response = await sendMessage(contextHint + userMsg.content, messages, {
       provider: 'claude',
@@ -181,21 +190,36 @@ export default function SetupGuides() {
           {GUIDES.map(guide => {
             const Icon = ICON_MAP[guide.icon] || Zap;
             const color = COLOR_MAP[guide.connectionType];
+            const metrics = getMetricsByType(guide.connectionType);
+            const providers = getProvidersByType(guide.connectionType);
             return (
               <button
                 key={guide.id}
                 onClick={() => openGuide(guide)}
-                className="card w-full !p-4 flex items-center gap-4 text-left hover:scale-[1.01] transition-transform"
+                className="card w-full !p-4 text-left hover:scale-[1.01] transition-transform"
               >
-                <div className="p-3 rounded-xl shrink-0" style={{ backgroundColor: `${color}15` }}>
-                  <Icon className="w-6 h-6" style={{ color }} />
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-xl shrink-0" style={{ backgroundColor: `${color}15` }}>
+                    <Icon className="w-6 h-6" style={{ color }} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-[var(--color-text)]">{guide.title}</p>
+                    <p className="text-xs text-[var(--color-text-muted)] mt-0.5">{guide.description}</p>
+                    <p className="text-xs text-[var(--color-text-muted)] mt-1">{guide.steps.length} steps</p>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-[var(--color-text-muted)] shrink-0" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-[var(--color-text)]">{guide.title}</p>
-                  <p className="text-xs text-[var(--color-text-muted)] mt-0.5">{guide.description}</p>
-                  <p className="text-xs text-[var(--color-text-muted)] mt-1">{guide.steps.length} steps</p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-[var(--color-text-muted)] shrink-0" />
+                {metrics && (
+                  <div className="mt-3 pt-3 border-t border-[var(--color-border)]">
+                    <div className="flex items-center gap-4 text-[10px] text-[var(--color-text-muted)]">
+                      <span>Avg: {metrics.avgDown} down</span>
+                      <span>{metrics.avgLatency} latency</span>
+                    </div>
+                    <p className="text-[10px] text-[var(--color-text-muted)] mt-1">
+                      Providers: {providers.map(p => p.name).join(', ')}
+                    </p>
+                  </div>
+                )}
               </button>
             );
           })}
@@ -240,6 +264,72 @@ export default function SetupGuides() {
             }}
           />
         ))}
+      </div>
+
+      {/* Provider selection */}
+      <div className="card mb-4">
+        <button
+          onClick={() => setShowProviders(!showProviders)}
+          className="w-full flex items-center justify-between"
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-green-50 dark:bg-green-900/20">
+              <Globe className="w-4 h-4 text-green-500" />
+            </div>
+            <div className="text-left">
+              <p className="text-sm font-medium text-[var(--color-text)]">
+                {selectedProvider ? selectedProvider.name : 'Select your provider'}
+              </p>
+              <p className="text-[10px] text-[var(--color-text-muted)]">
+                {selectedProvider ? `${selectedProvider.typicalDown} down` : 'For provider-specific setup notes'}
+              </p>
+            </div>
+          </div>
+          <ChevronDownIcon className={`w-4 h-4 text-[var(--color-text-muted)] transition-transform ${showProviders ? 'rotate-180' : ''}`} />
+        </button>
+
+        {showProviders && (
+          <div className="mt-3 pt-3 border-t border-[var(--color-border)] space-y-2">
+            {getProvidersByType(selectedGuide.connectionType).map(provider => (
+              <button
+                key={provider.id}
+                onClick={() => { setSelectedProvider(selectedProvider?.id === provider.id ? null : provider); setShowProviders(false); }}
+                className={`w-full text-left p-3 rounded-xl border transition-all ${
+                  selectedProvider?.id === provider.id
+                    ? 'border-[var(--color-primary)] bg-[var(--color-primary)]/5'
+                    : 'border-[var(--color-border)] hover:border-[var(--color-primary)]/40'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-[var(--color-text)]">{provider.name}</span>
+                  <span className="text-[10px] text-[var(--color-text-muted)]">{provider.typicalDown} down</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {selectedProvider && !showProviders && (
+          <div className="mt-3 pt-3 border-t border-[var(--color-border)]">
+            <p className="text-xs text-[var(--color-text-secondary)] mb-2">{selectedProvider.setupNotes}</p>
+            <div className="flex items-center justify-between">
+              <div className="flex gap-3 text-[10px] text-[var(--color-text-muted)]">
+                <span>{selectedProvider.typicalDown} down</span>
+                <span>{selectedProvider.typicalUp} up</span>
+                <span>{selectedProvider.typicalLatency} latency</span>
+              </div>
+              <a
+                href={`https://${selectedProvider.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-[10px] text-[var(--color-primary)] hover:underline"
+                onClick={e => e.stopPropagation()}
+              >
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Current step card */}
