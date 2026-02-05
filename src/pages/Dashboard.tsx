@@ -2,19 +2,22 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Wifi, MapPin, ChevronRight, ArrowDown, ArrowUp, Clock,
-  Play, RotateCcw, BookOpen, Radio,
+  Play, RotateCcw, BookOpen, Radio, Globe, ExternalLink, X,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useProvider } from '../context/ProviderContext';
 import {
   getNetworkStatus, getRecommendations, runSpeedTest, getQualityFromSpeed,
   getQualityColor, getQualityLabel, getBandLabel, formatSpeed, formatLatency,
 } from '../services/network';
+import { getConnectionTypeLabel } from '../services/providers';
 import type { NetworkStatus, Recommendation, SpeedTestResult, WifiBand } from '../types';
 
 const BANDS: WifiBand[] = ['2.4ghz', '5ghz', '6ghz'];
 
 export default function Dashboard() {
   const { user } = useAuth();
+  const { provider, connectionType, setupCompleted, clearProvider } = useProvider();
   const [networkStatus, setNetworkStatus] = useState<NetworkStatus | null>(null);
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
   const [loading, setLoading] = useState(true);
@@ -88,6 +91,62 @@ export default function Dashboard() {
           {greeting}, {user?.displayName?.split(' ')[0] || 'there'}
         </h1>
       </div>
+
+      {/* ── Provider card (shown when setup complete) ── */}
+      {setupCompleted && connectionType && (
+        <div className="card mb-4 !border-green-500/30 !bg-green-50/50 dark:!bg-green-900/10">
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-green-100 dark:bg-green-900/30">
+                <Globe className="w-5 h-5 text-green-600 dark:text-green-400" />
+              </div>
+              <div>
+                <p className="font-semibold text-[var(--color-text)]">
+                  {provider ? provider.name : getConnectionTypeLabel(connectionType)}
+                </p>
+                <p className="text-xs text-[var(--color-text-muted)]">
+                  {provider ? `${provider.typicalDown} down · ${provider.typicalLatency} latency` : 'Setup complete'}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              {provider && (
+                <a
+                  href={`https://${provider.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1.5 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4 text-green-600 dark:text-green-400" />
+                </a>
+              )}
+              <button
+                onClick={clearProvider}
+                className="p-1.5 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors"
+                title="Remove provider"
+              >
+                <X className="w-4 h-4 text-[var(--color-text-muted)]" />
+              </button>
+            </div>
+          </div>
+          {provider && (
+            <div className="mt-3 pt-3 border-t border-green-200 dark:border-green-800/30 grid grid-cols-3 gap-3 text-center">
+              <div>
+                <p className="text-[10px] text-[var(--color-text-muted)]">Download</p>
+                <p className="text-xs font-semibold text-[var(--color-text)]">{provider.typicalDown}</p>
+              </div>
+              <div>
+                <p className="text-[10px] text-[var(--color-text-muted)]">Upload</p>
+                <p className="text-xs font-semibold text-[var(--color-text)]">{provider.typicalUp}</p>
+              </div>
+              <div>
+                <p className="text-[10px] text-[var(--color-text-muted)]">Latency</p>
+                <p className="text-xs font-semibold text-[var(--color-text)]">{provider.typicalLatency}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* ── Network status card ── */}
       {networkStatus && (
@@ -258,16 +317,29 @@ export default function Dashboard() {
       )}
 
       {/* ── CTA banner ── */}
-      <Link
-        to="/guides"
-        className="card flex items-center justify-between !p-4 gradient-bg !border-0 group no-underline"
-      >
-        <div>
-          <h3 className="text-white font-semibold">New to internet setup?</h3>
-          <p className="text-white/80 text-xs mt-0.5">Follow our step-by-step guides for your connection type</p>
-        </div>
-        <ChevronRight className="w-5 h-5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
-      </Link>
+      {setupCompleted ? (
+        <Link
+          to="/placement"
+          className="card flex items-center justify-between !p-4 gradient-bg !border-0 group no-underline"
+        >
+          <div>
+            <h3 className="text-white font-semibold">Optimize your placement</h3>
+            <p className="text-white/80 text-xs mt-0.5">Use our AI assistant to find the best spot for your router</p>
+          </div>
+          <ChevronRight className="w-5 h-5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      ) : (
+        <Link
+          to="/guides"
+          className="card flex items-center justify-between !p-4 gradient-bg !border-0 group no-underline"
+        >
+          <div>
+            <h3 className="text-white font-semibold">New to internet setup?</h3>
+            <p className="text-white/80 text-xs mt-0.5">Follow our step-by-step guides for your connection type</p>
+          </div>
+          <ChevronRight className="w-5 h-5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      )}
     </div>
   );
 }

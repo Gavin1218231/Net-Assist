@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   ChevronLeft, Check, Lightbulb, MessageSquare, Send, Bot,
   Zap, Radio, Cable, Phone, Satellite, ArrowRight, Globe, ExternalLink,
-  ChevronDown as ChevronDownIcon,
+  ChevronDown as ChevronDownIcon, PartyPopper,
 } from 'lucide-react';
 import { sendMessage } from '../services/ai';
 import { getProvidersByType, getMetricsByType } from '../services/providers';
+import { useProvider } from '../context/ProviderContext';
 import type { ConnectionType, SetupGuide, ChatMessage, ISPProvider } from '../types';
 
 const GUIDES: SetupGuide[] = [
@@ -103,6 +105,9 @@ const COLOR_MAP: Record<ConnectionType, string> = {
 };
 
 export default function SetupGuides() {
+  const navigate = useNavigate();
+  const { setConnectionType: saveConnectionType, setProvider: saveProvider, markSetupComplete } = useProvider();
+
   const [selectedGuide, setSelectedGuide] = useState<SetupGuide | null>(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set());
@@ -376,10 +381,22 @@ export default function SetupGuides() {
           </button>
         ) : (
           <button
-            onClick={() => markStepComplete(step.id)}
-            className="flex-1 btn-primary !py-2.5 text-sm"
+            onClick={() => {
+              markStepComplete(step.id);
+              // Check if all will be done after this click
+              const willBeAllDone = selectedGuide.steps.every(s => s.id === step.id || completedSteps.has(s.id));
+              if (willBeAllDone || allDone) {
+                // Save provider to context and go to dashboard
+                saveConnectionType(selectedGuide.connectionType);
+                if (selectedProvider) saveProvider(selectedProvider);
+                markSetupComplete();
+                navigate('/dashboard');
+              }
+            }}
+            className="flex-1 btn-primary !py-2.5 text-sm flex items-center justify-center gap-2"
           >
-            {allDone ? 'All Done!' : 'Mark Complete'}
+            {allDone && <PartyPopper className="w-4 h-4" />}
+            {allDone ? 'Finish Setup' : 'Mark Complete'}
           </button>
         )}
       </div>
