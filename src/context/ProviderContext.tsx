@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import type { ConnectionType, ISPProvider } from '../types';
 import { getProviderById } from '../services/providers';
@@ -16,28 +17,28 @@ const ProviderContext = createContext<ProviderContextType | null>(null);
 
 const STORAGE_KEY = 'netassist-provider';
 
-export function ProviderProvider({ children }: { children: ReactNode }) {
-  const [connectionType, setConnectionType] = useState<ConnectionType | null>(null);
-  const [provider, setProvider] = useState<ISPProvider | null>(null);
-  const [setupCompleted, setSetupCompleted] = useState(false);
-
-  // Load from localStorage on mount
-  useEffect(() => {
+function loadFromStorage(): { connectionType: ConnectionType | null; provider: ISPProvider | null; setupCompleted: boolean } {
+  try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
-      try {
-        const data = JSON.parse(stored);
-        if (data.connectionType) setConnectionType(data.connectionType);
-        if (data.providerId) {
-          const p = getProviderById(data.providerId);
-          if (p) setProvider(p);
-        }
-        if (data.setupCompleted) setSetupCompleted(true);
-      } catch {
-        // Ignore parse errors
-      }
+      const data = JSON.parse(stored);
+      return {
+        connectionType: data.connectionType ?? null,
+        provider: data.providerId ? getProviderById(data.providerId) ?? null : null,
+        setupCompleted: data.setupCompleted ?? false,
+      };
     }
-  }, []);
+  } catch {
+    // Ignore parse errors
+  }
+  return { connectionType: null, provider: null, setupCompleted: false };
+}
+
+export function ProviderProvider({ children }: { children: ReactNode }) {
+  const [initialState] = useState(() => loadFromStorage());
+  const [connectionType, setConnectionType] = useState<ConnectionType | null>(initialState.connectionType);
+  const [provider, setProvider] = useState<ISPProvider | null>(initialState.provider);
+  const [setupCompleted, setSetupCompleted] = useState(initialState.setupCompleted);
 
   // Save to localStorage when state changes
   useEffect(() => {

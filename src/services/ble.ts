@@ -42,7 +42,7 @@ const MOCK_DEVICES: DeviceInfo[] = [
   },
 ];
 
-let currentState: BLEService = {
+const currentState: BLEService = {
   state: 'disconnected',
   devices: [],
   connectedDevice: null,

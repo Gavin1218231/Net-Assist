@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import type { User, AuthState } from '../types';
 
@@ -35,7 +36,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     error: null,
   });
 
-  const login = useCallback(async (email: string, _password: string) => {
+  const login = useCallback(async (email: string, password: string) => {
+    void password; // Used in real implementation
     setState(prev => ({ ...prev, isLoading: true, error: null }));
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -69,7 +71,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const signup = useCallback(async (email: string, _password: string, displayName: string) => {
+  const signup = useCallback(async (email: string, password: string, displayName: string) => {
+    void password; // Used in real implementation
     setState(prev => ({ ...prev, isLoading: true, error: null }));
     await new Promise(resolve => setTimeout(resolve, 1500));
     setState({
