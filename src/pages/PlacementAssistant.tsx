@@ -2,11 +2,16 @@ import { useState, useRef, useEffect } from 'react';
 import {
   MapPin, Plus, Trash2, Wifi, MessageSquare, Send, Bot,
   Bluetooth, Nfc, ChevronDown, Lightbulb, Home, X, Globe, ExternalLink,
+  Navigation, Signal, Zap,
 } from 'lucide-react';
 import { sendMessage } from '../services/ai';
 import { scanForDevices, connectToDevice, disconnectDevice, type BLEConnectionState } from '../services/ble';
 import { getProvidersByType, getMetricsByType, getConnectionTypeLabel } from '../services/providers';
-import type { Room, RoomType, ChatMessage, DeviceInfo, PlacementRecommendation, ConnectionType, ISPProvider } from '../types';
+import {
+  getAllStates, getBandPlacementTips, getPlacementRecommendation,
+  CARRIER_DISPLAY_NAMES,
+} from '../services/regional5g';
+import type { Room, RoomType, ChatMessage, DeviceInfo, PlacementRecommendation, ConnectionType, ISPProvider, StateData } from '../types';
 
 const ROOM_TYPES: { value: RoomType; label: string }[] = [
   { value: 'living_room', label: 'Living Room' },
@@ -69,6 +74,11 @@ export default function PlacementAssistant() {
   const [connectionType, setConnectionType] = useState<ConnectionType | null>(null);
   const [selectedProvider, setSelectedProvider] = useState<ISPProvider | null>(null);
 
+  // Regional 5G state
+  const [selectedState, setSelectedState] = useState<StateData | null>(null);
+  const [selectedCarrier, setSelectedCarrier] = useState<'tmobile' | 'verizon' | 'att' | null>(null);
+  const [showStateSelector, setShowStateSelector] = useState(false);
+
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
@@ -92,7 +102,14 @@ export default function PlacementAssistant() {
       : connectionType
         ? `The user has ${getConnectionTypeLabel(connectionType)} internet. `
         : '';
-    const response = await sendMessage(providerHint + userMessage.content, messages, {
+    const regionalHint = selectedState && selectedCarrier
+      ? `They are in ${selectedState.name} using ${CARRIER_DISPLAY_NAMES[selectedCarrier]}. `
+      : '';
+    const carrierData = selectedState?.carriers.find(c => c.carrier === selectedCarrier);
+    const bandHint = carrierData
+      ? `The dominant band in their area is ${carrierData.dominantBand.replace('_', '-')} with ~${carrierData.avgDownload} Mbps avg. `
+      : '';
+    const response = await sendMessage(providerHint + regionalHint + bandHint + userMessage.content, messages, {
       provider: 'claude',
       connectionType: connectionType ?? undefined,
     });
@@ -443,6 +460,155 @@ export default function PlacementAssistant() {
               </p>
             )}
           </div>
+
+          {/* Regional 5G Placement Intelligence (for 5G connections) */}
+          {connectionType === '5g_home' && (
+            <div className="card mt-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 rounded-xl bg-purple-50 dark:bg-purple-900/20">
+                  <Navigation className="w-5 h-5 text-purple-500" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[var(--color-text)]">Regional 5G Intelligence</h3>
+                  <p className="text-xs text-[var(--color-text-muted)]">Location-specific placement recommendations</p>
+                </div>
+              </div>
+
+              {/* State selector */}
+              <button
+                onClick={() => setShowStateSelector(!showStateSelector)}
+                className="w-full flex items-center justify-between p-3 rounded-xl border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 transition-all mb-4"
+              >
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[var(--color-text-muted)]" />
+                  <span className="text-sm text-[var(--color-text)]">
+                    {selectedState ? selectedState.name : 'Select your state'}
+                  </span>
+                </div>
+                <ChevronDown className={`w-4 h-4 text-[var(--color-text-muted)] transition-transform ${showStateSelector ? 'rotate-180' : ''}`} />
+              </button>
+
+              {showStateSelector && (
+                <div className="mb-4 max-h-48 overflow-y-auto rounded-xl border border-[var(--color-border)] divide-y divide-[var(--color-border)]">
+                  {getAllStates().map(state => (
+                    <button
+                      key={state.code}
+                      onClick={() => { setSelectedState(state); setShowStateSelector(false); setSelectedCarrier(null); }}
+                      className={`w-full text-left px-3 py-2.5 text-sm hover:bg-[var(--color-bg-secondary)] transition-colors ${
+                        selectedState?.code === state.code ? 'bg-[var(--color-primary)]/5 text-[var(--color-primary)]' : 'text-[var(--color-text)]'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span>{state.name}</span>
+                        <span className="text-[10px] text-[var(--color-text-muted)]">Best: {CARRIER_DISPLAY_NAMES[state.bestCarrier]}</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {selectedState && (
+                <>
+                  {/* Carrier comparison for selected state */}
+                  <p className="text-xs font-medium text-[var(--color-text-secondary)] mb-2">Carriers in {selectedState.name}</p>
+                  <div className="space-y-2 mb-4">
+                    {selectedState.carriers.map(carrier => (
+                      <button
+                        key={carrier.carrier}
+                        onClick={() => setSelectedCarrier(selectedCarrier === carrier.carrier ? null : carrier.carrier)}
+                        className={`w-full text-left p-3 rounded-xl border transition-all ${
+                          selectedCarrier === carrier.carrier
+                            ? 'border-purple-500 bg-purple-500/5'
+                            : 'border-[var(--color-border)] hover:border-purple-500/40'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-1">
+                          <div className="flex items-center gap-2">
+                            <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${
+                              carrier.rank === 1 ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' :
+                              carrier.rank === 2 ? 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400' :
+                              'bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400'
+                            }`}>#{carrier.rank}</span>
+                            <span className="text-sm font-medium text-[var(--color-text)]">{carrier.carrierName}</span>
+                          </div>
+                          <span className="text-xs font-bold text-purple-500">{carrier.avgDownload} Mbps</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-[10px] text-[var(--color-text-muted)]">
+                          <span>↑ {carrier.avgUpload} Mbps</span>
+                          <span>{carrier.avgLatency}ms latency</span>
+                          <span>{carrier.coverage5gPercent}% 5G coverage</span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Top cities in state */}
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    {selectedState.topCities.slice(0, 3).map(city => (
+                      <div key={city.name} className="rounded-xl bg-[var(--color-bg-secondary)] p-2.5 text-center">
+                        <p className="text-[10px] text-[var(--color-text-muted)] mb-0.5 truncate">{city.name}</p>
+                        <p className="text-xs font-bold text-[var(--color-text)]">{city.avgDownload} Mbps</p>
+                        {city.has5GUltra && <span className="text-[8px] text-purple-500">5G Ultra</span>}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Terrain notes */}
+                  <div className="p-3 rounded-xl bg-amber-50/70 dark:bg-amber-900/10 mb-4">
+                    <div className="flex items-start gap-2">
+                      <Signal className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                      <p className="text-xs text-amber-800 dark:text-amber-300">{selectedState.terrainNotes}</p>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* Band-specific placement tips */}
+              {selectedState && selectedCarrier && (() => {
+                const recommendation = getPlacementRecommendation(selectedState.code, selectedCarrier);
+                const carrierData = selectedState.carriers.find(c => c.carrier === selectedCarrier);
+                const bandTips = carrierData ? getBandPlacementTips(carrierData.dominantBand) : null;
+                if (!recommendation || !bandTips) return null;
+
+                return (
+                  <div className="border-t border-[var(--color-border)] pt-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Zap className="w-4 h-4 text-purple-500" />
+                      <h4 className="text-sm font-semibold text-[var(--color-text)]">
+                        {bandTips.label} Placement Tips
+                      </h4>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2 mb-4">
+                      <div className="rounded-xl bg-purple-50/70 dark:bg-purple-900/10 p-2.5">
+                        <p className="text-[10px] text-purple-600 dark:text-purple-400 mb-0.5">Penetration</p>
+                        <p className="text-xs font-medium text-[var(--color-text)]">{bandTips.penetration.split('—')[0]}</p>
+                      </div>
+                      <div className="rounded-xl bg-purple-50/70 dark:bg-purple-900/10 p-2.5">
+                        <p className="text-[10px] text-purple-600 dark:text-purple-400 mb-0.5">Expected Speed</p>
+                        <p className="text-xs font-medium text-[var(--color-text)]">{bandTips.speedRange}</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      {recommendation.tips.slice(0, 5).map((tip, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <Lightbulb className="w-4 h-4 text-purple-500 shrink-0 mt-0.5" />
+                          <span className="text-sm text-[var(--color-text-secondary)]">{tip}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {!selectedState && (
+                <p className="text-sm text-[var(--color-text-muted)] text-center py-4">
+                  Select your state above to see regional 5G performance and placement recommendations
+                </p>
+              )}
+            </div>
+          )}
         </div>
       )}
 

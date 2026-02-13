@@ -146,3 +146,47 @@ export interface CarrierMetrics {
   avgLatency: string;
   coverage: string;
 }
+
+// ── Regional 5G data types ──
+
+export type USRegion = 'northeast' | 'southeast' | 'midwest' | 'southwest' | 'west' | 'pacific';
+
+export type BandType = 'low_band' | 'mid_band' | 'mmwave';
+
+export interface RegionalCarrierData {
+  carrier: 'tmobile' | 'verizon' | 'att';
+  carrierName: string;
+  avgDownload: number; // Mbps
+  avgUpload: number;
+  avgLatency: number; // ms
+  coverage5gPercent: number;
+  dominantBand: BandType;
+  rank: 1 | 2 | 3;
+}
+
+export interface StateData {
+  code: string;
+  name: string;
+  region: USRegion;
+  bestCarrier: 'tmobile' | 'verizon' | 'att';
+  carriers: RegionalCarrierData[];
+  topCities: CityData[];
+  ruralCoverage: 'excellent' | 'good' | 'fair' | 'poor';
+  terrainNotes: string;
+}
+
+export interface CityData {
+  name: string;
+  avgDownload: number;
+  bestCarrier: 'tmobile' | 'verizon' | 'att';
+  has5GUltra: boolean; // mmWave or Ultra Capacity available
+}
+
+export interface BandPlacementTips {
+  bandType: BandType;
+  label: string;
+  range: string;
+  penetration: string;
+  speedRange: string;
+  placementTips: string[];
+}
