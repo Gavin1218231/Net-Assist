@@ -190,3 +190,65 @@ export interface BandPlacementTips {
   speedRange: string;
   placementTips: string[];
 }
+
+// ── Hyperlocal 5G data types ──
+
+export interface MetroArea {
+  id: string;
+  name: string;
+  stateCode: string;
+  neighborhoods: Neighborhood[];
+  zipCodes: ZipCodeData[];
+  towerDensity: 'ultra_dense' | 'dense' | 'moderate' | 'sparse';
+  avgDownload: number;
+  avgUpload: number;
+  avgLatency: number;
+}
+
+export interface Neighborhood {
+  id: string;
+  name: string;
+  metroId: string;
+  zipCodes: string[];
+  carriers: NeighborhoodCarrierData[];
+  towerCount: number;
+  buildingDensity: 'high' | 'medium' | 'low';
+  terrainType: 'urban_core' | 'suburban' | 'mixed_use' | 'residential' | 'industrial';
+  placementNotes: string;
+}
+
+export interface NeighborhoodCarrierData {
+  carrier: 'tmobile' | 'verizon' | 'att';
+  avgDownload: number;
+  avgUpload: number;
+  avgLatency: number;
+  primaryBand: BandType;
+  towerProximity: 'very_close' | 'close' | 'moderate' | 'far';
+  signalQuality: 'excellent' | 'good' | 'fair' | 'weak';
+  bestDirection: 'north' | 'south' | 'east' | 'west' | 'northeast' | 'northwest' | 'southeast' | 'southwest' | 'any';
+}
+
+export interface ZipCodeData {
+  zip: string;
+  neighborhoodId: string;
+  avgDownload: number;
+  bestCarrier: 'tmobile' | 'verizon' | 'att';
+  has5GUltra: boolean;
+  congestionLevel: 'low' | 'medium' | 'high';
+  peakHourImpact: number; // percentage speed reduction during peak (6-10 PM)
+}
+
+export interface TowerInfo {
+  id: string;
+  carrier: 'tmobile' | 'verizon' | 'att';
+  band: BandType;
+  direction: string; // compass direction from center of neighborhood
+  distance: string; // approximate distance
+  signalStrength: 'strong' | 'moderate' | 'weak';
+}
+
+export interface HyperlocalPlacementTip {
+  priority: 'critical' | 'high' | 'medium' | 'low';
+  tip: string;
+  reason: string;
+}
