@@ -488,6 +488,138 @@ export default function PlacementAssistant() {
             )}
           </div>
 
+          {/* Connection-type placement guidance (for non-5G types) */}
+          {connectionType && connectionType !== '5g_home' && (
+            <div className="card mt-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`p-2 rounded-xl ${
+                  connectionType === 'fiber' ? 'bg-cyan-50 dark:bg-cyan-900/20' :
+                  connectionType === 'cable' ? 'bg-orange-50 dark:bg-orange-900/20' :
+                  connectionType === 'dsl' ? 'bg-amber-50 dark:bg-amber-900/20' :
+                  'bg-indigo-50 dark:bg-indigo-900/20'
+                }`}>
+                  <Signal className={`w-5 h-5 ${
+                    connectionType === 'fiber' ? 'text-cyan-500' :
+                    connectionType === 'cable' ? 'text-orange-500' :
+                    connectionType === 'dsl' ? 'text-amber-500' :
+                    'text-indigo-500'
+                  }`} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[var(--color-text)]">{getConnectionTypeLabel(connectionType)} Placement Guide</h3>
+                  <p className="text-xs text-[var(--color-text-muted)]">What affects your speed and how to optimize</p>
+                </div>
+              </div>
+
+              {connectionType === 'fiber' && (
+                <div className="space-y-4">
+                  <div className="p-3 rounded-xl bg-cyan-50/70 dark:bg-cyan-900/10">
+                    <p className="text-xs font-medium text-cyan-800 dark:text-cyan-300 mb-1">Fiber Placement: Wi-Fi Matters More Than the Connection</p>
+                    <p className="text-[10px] text-cyan-600 dark:text-cyan-400">
+                      Fiber delivers full speed to your router (364 Mbps median — Ookla H1 2025). Your bottleneck is Wi-Fi coverage, not the connection.
+                      The ONT is fixed where fiber enters your home — use Ethernet to place the router centrally.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      'The ONT (fiber terminal) is installed where fiber enters your home — typically garage, basement, or utility closet',
+                      'Run an Ethernet cable from the ONT to a Wi-Fi router placed centrally in your home — this is the single best upgrade',
+                      'Place your router elevated (4–5 feet high) on a shelf or mounted on a wall — never on the floor',
+                      'Keep the router away from microwaves, baby monitors, and thick walls/metal — these degrade Wi-Fi signal',
+                      'For homes over 2,000 sq ft, add mesh extenders for full coverage — one per floor is typical',
+                    ].map((tip, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <Lightbulb className="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" />
+                        <span className="text-sm text-[var(--color-text-secondary)]">{tip}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {connectionType === 'cable' && (
+                <div className="space-y-4">
+                  <div className="p-3 rounded-xl bg-orange-50/70 dark:bg-orange-900/10">
+                    <p className="text-xs font-medium text-orange-800 dark:text-orange-300 mb-1">Cable Placement: Coax Outlet Location Is Key</p>
+                    <p className="text-[10px] text-orange-600 dark:text-orange-400">
+                      Cable delivers 239–261 Mbps median (Ookla). Your modem must connect to a coax outlet — use a longer coax cable (up to 25 ft)
+                      to position the gateway more centrally. Uploads are improving rapidly with DOCSIS 4.0 upgrades.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      'The modem/gateway MUST connect to a coax outlet — if it\'s in a corner, use a longer RG6 coax cable to gain flexibility',
+                      'If using a separate modem + router, run Ethernet from the modem to a centrally-placed router for best Wi-Fi',
+                      'Remove unnecessary coax splitters — each splitter reduces signal by 3–7 dB and can lower speeds 10–20%',
+                      'Cable speeds drop during peak hours (6–10 PM) due to shared neighborhood bandwidth — expect 10–25% slower speeds',
+                      'Keep gateway elevated on a shelf, not behind a TV or inside an entertainment center — these block Wi-Fi signal',
+                      'DOCSIS 4.0 upgrades are rolling out — check with your provider for upload speed improvements in your area',
+                    ].map((tip, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <Lightbulb className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
+                        <span className="text-sm text-[var(--color-text-secondary)]">{tip}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {connectionType === 'dsl' && (
+                <div className="space-y-4">
+                  <div className="p-3 rounded-xl bg-amber-50/70 dark:bg-amber-900/10">
+                    <p className="text-xs font-medium text-amber-800 dark:text-amber-300 mb-1">DSL Placement: Distance From Exchange Determines Speed</p>
+                    <p className="text-[10px] text-amber-600 dark:text-amber-400">
+                      DSL speeds depend on your distance from the telephone exchange — this cannot be changed with placement.
+                      Within 5,000 ft: full speeds. Over 10,000 ft: significant loss. Focus on choosing the best phone jack and Wi-Fi placement.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      'Use the phone jack closest to where the telephone line enters your home — this minimizes internal wiring signal loss',
+                      'Install DSL filters on ALL other phone jacks with phones attached — unfiltered jacks cause noise that drops speed 10–30%',
+                      'If speeds are below your plan, try a different phone jack — older internal wiring can degrade signal significantly',
+                      'Consider replacing old phone wiring between the jack and modem with CAT5 cable for better signal quality',
+                      'DSL is being phased out (FCC no longer considers it broadband) — check if fiber, cable, or 5G home is available at your address',
+                      'The modem/router must stay near a phone jack — if that\'s a corner room, add a Wi-Fi extender for whole-home coverage',
+                    ].map((tip, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <Lightbulb className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                        <span className="text-sm text-[var(--color-text-secondary)]">{tip}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {connectionType === 'satellite' && (
+                <div className="space-y-4">
+                  <div className="p-3 rounded-xl bg-indigo-50/70 dark:bg-indigo-900/10">
+                    <p className="text-xs font-medium text-indigo-800 dark:text-indigo-300 mb-1">Satellite Placement: Dish Position Is Everything</p>
+                    <p className="text-[10px] text-indigo-600 dark:text-indigo-400">
+                      Starlink (LEO): 105 Mbps median, 45 ms latency — needs clear sky view especially to the north.
+                      HughesNet/Viasat (GEO): 42–48 Mbps, 683 ms latency — dish must point south with precise alignment.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      'Starlink: Use the app\'s AR obstruction tool BEFORE mounting — even small obstructions cause brief dropouts',
+                      'Starlink: Roof mount is ideal; ground mount works if the dish clears fence/tree line — height is critical',
+                      'HughesNet/Viasat: Professional dish alignment is essential — GEO satellites require precision pointing south',
+                      'All satellite: The indoor router connects via a long cable from the dish — place the router centrally for best Wi-Fi',
+                      'Starlink rural areas often see 150–220 Mbps; suburban areas with more users may see 75–100 Mbps due to congestion',
+                      'GEO satellite latency (~683 ms) makes video calls and gaming difficult — Starlink (45 ms) is much better for real-time use',
+                    ].map((tip, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <Lightbulb className="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
+                        <span className="text-sm text-[var(--color-text-secondary)]">{tip}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Regional 5G Placement Intelligence (for 5G connections) */}
           {connectionType === '5g_home' && (
             <div className="card mt-6">
