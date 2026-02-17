@@ -30,13 +30,18 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function load() {
-      const [status, recs] = await Promise.all([
-        getNetworkStatus(),
-        getRecommendations(),
-      ]);
-      setNetworkStatus(status);
-      setRecommendations(recs);
-      setLoading(false);
+      try {
+        const [status, recs] = await Promise.all([
+          getNetworkStatus(),
+          getRecommendations(),
+        ]);
+        setNetworkStatus(status);
+        setRecommendations(recs);
+      } catch {
+        // Fall through – dashboard renders gracefully with null/empty state
+      } finally {
+        setLoading(false);
+      }
     }
     load();
   }, []);

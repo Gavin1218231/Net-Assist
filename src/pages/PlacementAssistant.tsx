@@ -110,46 +110,57 @@ export default function PlacementAssistant() {
     setChatInput('');
     setIsSending(true);
 
-    const providerHint = selectedProvider
-      ? `The user has ${selectedProvider.name} (${getConnectionTypeLabel(selectedProvider.connectionType)}). `
-      : connectionType
-        ? `The user has ${getConnectionTypeLabel(connectionType)} internet. `
+    try {
+      const providerHint = selectedProvider
+        ? `The user has ${selectedProvider.name} (${getConnectionTypeLabel(selectedProvider.connectionType)}). `
+        : connectionType
+          ? `The user has ${getConnectionTypeLabel(connectionType)} internet. `
+          : '';
+      const regionalHint = selectedState && selectedCarrier
+        ? `They are in ${selectedState.name} using ${CARRIER_DISPLAY_NAMES[selectedCarrier]}. `
         : '';
-    const regionalHint = selectedState && selectedCarrier
-      ? `They are in ${selectedState.name} using ${CARRIER_DISPLAY_NAMES[selectedCarrier]}. `
-      : '';
-    const carrierData = selectedState?.carriers.find(c => c.carrier === selectedCarrier);
-    const bandHint = carrierData
-      ? `The dominant band in their area is ${carrierData.dominantBand.replace('_', '-')} with ~${carrierData.avgDownload} Mbps avg. `
-      : '';
+      const carrierData = selectedState?.carriers.find(c => c.carrier === selectedCarrier);
+      const bandHint = carrierData
+        ? `The dominant band in their area is ${carrierData.dominantBand.replace('_', '-')} with ~${carrierData.avgDownload} Mbps avg. `
+        : '';
 
-    // Hyperlocal context
-    const hyperlocalCarrierData = selectedNeighborhood && hyperlocalCarrier
-      ? getCarrierDataForNeighborhood(selectedNeighborhood.id, hyperlocalCarrier)
-      : null;
-    const hyperlocalHint = selectedNeighborhood && hyperlocalCarrierData
-      ? `HYPERLOCAL DATA: They are in ${selectedNeighborhood.name}, ${selectedMetro?.name}. ` +
-        `Using ${CARRIER_DISPLAY[hyperlocalCarrier!]} with ${hyperlocalCarrierData.primaryBand.replace('_', '-')} band. ` +
-        `Expected: ${hyperlocalCarrierData.avgDownload} Mbps down, ${hyperlocalCarrierData.avgLatency}ms latency. ` +
-        `Best window direction: ${hyperlocalCarrierData.bestDirection}. ` +
-        `Signal quality: ${hyperlocalCarrierData.signalQuality}. Tower proximity: ${hyperlocalCarrierData.towerProximity}. ` +
-        `Building density: ${selectedNeighborhood.buildingDensity}. Local note: ${selectedNeighborhood.placementNotes} `
-      : '';
+      // Hyperlocal context
+      const hyperlocalCarrierData = selectedNeighborhood && hyperlocalCarrier
+        ? getCarrierDataForNeighborhood(selectedNeighborhood.id, hyperlocalCarrier)
+        : null;
+      const hyperlocalHint = selectedNeighborhood && hyperlocalCarrierData
+        ? `HYPERLOCAL DATA: They are in ${selectedNeighborhood.name}, ${selectedMetro?.name ?? 'unknown metro'}. ` +
+          `Using ${CARRIER_DISPLAY[hyperlocalCarrier!]} with ${hyperlocalCarrierData.primaryBand.replace('_', '-')} band. ` +
+          `Expected: ${hyperlocalCarrierData.avgDownload} Mbps down, ${hyperlocalCarrierData.avgLatency}ms latency. ` +
+          `Best window direction: ${hyperlocalCarrierData.bestDirection}. ` +
+          `Signal quality: ${hyperlocalCarrierData.signalQuality}. Tower proximity: ${hyperlocalCarrierData.towerProximity}. ` +
+          `Building density: ${selectedNeighborhood.buildingDensity}. Local note: ${selectedNeighborhood.placementNotes} `
+        : '';
 
-    const response = await sendMessage(providerHint + regionalHint + bandHint + hyperlocalHint + userMessage.content, messages, {
-      provider: 'claude',
-      connectionType: connectionType ?? undefined,
-    });
+      const response = await sendMessage(providerHint + regionalHint + bandHint + hyperlocalHint + userMessage.content, messages, {
+        provider: 'claude',
+        connectionType: connectionType ?? undefined,
+      });
 
-    const assistantMessage: ChatMessage = {
-      id: (Date.now() + 1).toString(),
-      role: 'assistant',
-      content: response,
-      timestamp: new Date().toISOString(),
-    };
+      const assistantMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: response,
+        timestamp: new Date().toISOString(),
+      };
 
-    setMessages(prev => [...prev, assistantMessage]);
-    setIsSending(false);
+      setMessages(prev => [...prev, assistantMessage]);
+    } catch {
+      const errorMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: 'Sorry, something went wrong. Please try again.',
+        timestamp: new Date().toISOString(),
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const handleScan = async () => {
@@ -937,7 +948,7 @@ export default function PlacementAssistant() {
                   {/* Carrier comparison for neighborhood */}
                   <p className="text-xs font-medium text-[var(--color-text-secondary)] mb-2">Carriers in {selectedNeighborhood.name}</p>
                   <div className="space-y-2 mb-4">
-                    {selectedNeighborhood.carriers
+                    {[...selectedNeighborhood.carriers]
                       .sort((a, b) => b.avgDownload - a.avgDownload)
                       .map((carrier, idx) => (
                         <button
