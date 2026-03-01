@@ -165,19 +165,32 @@ export default function PlacementAssistant() {
 
   const handleScan = async () => {
     setDiscoveredDevices([]);
-    await scanForDevices(setBleState, setDiscoveredDevices);
+    try {
+      await scanForDevices(setBleState, setDiscoveredDevices);
+    } catch {
+      setBleState('disconnected');
+    }
   };
 
   const handleConnect = async (deviceId: string) => {
-    const device = await connectToDevice(deviceId, setBleState);
-    if (device) {
-      setConnectedDevice(device);
+    try {
+      const device = await connectToDevice(deviceId, setBleState);
+      if (device) {
+        setConnectedDevice(device);
+      }
+    } catch {
+      setBleState('disconnected');
     }
   };
 
   const handleDisconnect = async () => {
-    await disconnectDevice(setBleState);
-    setConnectedDevice(null);
+    try {
+      await disconnectDevice(setBleState);
+    } catch {
+      // Disconnect may fail silently
+    } finally {
+      setConnectedDevice(null);
+    }
   };
 
   const addRoom = () => {

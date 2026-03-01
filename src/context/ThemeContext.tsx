@@ -20,14 +20,22 @@ function getSystemTheme(): 'light' | 'dark' {
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    const stored = localStorage.getItem('netassist-theme') as Theme | null;
-    return stored || 'system';
+    try {
+      const stored = localStorage.getItem('netassist-theme') as Theme | null;
+      return stored || 'system';
+    } catch {
+      return 'system';
+    }
   });
 
   const resolvedTheme = theme === 'system' ? getSystemTheme() : theme;
 
   useEffect(() => {
-    localStorage.setItem('netassist-theme', theme);
+    try {
+      localStorage.setItem('netassist-theme', theme);
+    } catch {
+      // localStorage may be unavailable
+    }
     const root = document.documentElement;
     root.classList.remove('light', 'dark');
     root.classList.add(resolvedTheme);

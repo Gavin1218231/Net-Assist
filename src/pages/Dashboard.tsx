@@ -50,18 +50,23 @@ export default function Dashboard() {
     setIsRunning(true);
     setProgress(0);
     setSpeedResult(null);
-    const result = await runSpeedTest(setProgress, selectedBand);
-    setSpeedResult(result);
-    // Sync the network status card with the speed test result
-    setNetworkStatus(prev => prev ? {
-      ...prev,
-      band: result.band,
-      downloadSpeed: result.downloadSpeed,
-      uploadSpeed: result.uploadSpeed,
-      latency: result.latency,
-      quality: getQualityFromSpeed(result.downloadSpeed),
-    } : prev);
-    setIsRunning(false);
+    try {
+      const result = await runSpeedTest(setProgress, selectedBand);
+      setSpeedResult(result);
+      // Sync the network status card with the speed test result
+      setNetworkStatus(prev => prev ? {
+        ...prev,
+        band: result.band,
+        downloadSpeed: result.downloadSpeed,
+        uploadSpeed: result.uploadSpeed,
+        latency: result.latency,
+        quality: getQualityFromSpeed(result.downloadSpeed),
+      } : prev);
+    } catch {
+      // Test failed – UI resets gracefully
+    } finally {
+      setIsRunning(false);
+    }
   };
 
   if (loading) {

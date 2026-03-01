@@ -77,10 +77,16 @@ export default function NetworkCheck() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getNetworkStatus().then(status => {
-      setNetworkStatus(status);
-      setLoading(false);
-    });
+    getNetworkStatus()
+      .then(status => {
+        setNetworkStatus(status);
+      })
+      .catch(() => {
+        // Network check failed – renders gracefully with null
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   const handleSpeedTest = async () => {
@@ -88,10 +94,15 @@ export default function NetworkCheck() {
     setProgress(0);
     setSpeedResult(null);
 
-    const result = await runSpeedTest(setProgress, selectedBand);
-    setSpeedResult(result);
-    setHistory(prev => [result, ...prev].slice(0, 10));
-    setIsRunning(false);
+    try {
+      const result = await runSpeedTest(setProgress, selectedBand);
+      setSpeedResult(result);
+      setHistory(prev => [result, ...prev].slice(0, 10));
+    } catch {
+      // Test failed – UI resets gracefully
+    } finally {
+      setIsRunning(false);
+    }
   };
 
   if (loading) {
