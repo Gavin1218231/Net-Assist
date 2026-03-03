@@ -18,10 +18,8 @@ import {
 } from '../services/hyperlocal5g';
 import {
   getAllMetros as getAllProviderMetros,
-  getMetrosByState as getProviderMetrosByState,
   getFastestProvidersInMetro,
   getHyperlocalPlacementTips as getProviderPlacementTips,
-  getProviderProfile,
   type ProviderMetroData,
   type ProviderRegionalProfile,
 } from '../services/hyperlocalProviders';

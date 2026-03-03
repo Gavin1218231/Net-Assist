@@ -7,6 +7,7 @@ import {
   runSpeedTest, getNetworkStatus, getQualityColor, getQualityLabel,
   getBandLabel, getBandDescription, formatSpeed, formatLatency,
 } from '../services/network';
+import { useAIAssistant } from '../context/AIAssistantContext';
 import type { NetworkStatus, SpeedTestResult, NetworkQuality, WifiBand } from '../types';
 
 const BANDS: WifiBand[] = ['2.4ghz', '5ghz', '6ghz'];
@@ -68,6 +69,7 @@ function SignalBar({ strength, label }: { strength: number; label: string }) {
 }
 
 export default function NetworkCheck() {
+  const { updateNetworkStatus, updateSpeedTestResult } = useAIAssistant();
   const [networkStatus, setNetworkStatus] = useState<NetworkStatus | null>(null);
   const [speedResult, setSpeedResult] = useState<SpeedTestResult | null>(null);
   const [isRunning, setIsRunning] = useState(false);
@@ -80,6 +82,7 @@ export default function NetworkCheck() {
     getNetworkStatus()
       .then(status => {
         setNetworkStatus(status);
+        if (status) updateNetworkStatus(status);
       })
       .catch(() => {
         // Network check failed – renders gracefully with null
@@ -87,7 +90,7 @@ export default function NetworkCheck() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [updateNetworkStatus]);
 
   const handleSpeedTest = async () => {
     setIsRunning(true);
@@ -98,6 +101,8 @@ export default function NetworkCheck() {
       const result = await runSpeedTest(setProgress, selectedBand);
       setSpeedResult(result);
       setHistory(prev => [result, ...prev].slice(0, 10));
+      // Share with AI assistant for contextual analysis
+      updateSpeedTestResult(result);
     } catch {
       // Test failed – UI resets gracefully
     } finally {

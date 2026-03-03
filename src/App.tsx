@@ -2,7 +2,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { ProviderProvider } from './context/ProviderContext';
+import { AIAssistantProvider } from './context/AIAssistantContext';
 import AppLayout from './components/layout/AppLayout';
+import GlobalAIAssistant from './components/GlobalAIAssistant';
 import Welcome from './pages/Welcome';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -59,7 +61,10 @@ export default function App() {
       <AuthProvider>
         <ProviderProvider>
           <Router>
-            <AppRoutes />
+            <AIAssistantProvider>
+              <AppRoutes />
+              <GlobalAIAssistant />
+            </AIAssistantProvider>
           </Router>
         </ProviderProvider>
       </AuthProvider>

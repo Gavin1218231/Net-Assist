@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useProvider } from '../context/ProviderContext';
+import { useAIAssistant } from '../context/AIAssistantContext';
 import {
   getNetworkStatus, getRecommendations, runSpeedTest, getQualityFromSpeed,
   getQualityColor, getQualityLabel, getBandLabel, formatSpeed, formatLatency,
@@ -18,6 +19,7 @@ const BANDS: WifiBand[] = ['2.4ghz', '5ghz', '6ghz'];
 export default function Dashboard() {
   const { user } = useAuth();
   const { provider, connectionType, setupCompleted, clearProvider } = useProvider();
+  const { updateNetworkStatus, updateSpeedTestResult, updateRecommendations } = useAIAssistant();
   const [networkStatus, setNetworkStatus] = useState<NetworkStatus | null>(null);
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
   const [loading, setLoading] = useState(true);
@@ -37,6 +39,9 @@ export default function Dashboard() {
         ]);
         setNetworkStatus(status);
         setRecommendations(recs);
+        // Share with AI assistant
+        if (status) updateNetworkStatus(status);
+        if (recs) updateRecommendations(recs);
       } catch {
         // Fall through – dashboard renders gracefully with null/empty state
       } finally {
@@ -44,7 +49,7 @@ export default function Dashboard() {
       }
     }
     load();
-  }, []);
+  }, [updateNetworkStatus, updateRecommendations]);
 
   const handleSpeedTest = async () => {
     setIsRunning(true);
@@ -53,15 +58,19 @@ export default function Dashboard() {
     try {
       const result = await runSpeedTest(setProgress, selectedBand);
       setSpeedResult(result);
+      // Share with AI assistant for contextual analysis
+      updateSpeedTestResult(result);
       // Sync the network status card with the speed test result
-      setNetworkStatus(prev => prev ? {
-        ...prev,
+      const updatedStatus = networkStatus ? {
+        ...networkStatus,
         band: result.band,
         downloadSpeed: result.downloadSpeed,
         uploadSpeed: result.uploadSpeed,
         latency: result.latency,
         quality: getQualityFromSpeed(result.downloadSpeed),
-      } : prev);
+      } : null;
+      setNetworkStatus(updatedStatus);
+      if (updatedStatus) updateNetworkStatus(updatedStatus);
     } catch {
       // Test failed – UI resets gracefully
     } finally {
