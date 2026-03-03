@@ -16,6 +16,15 @@ import {
   getBestCarrierForNeighborhood, getHyperlocalPlacementTips, getNeighborhoodByZip,
   CARRIER_DISPLAY, BAND_LABELS,
 } from '../services/hyperlocal5g';
+import {
+  getAllMetros as getAllProviderMetros,
+  getMetrosByState as getProviderMetrosByState,
+  getFastestProvidersInMetro,
+  getHyperlocalPlacementTips as getProviderPlacementTips,
+  getProviderProfile,
+  type ProviderMetroData,
+  type ProviderRegionalProfile,
+} from '../services/hyperlocalProviders';
 import type { Room, RoomType, ChatMessage, DeviceInfo, PlacementRecommendation, ConnectionType, ISPProvider, StateData, MetroArea, Neighborhood } from '../types';
 
 const ROOM_TYPES: { value: RoomType; label: string }[] = [
@@ -91,6 +100,11 @@ export default function PlacementAssistant() {
   const [zipSearch, setZipSearch] = useState('');
   const [showMetroSelector, setShowMetroSelector] = useState(false);
   const [showNeighborhoodSelector, setShowNeighborhoodSelector] = useState(false);
+
+  // Hyperlocal cable/fiber provider state
+  const [selectedProviderMetro, setSelectedProviderMetro] = useState<string | null>(null);
+  const [showProviderMetroSelector, setShowProviderMetroSelector] = useState(false);
+  const [selectedMetroProvider, setSelectedMetroProvider] = useState<{ provider: ProviderRegionalProfile; metroData: ProviderMetroData } | null>(null);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -640,6 +654,189 @@ export default function PlacementAssistant() {
                     ))}
                   </div>
                 </div>
+              )}
+            </div>
+          )}
+
+          {/* Hyperlocal Cable/Fiber Provider Intelligence */}
+          {(connectionType === 'fiber' || connectionType === 'cable') && (
+            <div className="card mt-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`p-2 rounded-xl ${connectionType === 'fiber' ? 'bg-cyan-50 dark:bg-cyan-900/20' : 'bg-orange-50 dark:bg-orange-900/20'}`}>
+                  <Globe className={`w-5 h-5 ${connectionType === 'fiber' ? 'text-cyan-500' : 'text-orange-500'}`} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[var(--color-text)]">Local Provider Intelligence</h3>
+                  <p className="text-xs text-[var(--color-text-muted)]">Metro-level speed data from Ookla Q3 2025 - Q1 2026</p>
+                </div>
+              </div>
+
+              {/* Metro selector */}
+              <button
+                onClick={() => setShowProviderMetroSelector(!showProviderMetroSelector)}
+                className={`w-full flex items-center justify-between p-3 rounded-xl border border-[var(--color-border)] hover:border-${connectionType === 'fiber' ? 'cyan' : 'orange'}-500/40 transition-all mb-4`}
+              >
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[var(--color-text-muted)]" />
+                  <span className="text-sm text-[var(--color-text)]">
+                    {selectedProviderMetro
+                      ? getAllProviderMetros().find(m => m.id === selectedProviderMetro)?.name ?? 'Select your metro area'
+                      : 'Select your metro area'}
+                  </span>
+                </div>
+                <ChevronDown className={`w-4 h-4 text-[var(--color-text-muted)] transition-transform ${showProviderMetroSelector ? 'rotate-180' : ''}`} />
+              </button>
+
+              {showProviderMetroSelector && (
+                <div className="mb-4 max-h-56 overflow-y-auto rounded-xl border border-[var(--color-border)] divide-y divide-[var(--color-border)]">
+                  {getAllProviderMetros().map(metro => (
+                    <button
+                      key={metro.id}
+                      onClick={() => {
+                        setSelectedProviderMetro(metro.id);
+                        setShowProviderMetroSelector(false);
+                        setSelectedMetroProvider(null);
+                      }}
+                      className={`w-full text-left px-3 py-2.5 text-sm hover:bg-[var(--color-bg-secondary)] transition-colors ${
+                        selectedProviderMetro === metro.id
+                          ? `bg-${connectionType === 'fiber' ? 'cyan' : 'orange'}-500/5 text-${connectionType === 'fiber' ? 'cyan' : 'orange'}-600`
+                          : 'text-[var(--color-text)]'
+                      }`}
+                    >
+                      <span>{metro.name}, {metro.state}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Provider rankings in selected metro */}
+              {selectedProviderMetro && (() => {
+                const fastestProviders = getFastestProvidersInMetro(selectedProviderMetro, 6)
+                  .filter(p => p.provider.connectionType === connectionType);
+                const metroName = getAllProviderMetros().find(m => m.id === selectedProviderMetro)?.name ?? selectedProviderMetro;
+
+                if (fastestProviders.length === 0) {
+                  return (
+                    <p className="text-sm text-[var(--color-text-muted)] text-center py-4">
+                      No {connectionType === 'fiber' ? 'fiber' : 'cable'} provider data available for {metroName}
+                    </p>
+                  );
+                }
+
+                return (
+                  <>
+                    <p className="text-xs font-medium text-[var(--color-text-secondary)] mb-2">
+                      {connectionType === 'fiber' ? 'Fiber' : 'Cable'} Providers in {metroName}
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      {fastestProviders.map(({ provider, metroData }, idx) => (
+                        <button
+                          key={provider.providerId}
+                          onClick={() => setSelectedMetroProvider(
+                            selectedMetroProvider?.provider.providerId === provider.providerId ? null : { provider, metroData }
+                          )}
+                          className={`w-full text-left p-3 rounded-xl border transition-all ${
+                            selectedMetroProvider?.provider.providerId === provider.providerId
+                              ? `border-${connectionType === 'fiber' ? 'cyan' : 'orange'}-500 bg-${connectionType === 'fiber' ? 'cyan' : 'orange'}-500/5`
+                              : 'border-[var(--color-border)] hover:border-[var(--color-primary)]/40'
+                          }`}
+                        >
+                          <div className="flex items-center justify-between mb-1">
+                            <div className="flex items-center gap-2">
+                              <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${
+                                idx === 0 ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' :
+                                idx === 1 ? 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400' :
+                                'bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400'
+                              }`}>#{idx + 1}</span>
+                              <span className="text-sm font-medium text-[var(--color-text)]">{provider.providerName}</span>
+                            </div>
+                            <span className={`text-xs font-bold ${connectionType === 'fiber' ? 'text-cyan-500' : 'text-orange-500'}`}>
+                              {metroData.medianDown} Mbps
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-3 text-[10px] text-[var(--color-text-muted)]">
+                            <span>↑ {metroData.medianUp} Mbps</span>
+                            <span>{metroData.medianLatency}ms latency</span>
+                            <span>{metroData.consistencyScore}% consistent</span>
+                            {metroData.has8Gig && <span className="text-purple-500">8 Gig</span>}
+                            {metroData.hasDocsis4 && <span className="text-green-500">DOCSIS 4.0</span>}
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Provider-specific tips */}
+                    {selectedMetroProvider && (() => {
+                      const tips = getProviderPlacementTips(selectedMetroProvider.provider.providerId, selectedProviderMetro);
+                      if (!tips || tips.tips.length === 0) return null;
+
+                      return (
+                        <div className="border-t border-[var(--color-border)] pt-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Zap className={`w-4 h-4 ${connectionType === 'fiber' ? 'text-cyan-500' : 'text-orange-500'}`} />
+                            <h4 className="text-sm font-semibold text-[var(--color-text)]">
+                              {selectedMetroProvider.provider.providerName} Tips for {metroName}
+                            </h4>
+                          </div>
+
+                          {/* Provider stats */}
+                          <div className="grid grid-cols-3 gap-2 mb-4">
+                            <div className={`rounded-xl p-2.5 text-center ${connectionType === 'fiber' ? 'bg-cyan-50/70 dark:bg-cyan-900/10' : 'bg-orange-50/70 dark:bg-orange-900/10'}`}>
+                              <p className={`text-[10px] ${connectionType === 'fiber' ? 'text-cyan-600 dark:text-cyan-400' : 'text-orange-600 dark:text-orange-400'} mb-0.5`}>Median Speed</p>
+                              <p className="text-xs font-bold text-[var(--color-text)]">{selectedMetroProvider.metroData.medianDown} Mbps</p>
+                            </div>
+                            <div className={`rounded-xl p-2.5 text-center ${connectionType === 'fiber' ? 'bg-cyan-50/70 dark:bg-cyan-900/10' : 'bg-orange-50/70 dark:bg-orange-900/10'}`}>
+                              <p className={`text-[10px] ${connectionType === 'fiber' ? 'text-cyan-600 dark:text-cyan-400' : 'text-orange-600 dark:text-orange-400'} mb-0.5`}>Peak Hour Drop</p>
+                              <p className="text-xs font-bold text-[var(--color-text)]">-{selectedMetroProvider.metroData.peakHourDegradation}%</p>
+                            </div>
+                            <div className={`rounded-xl p-2.5 text-center ${connectionType === 'fiber' ? 'bg-cyan-50/70 dark:bg-cyan-900/10' : 'bg-orange-50/70 dark:bg-orange-900/10'}`}>
+                              <p className={`text-[10px] ${connectionType === 'fiber' ? 'text-cyan-600 dark:text-cyan-400' : 'text-orange-600 dark:text-orange-400'} mb-0.5`}>Max Available</p>
+                              <p className="text-xs font-bold text-[var(--color-text)]">{selectedMetroProvider.metroData.maxAvailableSpeed >= 1000 ? `${selectedMetroProvider.metroData.maxAvailableSpeed / 1000} Gbps` : `${selectedMetroProvider.metroData.maxAvailableSpeed} Mbps`}</p>
+                            </div>
+                          </div>
+
+                          <div className="space-y-2">
+                            {tips.tips.slice(0, 5).map((tip, idx) => (
+                              <div key={idx} className="flex items-start gap-2">
+                                <div className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
+                                  tip.priority === 'critical' ? 'bg-red-100 dark:bg-red-900/30' :
+                                  tip.priority === 'high' ? 'bg-amber-100 dark:bg-amber-900/30' :
+                                  tip.priority === 'medium' ? 'bg-blue-100 dark:bg-blue-900/30' :
+                                  'bg-gray-100 dark:bg-gray-800'
+                                }`}>
+                                  <span className={`text-[8px] font-bold ${
+                                    tip.priority === 'critical' ? 'text-red-600 dark:text-red-400' :
+                                    tip.priority === 'high' ? 'text-amber-600 dark:text-amber-400' :
+                                    tip.priority === 'medium' ? 'text-blue-600 dark:text-blue-400' :
+                                    'text-gray-600 dark:text-gray-400'
+                                  }`}>{tip.priority === 'critical' ? '!' : tip.priority === 'high' ? 'H' : tip.priority === 'medium' ? 'M' : 'L'}</span>
+                                </div>
+                                <div>
+                                  <span className="text-sm text-[var(--color-text-secondary)]">{tip.tip}</span>
+                                  <p className="text-[10px] text-[var(--color-text-muted)] mt-0.5">{tip.reason}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Provider network info */}
+                          <div className="mt-4 p-3 rounded-xl bg-[var(--color-bg-secondary)]">
+                            <p className="text-xs font-medium text-[var(--color-text)] mb-1">Network Technology</p>
+                            <p className="text-[10px] text-[var(--color-text-muted)]">{selectedMetroProvider.provider.networkTechnology}</p>
+                            <p className="text-xs font-medium text-[var(--color-text)] mt-2 mb-1">Expansion Status</p>
+                            <p className="text-[10px] text-[var(--color-text-muted)]">{selectedMetroProvider.provider.expansionStatus}</p>
+                          </div>
+                        </div>
+                      );
+                    })()}
+                  </>
+                );
+              })()}
+
+              {!selectedProviderMetro && (
+                <p className="text-sm text-[var(--color-text-muted)] text-center py-4">
+                  Select your metro area to see local {connectionType === 'fiber' ? 'fiber' : 'cable'} provider performance and placement tips
+                </p>
               )}
             </div>
           )}
