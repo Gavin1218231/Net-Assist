@@ -112,7 +112,10 @@ export async function disconnectDevice(
 }
 
 export function getConnectionState(): BLEService {
-  return { ...currentState };
+  return {
+    ...currentState,
+    devices: [...currentState.devices], // Return copy of devices array
+  };
 }
 
 export async function initiateNFCHandshake(
