@@ -138,6 +138,9 @@ describe('regional5g service', () => {
       // Low band should mention good penetration
       expect(lowBand?.penetration.toLowerCase()).toContain('excellent');
 
+      // Mid band should mention moderate penetration
+      expect(midBand?.penetration.toLowerCase()).toContain('moderate');
+
       // mmWave should mention poor penetration
       expect(mmwave?.penetration.toLowerCase()).toContain('poor');
     });
