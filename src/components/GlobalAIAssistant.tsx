@@ -37,10 +37,14 @@ export default function GlobalAIAssistant() {
     }
   }, [isOpen, isMinimized]);
 
-  // Hide suggestions after first user message
+  // Hide suggestions after first user message, show again when cleared
   useEffect(() => {
-    if (messages.filter(m => m.role === 'user').length > 0) {
+    const userMessageCount = messages.filter(m => m.role === 'user').length;
+    if (userMessageCount > 0) {
       setShowSuggestions(false);
+    } else {
+      // Reset suggestions when chat is cleared (only welcome message remains)
+      setShowSuggestions(true);
     }
   }, [messages]);
 

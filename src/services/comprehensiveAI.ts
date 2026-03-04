@@ -567,6 +567,12 @@ function detectCategory(message: string, context?: AppContext): KnowledgeCategor
 }
 
 let responseIndex = 0;
+
+// Reset the response index (useful when clearing chat)
+export function resetResponseIndex(): void {
+  responseIndex = 0;
+}
+
 function pick<T>(arr: T[]): T {
   return arr[responseIndex++ % arr.length];
 }

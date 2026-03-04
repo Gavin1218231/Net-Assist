@@ -1,7 +1,7 @@
-import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect, useRef, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useProvider } from './ProviderContext';
-import { sendComprehensiveMessage, getQuickSuggestions, type AppContext } from '../services/comprehensiveAI';
+import { sendComprehensiveMessage, getQuickSuggestions, resetResponseIndex, type AppContext } from '../services/comprehensiveAI';
 import type { ChatMessage, NetworkStatus, SpeedTestResult, Recommendation, AIProvider } from '../types';
 
 interface AIAssistantState {
@@ -52,8 +52,8 @@ export function AIAssistantProvider({ children }: { children: ReactNode }) {
   const [speedTestResult, setSpeedTestResult] = useState<SpeedTestResult | undefined>();
   const [recommendations, setRecommendations] = useState<Recommendation[] | undefined>();
 
-  // Build app context
-  const appContext: AppContext = {
+  // Build app context - memoize to avoid stale closures
+  const appContextRef = useRef<AppContext>({
     currentPage: location.pathname,
     connectionType: connectionType || undefined,
     providerName: provider?.name,
@@ -61,10 +61,23 @@ export function AIAssistantProvider({ children }: { children: ReactNode }) {
     speedTestResult,
     recommendations,
     setupCompleted,
-  };
+  });
+
+  // Keep ref updated
+  useEffect(() => {
+    appContextRef.current = {
+      currentPage: location.pathname,
+      connectionType: connectionType || undefined,
+      providerName: provider?.name,
+      networkStatus,
+      speedTestResult,
+      recommendations,
+      setupCompleted,
+    };
+  }, [location.pathname, connectionType, provider?.name, networkStatus, speedTestResult, recommendations, setupCompleted]);
 
   // Get suggestions based on context
-  const suggestions = getQuickSuggestions(appContext);
+  const suggestions = getQuickSuggestions(appContextRef.current);
 
   // Reset unread when opening
   useEffect(() => {
@@ -101,6 +114,12 @@ export function AIAssistantProvider({ children }: { children: ReactNode }) {
     setUnreadCount(0);
   }, []);
 
+  // Use ref for isMinimized to avoid stale closure in sendMessage
+  const isMinimizedRef = useRef(isMinimized);
+  useEffect(() => {
+    isMinimizedRef.current = isMinimized;
+  }, [isMinimized]);
+
   const sendMessage = useCallback(async (content: string) => {
     if (!content.trim() || isLoading) return;
 
@@ -112,45 +131,54 @@ export function AIAssistantProvider({ children }: { children: ReactNode }) {
       timestamp: new Date().toISOString(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setIsLoading(true);
+    // Get current messages for history before adding new one
+    setMessages(prev => {
+      const updatedMessages = [...prev, userMessage];
 
-    try {
-      const aiProvider: AIProvider = 'claude';
-      const response = await sendComprehensiveMessage(content, messages, {
-        provider: aiProvider,
-        appContext,
-      });
+      // Start async operation with latest messages
+      (async () => {
+        setIsLoading(true);
+        try {
+          const aiProvider: AIProvider = 'claude';
+          const response = await sendComprehensiveMessage(content, updatedMessages, {
+            provider: aiProvider,
+            appContext: appContextRef.current,
+          });
 
-      const assistantMessage: ChatMessage = {
-        id: (Date.now() + 1).toString(),
-        role: 'assistant',
-        content: response,
-        timestamp: new Date().toISOString(),
-      };
+          const assistantMessage: ChatMessage = {
+            id: (Date.now() + 1).toString(),
+            role: 'assistant',
+            content: response,
+            timestamp: new Date().toISOString(),
+          };
 
-      setMessages(prev => [...prev, assistantMessage]);
+          setMessages(prevMsgs => [...prevMsgs, assistantMessage]);
 
-      // Increment unread if minimized
-      if (isMinimized) {
-        setUnreadCount(prev => prev + 1);
-      }
-    } catch (error) {
-      const errorMessage: ChatMessage = {
-        id: (Date.now() + 1).toString(),
-        role: 'assistant',
-        content: "I'm sorry, I encountered an error. Please try again.",
-        timestamp: new Date().toISOString(),
-      };
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [messages, isLoading, appContext, isMinimized]);
+          // Increment unread if minimized
+          if (isMinimizedRef.current) {
+            setUnreadCount(prevCount => prevCount + 1);
+          }
+        } catch {
+          const errorMessage: ChatMessage = {
+            id: (Date.now() + 1).toString(),
+            role: 'assistant',
+            content: "I'm sorry, I encountered an error. Please try again.",
+            timestamp: new Date().toISOString(),
+          };
+          setMessages(prevMsgs => [...prevMsgs, errorMessage]);
+        } finally {
+          setIsLoading(false);
+        }
+      })();
+
+      return updatedMessages;
+    });
+  }, [isLoading]);
 
   const clearMessages = useCallback(() => {
     setMessages([WELCOME_MESSAGE]);
     setUnreadCount(0);
+    resetResponseIndex(); // Reset response cycling for fresh experience
   }, []);
 
   const updateNetworkStatus = useCallback((status: NetworkStatus) => {
