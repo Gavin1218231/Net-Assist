@@ -332,6 +332,51 @@ const METROS: Record<string, { name: string; state: string; population: number }
   'fairlawn-oh': { name: 'Fairlawn', state: 'OH', population: 7437 },
   'wiscasset': { name: 'Wiscasset', state: 'ME', population: 3742 },
   'barre-vt': { name: 'Barre', state: 'VT', population: 8491 },
+  // HAWAII
+  'honolulu': { name: 'Honolulu', state: 'HI', population: 350964 },
+  // OKLAHOMA
+  'oklahoma-city': { name: 'Oklahoma City', state: 'OK', population: 681054 },
+  'tulsa': { name: 'Tulsa', state: 'OK', population: 413066 },
+  // ADDITIONAL CALIFORNIA
+  'orange-county': { name: 'Orange County', state: 'CA', population: 3186989 },
+  // ADDITIONAL VIRGINIA METROS (Verizon Fios territory)
+  'arlington-va': { name: 'Arlington', state: 'VA', population: 238643 },
+  'alexandria': { name: 'Alexandria', state: 'VA', population: 159428 },
+  'fairfax': { name: 'Fairfax', state: 'VA', population: 24019 },
+  'roanoke': { name: 'Roanoke', state: 'VA', population: 100011 },
+  'lynchburg': { name: 'Lynchburg', state: 'VA', population: 82168 },
+  'chesapeake': { name: 'Chesapeake', state: 'VA', population: 249422 },
+  'hampton': { name: 'Hampton', state: 'VA', population: 137148 },
+  // DELAWARE METROS (Verizon Fios territory)
+  'wilmington-de': { name: 'Wilmington', state: 'DE', population: 70898 },
+  'dover': { name: 'Dover', state: 'DE', population: 39403 },
+  'newark-de': { name: 'Newark', state: 'DE', population: 33387 },
+  // ADDITIONAL MARYLAND METROS
+  'frederick': { name: 'Frederick', state: 'MD', population: 78171 },
+  'rockville': { name: 'Rockville', state: 'MD', population: 67117 },
+  'gaithersburg': { name: 'Gaithersburg', state: 'MD', population: 69101 },
+  'bowie': { name: 'Bowie', state: 'MD', population: 58682 },
+  'annapolis': { name: 'Annapolis', state: 'MD', population: 40812 },
+  'silver-spring': { name: 'Silver Spring', state: 'MD', population: 81015 },
+  // ADDITIONAL NEW YORK METROS
+  'long-island': { name: 'Long Island', state: 'NY', population: 2826300 },
+  'new-rochelle': { name: 'New Rochelle', state: 'NY', population: 79726 },
+  'mount-vernon': { name: 'Mount Vernon', state: 'NY', population: 73893 },
+  'poughkeepsie': { name: 'Poughkeepsie', state: 'NY', population: 32736 },
+  // ADDITIONAL PENNSYLVANIA METROS
+  'allentown': { name: 'Allentown', state: 'PA', population: 126092 },
+  'erie': { name: 'Erie', state: 'PA', population: 94831 },
+  'reading': { name: 'Reading', state: 'PA', population: 95112 },
+  'scranton': { name: 'Scranton', state: 'PA', population: 77291 },
+  'bethlehem': { name: 'Bethlehem', state: 'PA', population: 75707 },
+  'harrisburg': { name: 'Harrisburg', state: 'PA', population: 50099 },
+  'lancaster-pa': { name: 'Lancaster', state: 'PA', population: 63490 },
+  'king-of-prussia': { name: 'King of Prussia', state: 'PA', population: 22028 },
+  // ADDITIONAL MASSACHUSETTS METROS
+  'quincy': { name: 'Quincy', state: 'MA', population: 101636 },
+  'brockton': { name: 'Brockton', state: 'MA', population: 105643 },
+  'new-bedford': { name: 'New Bedford', state: 'MA', population: 101079 },
+  'fall-river': { name: 'Fall River', state: 'MA', population: 93885 },
 };
 
 // ── Neighborhood-Level Data (Hyperlocal Performance) ──
@@ -635,6 +680,74 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'att-fiber', metroId: 'salt-lake', medianDown: 421, medianUp: 394, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Former Quantum Fiber' },
       { providerId: 'att-fiber', metroId: 'las-vegas', medianDown: 405, medianUp: 378, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Former Quantum Fiber' },
       { providerId: 'att-fiber', metroId: 'orlando', medianDown: 398, medianUp: 371, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Former Quantum Fiber' },
+      // Additional Texas metros
+      { providerId: 'att-fiber', metroId: 'fort-worth', medianDown: 395, medianUp: 368, medianLatency: 6, maxAvailableSpeed: 5000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'el-paso', medianDown: 368, medianUp: 341, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'corpus-christi', medianDown: 375, medianUp: 348, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'plano', medianDown: 402, medianUp: 375, medianLatency: 5, maxAvailableSpeed: 5000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, ooklaRank: 1, notes: 'High-income suburb with premium fiber' },
+      { providerId: 'att-fiber', metroId: 'lubbock', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'mcallen', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'amarillo', medianDown: 362, medianUp: 335, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      // Additional Florida metros
+      { providerId: 'att-fiber', metroId: 'jacksonville', medianDown: 372, medianUp: 345, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'fort-lauderdale', medianDown: 362, medianUp: 335, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'att-fiber', metroId: 'west-palm-beach', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'att-fiber', metroId: 'st-petersburg', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'pensacola', medianDown: 355, medianUp: 328, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'tallahassee', medianDown: 352, medianUp: 325, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      // Additional Georgia metros
+      { providerId: 'att-fiber', metroId: 'savannah', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'augusta', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      // Additional North Carolina metros
+      { providerId: 'att-fiber', metroId: 'durham', medianDown: 372, medianUp: 345, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'att-fiber', metroId: 'greensboro', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'winston-salem', medianDown: 362, medianUp: 335, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'asheville', medianDown: 355, medianUp: 328, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      // Additional Illinois metros
+      { providerId: 'att-fiber', metroId: 'springfield-il', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'peoria', medianDown: 355, medianUp: 328, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'rockford', medianDown: 352, medianUp: 325, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      // Additional Ohio metros
+      { providerId: 'att-fiber', metroId: 'columbus', medianDown: 368, medianUp: 341, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'att-fiber', metroId: 'cleveland', medianDown: 362, medianUp: 335, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'att-fiber', metroId: 'cincinnati', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'dayton', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'akron', medianDown: 355, medianUp: 328, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'toledo', medianDown: 352, medianUp: 325, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      // Additional Michigan metros
+      { providerId: 'att-fiber', metroId: 'grand-rapids', medianDown: 362, medianUp: 335, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'ann-arbor', medianDown: 372, medianUp: 345, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1, notes: 'University town with high fiber adoption' },
+      // Additional Tennessee metros
+      { providerId: 'att-fiber', metroId: 'memphis', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'knoxville', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      // Additional Alabama metros
+      { providerId: 'att-fiber', metroId: 'birmingham', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'huntsville', medianDown: 372, medianUp: 345, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2, notes: 'Tech hub with Google Fiber competition' },
+      { providerId: 'att-fiber', metroId: 'montgomery', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'mobile', medianDown: 355, medianUp: 328, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      // Additional Kentucky metros
+      { providerId: 'att-fiber', metroId: 'louisville', medianDown: 368, medianUp: 341, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'lexington', medianDown: 362, medianUp: 335, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      // Additional Indiana metros
+      { providerId: 'att-fiber', metroId: 'indianapolis', medianDown: 372, medianUp: 345, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'fort-wayne', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'evansville', medianDown: 352, medianUp: 325, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      // Additional Louisiana metros
+      { providerId: 'att-fiber', metroId: 'new-orleans', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'baton-rouge', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'shreveport', medianDown: 352, medianUp: 325, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      // California metros
+      { providerId: 'att-fiber', metroId: 'san-francisco', medianDown: 375, medianUp: 348, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'att-fiber', metroId: 'san-diego', medianDown: 368, medianUp: 341, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'att-fiber', metroId: 'fresno', medianDown: 362, medianUp: 335, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'sacramento', medianDown: 365, medianUp: 338, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      // South Carolina metros
+      { providerId: 'att-fiber', metroId: 'columbia-sc', medianDown: 358, medianUp: 331, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'charleston-sc', medianDown: 362, medianUp: 335, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'att-fiber', metroId: 'greenville-sc', medianDown: 355, medianUp: 328, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      // Wisconsin metros
+      { providerId: 'att-fiber', metroId: 'milwaukee', medianDown: 365, medianUp: 338, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'att-fiber', metroId: 'madison', medianDown: 372, medianUp: 345, medianLatency: 7, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1, notes: 'University town with high tech adoption' },
     ],
   },
   {
@@ -656,6 +769,59 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'verizon-fios', metroId: 'boston', medianDown: 318, medianUp: 291, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 7, has5Gig: false, ooklaRank: 2 },
       { providerId: 'verizon-fios', metroId: 'baltimore', medianDown: 325, medianUp: 298, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 93, peakHourDegradation: 6, has5Gig: false, ooklaRank: 1 },
       { providerId: 'verizon-fios', metroId: 'pittsburgh', medianDown: 308, medianUp: 281, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 8, has5Gig: false, ooklaRank: 2 },
+      // Additional New York metros
+      { providerId: 'verizon-fios', metroId: 'long-island', medianDown: 338, medianUp: 311, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1, notes: 'Largest Fios market by subscribers' },
+      { providerId: 'verizon-fios', metroId: 'yonkers', medianDown: 332, medianUp: 305, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 93, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'white-plains', medianDown: 335, medianUp: 308, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'new-rochelle', medianDown: 328, medianUp: 301, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 93, peakHourDegradation: 6, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'buffalo', medianDown: 305, medianUp: 278, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 8, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'rochester-ny', medianDown: 302, medianUp: 275, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 90, peakHourDegradation: 9, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'syracuse', medianDown: 298, medianUp: 271, medianLatency: 13, maxAvailableSpeed: 2300, consistencyScore: 90, peakHourDegradation: 9, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'albany', medianDown: 295, medianUp: 268, medianLatency: 13, maxAvailableSpeed: 2300, consistencyScore: 89, peakHourDegradation: 10, has5Gig: false, ooklaRank: 1 },
+      // New Jersey metros
+      { providerId: 'verizon-fios', metroId: 'newark', medianDown: 338, medianUp: 311, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'jersey-city-nj', medianDown: 342, medianUp: 315, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 95, peakHourDegradation: 4, has5Gig: false, ooklaRank: 1, notes: 'Top performing NJ market' },
+      { providerId: 'verizon-fios', metroId: 'paterson', medianDown: 325, medianUp: 298, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 6, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'elizabeth', medianDown: 322, medianUp: 295, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 6, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'trenton', medianDown: 318, medianUp: 291, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'princeton', medianDown: 345, medianUp: 318, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 95, peakHourDegradation: 4, has5Gig: false, ooklaRank: 1, notes: 'University area with premium fiber' },
+      { providerId: 'verizon-fios', metroId: 'hoboken', medianDown: 348, medianUp: 321, medianLatency: 8, maxAvailableSpeed: 2300, consistencyScore: 95, peakHourDegradation: 4, has5Gig: false, ooklaRank: 1 },
+      // Virginia metros
+      { providerId: 'verizon-fios', metroId: 'virginia-beach', medianDown: 318, medianUp: 291, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'norfolk', medianDown: 312, medianUp: 285, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'newport-news', medianDown: 308, medianUp: 281, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 8, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'richmond', medianDown: 322, medianUp: 295, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 6, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'arlington-va', medianDown: 342, medianUp: 315, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 95, peakHourDegradation: 4, has5Gig: false, ooklaRank: 1, notes: 'DC suburb with premium infrastructure' },
+      { providerId: 'verizon-fios', metroId: 'alexandria', medianDown: 338, medianUp: 311, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'fairfax', medianDown: 345, medianUp: 318, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 95, peakHourDegradation: 4, has5Gig: false, ooklaRank: 1, notes: 'Tech corridor with high adoption' },
+      { providerId: 'verizon-fios', metroId: 'chesapeake', medianDown: 315, medianUp: 288, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      // Maryland metros
+      { providerId: 'verizon-fios', metroId: 'frederick', medianDown: 325, medianUp: 298, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 93, peakHourDegradation: 6, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'rockville', medianDown: 335, medianUp: 308, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'gaithersburg', medianDown: 332, medianUp: 305, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 93, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'silver-spring', medianDown: 338, medianUp: 311, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'annapolis', medianDown: 328, medianUp: 301, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 93, peakHourDegradation: 6, has5Gig: false, ooklaRank: 1 },
+      // Delaware metros
+      { providerId: 'verizon-fios', metroId: 'wilmington-de', medianDown: 318, medianUp: 291, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'dover', medianDown: 308, medianUp: 281, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 8, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'newark-de', medianDown: 315, medianUp: 288, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      // Pennsylvania metros
+      { providerId: 'verizon-fios', metroId: 'allentown', medianDown: 312, medianUp: 285, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'reading', medianDown: 308, medianUp: 281, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 8, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'bethlehem', medianDown: 315, medianUp: 288, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'harrisburg', medianDown: 305, medianUp: 278, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 90, peakHourDegradation: 8, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'king-of-prussia', medianDown: 338, medianUp: 311, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1, notes: 'Tech/pharma corridor' },
+      // Massachusetts metros
+      { providerId: 'verizon-fios', metroId: 'worcester', medianDown: 305, medianUp: 278, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 90, peakHourDegradation: 8, has5Gig: false, ooklaRank: 2 },
+      { providerId: 'verizon-fios', metroId: 'cambridge', medianDown: 335, medianUp: 308, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1, notes: 'MIT/Harvard area with high demand' },
+      { providerId: 'verizon-fios', metroId: 'quincy', medianDown: 322, medianUp: 295, medianLatency: 10, maxAvailableSpeed: 2300, consistencyScore: 93, peakHourDegradation: 6, has5Gig: false, ooklaRank: 1 },
+      // Rhode Island metros
+      { providerId: 'verizon-fios', metroId: 'providence', medianDown: 315, medianUp: 288, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      // Connecticut metros
+      { providerId: 'verizon-fios', metroId: 'stamford', medianDown: 335, medianUp: 308, medianLatency: 9, maxAvailableSpeed: 2300, consistencyScore: 94, peakHourDegradation: 5, has5Gig: false, ooklaRank: 1, notes: 'Hedge fund corridor' },
+      { providerId: 'verizon-fios', metroId: 'bridgeport', medianDown: 312, medianUp: 285, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1 },
+      { providerId: 'verizon-fios', metroId: 'new-haven', medianDown: 318, medianUp: 291, medianLatency: 11, maxAvailableSpeed: 2300, consistencyScore: 92, peakHourDegradation: 7, has5Gig: false, ooklaRank: 1, notes: 'Yale University area' },
+      { providerId: 'verizon-fios', metroId: 'hartford', medianDown: 308, medianUp: 281, medianLatency: 12, maxAvailableSpeed: 2300, consistencyScore: 91, peakHourDegradation: 8, has5Gig: false, ooklaRank: 1 },
     ],
   },
   {
@@ -681,6 +847,29 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'google-fiber', metroId: 'salt-lake', medianDown: 872, medianUp: 865, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 2, notes: '51.4% availability' },
       { providerId: 'google-fiber', metroId: 'overland-park', medianDown: 938, medianUp: 931, medianLatency: 3, maxAvailableSpeed: 8000, consistencyScore: 99, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: '88% availability - highest Google Fiber coverage' },
       { providerId: 'google-fiber', metroId: 'huntsville', medianDown: 885, medianUp: 878, medianLatency: 4, maxAvailableSpeed: 8000, consistencyScore: 98, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Additional Texas metros
+      { providerId: 'google-fiber', metroId: 'dallas', medianDown: 905, medianUp: 898, medianLatency: 4, maxAvailableSpeed: 8000, consistencyScore: 98, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: '28% availability' },
+      { providerId: 'google-fiber', metroId: 'houston', medianDown: 892, medianUp: 885, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 2, notes: '18% availability - expanding' },
+      // Additional Colorado metros
+      { providerId: 'google-fiber', metroId: 'denver', medianDown: 882, medianUp: 875, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 2, notes: '22% availability' },
+      { providerId: 'google-fiber', metroId: 'colorado-springs', medianDown: 868, medianUp: 861, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'google-fiber', metroId: 'aurora-co', medianDown: 878, medianUp: 871, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      // Additional Arizona metros
+      { providerId: 'google-fiber', metroId: 'phoenix', medianDown: 862, medianUp: 855, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 2, notes: 'Expanding to Tempe 2026' },
+      { providerId: 'google-fiber', metroId: 'mesa', medianDown: 858, medianUp: 851, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'google-fiber', metroId: 'chandler', medianDown: 872, medianUp: 865, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Tech suburb with high adoption' },
+      // Additional Nevada metros
+      { providerId: 'google-fiber', metroId: 'las-vegas', medianDown: 852, medianUp: 845, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 2, notes: 'Expanding rapidly' },
+      { providerId: 'google-fiber', metroId: 'henderson', medianDown: 865, medianUp: 858, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Additional Utah metros
+      { providerId: 'google-fiber', metroId: 'provo', medianDown: 878, medianUp: 871, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'BYU area - early Google Fiber city' },
+      { providerId: 'google-fiber', metroId: 'orem', medianDown: 872, medianUp: 865, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'google-fiber', metroId: 'ogden', medianDown: 865, medianUp: 858, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'google-fiber', metroId: 'sandy', medianDown: 868, medianUp: 861, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Additional North Carolina metros
+      { providerId: 'google-fiber', metroId: 'durham', medianDown: 865, medianUp: 858, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Research Triangle' },
+      // Additional Georgia metros
+      { providerId: 'google-fiber', metroId: 'savannah', medianDown: 835, medianUp: 828, medianLatency: 6, maxAvailableSpeed: 2000, consistencyScore: 95, peakHourDegradation: 5, has5Gig: false, ooklaRank: 2 },
     ],
   },
   {
@@ -703,6 +892,54 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'frontier-fiber', metroId: 'indianapolis', medianDown: 358, medianUp: 351, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
       { providerId: 'frontier-fiber', metroId: 'columbus', medianDown: 352, medianUp: 345, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
       { providerId: 'frontier-fiber', metroId: 'san-diego', medianDown: 378, medianUp: 371, medianLatency: 7, maxAvailableSpeed: 7000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, ooklaRank: 2 },
+      // Additional California metros
+      { providerId: 'frontier-fiber', metroId: 'san-francisco', medianDown: 375, medianUp: 368, medianLatency: 8, maxAvailableSpeed: 7000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'sacramento', medianDown: 368, medianUp: 361, medianLatency: 8, maxAvailableSpeed: 7000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'frontier-fiber', metroId: 'fresno', medianDown: 365, medianUp: 358, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'frontier-fiber', metroId: 'bakersfield', medianDown: 362, medianUp: 355, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'frontier-fiber', metroId: 'stockton', medianDown: 358, medianUp: 351, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'frontier-fiber', metroId: 'modesto', medianDown: 355, medianUp: 348, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'frontier-fiber', metroId: 'riverside', medianDown: 368, medianUp: 361, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'frontier-fiber', metroId: 'san-jose', medianDown: 382, medianUp: 375, medianLatency: 7, maxAvailableSpeed: 7000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, ooklaRank: 2, notes: 'Silicon Valley coverage' },
+      { providerId: 'frontier-fiber', metroId: 'long-beach', medianDown: 375, medianUp: 368, medianLatency: 8, maxAvailableSpeed: 7000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'anaheim', medianDown: 372, medianUp: 365, medianLatency: 8, maxAvailableSpeed: 7000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      // Additional Florida metros
+      { providerId: 'frontier-fiber', metroId: 'orlando', medianDown: 365, medianUp: 358, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'jacksonville', medianDown: 362, medianUp: 355, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'miami', medianDown: 358, medianUp: 351, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'fort-lauderdale', medianDown: 355, medianUp: 348, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'west-palm-beach', medianDown: 352, medianUp: 345, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'st-petersburg', medianDown: 365, medianUp: 358, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      // Additional Texas metros
+      { providerId: 'frontier-fiber', metroId: 'houston', medianDown: 368, medianUp: 361, medianLatency: 8, maxAvailableSpeed: 7000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'san-antonio', medianDown: 365, medianUp: 358, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'austin', medianDown: 372, medianUp: 365, medianLatency: 8, maxAvailableSpeed: 7000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 3 },
+      { providerId: 'frontier-fiber', metroId: 'fort-worth', medianDown: 365, medianUp: 358, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      // Connecticut metros
+      { providerId: 'frontier-fiber', metroId: 'stamford', medianDown: 378, medianUp: 371, medianLatency: 7, maxAvailableSpeed: 7000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'bridgeport', medianDown: 365, medianUp: 358, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'new-haven', medianDown: 368, medianUp: 361, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'hartford', medianDown: 362, medianUp: 355, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      // Additional Ohio metros
+      { providerId: 'frontier-fiber', metroId: 'cleveland', medianDown: 355, medianUp: 348, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'cincinnati', medianDown: 358, medianUp: 351, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'dayton', medianDown: 352, medianUp: 345, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, ooklaRank: 2 },
+      // Additional Indiana metros
+      { providerId: 'frontier-fiber', metroId: 'fort-wayne', medianDown: 348, medianUp: 341, medianLatency: 10, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'frontier-fiber', metroId: 'evansville', medianDown: 345, medianUp: 338, medianLatency: 10, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, ooklaRank: 1 },
+      // Wisconsin metros
+      { providerId: 'frontier-fiber', metroId: 'milwaukee', medianDown: 358, medianUp: 351, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'madison', medianDown: 365, medianUp: 358, medianLatency: 8, maxAvailableSpeed: 5000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, ooklaRank: 1 },
+      // Illinois metros
+      { providerId: 'frontier-fiber', metroId: 'chicago', medianDown: 362, medianUp: 355, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, ooklaRank: 3 },
+      { providerId: 'frontier-fiber', metroId: 'rockford', medianDown: 348, medianUp: 341, medianLatency: 10, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, ooklaRank: 1 },
+      // New York metros
+      { providerId: 'frontier-fiber', metroId: 'buffalo', medianDown: 352, medianUp: 345, medianLatency: 9, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'rochester-ny', medianDown: 348, medianUp: 341, medianLatency: 10, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, ooklaRank: 2 },
+      { providerId: 'frontier-fiber', metroId: 'syracuse', medianDown: 345, medianUp: 338, medianLatency: 10, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, ooklaRank: 2 },
+      // Pennsylvania metros
+      { providerId: 'frontier-fiber', metroId: 'erie', medianDown: 342, medianUp: 335, medianLatency: 10, maxAvailableSpeed: 5000, consistencyScore: 90, peakHourDegradation: 9, has5Gig: true, ooklaRank: 1 },
+      { providerId: 'frontier-fiber', metroId: 'scranton', medianDown: 345, medianUp: 338, medianLatency: 10, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, ooklaRank: 1 },
     ],
   },
   {
@@ -720,6 +957,29 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
     metros: [
       { providerId: 'ziply-fiber', metroId: 'seattle', medianDown: 925, medianUp: 918, medianLatency: 4, maxAvailableSpeed: 50000, consistencyScore: 98, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: '50 Gig available - $900/mo' },
       { providerId: 'ziply-fiber', metroId: 'portland', medianDown: 912, medianUp: 905, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 98, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: '50 Gig available' },
+      // Additional Washington metros
+      { providerId: 'ziply-fiber', metroId: 'tacoma', medianDown: 918, medianUp: 911, medianLatency: 4, maxAvailableSpeed: 50000, consistencyScore: 98, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'spokane', medianDown: 908, medianUp: 901, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'vancouver-wa', medianDown: 915, medianUp: 908, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 98, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'bellevue', medianDown: 932, medianUp: 925, medianLatency: 4, maxAvailableSpeed: 50000, consistencyScore: 99, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Tech hub with premium fiber' },
+      { providerId: 'ziply-fiber', metroId: 'everett', medianDown: 912, medianUp: 905, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'kirkland', medianDown: 928, medianUp: 921, medianLatency: 4, maxAvailableSpeed: 50000, consistencyScore: 98, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'olympia', medianDown: 905, medianUp: 898, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'bellingham', medianDown: 898, medianUp: 891, medianLatency: 6, maxAvailableSpeed: 50000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Oregon metros
+      { providerId: 'ziply-fiber', metroId: 'eugene', medianDown: 905, medianUp: 898, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'salem', medianDown: 898, medianUp: 891, medianLatency: 6, maxAvailableSpeed: 50000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'bend', medianDown: 895, medianUp: 888, medianLatency: 6, maxAvailableSpeed: 50000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'medford', medianDown: 892, medianUp: 885, medianLatency: 6, maxAvailableSpeed: 50000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'beaverton', medianDown: 915, medianUp: 908, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 98, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'hillsboro', medianDown: 918, medianUp: 911, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 98, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Intel campus area' },
+      // Idaho metros
+      { providerId: 'ziply-fiber', metroId: 'boise', medianDown: 908, medianUp: 901, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'nampa', medianDown: 898, medianUp: 891, medianLatency: 6, maxAvailableSpeed: 50000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'meridian', medianDown: 905, medianUp: 898, medianLatency: 5, maxAvailableSpeed: 50000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Montana metros
+      { providerId: 'ziply-fiber', metroId: 'missoula', medianDown: 885, medianUp: 878, medianLatency: 7, maxAvailableSpeed: 50000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'ziply-fiber', metroId: 'billings', medianDown: 878, medianUp: 871, medianLatency: 7, maxAvailableSpeed: 50000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 1 },
     ],
   },
   {
@@ -754,6 +1014,29 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       // New England performance data
       { providerId: 'fidium-fiber', metroId: 'portland', medianDown: 512, medianUp: 505, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Maine: 150 Ookla wins, 8 Gig launching April 2026' },
       { providerId: 'fidium-fiber', metroId: 'sacramento', medianDown: 525, medianUp: 518, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: '20 Ookla top rankings in Sacramento metro Q3-Q4 2025' },
+      // Additional Maine metros
+      { providerId: 'fidium-fiber', metroId: 'portland-me', medianDown: 508, medianUp: 501, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Best ISP in Maine (CNET 2026)' },
+      { providerId: 'fidium-fiber', metroId: 'bangor', medianDown: 495, medianUp: 488, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // New Hampshire metros
+      { providerId: 'fidium-fiber', metroId: 'manchester-nh', medianDown: 502, medianUp: 495, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'fidium-fiber', metroId: 'concord-nh', medianDown: 498, medianUp: 491, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Vermont metros
+      { providerId: 'fidium-fiber', metroId: 'burlington-vt', medianDown: 492, medianUp: 485, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Texas metros
+      { providerId: 'fidium-fiber', metroId: 'dallas', medianDown: 518, medianUp: 511, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      { providerId: 'fidium-fiber', metroId: 'houston', medianDown: 512, medianUp: 505, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      { providerId: 'fidium-fiber', metroId: 'san-antonio', medianDown: 505, medianUp: 498, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      // Illinois metros
+      { providerId: 'fidium-fiber', metroId: 'chicago', medianDown: 508, medianUp: 501, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      { providerId: 'fidium-fiber', metroId: 'springfield-il', medianDown: 495, medianUp: 488, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Minnesota metros
+      { providerId: 'fidium-fiber', metroId: 'minneapolis', medianDown: 512, medianUp: 505, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'fidium-fiber', metroId: 'st-paul', medianDown: 508, medianUp: 501, medianLatency: 5, maxAvailableSpeed: 8000, consistencyScore: 97, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'fidium-fiber', metroId: 'duluth', medianDown: 492, medianUp: 485, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'fidium-fiber', metroId: 'rochester-mn', medianDown: 498, medianUp: 491, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Mayo Clinic area' },
+      // California metros
+      { providerId: 'fidium-fiber', metroId: 'fresno', medianDown: 505, medianUp: 498, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'fidium-fiber', metroId: 'bakersfield', medianDown: 498, medianUp: 491, medianLatency: 6, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
     ],
   },
   {
@@ -770,6 +1053,21 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
     expansionStatus: 'Ookla: Fastest/most reliable in NY and NJ (Q1-Q2 2025). Lowest latency/best gaming in NY, NJ, CT. 3M fiber passings, adding 175K in 2025. 65% multi-gig coverage by 2028.',
     metros: [
       { providerId: 'optimum-fiber', metroId: 'nyc', medianDown: 452, medianUp: 445, medianLatency: 7, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Fastest in NYC metro (Ookla Q1-Q2 2025)' },
+      // Additional New York metros
+      { providerId: 'optimum-fiber', metroId: 'long-island', medianDown: 448, medianUp: 441, medianLatency: 7, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'optimum-fiber', metroId: 'yonkers', medianDown: 445, medianUp: 438, medianLatency: 8, maxAvailableSpeed: 8000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'optimum-fiber', metroId: 'white-plains', medianDown: 448, medianUp: 441, medianLatency: 7, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // New Jersey metros
+      { providerId: 'optimum-fiber', metroId: 'newark', medianDown: 445, medianUp: 438, medianLatency: 8, maxAvailableSpeed: 8000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'optimum-fiber', metroId: 'jersey-city-nj', medianDown: 452, medianUp: 445, medianLatency: 7, maxAvailableSpeed: 8000, consistencyScore: 96, peakHourDegradation: 3, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'optimum-fiber', metroId: 'paterson', medianDown: 438, medianUp: 431, medianLatency: 8, maxAvailableSpeed: 8000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'optimum-fiber', metroId: 'elizabeth', medianDown: 435, medianUp: 428, medianLatency: 8, maxAvailableSpeed: 8000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Connecticut metros
+      { providerId: 'optimum-fiber', metroId: 'stamford', medianDown: 442, medianUp: 435, medianLatency: 8, maxAvailableSpeed: 8000, consistencyScore: 95, peakHourDegradation: 4, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'optimum-fiber', metroId: 'bridgeport', medianDown: 432, medianUp: 425, medianLatency: 9, maxAvailableSpeed: 8000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'optimum-fiber', metroId: 'new-haven', medianDown: 428, medianUp: 421, medianLatency: 9, maxAvailableSpeed: 8000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      // Pennsylvania metros
+      { providerId: 'optimum-fiber', metroId: 'philadelphia', medianDown: 418, medianUp: 411, medianLatency: 9, maxAvailableSpeed: 8000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, has8Gig: true, ooklaRank: 3 },
     ],
   },
   {
@@ -787,6 +1085,32 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
     metros: [
       { providerId: 'brightspeed-fiber', metroId: 'charlotte', medianDown: 425, medianUp: 418, medianLatency: 8, maxAvailableSpeed: 8000, consistencyScore: 94, peakHourDegradation: 5, has5Gig: true, has8Gig: true, ooklaRank: 3 },
       { providerId: 'brightspeed-fiber', metroId: 'raleigh', medianDown: 418, medianUp: 411, medianLatency: 9, maxAvailableSpeed: 8000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, has8Gig: true, ooklaRank: 3, notes: '50K homes connected in Triangle' },
+      // Additional North Carolina metros
+      { providerId: 'brightspeed-fiber', metroId: 'durham', medianDown: 415, medianUp: 408, medianLatency: 9, maxAvailableSpeed: 8000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      { providerId: 'brightspeed-fiber', metroId: 'greensboro', medianDown: 408, medianUp: 401, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'brightspeed-fiber', metroId: 'winston-salem', medianDown: 405, medianUp: 398, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'brightspeed-fiber', metroId: 'wilmington-nc', medianDown: 398, medianUp: 391, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'brightspeed-fiber', metroId: 'asheville', medianDown: 395, medianUp: 388, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // South Carolina metros
+      { providerId: 'brightspeed-fiber', metroId: 'columbia-sc', medianDown: 408, medianUp: 401, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'brightspeed-fiber', metroId: 'charleston-sc', medianDown: 412, medianUp: 405, medianLatency: 9, maxAvailableSpeed: 8000, consistencyScore: 93, peakHourDegradation: 6, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'brightspeed-fiber', metroId: 'greenville-sc', medianDown: 405, medianUp: 398, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Ohio metros
+      { providerId: 'brightspeed-fiber', metroId: 'cleveland', medianDown: 402, medianUp: 395, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      { providerId: 'brightspeed-fiber', metroId: 'columbus', medianDown: 405, medianUp: 398, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      { providerId: 'brightspeed-fiber', metroId: 'cincinnati', medianDown: 398, medianUp: 391, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      // Virginia metros
+      { providerId: 'brightspeed-fiber', metroId: 'richmond', medianDown: 408, medianUp: 401, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 92, peakHourDegradation: 7, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'brightspeed-fiber', metroId: 'virginia-beach', medianDown: 402, medianUp: 395, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 91, peakHourDegradation: 7, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      // Tennessee metros
+      { providerId: 'brightspeed-fiber', metroId: 'nashville', medianDown: 398, medianUp: 391, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      { providerId: 'brightspeed-fiber', metroId: 'memphis', medianDown: 395, medianUp: 388, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      // Alabama metros
+      { providerId: 'brightspeed-fiber', metroId: 'birmingham', medianDown: 392, medianUp: 385, medianLatency: 11, maxAvailableSpeed: 8000, consistencyScore: 90, peakHourDegradation: 9, has5Gig: true, has8Gig: true, ooklaRank: 2 },
+      { providerId: 'brightspeed-fiber', metroId: 'montgomery', medianDown: 388, medianUp: 381, medianLatency: 11, maxAvailableSpeed: 8000, consistencyScore: 90, peakHourDegradation: 9, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      // Florida metros
+      { providerId: 'brightspeed-fiber', metroId: 'jacksonville', medianDown: 398, medianUp: 391, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, has8Gig: true, ooklaRank: 3 },
+      { providerId: 'brightspeed-fiber', metroId: 'pensacola', medianDown: 392, medianUp: 385, medianLatency: 10, maxAvailableSpeed: 8000, consistencyScore: 91, peakHourDegradation: 8, has5Gig: true, has8Gig: true, ooklaRank: 1 },
     ],
   },
   {
@@ -803,6 +1127,12 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
     expansionStatus: 'Municipal open-access network in 20+ Utah cities. 810K people covered. 100% offer 1 Gbps+. Multiple ISPs compete (XMission, InfoWest, Sumo, etc.).',
     metros: [
       { providerId: 'utopia-fiber', metroId: 'salt-lake', medianDown: 945, medianUp: 938, medianLatency: 3, maxAvailableSpeed: 10000, consistencyScore: 99, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1, notes: 'Open-access - choose your ISP' },
+      { providerId: 'utopia-fiber', metroId: 'provo', medianDown: 938, medianUp: 931, medianLatency: 3, maxAvailableSpeed: 10000, consistencyScore: 99, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'utopia-fiber', metroId: 'orem', medianDown: 935, medianUp: 928, medianLatency: 4, maxAvailableSpeed: 10000, consistencyScore: 99, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'utopia-fiber', metroId: 'ogden', medianDown: 932, medianUp: 925, medianLatency: 4, maxAvailableSpeed: 10000, consistencyScore: 98, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'utopia-fiber', metroId: 'sandy', medianDown: 938, medianUp: 931, medianLatency: 3, maxAvailableSpeed: 10000, consistencyScore: 99, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'utopia-fiber', metroId: 'west-jordan', medianDown: 935, medianUp: 928, medianLatency: 4, maxAvailableSpeed: 10000, consistencyScore: 99, peakHourDegradation: 1, has5Gig: true, has8Gig: true, ooklaRank: 1 },
+      { providerId: 'utopia-fiber', metroId: 'layton', medianDown: 928, medianUp: 921, medianLatency: 4, maxAvailableSpeed: 10000, consistencyScore: 98, peakHourDegradation: 2, has5Gig: true, has8Gig: true, ooklaRank: 1 },
     ],
   },
 
@@ -832,6 +1162,47 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'xfinity', metroId: 'miami', medianDown: 245, medianUp: 25, medianLatency: 27, maxAvailableSpeed: 2000, consistencyScore: 85, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
       { providerId: 'xfinity', metroId: 'houston', medianDown: 242, medianUp: 24, medianLatency: 27, maxAvailableSpeed: 2000, consistencyScore: 85, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
       { providerId: 'xfinity', metroId: 'dc', medianDown: 262, medianUp: 32, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional California metros
+      { providerId: 'xfinity', metroId: 'la', medianDown: 262, medianUp: 30, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'xfinity', metroId: 'san-francisco', medianDown: 265, medianUp: 31, medianLatency: 23, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'san-jose', medianDown: 268, medianUp: 35, medianLatency: 23, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2, notes: 'Silicon Valley coverage' },
+      { providerId: 'xfinity', metroId: 'sacramento', medianDown: 258, medianUp: 28, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'xfinity', metroId: 'fresno', medianDown: 248, medianUp: 25, medianLatency: 26, maxAvailableSpeed: 2000, consistencyScore: 86, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'oakland', medianDown: 262, medianUp: 30, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Florida metros
+      { providerId: 'xfinity', metroId: 'tampa', medianDown: 248, medianUp: 26, medianLatency: 26, maxAvailableSpeed: 2000, consistencyScore: 86, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'orlando', medianDown: 252, medianUp: 27, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'jacksonville', medianDown: 245, medianUp: 24, medianLatency: 27, maxAvailableSpeed: 2000, consistencyScore: 85, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'fort-lauderdale', medianDown: 248, medianUp: 26, medianLatency: 26, maxAvailableSpeed: 2000, consistencyScore: 86, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Additional Illinois metros
+      { providerId: 'xfinity', metroId: 'springfield-il', medianDown: 242, medianUp: 23, medianLatency: 27, maxAvailableSpeed: 1200, consistencyScore: 85, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 1 },
+      // Additional Pennsylvania metros
+      { providerId: 'xfinity', metroId: 'pittsburgh', medianDown: 258, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'allentown', medianDown: 252, medianUp: 32, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional New Jersey metros
+      { providerId: 'xfinity', metroId: 'newark', medianDown: 265, medianUp: 38, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'jersey-city-nj', medianDown: 268, medianUp: 40, medianLatency: 23, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      // Additional Massachusetts metros
+      { providerId: 'xfinity', metroId: 'worcester', medianDown: 245, medianUp: 25, medianLatency: 27, maxAvailableSpeed: 2000, consistencyScore: 85, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'cambridge', medianDown: 258, medianUp: 32, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Michigan metros
+      { providerId: 'xfinity', metroId: 'detroit', medianDown: 252, medianUp: 28, medianLatency: 26, maxAvailableSpeed: 2000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'grand-rapids', medianDown: 248, medianUp: 26, medianLatency: 26, maxAvailableSpeed: 2000, consistencyScore: 86, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 1 },
+      // Additional Washington metros
+      { providerId: 'xfinity', metroId: 'tacoma', medianDown: 252, medianUp: 28, medianLatency: 26, maxAvailableSpeed: 2000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'xfinity', metroId: 'spokane', medianDown: 245, medianUp: 25, medianLatency: 27, maxAvailableSpeed: 2000, consistencyScore: 85, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Colorado metros
+      { providerId: 'xfinity', metroId: 'colorado-springs', medianDown: 278, medianUp: 48, medianLatency: 22, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 11, hasDocsis4: true, hasFiber: false, ooklaRank: 2, notes: 'DOCSIS 4.0 pilot market' },
+      { providerId: 'xfinity', metroId: 'aurora-co', medianDown: 272, medianUp: 42, medianLatency: 23, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      // Additional Georgia metros
+      { providerId: 'xfinity', metroId: 'savannah', medianDown: 248, medianUp: 30, medianLatency: 26, maxAvailableSpeed: 2000, consistencyScore: 86, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'augusta', medianDown: 245, medianUp: 28, medianLatency: 27, maxAvailableSpeed: 2000, consistencyScore: 85, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Maryland metros
+      { providerId: 'xfinity', metroId: 'baltimore', medianDown: 258, medianUp: 34, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'xfinity', metroId: 'silver-spring', medianDown: 265, medianUp: 36, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Oregon metros
+      { providerId: 'xfinity', metroId: 'portland', medianDown: 258, medianUp: 30, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'xfinity', metroId: 'eugene', medianDown: 248, medianUp: 26, medianLatency: 26, maxAvailableSpeed: 2000, consistencyScore: 86, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
     ],
   },
   {
@@ -856,6 +1227,54 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'spectrum', metroId: 'columbus', medianDown: 255, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
       { providerId: 'spectrum', metroId: 'louisville', medianDown: 248, medianUp: 15, medianLatency: 34, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
       { providerId: 'spectrum', metroId: 'milwaukee', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional California metros
+      { providerId: 'spectrum', metroId: 'san-diego', medianDown: 265, medianUp: 20, medianLatency: 30, maxAvailableSpeed: 2000, consistencyScore: 91, peakHourDegradation: 10, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'riverside', medianDown: 258, medianUp: 18, medianLatency: 31, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 11, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'long-beach', medianDown: 262, medianUp: 19, medianLatency: 30, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      // Additional Texas metros
+      { providerId: 'spectrum', metroId: 'austin', medianDown: 278, medianUp: 135, medianLatency: 29, maxAvailableSpeed: 2000, consistencyScore: 92, peakHourDegradation: 9, hasDocsis4: true, hasFiber: false, ooklaRank: 3, notes: 'DOCSIS 4.0 deploying' },
+      { providerId: 'spectrum', metroId: 'houston', medianDown: 262, medianUp: 19, medianLatency: 31, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 11, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'el-paso', medianDown: 248, medianUp: 15, medianLatency: 34, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'corpus-christi', medianDown: 245, medianUp: 14, medianLatency: 35, maxAvailableSpeed: 1000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional New York metros
+      { providerId: 'spectrum', metroId: 'buffalo', medianDown: 255, medianUp: 17, medianLatency: 32, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'rochester-ny', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'syracuse', medianDown: 248, medianUp: 15, medianLatency: 34, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'albany', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Florida metros
+      { providerId: 'spectrum', metroId: 'tampa', medianDown: 258, medianUp: 17, medianLatency: 32, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 11, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'orlando', medianDown: 262, medianUp: 18, medianLatency: 31, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 11, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'miami', medianDown: 255, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      // Additional North Carolina metros
+      { providerId: 'spectrum', metroId: 'raleigh', medianDown: 262, medianUp: 18, medianLatency: 31, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 11, hasDocsis4: false, hasFiber: true, ooklaRank: 4 },
+      { providerId: 'spectrum', metroId: 'greensboro', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'durham', medianDown: 258, medianUp: 17, medianLatency: 32, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 11, hasDocsis4: false, hasFiber: true, ooklaRank: 4 },
+      // Additional Ohio metros
+      { providerId: 'spectrum', metroId: 'cleveland', medianDown: 258, medianUp: 17, medianLatency: 32, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'cincinnati', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'dayton', medianDown: 248, medianUp: 15, medianLatency: 34, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'akron', medianDown: 245, medianUp: 14, medianLatency: 35, maxAvailableSpeed: 1000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'toledo', medianDown: 242, medianUp: 14, medianLatency: 35, maxAvailableSpeed: 1000, consistencyScore: 87, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Wisconsin metros
+      { providerId: 'spectrum', metroId: 'madison', medianDown: 255, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Missouri metros
+      { providerId: 'spectrum', metroId: 'st-louis', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'kansas-city', medianDown: 255, medianUp: 17, medianLatency: 32, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Additional Kentucky metros
+      { providerId: 'spectrum', metroId: 'lexington', medianDown: 248, medianUp: 15, medianLatency: 34, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Tennessee metros
+      { providerId: 'spectrum', metroId: 'nashville', medianDown: 258, medianUp: 17, medianLatency: 32, maxAvailableSpeed: 1000, consistencyScore: 90, peakHourDegradation: 11, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      { providerId: 'spectrum', metroId: 'memphis', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'knoxville', medianDown: 248, medianUp: 15, medianLatency: 34, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // South Carolina metros
+      { providerId: 'spectrum', metroId: 'columbia-sc', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'charleston-sc', medianDown: 255, medianUp: 17, medianLatency: 32, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'greenville-sc', medianDown: 248, medianUp: 15, medianLatency: 34, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Alabama metros
+      { providerId: 'spectrum', metroId: 'birmingham', medianDown: 248, medianUp: 15, medianLatency: 34, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'spectrum', metroId: 'huntsville', medianDown: 252, medianUp: 16, medianLatency: 33, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Hawaii (Spectrum is major provider)
+      { providerId: 'spectrum', metroId: 'honolulu', medianDown: 268, medianUp: 22, medianLatency: 30, maxAvailableSpeed: 2000, consistencyScore: 91, peakHourDegradation: 10, hasDocsis4: false, hasFiber: true, ooklaRank: 1, notes: 'Primary provider in Hawaii' },
     ],
   },
   {
@@ -876,6 +1295,37 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'cox', metroId: 'san-diego', medianDown: 272, medianUp: 36, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
       { providerId: 'cox', metroId: 'tucson', medianDown: 265, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 1, notes: 'Limited competition - Cox dominates' },
       { providerId: 'cox', metroId: 'omaha', medianDown: 258, medianUp: 32, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Arizona metros
+      { providerId: 'cox', metroId: 'mesa', medianDown: 278, medianUp: 40, medianLatency: 23, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'chandler', medianDown: 282, medianUp: 41, medianLatency: 23, maxAvailableSpeed: 2000, consistencyScore: 91, peakHourDegradation: 9, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'glendale-az', medianDown: 275, medianUp: 38, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      // Additional Virginia metros
+      { providerId: 'cox', metroId: 'virginia-beach', medianDown: 268, medianUp: 36, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'norfolk', medianDown: 265, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'newport-news', medianDown: 262, medianUp: 34, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'chesapeake', medianDown: 265, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Nevada metros
+      { providerId: 'cox', metroId: 'henderson', medianDown: 275, medianUp: 37, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'north-las-vegas', medianDown: 272, medianUp: 36, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: true, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'reno', medianDown: 268, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Louisiana metros
+      { providerId: 'cox', metroId: 'new-orleans', medianDown: 262, medianUp: 34, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'baton-rouge', medianDown: 258, medianUp: 32, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Oklahoma metros
+      { providerId: 'cox', metroId: 'oklahoma-city', medianDown: 265, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 1 },
+      { providerId: 'cox', metroId: 'tulsa', medianDown: 262, medianUp: 34, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 1 },
+      // Additional California metros
+      { providerId: 'cox', metroId: 'orange-county', medianDown: 275, medianUp: 38, medianLatency: 24, maxAvailableSpeed: 2000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: false, hasFiber: false, ooklaRank: 3, notes: 'Irvine area' },
+      { providerId: 'cox', metroId: 'santa-barbara', medianDown: 265, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Rhode Island metros
+      { providerId: 'cox', metroId: 'providence', medianDown: 258, medianUp: 33, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Connecticut metros
+      { providerId: 'cox', metroId: 'hartford', medianDown: 255, medianUp: 32, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Florida metros
+      { providerId: 'cox', metroId: 'pensacola', medianDown: 262, medianUp: 34, medianLatency: 25, maxAvailableSpeed: 2000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'cox', metroId: 'gainesville', medianDown: 258, medianUp: 32, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Georgia metros
+      { providerId: 'cox', metroId: 'savannah', medianDown: 258, medianUp: 33, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
     ],
   },
   {
@@ -894,6 +1344,25 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'wow', metroId: 'detroit', medianDown: 328, medianUp: 52, medianLatency: 19, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 8, hasDocsis4: false, hasFiber: true, ooklaRank: 2, notes: 'Fiber expansion - 5 Gig available' },
       { providerId: 'wow', metroId: 'tampa', medianDown: 335, medianUp: 55, medianLatency: 18, maxAvailableSpeed: 5000, consistencyScore: 93, peakHourDegradation: 7, hasDocsis4: false, hasFiber: true, ooklaRank: 3, notes: 'Central FL fiber buildout' },
       { providerId: 'wow', metroId: 'atlanta', medianDown: 308, medianUp: 42, medianLatency: 22, maxAvailableSpeed: 1000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: false, hasFiber: false, ooklaRank: 4 },
+      // Additional Michigan metros
+      { providerId: 'wow', metroId: 'grand-rapids', medianDown: 318, medianUp: 48, medianLatency: 20, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 9, hasDocsis4: false, hasFiber: true, ooklaRank: 2 },
+      { providerId: 'wow', metroId: 'ann-arbor', medianDown: 322, medianUp: 50, medianLatency: 19, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 8, hasDocsis4: false, hasFiber: true, ooklaRank: 2 },
+      // Additional Florida metros
+      { providerId: 'wow', metroId: 'orlando', medianDown: 332, medianUp: 54, medianLatency: 18, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 8, hasDocsis4: false, hasFiber: true, ooklaRank: 3, notes: 'Central FL expansion' },
+      { providerId: 'wow', metroId: 'st-petersburg', medianDown: 328, medianUp: 52, medianLatency: 19, maxAvailableSpeed: 5000, consistencyScore: 92, peakHourDegradation: 8, hasDocsis4: false, hasFiber: true, ooklaRank: 3 },
+      // South Carolina metros
+      { providerId: 'wow', metroId: 'greenville-sc', medianDown: 325, medianUp: 50, medianLatency: 19, maxAvailableSpeed: 5000, consistencyScore: 91, peakHourDegradation: 9, hasDocsis4: false, hasFiber: true, ooklaRank: 2, notes: 'Fiber buildout in progress' },
+      { providerId: 'wow', metroId: 'columbia-sc', medianDown: 318, medianUp: 48, medianLatency: 20, maxAvailableSpeed: 1000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'wow', metroId: 'charleston-sc', medianDown: 315, medianUp: 46, medianLatency: 21, maxAvailableSpeed: 1000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Alabama metros
+      { providerId: 'wow', metroId: 'birmingham', medianDown: 305, medianUp: 40, medianLatency: 22, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'wow', metroId: 'huntsville', medianDown: 308, medianUp: 42, medianLatency: 22, maxAvailableSpeed: 1000, consistencyScore: 90, peakHourDegradation: 10, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'wow', metroId: 'montgomery', medianDown: 298, medianUp: 38, medianLatency: 23, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Tennessee metros
+      { providerId: 'wow', metroId: 'knoxville', medianDown: 302, medianUp: 40, medianLatency: 22, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Georgia metros
+      { providerId: 'wow', metroId: 'augusta', medianDown: 305, medianUp: 41, medianLatency: 22, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'wow', metroId: 'savannah', medianDown: 302, medianUp: 40, medianLatency: 22, maxAvailableSpeed: 1000, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
     ],
   },
   {
@@ -910,6 +1379,25 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
     expansionStatus: '22nd largest US ISP, 6.9M people in 22 states. Expanding multi-gig symmetrical to 1M homes by 2026. Requires DOCSIS 3.1 modem for gig service. 3-year contracts available.',
     metros: [
       { providerId: 'mediacom', metroId: 'des-moines', medianDown: 198, medianUp: 22, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 85, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 2, notes: 'Iowa headquarters' },
+      // Additional Iowa metros
+      { providerId: 'mediacom', metroId: 'cedar-rapids', medianDown: 192, medianUp: 20, medianLatency: 27, maxAvailableSpeed: 1000, consistencyScore: 84, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Illinois metros
+      { providerId: 'mediacom', metroId: 'springfield-il', medianDown: 185, medianUp: 18, medianLatency: 28, maxAvailableSpeed: 1000, consistencyScore: 83, peakHourDegradation: 17, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'mediacom', metroId: 'peoria', medianDown: 182, medianUp: 17, medianLatency: 29, maxAvailableSpeed: 1000, consistencyScore: 82, peakHourDegradation: 18, hasDocsis4: false, hasFiber: false, ooklaRank: 1 },
+      { providerId: 'mediacom', metroId: 'rockford', medianDown: 180, medianUp: 17, medianLatency: 29, maxAvailableSpeed: 1000, consistencyScore: 82, peakHourDegradation: 18, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Minnesota metros
+      { providerId: 'mediacom', metroId: 'duluth', medianDown: 178, medianUp: 16, medianLatency: 30, maxAvailableSpeed: 1000, consistencyScore: 81, peakHourDegradation: 19, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Missouri metros
+      { providerId: 'mediacom', metroId: 'st-louis', medianDown: 188, medianUp: 19, medianLatency: 28, maxAvailableSpeed: 1000, consistencyScore: 84, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Alabama metros
+      { providerId: 'mediacom', metroId: 'mobile', medianDown: 175, medianUp: 16, medianLatency: 30, maxAvailableSpeed: 1000, consistencyScore: 81, peakHourDegradation: 19, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Florida metros
+      { providerId: 'mediacom', metroId: 'tallahassee', medianDown: 180, medianUp: 17, medianLatency: 29, maxAvailableSpeed: 1000, consistencyScore: 82, peakHourDegradation: 18, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Indiana metros
+      { providerId: 'mediacom', metroId: 'fort-wayne', medianDown: 178, medianUp: 16, medianLatency: 30, maxAvailableSpeed: 1000, consistencyScore: 81, peakHourDegradation: 19, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'mediacom', metroId: 'evansville', medianDown: 175, medianUp: 16, medianLatency: 30, maxAvailableSpeed: 1000, consistencyScore: 81, peakHourDegradation: 19, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Georgia metros
+      { providerId: 'mediacom', metroId: 'augusta', medianDown: 178, medianUp: 16, medianLatency: 30, maxAvailableSpeed: 1000, consistencyScore: 81, peakHourDegradation: 19, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
     ],
   },
   {
@@ -930,6 +1418,17 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
       { providerId: 'astound', metroId: 'houston', medianDown: 242, medianUp: 28, medianLatency: 25, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'enTouch network - pricing varies' },
       { providerId: 'astound', metroId: 'seattle', medianDown: 262, medianUp: 30, medianLatency: 23, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'Wave network - data caps apply' },
       { providerId: 'astound', metroId: 'portland', medianDown: 258, medianUp: 29, medianLatency: 24, maxAvailableSpeed: 1000, consistencyScore: 87, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'Wave network - data caps apply' },
+      // Additional Texas metros (Grande network)
+      { providerId: 'astound', metroId: 'san-antonio', medianDown: 248, medianUp: 30, medianLatency: 24, maxAvailableSpeed: 1000, consistencyScore: 87, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'Grande network' },
+      { providerId: 'astound', metroId: 'dallas', medianDown: 252, medianUp: 31, medianLatency: 24, maxAvailableSpeed: 1000, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'Grande network' },
+      // Additional Northeast metros (RCN network)
+      { providerId: 'astound', metroId: 'nyc', medianDown: 265, medianUp: 34, medianLatency: 22, maxAvailableSpeed: 1500, consistencyScore: 89, peakHourDegradation: 11, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'RCN network' },
+      { providerId: 'astound', metroId: 'boston', medianDown: 262, medianUp: 33, medianLatency: 23, maxAvailableSpeed: 1500, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'RCN network' },
+      { providerId: 'astound', metroId: 'dc', medianDown: 258, medianUp: 32, medianLatency: 23, maxAvailableSpeed: 1500, consistencyScore: 88, peakHourDegradation: 12, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'RCN network' },
+      { providerId: 'astound', metroId: 'philadelphia', medianDown: 255, medianUp: 31, medianLatency: 24, maxAvailableSpeed: 1500, consistencyScore: 87, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'RCN network' },
+      // California metros (Wave network)
+      { providerId: 'astound', metroId: 'san-francisco', medianDown: 255, medianUp: 29, medianLatency: 24, maxAvailableSpeed: 1000, consistencyScore: 87, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'Wave network - data caps' },
+      { providerId: 'astound', metroId: 'sacramento', medianDown: 248, medianUp: 28, medianLatency: 25, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 3, notes: 'Wave network - data caps' },
     ],
   },
   {
@@ -946,6 +1445,26 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
     expansionStatus: 'Formerly Atlantic Broadband. No contracts, no data caps. Upload speeds 10-50 Mbps (generous for cable). Small FTTH patches in select areas. Aggressive fiber expansion 2024-2026.',
     metros: [
       { providerId: 'breezeline', metroId: 'pittsburgh', medianDown: 228, medianUp: 38, medianLatency: 24, maxAvailableSpeed: 1000, consistencyScore: 87, peakHourDegradation: 13, hasDocsis4: false, hasFiber: true, ooklaRank: 3, notes: 'No contracts, no caps' },
+      // Additional Pennsylvania metros
+      { providerId: 'breezeline', metroId: 'allentown', medianDown: 218, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'breezeline', metroId: 'harrisburg', medianDown: 215, medianUp: 34, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 85, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // West Virginia metros
+      { providerId: 'breezeline', metroId: 'charleston-wv', medianDown: 205, medianUp: 30, medianLatency: 27, maxAvailableSpeed: 1000, consistencyScore: 84, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 1 },
+      // Maryland metros
+      { providerId: 'breezeline', metroId: 'annapolis', medianDown: 218, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Ohio metros
+      { providerId: 'breezeline', metroId: 'cleveland', medianDown: 212, medianUp: 33, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 85, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 4 },
+      { providerId: 'breezeline', metroId: 'akron', medianDown: 208, medianUp: 32, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 84, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // New Hampshire metros
+      { providerId: 'breezeline', metroId: 'manchester-nh', medianDown: 215, medianUp: 34, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 85, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'breezeline', metroId: 'concord-nh', medianDown: 208, medianUp: 32, medianLatency: 27, maxAvailableSpeed: 1000, consistencyScore: 84, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Maine metros
+      { providerId: 'breezeline', metroId: 'portland-me', medianDown: 212, medianUp: 33, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 85, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // South Carolina metros
+      { providerId: 'breezeline', metroId: 'charleston-sc', medianDown: 218, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Florida metros
+      { providerId: 'breezeline', metroId: 'miami', medianDown: 222, medianUp: 36, medianLatency: 25, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'breezeline', metroId: 'west-palm-beach', medianDown: 218, medianUp: 35, medianLatency: 25, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
     ],
   },
   {
@@ -963,6 +1482,26 @@ export const PROVIDER_PROFILES: ProviderRegionalProfile[] = [
     metros: [
       { providerId: 'sparklight', metroId: 'prescott', medianDown: 285, medianUp: 52, medianLatency: 22, maxAvailableSpeed: 7000, consistencyScore: 91, peakHourDegradation: 9, hasDocsis4: false, hasFiber: true, ooklaRank: 1, notes: 'Ookla: Fastest in Prescott (H1 2025) - 51% faster upload than competitors' },
       { providerId: 'sparklight', metroId: 'tucson', medianDown: 215, medianUp: 28, medianLatency: 27, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Additional Arizona metros
+      { providerId: 'sparklight', metroId: 'phoenix', medianDown: 205, medianUp: 26, medianLatency: 28, maxAvailableSpeed: 1000, consistencyScore: 85, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 4, notes: 'Limited Phoenix coverage' },
+      // Idaho metros
+      { providerId: 'sparklight', metroId: 'boise', medianDown: 218, medianUp: 30, medianLatency: 26, maxAvailableSpeed: 1000, consistencyScore: 87, peakHourDegradation: 13, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'sparklight', metroId: 'nampa', medianDown: 212, medianUp: 28, medianLatency: 27, maxAvailableSpeed: 1000, consistencyScore: 86, peakHourDegradation: 14, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Texas metros
+      { providerId: 'sparklight', metroId: 'midland', medianDown: 208, medianUp: 27, medianLatency: 27, maxAvailableSpeed: 1000, consistencyScore: 85, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 1, notes: 'Oil/gas region - high demand' },
+      { providerId: 'sparklight', metroId: 'odessa', medianDown: 205, medianUp: 26, medianLatency: 28, maxAvailableSpeed: 1000, consistencyScore: 85, peakHourDegradation: 15, hasDocsis4: false, hasFiber: false, ooklaRank: 1 },
+      { providerId: 'sparklight', metroId: 'amarillo', medianDown: 198, medianUp: 24, medianLatency: 29, maxAvailableSpeed: 1000, consistencyScore: 84, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Mississippi metros
+      { providerId: 'sparklight', metroId: 'jackson-ms', medianDown: 192, medianUp: 23, medianLatency: 29, maxAvailableSpeed: 1000, consistencyScore: 83, peakHourDegradation: 17, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // New Mexico metros
+      { providerId: 'sparklight', metroId: 'albuquerque', medianDown: 202, medianUp: 25, medianLatency: 28, maxAvailableSpeed: 1000, consistencyScore: 84, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      { providerId: 'sparklight', metroId: 'santa-fe', medianDown: 195, medianUp: 24, medianLatency: 29, maxAvailableSpeed: 1000, consistencyScore: 83, peakHourDegradation: 17, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      // Oklahoma metros
+      { providerId: 'sparklight', metroId: 'oklahoma-city', medianDown: 198, medianUp: 24, medianLatency: 29, maxAvailableSpeed: 1000, consistencyScore: 84, peakHourDegradation: 16, hasDocsis4: false, hasFiber: false, ooklaRank: 3, notes: 'Limited OKC coverage' },
+      { providerId: 'sparklight', metroId: 'tulsa', medianDown: 195, medianUp: 24, medianLatency: 29, maxAvailableSpeed: 1000, consistencyScore: 83, peakHourDegradation: 17, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
+      // Montana metros
+      { providerId: 'sparklight', metroId: 'billings', medianDown: 188, medianUp: 22, medianLatency: 30, maxAvailableSpeed: 1000, consistencyScore: 82, peakHourDegradation: 18, hasDocsis4: false, hasFiber: false, ooklaRank: 2 },
+      { providerId: 'sparklight', metroId: 'missoula', medianDown: 185, medianUp: 21, medianLatency: 31, maxAvailableSpeed: 1000, consistencyScore: 81, peakHourDegradation: 19, hasDocsis4: false, hasFiber: false, ooklaRank: 3 },
     ],
   },
 ];
