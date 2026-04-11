@@ -18,11 +18,17 @@ function getSystemTheme(): 'light' | 'dark' {
   return 'light';
 }
 
+const VALID_THEMES: Theme[] = ['light', 'dark', 'system'];
+
+function isValidTheme(value: string | null): value is Theme {
+  return value !== null && VALID_THEMES.includes(value as Theme);
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     try {
-      const stored = localStorage.getItem('netassist-theme') as Theme | null;
-      return stored || 'system';
+      const stored = localStorage.getItem('netassist-theme');
+      return isValidTheme(stored) ? stored : 'system';
     } catch {
       return 'system';
     }

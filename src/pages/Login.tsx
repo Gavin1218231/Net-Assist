@@ -12,18 +12,37 @@ export default function Login() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await login(email, password);
-    navigate('/dashboard');
+    try {
+      await login(email, password);
+      // Only navigate if no error occurred
+      if (!error) {
+        navigate('/dashboard');
+      }
+    } catch {
+      // Error is handled by AuthContext
+    }
   };
 
   const handleGoogleLogin = async () => {
-    await loginWithGoogle();
-    navigate('/dashboard');
+    try {
+      await loginWithGoogle();
+      if (!error) {
+        navigate('/dashboard');
+      }
+    } catch {
+      // Error is handled by AuthContext
+    }
   };
 
   const handleSSOLogin = async (provider: string) => {
-    await loginWithSSO(provider);
-    navigate('/dashboard');
+    try {
+      await loginWithSSO(provider);
+      if (!error) {
+        navigate('/dashboard');
+      }
+    } catch {
+      // Error is handled by AuthContext
+    }
   };
 
   return (

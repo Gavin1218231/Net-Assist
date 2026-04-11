@@ -131,49 +131,48 @@ export function AIAssistantProvider({ children }: { children: ReactNode }) {
       timestamp: new Date().toISOString(),
     };
 
-    // Get current messages for history before adding new one
-    setMessages(prev => {
-      const updatedMessages = [...prev, userMessage];
+    // Add user message first
+    setMessages(prev => [...prev, userMessage]);
 
-      // Start async operation with latest messages
-      (async () => {
-        setIsLoading(true);
-        try {
-          const aiProvider: AIProvider = 'claude';
-          const response = await sendComprehensiveMessage(content, updatedMessages, {
-            provider: aiProvider,
-            appContext: appContextRef.current,
-          });
+    // Then start async operation separately to avoid race condition
+    setIsLoading(true);
 
-          const assistantMessage: ChatMessage = {
-            id: (Date.now() + 1).toString(),
-            role: 'assistant',
-            content: response,
-            timestamp: new Date().toISOString(),
-          };
+    (async () => {
+      try {
+        // Get current messages including the user message we just added
+        const currentMessages = [...messages, userMessage];
+        const aiProvider: AIProvider = 'claude';
+        const response = await sendComprehensiveMessage(content, currentMessages, {
+          provider: aiProvider,
+          appContext: appContextRef.current,
+        });
 
-          setMessages(prevMsgs => [...prevMsgs, assistantMessage]);
+        const assistantMessage: ChatMessage = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: response,
+          timestamp: new Date().toISOString(),
+        };
 
-          // Increment unread if minimized
-          if (isMinimizedRef.current) {
-            setUnreadCount(prevCount => prevCount + 1);
-          }
-        } catch {
-          const errorMessage: ChatMessage = {
-            id: (Date.now() + 1).toString(),
-            role: 'assistant',
-            content: "I'm sorry, I encountered an error. Please try again.",
-            timestamp: new Date().toISOString(),
-          };
-          setMessages(prevMsgs => [...prevMsgs, errorMessage]);
-        } finally {
-          setIsLoading(false);
+        setMessages(prevMsgs => [...prevMsgs, assistantMessage]);
+
+        // Increment unread if minimized
+        if (isMinimizedRef.current) {
+          setUnreadCount(prevCount => prevCount + 1);
         }
-      })();
-
-      return updatedMessages;
-    });
-  }, [isLoading]);
+      } catch {
+        const errorMessage: ChatMessage = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: "I'm sorry, I encountered an error. Please try again.",
+          timestamp: new Date().toISOString(),
+        };
+        setMessages(prevMsgs => [...prevMsgs, errorMessage]);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
+  }, [isLoading, messages]);
 
   const clearMessages = useCallback(() => {
     setMessages([WELCOME_MESSAGE]);

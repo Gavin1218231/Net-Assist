@@ -24,13 +24,26 @@ export default function Signup() {
       return;
     }
     setPasswordError('');
-    await signup(email, password, displayName);
-    navigate('/dashboard');
+    try {
+      await signup(email, password, displayName);
+      // Only navigate if no error occurred
+      if (!error) {
+        navigate('/dashboard');
+      }
+    } catch {
+      // Error is handled by AuthContext
+    }
   };
 
   const handleGoogleSignup = async () => {
-    await loginWithGoogle();
-    navigate('/dashboard');
+    try {
+      await loginWithGoogle();
+      if (!error) {
+        navigate('/dashboard');
+      }
+    } catch {
+      // Error is handled by AuthContext
+    }
   };
 
   return (

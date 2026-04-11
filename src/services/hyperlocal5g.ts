@@ -817,11 +817,13 @@ export function getHyperlocalPlacementTips(
 
   // Direction-based tip
   const directionTips = getDirectionTips(carrierData.bestDirection);
-  tips.push({
-    priority: 'critical',
-    tip: directionTips[0],
-    reason: `Based on tower locations in ${neighborhood.name}`,
-  });
+  if (directionTips.length > 0) {
+    tips.push({
+      priority: 'critical',
+      tip: directionTips[0],
+      reason: `Based on tower locations in ${neighborhood.name}`,
+    });
+  }
 
   // Band-specific tips
   if (carrierData.primaryBand === 'mmwave') {
