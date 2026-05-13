@@ -13342,6 +13342,656 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '86406', neighborhoodId: 'lhc-north', avgDownload: 318, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'medium', peakHourImpact: 16 },
     ],
   },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // BEND OR
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'bend',
+    name: 'Bend-Redmond',
+    stateCode: 'OR',
+    towerDensity: 'moderate',
+    avgDownload: 318,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'rdm-downtown-bend',
+        name: 'Downtown Bend',
+        metroId: 'bend',
+        zipCodes: ['97701', '97702'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Old Mill District. Mirror Pond. Drake Park.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'rdm-west-bend',
+        name: 'West Bend / Mt Bachelor',
+        metroId: 'bend',
+        zipCodes: ['97702', '97707'],
+        towerCount: 32,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Century Drive. Mt Bachelor access. Cascade Lakes.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'rdm-redmond',
+        name: 'Redmond',
+        metroId: 'bend',
+        zipCodes: ['97756', '97754'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Downtown Redmond. Airport area. Cascade Village.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '97701', neighborhoodId: 'rdm-downtown-bend', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '97702', neighborhoodId: 'rdm-west-bend', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '97756', neighborhoodId: 'rdm-redmond', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MEDFORD OR
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'medford',
+    name: 'Medford-Ashland',
+    stateCode: 'OR',
+    towerDensity: 'moderate',
+    avgDownload: 308,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'mfr-downtown',
+        name: 'Downtown Medford',
+        metroId: 'medford',
+        zipCodes: ['97501', '97504'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Main Street. Craterian Theater. Bear Creek.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'mfr-rogue-valley',
+        name: 'Rogue Valley Mall / North',
+        metroId: 'medford',
+        zipCodes: ['97504', '97502'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Rogue Valley Mall. Crater Lake Highway. North Medford.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'mfr-ashland',
+        name: 'Ashland',
+        metroId: 'medford',
+        zipCodes: ['97520', '97525'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Oregon Shakespeare Festival. Lithia Park. SOU campus.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '97501', neighborhoodId: 'mfr-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '97504', neighborhoodId: 'mfr-rogue-valley', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '97520', neighborhoodId: 'mfr-ashland', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // BELLINGHAM WA
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'bellingham',
+    name: 'Bellingham',
+    stateCode: 'WA',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'bli-downtown',
+        name: 'Downtown Bellingham',
+        metroId: 'bellingham',
+        zipCodes: ['98225', '98226'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic Fairhaven. Railroad Avenue. Whatcom Museum.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'bli-wwu',
+        name: 'WWU / Sehome Hill',
+        metroId: 'bellingham',
+        zipCodes: ['98225', '98229'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Western Washington University. Sehome Village. Lakeway.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'bli-bellis-fair',
+        name: 'Bellis Fair / Cordata',
+        metroId: 'bellingham',
+        zipCodes: ['98226', '98229'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Bellis Fair Mall. Cordata Parkway. Meridian Village.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 48, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '98225', neighborhoodId: 'bli-downtown', avgDownload: 358, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '98229', neighborhoodId: 'bli-wwu', avgDownload: 368, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '98226', neighborhoodId: 'bli-bellis-fair', avgDownload: 378, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // OLYMPIA WA
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'olympia',
+    name: 'Olympia-Lacey',
+    stateCode: 'WA',
+    towerDensity: 'moderate',
+    avgDownload: 318,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'olm-downtown',
+        name: 'Downtown Olympia',
+        metroId: 'olympia',
+        zipCodes: ['98501', '98502'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol Campus. Percival Landing. Farmers Market.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'olm-lacey',
+        name: 'Lacey / Hawks Prairie',
+        metroId: 'olympia',
+        zipCodes: ['98503', '98516'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'South Sound Center. Martin Way. Hawks Prairie.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'olm-tumwater',
+        name: 'Tumwater',
+        metroId: 'olympia',
+        zipCodes: ['98501', '98512'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Tumwater Falls. Olympia Regional Airport. Brewery district.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 298, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '98501', neighborhoodId: 'olm-downtown', avgDownload: 348, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '98503', neighborhoodId: 'olm-lacey', avgDownload: 368, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '98512', neighborhoodId: 'olm-tumwater', avgDownload: 338, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TRI-CITIES WA
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'tri-cities-wa',
+    name: 'Tri-Cities WA',
+    stateCode: 'WA',
+    towerDensity: 'moderate',
+    avgDownload: 315,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'psc-richland',
+        name: 'Richland / Uptown',
+        metroId: 'tri-cities-wa',
+        zipCodes: ['99352', '99354'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Uptown Richland. REACH Museum. Columbia Point.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'psc-kennewick',
+        name: 'Kennewick / Columbia Center',
+        metroId: 'tri-cities-wa',
+        zipCodes: ['99336', '99337'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Columbia Center Mall. Clearwater Avenue. Canyon Lakes.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'psc-pasco',
+        name: 'Pasco',
+        metroId: 'tri-cities-wa',
+        zipCodes: ['99301', '99302'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Downtown Pasco. Tri-Cities Airport. Road 68 corridor.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '99352', neighborhoodId: 'psc-richland', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '99336', neighborhoodId: 'psc-kennewick', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '99301', neighborhoodId: 'psc-pasco', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // YAKIMA WA
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'yakima',
+    name: 'Yakima',
+    stateCode: 'WA',
+    towerDensity: 'moderate',
+    avgDownload: 305,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'ykm-downtown',
+        name: 'Downtown Yakima',
+        metroId: 'yakima',
+        zipCodes: ['98901', '98902'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Yakima Avenue. Capitol Theatre. Millennium Plaza.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'ykm-west-valley',
+        name: 'West Valley / Valley Mall',
+        metroId: 'yakima',
+        zipCodes: ['98908', '98903'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Valley Mall. 40th Avenue. West Valley suburbs.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '98901', neighborhoodId: 'ykm-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '98908', neighborhoodId: 'ykm-west-valley', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ST. GEORGE UT
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'st-george',
+    name: 'St. George',
+    stateCode: 'UT',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'sgu-downtown',
+        name: 'Downtown St. George',
+        metroId: 'st-george',
+        zipCodes: ['84770', '84790'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown. Tabernacle. Pioneer Park.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'sgu-red-cliffs',
+        name: 'Red Cliffs Mall / Washington',
+        metroId: 'st-george',
+        zipCodes: ['84780', '84790'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Red Cliffs Mall. Telegraph Street. Washington City.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'sgu-ivins',
+        name: 'Ivins / Snow Canyon',
+        metroId: 'st-george',
+        zipCodes: ['84738', '84770'],
+        towerCount: 28,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Entrada. Tuacahn. Snow Canyon State Park access.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '84770', neighborhoodId: 'sgu-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '84780', neighborhoodId: 'sgu-red-cliffs', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '84738', neighborhoodId: 'sgu-ivins', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // PROVO-OREM UT
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'provo-orem',
+    name: 'Provo-Orem',
+    stateCode: 'UT',
+    towerDensity: 'dense',
+    avgDownload: 355,
+    avgUpload: 50,
+    avgLatency: 17,
+    neighborhoods: [
+      {
+        id: 'pvu-downtown-provo',
+        name: 'Downtown Provo',
+        metroId: 'provo-orem',
+        zipCodes: ['84601', '84606'],
+        towerCount: 48,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Center Street. Provo City Center Temple. Startup Row.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 408, avgUpload: 58, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 378, avgUpload: 54, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 50, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'pvu-byu',
+        name: 'BYU Campus',
+        metroId: 'provo-orem',
+        zipCodes: ['84602', '84604'],
+        towerCount: 55,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'Brigham Young University. LaVell Edwards Stadium. Cougartown.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 428, avgUpload: 62, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 398, avgUpload: 58, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 368, avgUpload: 54, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'pvu-orem',
+        name: 'Orem / University Mall',
+        metroId: 'provo-orem',
+        zipCodes: ['84097', '84058'],
+        towerCount: 52,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'University Place. State Street. UVU campus.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 48, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'pvu-lehi',
+        name: 'Lehi / Silicon Slopes',
+        metroId: 'provo-orem',
+        zipCodes: ['84043', '84045'],
+        towerCount: 58,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Thanksgiving Point. Adobe campus. Silicon Slopes tech hub.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 418, avgUpload: 60, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 388, avgUpload: 56, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 52, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '84601', neighborhoodId: 'pvu-downtown-provo', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '84602', neighborhoodId: 'pvu-byu', avgDownload: 408, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '84097', neighborhoodId: 'pvu-orem', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '84043', neighborhoodId: 'pvu-lehi', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // OGDEN UT
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'ogden',
+    name: 'Ogden-Clearfield',
+    stateCode: 'UT',
+    towerDensity: 'moderate',
+    avgDownload: 335,
+    avgUpload: 46,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'ogd-downtown',
+        name: 'Downtown Ogden',
+        metroId: 'ogden',
+        zipCodes: ['84401', '84403'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: '25th Street. Union Station. Ogden Eccles Convention Center.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'ogd-newgate',
+        name: 'Newgate Mall / South Ogden',
+        metroId: 'ogden',
+        zipCodes: ['84405', '84403'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Newgate Mall. Harrison Boulevard. Weber State University.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 48, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'ogd-layton',
+        name: 'Layton / Hill AFB',
+        metroId: 'ogden',
+        zipCodes: ['84041', '84040'],
+        towerCount: 48,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Layton Hills Mall. Hill AFB. Antelope Drive corridor.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '84401', neighborhoodId: 'ogd-downtown', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '84405', neighborhoodId: 'ogd-newgate', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '84041', neighborhoodId: 'ogd-layton', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // LOGAN UT
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'logan',
+    name: 'Logan',
+    stateCode: 'UT',
+    towerDensity: 'moderate',
+    avgDownload: 315,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'lgu-downtown',
+        name: 'Downtown Logan',
+        metroId: 'logan',
+        zipCodes: ['84321', '84322'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Main Street. Historic Tabernacle. Cache Valley Center.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'lgu-usu',
+        name: 'Utah State University',
+        metroId: 'logan',
+        zipCodes: ['84322', '84341'],
+        towerCount: 42,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'USU campus. Maverik Stadium. Old Main Hill.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 46, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'lgu-north',
+        name: 'North Logan / Hyde Park',
+        metroId: 'logan',
+        zipCodes: ['84341', '84318'],
+        towerCount: 28,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'North Main. Cache Valley Mall. Green Canyon.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '84321', neighborhoodId: 'lgu-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '84322', neighborhoodId: 'lgu-usu', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '84341', neighborhoodId: 'lgu-north', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
