@@ -12722,6 +12722,626 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '80303', neighborhoodId: 'bld-29th-street', avgDownload: 368, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
     ],
   },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SANTA FE NM
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'santa-fe',
+    name: 'Santa Fe',
+    stateCode: 'NM',
+    towerDensity: 'moderate',
+    avgDownload: 305,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'saf-downtown',
+        name: 'Downtown Santa Fe / Plaza',
+        metroId: 'santa-fe',
+        zipCodes: ['87501', '87505'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic Plaza. Canyon Road galleries. State Capitol.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'saf-south',
+        name: 'South Santa Fe / Cerrillos Road',
+        metroId: 'santa-fe',
+        zipCodes: ['87507', '87508'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Santa Fe Place Mall. Cerrillos Road corridor. Fashion Outlets.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '87501', neighborhoodId: 'saf-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '87507', neighborhoodId: 'saf-south', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // CHEYENNE WY
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'cheyenne',
+    name: 'Cheyenne',
+    stateCode: 'WY',
+    towerDensity: 'moderate',
+    avgDownload: 295,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'cys-downtown',
+        name: 'Downtown Cheyenne',
+        metroId: 'cheyenne',
+        zipCodes: ['82001', '82007'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol. Depot Square. Historic downtown.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'cys-frontier-mall',
+        name: 'Frontier Mall / Dell Range',
+        metroId: 'cheyenne',
+        zipCodes: ['82009', '82001'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Frontier Mall. Dell Range Boulevard. Northern growth area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '82001', neighborhoodId: 'cys-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '82009', neighborhoodId: 'cys-frontier-mall', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // CASPER WY
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'casper',
+    name: 'Casper',
+    stateCode: 'WY',
+    towerDensity: 'moderate',
+    avgDownload: 288,
+    avgUpload: 36,
+    avgLatency: 25,
+    neighborhoods: [
+      {
+        id: 'cpr-downtown',
+        name: 'Downtown Casper',
+        metroId: 'casper',
+        zipCodes: ['82601', '82604'],
+        towerCount: 25,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Old Yellowstone District. Tate Pumpkin House. David Street Station.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 258, avgUpload: 34, avgLatency: 30, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'cpr-eastridge',
+        name: 'Eastridge Mall / East Casper',
+        metroId: 'casper',
+        zipCodes: ['82609', '82601'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Eastridge Mall. East Second Street. Wyoming Medical Center.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '82601', neighborhoodId: 'cpr-downtown', avgDownload: 318, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '82609', neighborhoodId: 'cpr-eastridge', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // RAPID CITY SD
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'rapid-city',
+    name: 'Rapid City',
+    stateCode: 'SD',
+    towerDensity: 'moderate',
+    avgDownload: 298,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'rap-downtown',
+        name: 'Downtown Rapid City',
+        metroId: 'rapid-city',
+        zipCodes: ['57701', '57702'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Main Street Square. City of Presidents. Art Alley.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'rap-rushmore',
+        name: 'Rushmore Mall / East',
+        metroId: 'rapid-city',
+        zipCodes: ['57701', '57703'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Rushmore Mall. I-90 corridor. Box Elder.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '57701', neighborhoodId: 'rap-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '57703', neighborhoodId: 'rap-rushmore', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // BISMARCK ND
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'bismarck',
+    name: 'Bismarck-Mandan',
+    stateCode: 'ND',
+    towerDensity: 'moderate',
+    avgDownload: 298,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'bis-downtown',
+        name: 'Downtown Bismarck',
+        metroId: 'bismarck',
+        zipCodes: ['58501', '58504'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol. Main Avenue. North Dakota Heritage Center.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'bis-kirkwood',
+        name: 'Kirkwood Mall / North Bismarck',
+        metroId: 'bismarck',
+        zipCodes: ['58503', '58501'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Kirkwood Mall. State Street. BSC campus.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'bis-mandan',
+        name: 'Mandan',
+        metroId: 'bismarck',
+        zipCodes: ['58554', '58503'],
+        towerCount: 25,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Historic Main Street. Five Nations Arts. Fort Lincoln.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'tmobile', avgDownload: 258, avgUpload: 34, avgLatency: 30, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '58501', neighborhoodId: 'bis-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '58503', neighborhoodId: 'bis-kirkwood', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '58554', neighborhoodId: 'bis-mandan', avgDownload: 318, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // GREAT FALLS MT
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'great-falls',
+    name: 'Great Falls',
+    stateCode: 'MT',
+    towerDensity: 'moderate',
+    avgDownload: 288,
+    avgUpload: 36,
+    avgLatency: 25,
+    neighborhoods: [
+      {
+        id: 'gtf-downtown',
+        name: 'Downtown Great Falls',
+        metroId: 'great-falls',
+        zipCodes: ['59401', '59405'],
+        towerCount: 25,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Central Avenue. Civic Center. Missouri River waterfront.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 258, avgUpload: 34, avgLatency: 30, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'gtf-holiday-village',
+        name: 'Holiday Village Mall / 10th Ave',
+        metroId: 'great-falls',
+        zipCodes: ['59405', '59404'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Holiday Village Mall. 10th Avenue South. Malmstrom AFB nearby.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '59401', neighborhoodId: 'gtf-downtown', avgDownload: 318, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '59405', neighborhoodId: 'gtf-holiday-village', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // POCATELLO ID
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'pocatello',
+    name: 'Pocatello',
+    stateCode: 'ID',
+    towerDensity: 'moderate',
+    avgDownload: 295,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'pih-downtown',
+        name: 'Downtown Pocatello',
+        metroId: 'pocatello',
+        zipCodes: ['83201', '83204'],
+        towerCount: 25,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic Old Town. Idaho State University. Portneuf River.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'pih-chubbuck',
+        name: 'Chubbuck / Pine Ridge Mall',
+        metroId: 'pocatello',
+        zipCodes: ['83202', '83201'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Pine Ridge Mall. Yellowstone Avenue. I-15 corridor.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '83201', neighborhoodId: 'pih-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '83202', neighborhoodId: 'pih-chubbuck', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // IDAHO FALLS ID
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'idaho-falls',
+    name: 'Idaho Falls',
+    stateCode: 'ID',
+    towerDensity: 'moderate',
+    avgDownload: 298,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'ida-downtown',
+        name: 'Downtown Idaho Falls',
+        metroId: 'idaho-falls',
+        zipCodes: ['83402', '83401'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Snake River greenbelt. Downtown arts. Colonial Theatre.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'ida-grand-teton',
+        name: 'Grand Teton Mall / West',
+        metroId: 'idaho-falls',
+        zipCodes: ['83404', '83402'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Grand Teton Mall. 17th Street. Ammon suburbs.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '83402', neighborhoodId: 'ida-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '83404', neighborhoodId: 'ida-grand-teton', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TWIN FALLS ID
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'twin-falls',
+    name: 'Twin Falls',
+    stateCode: 'ID',
+    towerDensity: 'moderate',
+    avgDownload: 295,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'twf-downtown',
+        name: 'Downtown Twin Falls',
+        metroId: 'twin-falls',
+        zipCodes: ['83301', '83303'],
+        towerCount: 25,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown. Perrine Bridge. Snake River Canyon.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'twf-magic-valley',
+        name: 'Magic Valley Mall / Blue Lakes',
+        metroId: 'twin-falls',
+        zipCodes: ['83301', '83316'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Magic Valley Mall. Blue Lakes Boulevard. CSI campus.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '83301', neighborhoodId: 'twf-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '83316', neighborhoodId: 'twf-magic-valley', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // FLAGSTAFF AZ
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'flagstaff',
+    name: 'Flagstaff',
+    stateCode: 'AZ',
+    towerDensity: 'moderate',
+    avgDownload: 308,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'flg-downtown',
+        name: 'Downtown Flagstaff',
+        metroId: 'flagstaff',
+        zipCodes: ['86001', '86004'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic Route 66. Weatherford Hotel. NAU nearby.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'flg-nau',
+        name: 'NAU Campus / University',
+        metroId: 'flagstaff',
+        zipCodes: ['86011', '86001'],
+        towerCount: 38,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'Northern Arizona University. Skydome. Walkup Skydome.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'flg-east',
+        name: 'East Flagstaff / Walmart Area',
+        metroId: 'flagstaff',
+        zipCodes: ['86004', '86001'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Flagstaff Mall. I-40 corridor. Eastside shopping.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '86001', neighborhoodId: 'flg-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '86011', neighborhoodId: 'flg-nau', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '86004', neighborhoodId: 'flg-east', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // YUMA AZ
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'yuma',
+    name: 'Yuma',
+    stateCode: 'AZ',
+    towerDensity: 'moderate',
+    avgDownload: 298,
+    avgUpload: 38,
+    avgLatency: 23,
+    neighborhoods: [
+      {
+        id: 'yum-downtown',
+        name: 'Downtown Yuma',
+        metroId: 'yuma',
+        zipCodes: ['85364', '85365'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown. Yuma Quartermaster Depot. Main Street.',
+        carriers: [
+          { carrier: 'att', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'yum-foothills',
+        name: 'Foothills / Yuma Palms',
+        metroId: 'yuma',
+        zipCodes: ['85367', '85365'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Yuma Palms Regional Center. Foothills Boulevard. AWC.',
+        carriers: [
+          { carrier: 'att', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '85364', neighborhoodId: 'yum-downtown', avgDownload: 328, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '85367', neighborhoodId: 'yum-foothills', avgDownload: 338, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // LAKE HAVASU CITY AZ
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'lake-havasu',
+    name: 'Lake Havasu City',
+    stateCode: 'AZ',
+    towerDensity: 'moderate',
+    avgDownload: 295,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'lhc-downtown',
+        name: 'Downtown Lake Havasu / London Bridge',
+        metroId: 'lake-havasu',
+        zipCodes: ['86403', '86404'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'London Bridge. English Village. Island Fashion Mall.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'lhc-north',
+        name: 'North Lake Havasu / Highway 95',
+        metroId: 'lake-havasu',
+        zipCodes: ['86406', '86403'],
+        towerCount: 25,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Highway 95 corridor. Shops at Lake Havasu. Nautical Inn.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 258, avgUpload: 34, avgLatency: 30, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '86403', neighborhoodId: 'lhc-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '86406', neighborhoodId: 'lhc-north', avgDownload: 318, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
