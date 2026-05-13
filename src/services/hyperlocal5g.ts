@@ -13992,6 +13992,575 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '84341', neighborhoodId: 'lgu-north', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
     ],
   },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // PORTLAND ME
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'portland-me',
+    name: 'Portland ME',
+    stateCode: 'ME',
+    towerDensity: 'moderate',
+    avgDownload: 318,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'pwm-downtown',
+        name: 'Downtown Portland / Old Port',
+        metroId: 'portland-me',
+        zipCodes: ['04101', '04102'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Old Port district. Congress Street. Arts District.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'pwm-south-portland',
+        name: 'South Portland / Mall',
+        metroId: 'portland-me',
+        zipCodes: ['04106', '04107'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Maine Mall. Millcreek. Running Hill Road.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'pwm-westbrook',
+        name: 'Westbrook / Scarborough',
+        metroId: 'portland-me',
+        zipCodes: ['04092', '04074'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Rock Row. Scarborough Gallery. Idexx area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '04101', neighborhoodId: 'pwm-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '04106', neighborhoodId: 'pwm-south-portland', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '04092', neighborhoodId: 'pwm-westbrook', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // BANGOR ME
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'bangor',
+    name: 'Bangor',
+    stateCode: 'ME',
+    towerDensity: 'moderate',
+    avgDownload: 298,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'bgr-downtown',
+        name: 'Downtown Bangor',
+        metroId: 'bangor',
+        zipCodes: ['04401', '04402'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'West Market Square. Cross Insurance Center. Waterfront.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'bgr-bangor-mall',
+        name: 'Bangor Mall / Stillwater',
+        metroId: 'bangor',
+        zipCodes: ['04401', '04473'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Bangor Mall. Stillwater Avenue. Broadway corridor.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '04401', neighborhoodId: 'bgr-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '04473', neighborhoodId: 'bgr-bangor-mall', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MANCHESTER NH
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'manchester-nh',
+    name: 'Manchester NH',
+    stateCode: 'NH',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'mht-downtown',
+        name: 'Downtown Manchester',
+        metroId: 'manchester-nh',
+        zipCodes: ['03101', '03104'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Elm Street. Millyard. SNHU Arena.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'mht-south',
+        name: 'South Manchester / Mall of NH',
+        metroId: 'manchester-nh',
+        zipCodes: ['03103', '03109'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Mall of New Hampshire. South Willow Street. I-293 corridor.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 46, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'mht-nashua',
+        name: 'Nashua',
+        metroId: 'manchester-nh',
+        zipCodes: ['03060', '03063'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Pheasant Lane Mall. Main Street. Daniel Webster Highway.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '03101', neighborhoodId: 'mht-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '03103', neighborhoodId: 'mht-south', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '03060', neighborhoodId: 'mht-nashua', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // BURLINGTON VT
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'burlington-vt',
+    name: 'Burlington VT',
+    stateCode: 'VT',
+    towerDensity: 'moderate',
+    avgDownload: 315,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'btv-downtown',
+        name: 'Downtown Burlington',
+        metroId: 'burlington-vt',
+        zipCodes: ['05401', '05402'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Church Street Marketplace. Waterfront Park. Lake Champlain.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'btv-uvm',
+        name: 'UVM / University',
+        metroId: 'burlington-vt',
+        zipCodes: ['05405', '05401'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Vermont. UVM Medical Center. Gutterson Fieldhouse.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'btv-south',
+        name: 'South Burlington / Williston',
+        metroId: 'burlington-vt',
+        zipCodes: ['05403', '05495'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'University Mall. Williston Road. Taft Corners.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '05401', neighborhoodId: 'btv-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '05405', neighborhoodId: 'btv-uvm', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '05403', neighborhoodId: 'btv-south', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ITHACA NY
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'ithaca',
+    name: 'Ithaca',
+    stateCode: 'NY',
+    towerDensity: 'moderate',
+    avgDownload: 318,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'ith-downtown',
+        name: 'Downtown Ithaca / Commons',
+        metroId: 'ithaca',
+        zipCodes: ['14850', '14851'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Ithaca Commons. State Theatre. Gorge trails.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'ith-cornell',
+        name: 'Cornell University',
+        metroId: 'ithaca',
+        zipCodes: ['14853', '14850'],
+        towerCount: 45,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'Cornell campus. Collegetown. Schoellkopf Field.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 48, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'ith-ithaca-college',
+        name: 'Ithaca College / South Hill',
+        metroId: 'ithaca',
+        zipCodes: ['14850', '14882'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Ithaca College. South Hill. Buttermilk Falls area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '14850', neighborhoodId: 'ith-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '14853', neighborhoodId: 'ith-cornell', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '14882', neighborhoodId: 'ith-ithaca-college', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // STATE COLLEGE PA
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'state-college',
+    name: 'State College',
+    stateCode: 'PA',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'sco-downtown',
+        name: 'Downtown State College',
+        metroId: 'state-college',
+        zipCodes: ['16801', '16803'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'College Avenue. Allen Street. Downtown arts.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'sco-penn-state',
+        name: 'Penn State University',
+        metroId: 'state-college',
+        zipCodes: ['16802', '16801'],
+        towerCount: 55,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'Penn State campus. Beaver Stadium. Innovation Park.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 418, avgUpload: 60, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 388, avgUpload: 56, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 348, avgUpload: 52, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'sco-nittany-mall',
+        name: 'Nittany Mall / Patton Township',
+        metroId: 'state-college',
+        zipCodes: ['16803', '16801'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Nittany Mall. North Atherton. Toftrees.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '16801', neighborhoodId: 'sco-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '16802', neighborhoodId: 'sco-penn-state', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 25 },
+      { zip: '16803', neighborhoodId: 'sco-nittany-mall', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // CHAMPAIGN-URBANA IL
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'champaign-urbana',
+    name: 'Champaign-Urbana',
+    stateCode: 'IL',
+    towerDensity: 'moderate',
+    avgDownload: 328,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'cmi-downtown-champaign',
+        name: 'Downtown Champaign',
+        metroId: 'champaign-urbana',
+        zipCodes: ['61820', '61821'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Neil Street. Champaign Center. Virginia Theatre.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'cmi-uiuc',
+        name: 'UIUC Campus / Campustown',
+        metroId: 'champaign-urbana',
+        zipCodes: ['61801', '61820'],
+        towerCount: 52,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Illinois. Memorial Stadium. Green Street.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 408, avgUpload: 58, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 378, avgUpload: 54, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 338, avgUpload: 50, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'cmi-urbana',
+        name: 'Downtown Urbana',
+        metroId: 'champaign-urbana',
+        zipCodes: ['61801', '61802'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Downtown Urbana. Lincoln Square. Carle Hospital.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '61820', neighborhoodId: 'cmi-downtown-champaign', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '61801', neighborhoodId: 'cmi-uiuc', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '61802', neighborhoodId: 'cmi-urbana', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // BLOOMINGTON IN
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'bloomington-in',
+    name: 'Bloomington IN',
+    stateCode: 'IN',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'bmg-downtown',
+        name: 'Downtown Bloomington',
+        metroId: 'bloomington-in',
+        zipCodes: ['47404', '47408'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Courthouse Square. Kirkwood Avenue. B-Line Trail.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'bmg-iu',
+        name: 'Indiana University',
+        metroId: 'bloomington-in',
+        zipCodes: ['47405', '47401'],
+        towerCount: 52,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'IU campus. Memorial Stadium. Sample Gates.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 408, avgUpload: 58, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 378, avgUpload: 54, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 338, avgUpload: 50, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'bmg-east',
+        name: 'East Bloomington / College Mall',
+        metroId: 'bloomington-in',
+        zipCodes: ['47401', '47403'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'College Mall. East 3rd Street. Whitehall Crossing.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '47404', neighborhoodId: 'bmg-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '47405', neighborhoodId: 'bmg-iu', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '47401', neighborhoodId: 'bmg-east', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // COLUMBIA MO
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'columbia-mo',
+    name: 'Columbia MO',
+    stateCode: 'MO',
+    towerDensity: 'moderate',
+    avgDownload: 318,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'cou-downtown',
+        name: 'Downtown Columbia / The District',
+        metroId: 'columbia-mo',
+        zipCodes: ['65201', '65203'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'The District. Broadway. Missouri Theatre.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'cou-mizzou',
+        name: 'Mizzou Campus',
+        metroId: 'columbia-mo',
+        zipCodes: ['65211', '65201'],
+        towerCount: 48,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Missouri. Faurot Field. Jesse Hall.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 48, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'cou-columbia-mall',
+        name: 'Columbia Mall / South',
+        metroId: 'columbia-mo',
+        zipCodes: ['65203', '65202'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Columbia Mall. Stadium Boulevard. Grindstone.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '65201', neighborhoodId: 'cou-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '65211', neighborhoodId: 'cou-mizzou', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '65203', neighborhoodId: 'cou-columbia-mall', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
