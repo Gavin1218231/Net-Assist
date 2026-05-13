@@ -15186,6 +15186,198 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '71106', neighborhoodId: 'shv-south-highlands', avgDownload: 348, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // CALIFORNIA CENTRAL VALLEY
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'visalia',
+    name: 'Visalia-Tulare',
+    stateCode: 'CA',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 42,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'visalia-downtown',
+        name: 'Downtown Visalia',
+        metroId: 'visalia',
+        zipCodes: ['93291'],
+        towerCount: 9,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown with Fox Theatre; good coverage on Main Street',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 345, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'visalia-mooney-blvd',
+        name: 'Mooney Boulevard Corridor',
+        metroId: 'visalia',
+        zipCodes: ['93277'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail corridor; good coverage along shopping strip',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 335, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'visalia-tulare',
+        name: 'Tulare',
+        metroId: 'visalia',
+        zipCodes: ['93274'],
+        towerCount: 7,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Adjacent city with agricultural industry; good downtown coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 335, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 325, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 38, avgLatency: 21, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '93291', neighborhoodId: 'visalia-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '93277', neighborhoodId: 'visalia-mooney-blvd', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+      { zip: '93274', neighborhoodId: 'visalia-tulare', avgDownload: 325, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // CALIFORNIA CENTRAL COAST
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'san-luis-obispo',
+    name: 'San Luis Obispo',
+    stateCode: 'CA',
+    towerDensity: 'moderate',
+    avgDownload: 355,
+    avgUpload: 46,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'slo-downtown',
+        name: 'Downtown SLO',
+        metroId: 'san-luis-obispo',
+        zipCodes: ['93401'],
+        towerCount: 11,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Charming downtown with mission plaza; good coverage on Higuera Street',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 51, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 358, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'slo-cal-poly',
+        name: 'Cal Poly Area',
+        metroId: 'san-luis-obispo',
+        zipCodes: ['93407', '93405'],
+        towerCount: 12,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Cal Poly campus and surrounding area; excellent coverage for students',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 395, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 362, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'slo-madonna',
+        name: 'Madonna Road Area',
+        metroId: 'san-luis-obispo',
+        zipCodes: ['93401', '93405'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail area; consistent coverage for shopping',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '93401', neighborhoodId: 'slo-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '93407', neighborhoodId: 'slo-cal-poly', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '93405', neighborhoodId: 'slo-madonna', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+    ],
+  },
+  {
+    id: 'santa-maria',
+    name: 'Santa Maria',
+    stateCode: 'CA',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 42,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'sm-downtown',
+        name: 'Downtown Santa Maria',
+        metroId: 'santa-maria',
+        zipCodes: ['93454'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Downtown with Santa Maria BBQ corridor; good coverage on Broadway',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 345, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'sm-town-center',
+        name: 'Town Center Mall Area',
+        metroId: 'santa-maria',
+        zipCodes: ['93458'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail corridor on Main Street; consistent coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 335, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'sm-orcutt',
+        name: 'Orcutt',
+        metroId: 'santa-maria',
+        zipCodes: ['93455'],
+        towerCount: 6,
+        buildingDensity: 'low',
+        terrainType: 'residential',
+        placementNotes: 'Unincorporated community south of Santa Maria; suburban coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 332, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 322, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 38, avgLatency: 21, primaryBand: 'low_band', towerProximity: 'far', signalQuality: 'fair', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '93454', neighborhoodId: 'sm-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '93458', neighborhoodId: 'sm-town-center', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+      { zip: '93455', neighborhoodId: 'sm-orcutt', avgDownload: 322, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE SOUTHEAST METROS
+  // ─────────────────────────────────────────────────────────────────────────────
 ];
 
 // ── Direction-based Placement Tips ──
