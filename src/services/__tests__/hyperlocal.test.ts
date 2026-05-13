@@ -27,7 +27,7 @@ describe('hyperlocal5g service', () => {
         expect(typeof metro.name).toBe('string');
         expect(typeof metro.stateCode).toBe('string');
         expect(metro.stateCode.length).toBe(2);
-        expect(['ultra_dense', 'dense', 'moderate', 'suburban', 'rural']).toContain(metro.towerDensity);
+        expect(['ultra_dense', 'dense', 'moderate', 'sparse']).toContain(metro.towerDensity);
         expect(typeof metro.avgDownload).toBe('number');
         expect(typeof metro.avgUpload).toBe('number');
         expect(typeof metro.avgLatency).toBe('number');
