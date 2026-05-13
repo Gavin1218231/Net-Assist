@@ -11942,6 +11942,786 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '19606', neighborhoodId: 'rdg-exeter', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
     ],
   },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SPRINGFIELD IL
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'springfield-il',
+    name: 'Springfield IL',
+    stateCode: 'IL',
+    towerDensity: 'moderate',
+    avgDownload: 308,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'spi-downtown',
+        name: 'Downtown Springfield',
+        metroId: 'springfield-il',
+        zipCodes: ['62701', '62702'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol complex. Lincoln sites. Old State Capitol.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'spi-west',
+        name: 'West Springfield / White Oaks',
+        metroId: 'springfield-il',
+        zipCodes: ['62704', '62711'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'White Oaks Mall. Wabash Avenue. West side retail.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'spi-chatham',
+        name: 'Chatham / South',
+        metroId: 'springfield-il',
+        zipCodes: ['62629', '62703'],
+        towerCount: 32,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Chatham suburb. Southern View. Growing residential.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '62701', neighborhoodId: 'spi-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '62704', neighborhoodId: 'spi-west', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '62629', neighborhoodId: 'spi-chatham', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // PEORIA IL
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'peoria',
+    name: 'Peoria',
+    stateCode: 'IL',
+    towerDensity: 'moderate',
+    avgDownload: 305,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'pia-downtown',
+        name: 'Downtown Peoria',
+        metroId: 'peoria',
+        zipCodes: ['61602', '61603'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Civic Center. Caterpillar HQ. Riverfront.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'pia-north',
+        name: 'North Peoria / Northwoods Mall',
+        metroId: 'peoria',
+        zipCodes: ['61614', '61615'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Northwoods Mall. War Memorial Drive. Metro Centre.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'pia-east-peoria',
+        name: 'East Peoria',
+        metroId: 'peoria',
+        zipCodes: ['61611', '61616'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Par-A-Dice Casino. Levee District. Festival of Lights.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '61602', neighborhoodId: 'pia-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '61614', neighborhoodId: 'pia-north', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '61611', neighborhoodId: 'pia-east-peoria', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ROCKFORD IL
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'rockford',
+    name: 'Rockford',
+    stateCode: 'IL',
+    towerDensity: 'moderate',
+    avgDownload: 305,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'rfd-downtown',
+        name: 'Downtown Rockford',
+        metroId: 'rockford',
+        zipCodes: ['61101', '61104'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Davis Park. BMO Harris Bank Center. State Street.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'rfd-east',
+        name: 'East Rockford / CherryVale Mall',
+        metroId: 'rockford',
+        zipCodes: ['61108', '61107'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'CherryVale Mall. East State Street. I-90 corridor.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'rfd-loves-park',
+        name: 'Loves Park / Machesney Park',
+        metroId: 'rockford',
+        zipCodes: ['61111', '61115'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'North Second Street. Rock River. Magic Waters area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '61101', neighborhoodId: 'rfd-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '61108', neighborhoodId: 'rfd-east', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '61111', neighborhoodId: 'rfd-loves-park', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SOUTH BEND IN
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'south-bend',
+    name: 'South Bend-Mishawaka',
+    stateCode: 'IN',
+    towerDensity: 'moderate',
+    avgDownload: 308,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'sbn-downtown',
+        name: 'Downtown South Bend',
+        metroId: 'south-bend',
+        zipCodes: ['46601', '46617'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'East Bank Village. Morris Performing Arts. St. Joseph River.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'sbn-notre-dame',
+        name: 'Notre Dame / Eddy Street',
+        metroId: 'south-bend',
+        zipCodes: ['46556', '46637'],
+        towerCount: 48,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Notre Dame. Notre Dame Stadium. Eddy Street Commons.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'sbn-mishawaka',
+        name: 'Mishawaka / University Park Mall',
+        metroId: 'south-bend',
+        zipCodes: ['46545', '46544'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'University Park Mall. Grape Road corridor. Downtown Mishawaka.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '46601', neighborhoodId: 'sbn-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '46556', neighborhoodId: 'sbn-notre-dame', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '46545', neighborhoodId: 'sbn-mishawaka', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // EVANSVILLE IN
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'evansville',
+    name: 'Evansville',
+    stateCode: 'IN',
+    towerDensity: 'moderate',
+    avgDownload: 305,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'evv-downtown',
+        name: 'Downtown Evansville',
+        metroId: 'evansville',
+        zipCodes: ['47708', '47713'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Main Street. Ford Center. Riverfront. Old Courthouse.',
+        carriers: [
+          { carrier: 'att', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'evv-east',
+        name: 'East Side / Eastland Mall',
+        metroId: 'evansville',
+        zipCodes: ['47715', '47714'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Eastland Mall. Green River Road. University of Evansville.',
+        carriers: [
+          { carrier: 'att', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'evv-newburgh',
+        name: 'Newburgh / Warrick County',
+        metroId: 'evansville',
+        zipCodes: ['47630', '47629'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Historic Newburgh. Castle High School. Ohio River views.',
+        carriers: [
+          { carrier: 'att', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '47708', neighborhoodId: 'evv-downtown', avgDownload: 338, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '47715', neighborhoodId: 'evv-east', avgDownload: 348, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '47630', neighborhoodId: 'evv-newburgh', avgDownload: 338, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // DAVENPORT IA (QUAD CITIES)
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'quad-cities',
+    name: 'Quad Cities',
+    stateCode: 'IA',
+    towerDensity: 'moderate',
+    avgDownload: 308,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'qc-davenport',
+        name: 'Downtown Davenport',
+        metroId: 'quad-cities',
+        zipCodes: ['52801', '52803'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'River Music Experience. Figge Art Museum. Centennial Bridge.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'qc-bettendorf',
+        name: 'Bettendorf',
+        metroId: 'quad-cities',
+        zipCodes: ['52722', '52732'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Isle of Capri Casino. Duck Creek Mall. I-74 corridor.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'qc-moline',
+        name: 'Moline / Rock Island',
+        metroId: 'quad-cities',
+        zipCodes: ['61265', '61201'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'TaxSlayer Center. Arsenal Island. Downtown Moline arts.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '52801', neighborhoodId: 'qc-davenport', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '52722', neighborhoodId: 'qc-bettendorf', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '61265', neighborhoodId: 'qc-moline', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // GREEN BAY WI
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'green-bay',
+    name: 'Green Bay',
+    stateCode: 'WI',
+    towerDensity: 'moderate',
+    avgDownload: 315,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'grb-downtown',
+        name: 'Downtown Green Bay',
+        metroId: 'green-bay',
+        zipCodes: ['54301', '54302'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'CityDeck. Weidner Center. Neville Public Museum.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'grb-lambeau',
+        name: 'Lambeau Field / Titletown',
+        metroId: 'green-bay',
+        zipCodes: ['54304', '54313'],
+        towerCount: 48,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Lambeau Field. Titletown District. Packers Hall of Fame.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'grb-west',
+        name: 'West Green Bay / Ashwaubenon',
+        metroId: 'green-bay',
+        zipCodes: ['54304', '54313'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Bay Park Square Mall. Oneida Street. Howard-Suamico.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '54301', neighborhoodId: 'grb-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '54304', neighborhoodId: 'grb-lambeau', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 25 },
+      { zip: '54313', neighborhoodId: 'grb-west', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // APPLETON WI
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'appleton',
+    name: 'Appleton-Oshkosh',
+    stateCode: 'WI',
+    towerDensity: 'moderate',
+    avgDownload: 308,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'atw-downtown',
+        name: 'Downtown Appleton',
+        metroId: 'appleton',
+        zipCodes: ['54911', '54914'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'College Avenue. Fox Cities PAC. Lawrence University.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'atw-fox-river',
+        name: 'Fox River Mall / Grand Chute',
+        metroId: 'appleton',
+        zipCodes: ['54913', '54915'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Fox River Mall. Richmond Street. Major retail area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'atw-oshkosh',
+        name: 'Oshkosh / UW-Oshkosh',
+        metroId: 'appleton',
+        zipCodes: ['54901', '54902'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'EAA AirVenture. UW-Oshkosh. Main Street district.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '54911', neighborhoodId: 'atw-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '54913', neighborhoodId: 'atw-fox-river', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '54901', neighborhoodId: 'atw-oshkosh', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // WILMINGTON NC
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'wilmington-nc',
+    name: 'Wilmington NC',
+    stateCode: 'NC',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'ilm-downtown',
+        name: 'Downtown Wilmington',
+        metroId: 'wilmington-nc',
+        zipCodes: ['28401', '28403'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Riverwalk. Historic district. Thalian Hall.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'ilm-wrightsville',
+        name: 'Wrightsville Beach / Mayfaire',
+        metroId: 'wilmington-nc',
+        zipCodes: ['28403', '28480'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Mayfaire Town Center. Wrightsville Beach. UNCW.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'ilm-monkey-junction',
+        name: 'Monkey Junction / Carolina Beach',
+        metroId: 'wilmington-nc',
+        zipCodes: ['28412', '28428'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Monkey Junction shopping. Carolina Beach. Kure Beach.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '28401', neighborhoodId: 'ilm-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '28403', neighborhoodId: 'ilm-wrightsville', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '28412', neighborhoodId: 'ilm-monkey-junction', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // COLUMBIA SC
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'columbia-sc',
+    name: 'Columbia SC',
+    stateCode: 'SC',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'cae-downtown',
+        name: 'Downtown Columbia / USC',
+        metroId: 'columbia-sc',
+        zipCodes: ['29201', '29208'],
+        towerCount: 45,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'State House. University of South Carolina. Main Street.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'cae-forest-acres',
+        name: 'Forest Acres / Trenholm Road',
+        metroId: 'columbia-sc',
+        zipCodes: ['29206', '29204'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Trenholm Plaza. Forest Drive. Richland Mall.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'cae-lexington',
+        name: 'Lexington / Irmo',
+        metroId: 'columbia-sc',
+        zipCodes: ['29072', '29063'],
+        towerCount: 48,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Columbiana Centre. Lake Murray. Harbison area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '29201', neighborhoodId: 'cae-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '29206', neighborhoodId: 'cae-forest-acres', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '29072', neighborhoodId: 'cae-lexington', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // FORT COLLINS CO
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'fort-collins',
+    name: 'Fort Collins-Loveland',
+    stateCode: 'CO',
+    towerDensity: 'moderate',
+    avgDownload: 335,
+    avgUpload: 46,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'fnl-downtown',
+        name: 'Downtown Fort Collins',
+        metroId: 'fort-collins',
+        zipCodes: ['80524', '80521'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Old Town. New Belgium Brewing. Cache la Poudre River.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'fnl-csu',
+        name: 'CSU Campus / Midtown',
+        metroId: 'fort-collins',
+        zipCodes: ['80521', '80525'],
+        towerCount: 48,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'Colorado State University. Canvas Stadium. Midtown shopping.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 408, avgUpload: 58, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 54, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 50, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'fnl-loveland',
+        name: 'Loveland',
+        metroId: 'fort-collins',
+        zipCodes: ['80537', '80538'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Promenade Shops. Sculpture in the Park. Lake Loveland.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '80524', neighborhoodId: 'fnl-downtown', avgDownload: 368, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '80521', neighborhoodId: 'fnl-csu', avgDownload: 388, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '80537', neighborhoodId: 'fnl-loveland', avgDownload: 348, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // BOULDER CO
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'boulder',
+    name: 'Boulder',
+    stateCode: 'CO',
+    towerDensity: 'moderate',
+    avgDownload: 345,
+    avgUpload: 48,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'bld-downtown',
+        name: 'Downtown Boulder / Pearl Street',
+        metroId: 'boulder',
+        zipCodes: ['80302', '80301'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Pearl Street Mall. Boulder Creek. Flatirons views.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 48, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'bld-cu',
+        name: 'CU Boulder / University Hill',
+        metroId: 'boulder',
+        zipCodes: ['80309', '80302'],
+        towerCount: 52,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Colorado. Folsom Field. The Hill.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 418, avgUpload: 60, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 56, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 52, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'bld-29th-street',
+        name: '29th Street / Table Mesa',
+        metroId: 'boulder',
+        zipCodes: ['80303', '80305'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Twenty Ninth Street. NCAR. Table Mesa Park-n-Ride.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '80302', neighborhoodId: 'bld-downtown', avgDownload: 378, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '80309', neighborhoodId: 'bld-cu', avgDownload: 398, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '80303', neighborhoodId: 'bld-29th-street', avgDownload: 368, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
