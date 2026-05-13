@@ -15955,6 +15955,262 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '26508', neighborhoodId: 'mog-suncrest', avgDownload: 342, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE MASSACHUSETTS METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'springfield-ma',
+    name: 'Springfield',
+    stateCode: 'MA',
+    towerDensity: 'moderate',
+    avgDownload: 345,
+    avgUpload: 44,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'sma-downtown',
+        name: 'Downtown Springfield',
+        metroId: 'springfield-ma',
+        zipCodes: ['01103', '01104'],
+        towerCount: 11,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'MGM casino area and historic downtown; good coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'sma-eastfield-mall',
+        name: 'Eastfield Mall Area',
+        metroId: 'springfield-ma',
+        zipCodes: ['01118'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail corridor; consistent coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+          { carrier: 'att', avgDownload: 332, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'sma-holyoke',
+        name: 'Holyoke',
+        metroId: 'springfield-ma',
+        zipCodes: ['01040'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Paper City with Holyoke Mall; industrial heritage area',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 335, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'att', avgDownload: 322, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '01103', neighborhoodId: 'sma-downtown', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '01118', neighborhoodId: 'sma-eastfield-mall', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+      { zip: '01040', neighborhoodId: 'sma-holyoke', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE KENTUCKY METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'bowling-green-ky',
+    name: 'Bowling Green',
+    stateCode: 'KY',
+    towerDensity: 'moderate',
+    avgDownload: 335,
+    avgUpload: 43,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'bgk-downtown',
+        name: 'Downtown Bowling Green',
+        metroId: 'bowling-green-ky',
+        zipCodes: ['42101'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic Fountain Square district; good coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 365, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 352, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 335, avgUpload: 42, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'bgk-wku',
+        name: 'WKU Campus',
+        metroId: 'bowling-green-ky',
+        zipCodes: ['42101'],
+        towerCount: 10,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Western Kentucky University hilltop campus; good student coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'bgk-greenwood-mall',
+        name: 'Greenwood Mall Area',
+        metroId: 'bowling-green-ky',
+        zipCodes: ['42104'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail corridor; consistent coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '42101', neighborhoodId: 'bgk-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+      { zip: '42101', neighborhoodId: 'bgk-wku', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '42104', neighborhoodId: 'bgk-greenwood-mall', avgDownload: 345, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE ARKANSAS METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'fort-smith-ar',
+    name: 'Fort Smith',
+    stateCode: 'AR',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 42,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'fsa-downtown',
+        name: 'Downtown Fort Smith',
+        metroId: 'fort-smith-ar',
+        zipCodes: ['72901'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown on Arkansas River; good coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 358, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'verizon', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'fsa-central-mall',
+        name: 'Central Mall Area',
+        metroId: 'fort-smith-ar',
+        zipCodes: ['72903'],
+        towerCount: 7,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail corridor; consistent coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 345, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'verizon', avgDownload: 332, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'fsa-uafs',
+        name: 'UAFS Area',
+        metroId: 'fort-smith-ar',
+        zipCodes: ['72908'],
+        towerCount: 6,
+        buildingDensity: 'low',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Arkansas-Fort Smith area; good student coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 348, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 335, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 322, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '72901', neighborhoodId: 'fsa-downtown', avgDownload: 348, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '72903', neighborhoodId: 'fsa-central-mall', avgDownload: 335, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '72908', neighborhoodId: 'fsa-uafs', avgDownload: 338, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE CONNECTICUT METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'stamford',
+    name: 'Stamford-Norwalk',
+    stateCode: 'CT',
+    towerDensity: 'dense',
+    avgDownload: 385,
+    avgUpload: 50,
+    avgLatency: 16,
+    neighborhoods: [
+      {
+        id: 'stm-downtown',
+        name: 'Downtown Stamford',
+        metroId: 'stamford',
+        zipCodes: ['06901', '06902'],
+        towerCount: 16,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Financial district with corporate HQs; excellent coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 418, avgUpload: 55, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 402, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 388, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'stm-norwalk',
+        name: 'South Norwalk',
+        metroId: 'stamford',
+        zipCodes: ['06854', '06855'],
+        towerCount: 12,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'SoNo entertainment district; good waterfront coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 382, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'stm-greenwich',
+        name: 'Greenwich',
+        metroId: 'stamford',
+        zipCodes: ['06830', '06831'],
+        towerCount: 10,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Affluent suburb with excellent infrastructure; hedge fund row',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 395, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 365, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '06901', neighborhoodId: 'stm-downtown', avgDownload: 408, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '06854', neighborhoodId: 'stm-norwalk', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '06830', neighborhoodId: 'stm-greenwich', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
