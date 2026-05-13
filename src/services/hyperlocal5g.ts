@@ -10057,6 +10057,932 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '79015', neighborhoodId: 'ama-canyon', avgDownload: 318, bestCarrier: 'att', has5GUltra: false, congestionLevel: 'medium', peakHourImpact: 16 },
     ],
   },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // FARGO ND-MN
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'fargo',
+    name: 'Fargo-Moorhead',
+    stateCode: 'ND',
+    towerDensity: 'moderate',
+    avgDownload: 305,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'far-downtown',
+        name: 'Downtown Fargo',
+        metroId: 'fargo',
+        zipCodes: ['58102', '58103'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Broadway downtown. Fargo Theatre. Island Park area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'far-ndsu',
+        name: 'NDSU / North Fargo',
+        metroId: 'fargo',
+        zipCodes: ['58105', '58102'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'North Dakota State University. Fargodome. University Village.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'far-west',
+        name: 'West Fargo',
+        metroId: 'fargo',
+        zipCodes: ['58078', '58104'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'West Acres Mall. Sheyenne corridor. Fastest growing area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'far-moorhead',
+        name: 'Moorhead MN',
+        metroId: 'fargo',
+        zipCodes: ['56560', '56563'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Minnesota State Moorhead. Hjemkomst Center. Downtown Moorhead.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 40, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'tmobile', avgDownload: 258, avgUpload: 34, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '58102', neighborhoodId: 'far-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '58105', neighborhoodId: 'far-ndsu', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '58078', neighborhoodId: 'far-west', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '56560', neighborhoodId: 'far-moorhead', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SIOUX FALLS SD
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'sioux-falls',
+    name: 'Sioux Falls',
+    stateCode: 'SD',
+    towerDensity: 'moderate',
+    avgDownload: 315,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'sux-downtown',
+        name: 'Downtown Sioux Falls',
+        metroId: 'sioux-falls',
+        zipCodes: ['57104', '57103'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Phillips Avenue downtown. Falls Park. SculptureWalk.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'sux-east',
+        name: 'East Sioux Falls / Empire Mall',
+        metroId: 'sioux-falls',
+        zipCodes: ['57106', '57108'],
+        towerCount: 48,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Empire Mall. Louise Avenue corridor. Major retail area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'sux-tea-harrisburg',
+        name: 'Tea / Harrisburg',
+        metroId: 'sioux-falls',
+        zipCodes: ['57064', '57032'],
+        towerCount: 32,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Fast-growing southern suburbs. New construction areas.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '57104', neighborhoodId: 'sux-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '57106', neighborhoodId: 'sux-east', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '57064', neighborhoodId: 'sux-tea-harrisburg', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 8 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // LINCOLN NE
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'lincoln-ne',
+    name: 'Lincoln',
+    stateCode: 'NE',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'lnk-downtown',
+        name: 'Downtown Lincoln',
+        metroId: 'lincoln-ne',
+        zipCodes: ['68508', '68502'],
+        towerCount: 42,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Haymarket district. State Capitol. Pinnacle Bank Arena.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'lnk-unl',
+        name: 'UNL Campus / East Campus',
+        metroId: 'lincoln-ne',
+        zipCodes: ['68503', '68583'],
+        towerCount: 48,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Nebraska Lincoln. Memorial Stadium. Innovation Campus.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'lnk-south',
+        name: 'South Lincoln / Gateway',
+        metroId: 'lincoln-ne',
+        zipCodes: ['68506', '68516'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Gateway Mall. SouthPointe Pavilions. Holmes Lake area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '68508', neighborhoodId: 'lnk-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '68503', neighborhoodId: 'lnk-unl', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '68506', neighborhoodId: 'lnk-south', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MODESTO CA
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'modesto',
+    name: 'Modesto',
+    stateCode: 'CA',
+    towerDensity: 'moderate',
+    avgDownload: 315,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'mod-downtown',
+        name: 'Downtown Modesto',
+        metroId: 'modesto',
+        zipCodes: ['95354', '95350'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'McHenry Avenue. Gallo Center for the Arts. Modesto Arch.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'mod-north',
+        name: 'North Modesto / Village One',
+        metroId: 'modesto',
+        zipCodes: ['95356', '95357'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Vintage Faire Mall. Village One community. Northern growth area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'mod-turlock',
+        name: 'Turlock',
+        metroId: 'modesto',
+        zipCodes: ['95380', '95382'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'CSU Stanislaus. Downtown Main Street. Monte Vista Crossings.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '95354', neighborhoodId: 'mod-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '95356', neighborhoodId: 'mod-north', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '95380', neighborhoodId: 'mod-turlock', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // WACO TX
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'waco',
+    name: 'Waco',
+    stateCode: 'TX',
+    towerDensity: 'moderate',
+    avgDownload: 318,
+    avgUpload: 42,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'waco-downtown',
+        name: 'Downtown Waco',
+        metroId: 'waco',
+        zipCodes: ['76701', '76706'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Magnolia Market at the Silos. Waco Suspension Bridge. Convention Center.',
+        carriers: [
+          { carrier: 'att', avgDownload: 368, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'waco-baylor',
+        name: 'Baylor University / Campus',
+        metroId: 'waco',
+        zipCodes: ['76798', '76707'],
+        towerCount: 45,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'Baylor University campus. McLane Stadium. Brazos River area.',
+        carriers: [
+          { carrier: 'att', avgDownload: 388, avgUpload: 54, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'waco-richland',
+        name: 'Richland Mall / Bosque',
+        metroId: 'waco',
+        zipCodes: ['76710', '76712'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Richland Mall. Bosque Boulevard. Lake Waco area.',
+        carriers: [
+          { carrier: 'att', avgDownload: 378, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '76701', neighborhoodId: 'waco-downtown', avgDownload: 348, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '76798', neighborhoodId: 'waco-baylor', avgDownload: 368, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '76710', neighborhoodId: 'waco-richland', avgDownload: 358, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // EUGENE OR
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'eugene',
+    name: 'Eugene-Springfield',
+    stateCode: 'OR',
+    towerDensity: 'moderate',
+    avgDownload: 325,
+    avgUpload: 44,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'eug-downtown',
+        name: 'Downtown Eugene',
+        metroId: 'eugene',
+        zipCodes: ['97401', '97402'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Broadway district. Hult Center. Fifth Street Market.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'eug-uo',
+        name: 'University of Oregon',
+        metroId: 'eugene',
+        zipCodes: ['97403', '97405'],
+        towerCount: 48,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'UO campus. Autzen Stadium. South University district.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 398, avgUpload: 56, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 52, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 48, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'eug-springfield',
+        name: 'Springfield',
+        metroId: 'eugene',
+        zipCodes: ['97477', '97478'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Gateway Mall. Main Street Springfield. McKenzie River area.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '97401', neighborhoodId: 'eug-downtown', avgDownload: 358, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '97403', neighborhoodId: 'eug-uo', avgDownload: 378, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '97477', neighborhoodId: 'eug-springfield', avgDownload: 348, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SALEM OR
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'salem-or',
+    name: 'Salem',
+    stateCode: 'OR',
+    towerDensity: 'moderate',
+    avgDownload: 315,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'slm-downtown',
+        name: 'Downtown Salem',
+        metroId: 'salem-or',
+        zipCodes: ['97301', '97302'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol. Riverfront Park. Court Street.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'slm-south',
+        name: 'South Salem / Lancaster',
+        metroId: 'salem-or',
+        zipCodes: ['97306', '97302'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Lancaster Mall. South Commercial corridor. Willamette University.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'slm-keizer',
+        name: 'Keizer',
+        metroId: 'salem-or',
+        zipCodes: ['97303', '97307'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Keizer Station. River Road. Volcanoes Stadium.',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 298, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '97301', neighborhoodId: 'slm-downtown', avgDownload: 348, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '97306', neighborhoodId: 'slm-south', avgDownload: 358, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '97303', neighborhoodId: 'slm-keizer', avgDownload: 338, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // JACKSON MS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'jackson-ms',
+    name: 'Jackson',
+    stateCode: 'MS',
+    towerDensity: 'moderate',
+    avgDownload: 298,
+    avgUpload: 38,
+    avgLatency: 23,
+    neighborhoods: [
+      {
+        id: 'jan-downtown',
+        name: 'Downtown Jackson',
+        metroId: 'jackson-ms',
+        zipCodes: ['39201', '39202'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol. Fondren District. Mississippi Museum of Art.',
+        carriers: [
+          { carrier: 'att', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'jan-northeast',
+        name: 'Northeast Jackson / County Line',
+        metroId: 'jackson-ms',
+        zipCodes: ['39211', '39206'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Highland Village. County Line Road. Northpark Mall.',
+        carriers: [
+          { carrier: 'att', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'jan-ridgeland',
+        name: 'Ridgeland / Madison',
+        metroId: 'jackson-ms',
+        zipCodes: ['39157', '39110'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Renaissance at Colony Park. Madison shopping. Reservoir area.',
+        carriers: [
+          { carrier: 'att', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '39201', neighborhoodId: 'jan-downtown', avgDownload: 328, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '39211', neighborhoodId: 'jan-northeast', avgDownload: 348, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '39157', neighborhoodId: 'jan-ridgeland', avgDownload: 358, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MONTGOMERY AL
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'montgomery',
+    name: 'Montgomery',
+    stateCode: 'AL',
+    towerDensity: 'moderate',
+    avgDownload: 305,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'mgm-downtown',
+        name: 'Downtown Montgomery',
+        metroId: 'montgomery',
+        zipCodes: ['36104', '36106'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Dexter Avenue. State Capitol. Rosa Parks Museum. Riverfront.',
+        carriers: [
+          { carrier: 'att', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'mgm-east',
+        name: 'East Montgomery / Eastdale Mall',
+        metroId: 'montgomery',
+        zipCodes: ['36117', '36116'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Eastdale Mall. Taylor Road. Eastern Boulevard corridor.',
+        carriers: [
+          { carrier: 'att', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'mgm-prattville',
+        name: 'Prattville',
+        metroId: 'montgomery',
+        zipCodes: ['36066', '36067'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Historic downtown. Prattville shopping. Autauga Creek.',
+        carriers: [
+          { carrier: 'att', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'verizon', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '36104', neighborhoodId: 'mgm-downtown', avgDownload: 338, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '36117', neighborhoodId: 'mgm-east', avgDownload: 348, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '36066', neighborhoodId: 'mgm-prattville', avgDownload: 338, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SCRANTON PA
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'scranton',
+    name: 'Scranton-Wilkes-Barre',
+    stateCode: 'PA',
+    towerDensity: 'moderate',
+    avgDownload: 308,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'avp-downtown-scranton',
+        name: 'Downtown Scranton',
+        metroId: 'scranton',
+        zipCodes: ['18503', '18508'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Courthouse Square. Steamtown. University of Scranton.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'avp-wilkes-barre',
+        name: 'Downtown Wilkes-Barre',
+        metroId: 'scranton',
+        zipCodes: ['18701', '18702'],
+        towerCount: 32,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Public Square. Mohegan Sun Arena. King\'s College.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'avp-wyoming-valley',
+        name: 'Wyoming Valley / Kingston',
+        metroId: 'scranton',
+        zipCodes: ['18704', '18706'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Wyoming Valley Mall. Kingston. Forty Fort.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '18503', neighborhoodId: 'avp-downtown-scranton', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '18701', neighborhoodId: 'avp-wilkes-barre', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '18704', neighborhoodId: 'avp-wyoming-valley', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // CEDAR RAPIDS IA
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'cedar-rapids',
+    name: 'Cedar Rapids',
+    stateCode: 'IA',
+    towerDensity: 'moderate',
+    avgDownload: 315,
+    avgUpload: 42,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'cid-downtown',
+        name: 'Downtown Cedar Rapids',
+        metroId: 'cedar-rapids',
+        zipCodes: ['52401', '52402'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'NewBo district. Paramount Theatre. US Cellular Center.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'cid-northeast',
+        name: 'Northeast Cedar Rapids',
+        metroId: 'cedar-rapids',
+        zipCodes: ['52402', '52411'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Lindale Mall. Collins Road corridor. Major retail area.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'cid-marion',
+        name: 'Marion',
+        metroId: 'cedar-rapids',
+        zipCodes: ['52302', '52314'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Uptown Marion. Indian Creek Nature Center. Growing eastern suburb.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '52401', neighborhoodId: 'cid-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '52402', neighborhoodId: 'cid-northeast', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '52302', neighborhoodId: 'cid-marion', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ROCHESTER MN
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'rochester-mn',
+    name: 'Rochester MN',
+    stateCode: 'MN',
+    towerDensity: 'moderate',
+    avgDownload: 328,
+    avgUpload: 44,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'rst-downtown',
+        name: 'Downtown Rochester / Mayo Clinic',
+        metroId: 'rochester-mn',
+        zipCodes: ['55902', '55904'],
+        towerCount: 48,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Mayo Clinic campus. Peace Plaza. Destination Medical Center.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 46, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+        ],
+      },
+      {
+        id: 'rst-northwest',
+        name: 'Northwest Rochester / Apache Mall',
+        metroId: 'rochester-mn',
+        zipCodes: ['55901', '55906'],
+        towerCount: 45,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Apache Mall. US-52 corridor. Crossroads shopping.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'rst-byron',
+        name: 'Byron / Southwest',
+        metroId: 'rochester-mn',
+        zipCodes: ['55920', '55902'],
+        towerCount: 32,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Growing Byron suburb. Southwest Rochester expansion.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '55902', neighborhoodId: 'rst-downtown', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
+      { zip: '55901', neighborhoodId: 'rst-northwest', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '55920', neighborhoodId: 'rst-byron', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TOPEKA KS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'topeka',
+    name: 'Topeka',
+    stateCode: 'KS',
+    towerDensity: 'moderate',
+    avgDownload: 308,
+    avgUpload: 40,
+    avgLatency: 22,
+    neighborhoods: [
+      {
+        id: 'top-downtown',
+        name: 'Downtown Topeka',
+        metroId: 'topeka',
+        zipCodes: ['66603', '66607'],
+        towerCount: 35,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol. NOTO Arts District. Kansas Avenue.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'top-west',
+        name: 'West Topeka / Wanamaker',
+        metroId: 'topeka',
+        zipCodes: ['66614', '66604'],
+        towerCount: 42,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'West Ridge Mall. Wanamaker corridor. Forbes Field.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'top-washburn',
+        name: 'Washburn University Area',
+        metroId: 'topeka',
+        zipCodes: ['66606', '66611'],
+        towerCount: 38,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Washburn University. Gage Park. Historic district.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'tmobile', avgDownload: 278, avgUpload: 38, avgLatency: 26, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '66603', neighborhoodId: 'top-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '66614', neighborhoodId: 'top-west', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '66606', neighborhoodId: 'top-washburn', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // BOZEMAN MT
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'bozeman',
+    name: 'Bozeman',
+    stateCode: 'MT',
+    towerDensity: 'moderate',
+    avgDownload: 295,
+    avgUpload: 38,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'bzn-downtown',
+        name: 'Downtown Bozeman',
+        metroId: 'bozeman',
+        zipCodes: ['59715', '59718'],
+        towerCount: 28,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Main Street downtown. Montana State University. Museum of the Rockies.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 348, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 318, avgUpload: 42, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 268, avgUpload: 36, avgLatency: 28, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'bzn-four-corners',
+        name: 'Four Corners / West',
+        metroId: 'bozeman',
+        zipCodes: ['59718', '59730'],
+        towerCount: 32,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Four Corners area. Gallatin Gateway. Big Sky access.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 338, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
+          { carrier: 'att', avgDownload: 308, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'tmobile', avgDownload: 258, avgUpload: 34, avgLatency: 30, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'bzn-belgrade',
+        name: 'Belgrade',
+        metroId: 'bozeman',
+        zipCodes: ['59714', '59718'],
+        towerCount: 28,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Belgrade downtown. Airport area. Growing suburb.',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 328, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 298, avgUpload: 38, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'tmobile', avgDownload: 248, avgUpload: 32, avgLatency: 32, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '59715', neighborhoodId: 'bzn-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '59718', neighborhoodId: 'bzn-four-corners', avgDownload: 318, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '59714', neighborhoodId: 'bzn-belgrade', avgDownload: 308, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
