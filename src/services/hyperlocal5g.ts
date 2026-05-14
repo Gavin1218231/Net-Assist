@@ -19564,6 +19564,342 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '24153', neighborhoodId: 'roa-salem', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE OHIO METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'youngstown-oh',
+    name: 'Youngstown',
+    stateCode: 'OH',
+    towerDensity: 'moderate',
+    avgDownload: 342,
+    avgUpload: 43,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'yng-downtown',
+        name: 'Downtown Youngstown',
+        metroId: 'youngstown-oh',
+        zipCodes: ['44503'],
+        towerCount: 9,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Revitalized downtown; good urban coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 372, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 342, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'yng-boardman',
+        name: 'Boardman',
+        metroId: 'youngstown-oh',
+        zipCodes: ['44512'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Southern Hills Mall area; good retail coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 332, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '44503', neighborhoodId: 'yng-downtown', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '44512', neighborhoodId: 'yng-boardman', avgDownload: 352, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE MICHIGAN METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'kalamazoo-mi',
+    name: 'Kalamazoo',
+    stateCode: 'MI',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 45,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'kzoo-downtown',
+        name: 'Downtown Kalamazoo',
+        metroId: 'kalamazoo-mi',
+        zipCodes: ['49007'],
+        towerCount: 11,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Kalamazoo Mall pedestrian area; excellent coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'kzoo-wmu',
+        name: 'WMU Campus',
+        metroId: 'kalamazoo-mi',
+        zipCodes: ['49008'],
+        towerCount: 10,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Western Michigan University; excellent student coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 395, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'kzoo-portage',
+        name: 'Portage',
+        metroId: 'kalamazoo-mi',
+        zipCodes: ['49024'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Crossroads Mall area; good retail coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 365, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 348, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '49007', neighborhoodId: 'kzoo-downtown', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '49008', neighborhoodId: 'kzoo-wmu', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '49024', neighborhoodId: 'kzoo-portage', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE INDIANA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'south-bend-in',
+    name: 'South Bend',
+    stateCode: 'IN',
+    towerDensity: 'moderate',
+    avgDownload: 355,
+    avgUpload: 45,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'sb-downtown',
+        name: 'Downtown South Bend',
+        metroId: 'south-bend-in',
+        zipCodes: ['46601'],
+        towerCount: 10,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Revitalized downtown; good urban coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 385, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'sb-notre-dame',
+        name: 'Notre Dame',
+        metroId: 'south-bend-in',
+        zipCodes: ['46556'],
+        towerCount: 12,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Notre Dame; excellent gameday coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 408, avgUpload: 54, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 392, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 375, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'sb-mishawaka',
+        name: 'Mishawaka',
+        metroId: 'south-bend-in',
+        zipCodes: ['46545'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'University Park Mall area; good retail coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 375, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '46601', neighborhoodId: 'sb-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '46556', neighborhoodId: 'sb-notre-dame', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 35 },
+      { zip: '46545', neighborhoodId: 'sb-mishawaka', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE NEW YORK METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'syracuse-ny',
+    name: 'Syracuse',
+    stateCode: 'NY',
+    towerDensity: 'dense',
+    avgDownload: 378,
+    avgUpload: 49,
+    avgLatency: 16,
+    neighborhoods: [
+      {
+        id: 'syr-downtown',
+        name: 'Downtown Syracuse',
+        metroId: 'syracuse-ny',
+        zipCodes: ['13202'],
+        towerCount: 13,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Armory Square area; excellent urban coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 408, avgUpload: 54, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 395, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'syr-su',
+        name: 'Syracuse University',
+        metroId: 'syracuse-ny',
+        zipCodes: ['13210'],
+        towerCount: 14,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Syracuse University and Carrier Dome; excellent gameday coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 422, avgUpload: 56, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 405, avgUpload: 53, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 388, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'syr-destiny',
+        name: 'Destiny USA',
+        metroId: 'syracuse-ny',
+        zipCodes: ['13290'],
+        towerCount: 11,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Major shopping destination; excellent retail coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 385, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 368, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '13202', neighborhoodId: 'syr-downtown', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '13210', neighborhoodId: 'syr-su', avgDownload: 412, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 30 },
+      { zip: '13290', neighborhoodId: 'syr-destiny', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE WISCONSIN METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'appleton-wi',
+    name: 'Appleton',
+    stateCode: 'WI',
+    towerDensity: 'moderate',
+    avgDownload: 355,
+    avgUpload: 45,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'app-downtown',
+        name: 'Downtown Appleton',
+        metroId: 'appleton-wi',
+        zipCodes: ['54911'],
+        towerCount: 10,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'College Avenue downtown; good walkable coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 385, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'app-fox-river',
+        name: 'Fox River Mall',
+        metroId: 'appleton-wi',
+        zipCodes: ['54913'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail area; excellent shopping coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '54911', neighborhoodId: 'app-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '54913', neighborhoodId: 'app-fox-river', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE ILLINOIS METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'peoria-il',
+    name: 'Peoria',
+    stateCode: 'IL',
+    towerDensity: 'moderate',
+    avgDownload: 352,
+    avgUpload: 44,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'peo-downtown',
+        name: 'Downtown Peoria',
+        metroId: 'peoria-il',
+        zipCodes: ['61602'],
+        towerCount: 10,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Riverfront downtown; Caterpillar HQ area',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 382, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 352, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'peo-bradley',
+        name: 'Bradley University',
+        metroId: 'peoria-il',
+        zipCodes: ['61625'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'University area; good student coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 342, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '61602', neighborhoodId: 'peo-downtown', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '61625', neighborhoodId: 'peo-bradley', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
