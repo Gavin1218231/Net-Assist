@@ -18600,6 +18600,387 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '39540', neighborhoodId: 'gpt-diberville', avgDownload: 368, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL COLORADO METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'fort-collins-co',
+    name: 'Fort Collins',
+    stateCode: 'CO',
+    towerDensity: 'moderate',
+    avgDownload: 368,
+    avgUpload: 47,
+    avgLatency: 17,
+    neighborhoods: [
+      {
+        id: 'ftc-downtown',
+        name: 'Downtown Fort Collins',
+        metroId: 'fort-collins-co',
+        zipCodes: ['80524'],
+        towerCount: 11,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Old Town historic district; excellent walkable coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 398, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 382, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 365, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'ftc-csu',
+        name: 'CSU Campus',
+        metroId: 'fort-collins-co',
+        zipCodes: ['80523'],
+        towerCount: 10,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Colorado State University; excellent student coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 405, avgUpload: 53, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 388, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'ftc-loveland',
+        name: 'Loveland',
+        metroId: 'fort-collins-co',
+        zipCodes: ['80537', '80538'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Art community; good family coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 385, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 352, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '80524', neighborhoodId: 'ftc-downtown', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '80523', neighborhoodId: 'ftc-csu', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 25 },
+      { zip: '80537', neighborhoodId: 'ftc-loveland', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+  {
+    id: 'pueblo-co',
+    name: 'Pueblo',
+    stateCode: 'CO',
+    towerDensity: 'moderate',
+    avgDownload: 345,
+    avgUpload: 44,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'pue-downtown',
+        name: 'Downtown Pueblo',
+        metroId: 'pueblo-co',
+        zipCodes: ['81003'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown; good urban coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 375, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'pue-south',
+        name: 'South Pueblo',
+        metroId: 'pueblo-co',
+        zipCodes: ['81005'],
+        towerCount: 7,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'CSU-Pueblo area; good student coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 345, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '81003', neighborhoodId: 'pue-downtown', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '81005', neighborhoodId: 'pue-south', avgDownload: 352, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL GEORGIA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'columbus-ga',
+    name: 'Columbus',
+    stateCode: 'GA',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 46,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'clga-downtown',
+        name: 'Downtown Columbus',
+        metroId: 'columbus-ga',
+        zipCodes: ['31901'],
+        towerCount: 10,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Riverwalk area; good entertainment coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 388, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'clga-fort-benning',
+        name: 'Fort Benning Area',
+        metroId: 'columbus-ga',
+        zipCodes: ['31905'],
+        towerCount: 9,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Military base area; excellent service member coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'clga-phenix-city',
+        name: 'Phenix City',
+        metroId: 'columbus-ga',
+        zipCodes: ['36867'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Alabama border city; good cross-state coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'verizon', avgDownload: 352, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 335, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '31901', neighborhoodId: 'clga-downtown', avgDownload: 378, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '31905', neighborhoodId: 'clga-fort-benning', avgDownload: 368, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '36867', neighborhoodId: 'clga-phenix-city', avgDownload: 358, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL IDAHO METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'idaho-falls-id',
+    name: 'Idaho Falls',
+    stateCode: 'ID',
+    towerDensity: 'moderate',
+    avgDownload: 338,
+    avgUpload: 42,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'ifa-downtown',
+        name: 'Downtown Idaho Falls',
+        metroId: 'idaho-falls-id',
+        zipCodes: ['83402'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Snake River Falls area; good downtown coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 352, avgUpload: 44, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 332, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'ifa-ammon',
+        name: 'Ammon',
+        metroId: 'idaho-falls-id',
+        zipCodes: ['83406'],
+        towerCount: 7,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Growing suburb; municipal fiber competition',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 45, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 325, avgUpload: 40, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '83402', neighborhoodId: 'ifa-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '83406', neighborhoodId: 'ifa-ammon', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL HAWAII METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'kailua-kona-hi',
+    name: 'Kailua-Kona',
+    stateCode: 'HI',
+    towerDensity: 'moderate',
+    avgDownload: 345,
+    avgUpload: 44,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'kona-downtown',
+        name: 'Kailua Village',
+        metroId: 'kailua-kona-hi',
+        zipCodes: ['96740'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown; excellent tourist coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 375, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'kona-keauhou',
+        name: 'Keauhou',
+        metroId: 'kailua-kona-hi',
+        zipCodes: ['96739'],
+        towerCount: 7,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Resort area; good vacation coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 345, avgUpload: 44, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '96740', neighborhoodId: 'kona-downtown', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '96739', neighborhoodId: 'kona-keauhou', avgDownload: 352, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 14 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL MARYLAND METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'annapolis-md',
+    name: 'Annapolis',
+    stateCode: 'MD',
+    towerDensity: 'dense',
+    avgDownload: 378,
+    avgUpload: 49,
+    avgLatency: 16,
+    neighborhoods: [
+      {
+        id: 'ann-downtown',
+        name: 'Downtown Annapolis',
+        metroId: 'annapolis-md',
+        zipCodes: ['21401'],
+        towerCount: 12,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic State House area; excellent coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 408, avgUpload: 53, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 392, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 375, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'ann-usna',
+        name: 'Naval Academy',
+        metroId: 'annapolis-md',
+        zipCodes: ['21402'],
+        towerCount: 10,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'US Naval Academy; excellent coverage for midshipmen',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 415, avgUpload: 54, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 398, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 382, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'ann-eastport',
+        name: 'Eastport',
+        metroId: 'annapolis-md',
+        zipCodes: ['21403'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'residential',
+        placementNotes: 'Maritime community; good waterfront coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 395, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 362, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '21401', neighborhoodId: 'ann-downtown', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '21402', neighborhoodId: 'ann-usna', avgDownload: 405, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '21403', neighborhoodId: 'ann-eastport', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL RHODE ISLAND METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'cranston-ri',
+    name: 'Cranston',
+    stateCode: 'RI',
+    towerDensity: 'dense',
+    avgDownload: 375,
+    avgUpload: 48,
+    avgLatency: 16,
+    neighborhoods: [
+      {
+        id: 'cran-downtown',
+        name: 'Downtown Cranston',
+        metroId: 'cranston-ri',
+        zipCodes: ['02910'],
+        towerCount: 11,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Downtown Cranston; good urban coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 405, avgUpload: 53, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 388, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'cran-garden-city',
+        name: 'Garden City',
+        metroId: 'cranston-ri',
+        zipCodes: ['02920'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major shopping area; excellent retail coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 392, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 375, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 358, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '02910', neighborhoodId: 'cran-downtown', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '02920', neighborhoodId: 'cran-garden-city', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
