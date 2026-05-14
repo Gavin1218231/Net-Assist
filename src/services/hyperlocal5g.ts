@@ -18981,6 +18981,166 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '02920', neighborhoodId: 'cran-garden-city', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL KENTUCKY METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'owensboro-ky',
+    name: 'Owensboro',
+    stateCode: 'KY',
+    towerDensity: 'moderate',
+    avgDownload: 342,
+    avgUpload: 43,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'own-downtown',
+        name: 'Downtown Owensboro',
+        metroId: 'owensboro-ky',
+        zipCodes: ['42301'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Riverfront area; good downtown coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 372, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'own-south',
+        name: 'South Owensboro',
+        metroId: 'owensboro-ky',
+        zipCodes: ['42303'],
+        towerCount: 7,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Growing residential area; good family coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 358, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'verizon', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 325, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '42301', neighborhoodId: 'own-downtown', avgDownload: 362, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '42303', neighborhoodId: 'own-south', avgDownload: 348, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL SOUTH DAKOTA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'brookings-sd',
+    name: 'Brookings',
+    stateCode: 'SD',
+    towerDensity: 'sparse',
+    avgDownload: 328,
+    avgUpload: 40,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'brk-downtown',
+        name: 'Downtown Brookings',
+        metroId: 'brookings-sd',
+        zipCodes: ['57006'],
+        towerCount: 7,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'SDSU area; excellent student coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 44, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 342, avgUpload: 42, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 322, avgUpload: 39, avgLatency: 22, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '57006', neighborhoodId: 'brk-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL WEST VIRGINIA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'parkersburg-wv',
+    name: 'Parkersburg',
+    stateCode: 'WV',
+    towerDensity: 'sparse',
+    avgDownload: 322,
+    avgUpload: 39,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'pbg-downtown',
+        name: 'Downtown Parkersburg',
+        metroId: 'parkersburg-wv',
+        zipCodes: ['26101'],
+        towerCount: 7,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown; Ohio River valley terrain',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 352, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 38, avgLatency: 22, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'pbg-vienna',
+        name: 'Vienna',
+        metroId: 'parkersburg-wv',
+        zipCodes: ['26105'],
+        towerCount: 6,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Grand Central Mall area; good retail coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 342, avgUpload: 42, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 308, avgUpload: 36, avgLatency: 23, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '26101', neighborhoodId: 'pbg-downtown', avgDownload: 342, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '26105', neighborhoodId: 'pbg-vienna', avgDownload: 332, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 14 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL WYOMING METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'gillette-wy',
+    name: 'Gillette',
+    stateCode: 'WY',
+    towerDensity: 'sparse',
+    avgDownload: 312,
+    avgUpload: 38,
+    avgLatency: 23,
+    neighborhoods: [
+      {
+        id: 'gil-downtown',
+        name: 'Downtown Gillette',
+        metroId: 'gillette-wy',
+        zipCodes: ['82716'],
+        towerCount: 6,
+        buildingDensity: 'low',
+        terrainType: 'urban_core',
+        placementNotes: 'Energy capital; good coverage for workers',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 342, avgUpload: 42, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 328, avgUpload: 40, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 302, avgUpload: 35, avgLatency: 25, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '82716', neighborhoodId: 'gil-downtown', avgDownload: 332, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
