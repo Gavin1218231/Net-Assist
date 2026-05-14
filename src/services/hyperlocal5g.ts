@@ -21941,6 +21941,67 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '45429', neighborhoodId: 'day-kettering', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
     ],
   },
+  {
+    id: 'tulsa-ok',
+    name: 'Tulsa',
+    stateCode: 'OK',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 44,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'tul-downtown',
+        name: 'Downtown Tulsa',
+        metroId: 'tulsa-ok',
+        zipCodes: ['74103'],
+        towerCount: 14,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Oil capital with Art Deco downtown and strong tech sector',
+        carriers: [
+          { carrier: 'att', avgDownload: 388, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 358, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'tul-brookside',
+        name: 'Brookside',
+        metroId: 'tulsa-ok',
+        zipCodes: ['74105'],
+        towerCount: 10,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Trendy shopping and dining district with good coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 378, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'tul-south-tulsa',
+        name: 'South Tulsa',
+        metroId: 'tulsa-ok',
+        zipCodes: ['74133'],
+        towerCount: 10,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Growing suburban area with excellent newer infrastructure',
+        carriers: [
+          { carrier: 'att', avgDownload: 368, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'verizon', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 338, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '74103', neighborhoodId: 'tul-downtown', avgDownload: 378, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '74105', neighborhoodId: 'tul-brookside', avgDownload: 368, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 14 },
+      { zip: '74133', neighborhoodId: 'tul-south-tulsa', avgDownload: 358, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
