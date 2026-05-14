@@ -19900,6 +19900,246 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '61625', neighborhoodId: 'peo-bradley', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE LOUISIANA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'lafayette-la',
+    name: 'Lafayette',
+    stateCode: 'LA',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 46,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'laf-downtown',
+        name: 'Downtown Lafayette',
+        metroId: 'lafayette-la',
+        zipCodes: ['70501'],
+        towerCount: 10,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Downtown and UL Lafayette area; good Cajun country coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 388, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'laf-ambassador',
+        name: 'Ambassador Caffery',
+        metroId: 'lafayette-la',
+        zipCodes: ['70508'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail corridor; good shopping coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '70501', neighborhoodId: 'laf-downtown', avgDownload: 378, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '70508', neighborhoodId: 'laf-ambassador', avgDownload: 368, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE TENNESSEE METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'chattanooga-tn',
+    name: 'Chattanooga',
+    stateCode: 'TN',
+    towerDensity: 'dense',
+    avgDownload: 385,
+    avgUpload: 50,
+    avgLatency: 16,
+    neighborhoods: [
+      {
+        id: 'cht-downtown',
+        name: 'Downtown Chattanooga',
+        metroId: 'chattanooga-tn',
+        zipCodes: ['37402'],
+        towerCount: 13,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Riverfront and Aquarium area; excellent gig city coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 418, avgUpload: 55, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 402, avgUpload: 53, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 385, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'cht-north-shore',
+        name: 'North Shore',
+        metroId: 'chattanooga-tn',
+        zipCodes: ['37405'],
+        towerCount: 10,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'Trendy neighborhood; excellent walkable coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 402, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'verizon', avgDownload: 388, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'cht-hamilton-place',
+        name: 'Hamilton Place',
+        metroId: 'chattanooga-tn',
+        zipCodes: ['37421'],
+        towerCount: 11,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Major retail area; excellent shopping coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 395, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 362, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '37402', neighborhoodId: 'cht-downtown', avgDownload: 408, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '37405', neighborhoodId: 'cht-north-shore', avgDownload: 392, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '37421', neighborhoodId: 'cht-hamilton-place', avgDownload: 385, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE WASHINGTON METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'olympia-wa',
+    name: 'Olympia',
+    stateCode: 'WA',
+    towerDensity: 'moderate',
+    avgDownload: 362,
+    avgUpload: 46,
+    avgLatency: 17,
+    neighborhoods: [
+      {
+        id: 'oly-downtown',
+        name: 'Downtown Olympia',
+        metroId: 'olympia-wa',
+        zipCodes: ['98501'],
+        towerCount: 10,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol area; excellent government coverage',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 395, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'att', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'oly-evergreen',
+        name: 'Evergreen State College',
+        metroId: 'olympia-wa',
+        zipCodes: ['98505'],
+        towerCount: 8,
+        buildingDensity: 'low',
+        terrainType: 'mixed_use',
+        placementNotes: 'College campus; good student coverage',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 382, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'att', avgDownload: 352, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+      {
+        id: 'oly-lacey',
+        name: 'Lacey',
+        metroId: 'olympia-wa',
+        zipCodes: ['98503'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Growing suburb; good residential coverage',
+        carriers: [
+          { carrier: 'tmobile', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+          { carrier: 'att', avgDownload: 348, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '98501', neighborhoodId: 'oly-downtown', avgDownload: 385, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '98505', neighborhoodId: 'oly-evergreen', avgDownload: 372, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '98503', neighborhoodId: 'oly-lacey', avgDownload: 368, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // MORE ALABAMA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'mobile-al',
+    name: 'Mobile',
+    stateCode: 'AL',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 46,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'mob-downtown',
+        name: 'Downtown Mobile',
+        metroId: 'mobile-al',
+        zipCodes: ['36602'],
+        towerCount: 11,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Historic downtown and port area; good coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 388, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'mob-usa',
+        name: 'University of South Alabama',
+        metroId: 'mobile-al',
+        zipCodes: ['36688'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'USA campus and medical center; excellent coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+      {
+        id: 'mob-daphne',
+        name: 'Daphne',
+        metroId: 'mobile-al',
+        zipCodes: ['36526'],
+        towerCount: 8,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Eastern Shore suburb; good bay area coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 352, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 338, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '36602', neighborhoodId: 'mob-downtown', avgDownload: 378, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '36688', neighborhoodId: 'mob-usa', avgDownload: 368, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '36526', neighborhoodId: 'mob-daphne', avgDownload: 358, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
