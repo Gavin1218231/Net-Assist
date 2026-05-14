@@ -18220,6 +18220,386 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '89431', neighborhoodId: 'rno-sparks', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL VERMONT METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'montpelier-vt',
+    name: 'Montpelier',
+    stateCode: 'VT',
+    towerDensity: 'sparse',
+    avgDownload: 325,
+    avgUpload: 40,
+    avgLatency: 21,
+    neighborhoods: [
+      {
+        id: 'mtp-downtown',
+        name: 'Downtown Montpelier',
+        metroId: 'montpelier-vt',
+        zipCodes: ['05602'],
+        towerCount: 6,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol; smallest state capital has limited tower density',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 355, avgUpload: 44, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 338, avgUpload: 42, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 38, avgLatency: 22, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'mtp-barre',
+        name: 'Barre',
+        metroId: 'montpelier-vt',
+        zipCodes: ['05641'],
+        towerCount: 5,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Granite capital; hillier terrain affects signal',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 342, avgUpload: 42, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 325, avgUpload: 40, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 305, avgUpload: 36, avgLatency: 23, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '05602', neighborhoodId: 'mtp-downtown', avgDownload: 345, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '05641', neighborhoodId: 'mtp-barre', avgDownload: 332, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 8 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL DELAWARE METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'dover-de',
+    name: 'Dover',
+    stateCode: 'DE',
+    towerDensity: 'moderate',
+    avgDownload: 355,
+    avgUpload: 45,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'dov-downtown',
+        name: 'Downtown Dover',
+        metroId: 'dover-de',
+        zipCodes: ['19901'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol area; good government coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 385, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 352, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'dov-afb',
+        name: 'Dover AFB Area',
+        metroId: 'dover-de',
+        zipCodes: ['19902'],
+        towerCount: 8,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Military base area; good coverage for service members',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 358, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 342, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'dov-smyrna',
+        name: 'Smyrna',
+        metroId: 'dover-de',
+        zipCodes: ['19977'],
+        towerCount: 6,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Growing suburb; good residential coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'att', avgDownload: 345, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 328, avgUpload: 40, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '19901', neighborhoodId: 'dov-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '19902', neighborhoodId: 'dov-afb', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '19977', neighborhoodId: 'dov-smyrna', avgDownload: 352, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL ALASKA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'juneau-ak',
+    name: 'Juneau',
+    stateCode: 'AK',
+    towerDensity: 'sparse',
+    avgDownload: 308,
+    avgUpload: 37,
+    avgLatency: 24,
+    neighborhoods: [
+      {
+        id: 'jun-downtown',
+        name: 'Downtown Juneau',
+        metroId: 'juneau-ak',
+        zipCodes: ['99801'],
+        towerCount: 6,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'State Capitol; mountainous terrain limits coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 338, avgUpload: 41, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 322, avgUpload: 39, avgLatency: 23, primaryBand: 'low_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 298, avgUpload: 35, avgLatency: 26, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'jun-valley',
+        name: 'Mendenhall Valley',
+        metroId: 'juneau-ak',
+        zipCodes: ['99801'],
+        towerCount: 5,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Residential valley; glacier views but challenging terrain',
+        carriers: [
+          { carrier: 'att', avgDownload: 328, avgUpload: 40, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+          { carrier: 'verizon', avgDownload: 312, avgUpload: 37, avgLatency: 24, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 288, avgUpload: 33, avgLatency: 27, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '99801', neighborhoodId: 'jun-downtown', avgDownload: 325, bestCarrier: 'att', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL NEBRASKA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'grand-island-ne',
+    name: 'Grand Island',
+    stateCode: 'NE',
+    towerDensity: 'sparse',
+    avgDownload: 332,
+    avgUpload: 41,
+    avgLatency: 20,
+    neighborhoods: [
+      {
+        id: 'gis-downtown',
+        name: 'Downtown Grand Island',
+        metroId: 'grand-island-ne',
+        zipCodes: ['68801'],
+        towerCount: 7,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Rail town history; good downtown coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+          { carrier: 'att', avgDownload: 345, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 325, avgUpload: 40, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'gis-fonner',
+        name: 'Fonner Park Area',
+        metroId: 'grand-island-ne',
+        zipCodes: ['68803'],
+        towerCount: 6,
+        buildingDensity: 'low',
+        terrainType: 'mixed_use',
+        placementNotes: 'State Fair grounds; good event coverage',
+        carriers: [
+          { carrier: 'verizon', avgDownload: 352, avgUpload: 44, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+          { carrier: 'att', avgDownload: 335, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 318, avgUpload: 38, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'north' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '68801', neighborhoodId: 'gis-downtown', avgDownload: 352, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '68803', neighborhoodId: 'gis-fonner', avgDownload: 342, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 18 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL OKLAHOMA METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'norman-ok',
+    name: 'Norman',
+    stateCode: 'OK',
+    towerDensity: 'moderate',
+    avgDownload: 365,
+    avgUpload: 47,
+    avgLatency: 17,
+    neighborhoods: [
+      {
+        id: 'nor-downtown',
+        name: 'Downtown Norman',
+        metroId: 'norman-ok',
+        zipCodes: ['73069'],
+        towerCount: 10,
+        buildingDensity: 'high',
+        terrainType: 'urban_core',
+        placementNotes: 'Campus Corner and downtown; excellent walkable coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 395, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 382, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 365, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'nor-ou',
+        name: 'OU Campus',
+        metroId: 'norman-ok',
+        zipCodes: ['73019'],
+        towerCount: 12,
+        buildingDensity: 'medium',
+        terrainType: 'mixed_use',
+        placementNotes: 'University of Oklahoma; excellent gameday coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 408, avgUpload: 54, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'verizon', avgDownload: 392, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 375, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'nor-moore',
+        name: 'Moore',
+        metroId: 'norman-ok',
+        zipCodes: ['73160'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Fast-growing suburb; newer infrastructure',
+        carriers: [
+          { carrier: 'att', avgDownload: 382, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'verizon', avgDownload: 368, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 352, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '73069', neighborhoodId: 'nor-downtown', avgDownload: 385, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '73019', neighborhoodId: 'nor-ou', avgDownload: 395, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 30 },
+      { zip: '73160', neighborhoodId: 'nor-moore', avgDownload: 372, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+  {
+    id: 'lawton-ok',
+    name: 'Lawton',
+    stateCode: 'OK',
+    towerDensity: 'moderate',
+    avgDownload: 345,
+    avgUpload: 44,
+    avgLatency: 19,
+    neighborhoods: [
+      {
+        id: 'law-downtown',
+        name: 'Downtown Lawton',
+        metroId: 'lawton-ok',
+        zipCodes: ['73501'],
+        towerCount: 9,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Downtown area; good coverage for military families',
+        carriers: [
+          { carrier: 'att', avgDownload: 375, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 358, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+          { carrier: 'tmobile', avgDownload: 342, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'law-fort-sill',
+        name: 'Fort Sill Area',
+        metroId: 'lawton-ok',
+        zipCodes: ['73503'],
+        towerCount: 8,
+        buildingDensity: 'low',
+        terrainType: 'suburban',
+        placementNotes: 'Military base area; excellent service member coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+          { carrier: 'verizon', avgDownload: 352, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+          { carrier: 'tmobile', avgDownload: 335, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '73501', neighborhoodId: 'law-downtown', avgDownload: 362, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '73503', neighborhoodId: 'law-fort-sill', avgDownload: 355, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ADDITIONAL MISSISSIPPI METROS
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    id: 'gulfport-ms',
+    name: 'Gulfport-Biloxi',
+    stateCode: 'MS',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 46,
+    avgLatency: 18,
+    neighborhoods: [
+      {
+        id: 'gpt-downtown',
+        name: 'Downtown Gulfport',
+        metroId: 'gulfport-ms',
+        zipCodes: ['39501'],
+        towerCount: 10,
+        buildingDensity: 'medium',
+        terrainType: 'urban_core',
+        placementNotes: 'Beachfront downtown; good coastal coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 388, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+          { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        ],
+      },
+      {
+        id: 'gpt-biloxi',
+        name: 'Biloxi',
+        metroId: 'gulfport-ms',
+        zipCodes: ['39530', '39531'],
+        towerCount: 12,
+        buildingDensity: 'high',
+        terrainType: 'mixed_use',
+        placementNotes: 'Casino district; excellent entertainment coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 398, avgUpload: 52, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+          { carrier: 'verizon', avgDownload: 382, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+          { carrier: 'tmobile', avgDownload: 365, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        ],
+      },
+      {
+        id: 'gpt-diberville',
+        name: "D'Iberville",
+        metroId: 'gulfport-ms',
+        zipCodes: ['39540'],
+        towerCount: 8,
+        buildingDensity: 'medium',
+        terrainType: 'suburban',
+        placementNotes: 'Outlet mall area; good retail coverage',
+        carriers: [
+          { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        ],
+      },
+    ],
+    zipCodes: [
+      { zip: '39501', neighborhoodId: 'gpt-downtown', avgDownload: 378, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '39530', neighborhoodId: 'gpt-biloxi', avgDownload: 388, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '39540', neighborhoodId: 'gpt-diberville', avgDownload: 368, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
