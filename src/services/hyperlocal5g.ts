@@ -22477,6 +22477,266 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '14222', neighborhoodId: 'buf-elmwood', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
     ],
   },
+  {
+    id: 'pittsburgh-pa',
+    name: 'Pittsburgh',
+    stateCode: 'PA',
+    towerDensity: 'dense',
+    avgDownload: 375,
+    avgUpload: 48,
+    avgLatency: 16,
+    neighborhoods: [
+      { id: 'pit-downtown', name: 'Downtown Pittsburgh', metroId: 'pittsburgh-pa', zipCodes: ['15222'], towerCount: 18, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Golden Triangle with river confluence', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 55, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'pit-oakland', name: 'Oakland', metroId: 'pittsburgh-pa', zipCodes: ['15213'], towerCount: 16, buildingDensity: 'high', terrainType: 'mixed_use', placementNotes: 'University district with CMU and Pitt', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 53, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 368, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'pit-shadyside', name: 'Shadyside', metroId: 'pittsburgh-pa', zipCodes: ['15232'], towerCount: 12, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Upscale shopping and dining district', carriers: [
+        { carrier: 'verizon', avgDownload: 388, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'pit-squirrel-hill', name: 'Squirrel Hill', metroId: 'pittsburgh-pa', zipCodes: ['15217'], towerCount: 10, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Historic residential with commercial strip', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'pit-strip-district', name: 'Strip District', metroId: 'pittsburgh-pa', zipCodes: ['15201'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Historic market area now tech hub', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 52, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '15222', neighborhoodId: 'pit-downtown', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '15213', neighborhoodId: 'pit-oakland', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '15232', neighborhoodId: 'pit-shadyside', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '15217', neighborhoodId: 'pit-squirrel-hill', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 14 },
+      { zip: '15201', neighborhoodId: 'pit-strip-district', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  {
+    id: 'philadelphia-pa',
+    name: 'Philadelphia',
+    stateCode: 'PA',
+    towerDensity: 'ultra_dense',
+    avgDownload: 398,
+    avgUpload: 53,
+    avgLatency: 13,
+    neighborhoods: [
+      { id: 'phl-center-city', name: 'Center City', metroId: 'philadelphia-pa', zipCodes: ['19102'], towerCount: 28, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Historic downtown with dense high-rises', carriers: [
+        { carrier: 'verizon', avgDownload: 435, avgUpload: 62, avgLatency: 10, primaryBand: 'mmwave', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 415, avgUpload: 58, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 398, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'phl-university-city', name: 'University City', metroId: 'philadelphia-pa', zipCodes: ['19104'], towerCount: 22, buildingDensity: 'high', terrainType: 'mixed_use', placementNotes: 'UPenn and Drexel campus area', carriers: [
+        { carrier: 'verizon', avgDownload: 425, avgUpload: 60, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 405, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 388, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+      ]},
+      { id: 'phl-old-city', name: 'Old City', metroId: 'philadelphia-pa', zipCodes: ['19106'], towerCount: 16, buildingDensity: 'high', terrainType: 'mixed_use', placementNotes: 'Historic district near Independence Hall', carriers: [
+        { carrier: 'verizon', avgDownload: 418, avgUpload: 57, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 398, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 382, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'phl-fishtown', name: 'Fishtown', metroId: 'philadelphia-pa', zipCodes: ['19125'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Trendy neighborhood with restaurants and bars', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 55, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'phl-manayunk', name: 'Manayunk', metroId: 'philadelphia-pa', zipCodes: ['19127'], towerCount: 10, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Hillside neighborhood with Main Street shops', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'phl-south-philly', name: 'South Philadelphia', metroId: 'philadelphia-pa', zipCodes: ['19148'], towerCount: 12, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Sports complex area and Italian Market', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 52, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 375, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '19102', neighborhoodId: 'phl-center-city', avgDownload: 425, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '19104', neighborhoodId: 'phl-university-city', avgDownload: 415, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '19106', neighborhoodId: 'phl-old-city', avgDownload: 405, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 24 },
+      { zip: '19125', neighborhoodId: 'phl-fishtown', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '19127', neighborhoodId: 'phl-manayunk', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '19148', neighborhoodId: 'phl-south-philly', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+    ],
+  },
+  {
+    id: 'allentown-pa',
+    name: 'Allentown',
+    stateCode: 'PA',
+    towerDensity: 'moderate',
+    avgDownload: 355,
+    avgUpload: 43,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'all-downtown', name: 'Downtown Allentown', metroId: 'allentown-pa', zipCodes: ['18101'], towerCount: 12, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Revitalized downtown with PPL Center', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'all-west-end', name: 'West End', metroId: 'allentown-pa', zipCodes: ['18104'], towerCount: 10, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Historic residential neighborhood', carriers: [
+        { carrier: 'verizon', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 355, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 342, avgUpload: 40, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'all-lehigh-valley-mall', name: 'Lehigh Valley Mall Area', metroId: 'allentown-pa', zipCodes: ['18052'], towerCount: 12, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Major retail corridor', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '18101', neighborhoodId: 'all-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '18104', neighborhoodId: 'all-west-end', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '18052', neighborhoodId: 'all-lehigh-valley-mall', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  {
+    id: 'scranton-pa',
+    name: 'Scranton',
+    stateCode: 'PA',
+    towerDensity: 'moderate',
+    avgDownload: 345,
+    avgUpload: 41,
+    avgLatency: 20,
+    neighborhoods: [
+      { id: 'scr-downtown', name: 'Downtown Scranton', metroId: 'scranton-pa', zipCodes: ['18503'], towerCount: 10, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Electric City downtown with Steamtown', carriers: [
+        { carrier: 'verizon', avgDownload: 375, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'scr-green-ridge', name: 'Green Ridge', metroId: 'scranton-pa', zipCodes: ['18509'], towerCount: 8, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Residential area with local shops', carriers: [
+        { carrier: 'verizon', avgDownload: 362, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 345, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 332, avgUpload: 39, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '18503', neighborhoodId: 'scr-downtown', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '18509', neighborhoodId: 'scr-green-ridge', avgDownload: 352, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  {
+    id: 'harrisburg-pa',
+    name: 'Harrisburg',
+    stateCode: 'PA',
+    towerDensity: 'moderate',
+    avgDownload: 355,
+    avgUpload: 43,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'har-downtown', name: 'Downtown Harrisburg', metroId: 'harrisburg-pa', zipCodes: ['17101'], towerCount: 12, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Pennsylvania state capital district', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'har-midtown', name: 'Midtown', metroId: 'harrisburg-pa', zipCodes: ['17102'], towerCount: 10, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Restaurant Row and arts district', carriers: [
+        { carrier: 'verizon', avgDownload: 375, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'har-camp-hill', name: 'Camp Hill', metroId: 'harrisburg-pa', zipCodes: ['17011'], towerCount: 10, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Affluent West Shore suburb', carriers: [
+        { carrier: 'verizon', avgDownload: 372, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 355, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 342, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '17101', neighborhoodId: 'har-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '17102', neighborhoodId: 'har-midtown', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 14 },
+      { zip: '17011', neighborhoodId: 'har-camp-hill', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  {
+    id: 'reading-pa',
+    name: 'Reading',
+    stateCode: 'PA',
+    towerDensity: 'moderate',
+    avgDownload: 348,
+    avgUpload: 42,
+    avgLatency: 19,
+    neighborhoods: [
+      { id: 'rdg-downtown', name: 'Downtown Reading', metroId: 'reading-pa', zipCodes: ['19601'], towerCount: 10, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Historic Berks County seat', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'rdg-wyomissing', name: 'Wyomissing', metroId: 'reading-pa', zipCodes: ['19610'], towerCount: 10, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Affluent suburb with corporate HQs', carriers: [
+        { carrier: 'verizon', avgDownload: 368, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 338, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '19601', neighborhoodId: 'rdg-downtown', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '19610', neighborhoodId: 'rdg-wyomissing', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  {
+    id: 'bethlehem-pa',
+    name: 'Bethlehem',
+    stateCode: 'PA',
+    towerDensity: 'moderate',
+    avgDownload: 352,
+    avgUpload: 43,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'bth-downtown', name: 'Downtown Bethlehem', metroId: 'bethlehem-pa', zipCodes: ['18015'], towerCount: 10, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Historic Moravian district and SteelStacks', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'bth-south-side', name: 'South Side', metroId: 'bethlehem-pa', zipCodes: ['18018'], towerCount: 10, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Lehigh University area and ArtsQuest', carriers: [
+        { carrier: 'verizon', avgDownload: 375, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '18015', neighborhoodId: 'bth-downtown', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '18018', neighborhoodId: 'bth-south-side', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  {
+    id: 'lancaster-pa',
+    name: 'Lancaster',
+    stateCode: 'PA',
+    towerDensity: 'moderate',
+    avgDownload: 352,
+    avgUpload: 43,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'lan-downtown', name: 'Downtown Lancaster', metroId: 'lancaster-pa', zipCodes: ['17602'], towerCount: 12, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Historic downtown with Central Market', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'lan-park-city', name: 'Park City', metroId: 'lancaster-pa', zipCodes: ['17601'], towerCount: 10, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Major retail and outlet shopping', carriers: [
+        { carrier: 'verizon', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 355, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 342, avgUpload: 40, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'lan-lititz', name: 'Lititz', metroId: 'lancaster-pa', zipCodes: ['17543'], towerCount: 8, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Charming small town with historic district', carriers: [
+        { carrier: 'verizon', avgDownload: 365, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 348, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 335, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '17602', neighborhoodId: 'lan-downtown', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '17601', neighborhoodId: 'lan-park-city', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '17543', neighborhoodId: 'lan-lititz', avgDownload: 355, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
