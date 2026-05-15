@@ -22352,6 +22352,131 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '02906', neighborhoodId: 'pvd-east-side', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
     ],
   },
+  {
+    id: 'new-haven-ct',
+    name: 'New Haven',
+    stateCode: 'CT',
+    towerDensity: 'moderate',
+    avgDownload: 365,
+    avgUpload: 46,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'nh-downtown', name: 'Downtown New Haven', metroId: 'new-haven-ct', zipCodes: ['06510'], towerCount: 14, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Yale University city with historic Green', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 52, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'nh-east-rock', name: 'East Rock', metroId: 'new-haven-ct', zipCodes: ['06511'], towerCount: 10, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Upscale residential near park', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '06510', neighborhoodId: 'nh-downtown', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '06511', neighborhoodId: 'nh-east-rock', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  {
+    id: 'stamford-ct',
+    name: 'Stamford',
+    stateCode: 'CT',
+    towerDensity: 'dense',
+    avgDownload: 385,
+    avgUpload: 50,
+    avgLatency: 14,
+    neighborhoods: [
+      { id: 'stm-downtown', name: 'Downtown Stamford', metroId: 'stamford-ct', zipCodes: ['06901'], towerCount: 18, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'NYC commuter hub with corporate HQs', carriers: [
+        { carrier: 'verizon', avgDownload: 418, avgUpload: 58, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 398, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 385, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'stm-harbor-point', name: 'Harbor Point', metroId: 'stamford-ct', zipCodes: ['06902'], towerCount: 14, buildingDensity: 'high', terrainType: 'mixed_use', placementNotes: 'Waterfront redevelopment with new towers', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '06901', neighborhoodId: 'stm-downtown', avgDownload: 405, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '06902', neighborhoodId: 'stm-harbor-point', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  {
+    id: 'albany-ny',
+    name: 'Albany',
+    stateCode: 'NY',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 44,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'alb-downtown', name: 'Downtown Albany', metroId: 'albany-ny', zipCodes: ['12207'], towerCount: 14, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'New York State capital government district', carriers: [
+        { carrier: 'verizon', avgDownload: 388, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'alb-colonie', name: 'Colonie', metroId: 'albany-ny', zipCodes: ['12205'], towerCount: 10, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Major suburban retail center', carriers: [
+        { carrier: 'verizon', avgDownload: 375, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '12207', neighborhoodId: 'alb-downtown', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '12205', neighborhoodId: 'alb-colonie', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  {
+    id: 'yonkers-ny',
+    name: 'Yonkers',
+    stateCode: 'NY',
+    towerDensity: 'dense',
+    avgDownload: 378,
+    avgUpload: 49,
+    avgLatency: 15,
+    neighborhoods: [
+      { id: 'yon-downtown', name: 'Downtown Yonkers', metroId: 'yonkers-ny', zipCodes: ['10701'], towerCount: 16, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'NYC adjacent city with Hudson waterfront', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 56, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 378, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'yon-cross-county', name: 'Cross County', metroId: 'yonkers-ny', zipCodes: ['10704'], towerCount: 12, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Major shopping center area', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '10701', neighborhoodId: 'yon-downtown', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '10704', neighborhoodId: 'yon-cross-county', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 20 },
+    ],
+  },
+  {
+    id: 'buffalo-ny',
+    name: 'Buffalo',
+    stateCode: 'NY',
+    towerDensity: 'moderate',
+    avgDownload: 355,
+    avgUpload: 43,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'buf-downtown', name: 'Downtown Buffalo', metroId: 'buffalo-ny', zipCodes: ['14202'], towerCount: 14, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Western NY hub with waterfront revitalization', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'buf-elmwood', name: 'Elmwood Village', metroId: 'buffalo-ny', zipCodes: ['14222'], towerCount: 10, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Trendy arts and dining district', carriers: [
+        { carrier: 'verizon', avgDownload: 375, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '14202', neighborhoodId: 'buf-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '14222', neighborhoodId: 'buf-elmwood', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
