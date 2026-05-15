@@ -22227,6 +22227,131 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '53711', neighborhoodId: 'mad-west', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
     ],
   },
+  {
+    id: 'richmond-va',
+    name: 'Richmond',
+    stateCode: 'VA',
+    towerDensity: 'moderate',
+    avgDownload: 362,
+    avgUpload: 45,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'rva-downtown', name: 'Downtown Richmond', metroId: 'richmond-va', zipCodes: ['23219'], towerCount: 14, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Virginia capital with historic downtown', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 375, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'rva-short-pump', name: 'Short Pump', metroId: 'richmond-va', zipCodes: ['23233'], towerCount: 12, buildingDensity: 'medium', terrainType: 'suburban', placementNotes: 'Affluent suburban retail hub', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '23219', neighborhoodId: 'rva-downtown', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '23233', neighborhoodId: 'rva-short-pump', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  {
+    id: 'norfolk-va',
+    name: 'Norfolk',
+    stateCode: 'VA',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 44,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'nfk-downtown', name: 'Downtown Norfolk', metroId: 'norfolk-va', zipCodes: ['23510'], towerCount: 14, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Naval Station hub with waterfront', carriers: [
+        { carrier: 'verizon', avgDownload: 388, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'nfk-ghent', name: 'Ghent', metroId: 'norfolk-va', zipCodes: ['23517'], towerCount: 10, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Historic arts and dining district', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '23510', neighborhoodId: 'nfk-downtown', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '23517', neighborhoodId: 'nfk-ghent', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 14 },
+    ],
+  },
+  {
+    id: 'virginia-beach-va',
+    name: 'Virginia Beach',
+    stateCode: 'VA',
+    towerDensity: 'moderate',
+    avgDownload: 355,
+    avgUpload: 43,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'vb-oceanfront', name: 'Oceanfront', metroId: 'virginia-beach-va', zipCodes: ['23451'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Resort beach area with seasonal demand', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'vb-town-center', name: 'Town Center', metroId: 'virginia-beach-va', zipCodes: ['23462'], towerCount: 12, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Modern urban business district', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '23451', neighborhoodId: 'vb-oceanfront', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 24 },
+      { zip: '23462', neighborhoodId: 'vb-town-center', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  {
+    id: 'hartford-ct',
+    name: 'Hartford',
+    stateCode: 'CT',
+    towerDensity: 'moderate',
+    avgDownload: 365,
+    avgUpload: 46,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'htf-downtown', name: 'Downtown Hartford', metroId: 'hartford-ct', zipCodes: ['06103'], towerCount: 14, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Insurance capital of the world', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 52, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'htf-west-hartford', name: 'West Hartford', metroId: 'hartford-ct', zipCodes: ['06107'], towerCount: 10, buildingDensity: 'medium', terrainType: 'suburban', placementNotes: 'Affluent suburb with strong coverage', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '06103', neighborhoodId: 'htf-downtown', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '06107', neighborhoodId: 'htf-west-hartford', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  {
+    id: 'providence-ri',
+    name: 'Providence',
+    stateCode: 'RI',
+    towerDensity: 'moderate',
+    avgDownload: 362,
+    avgUpload: 45,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'pvd-downtown', name: 'Downtown Providence', metroId: 'providence-ri', zipCodes: ['02903'], towerCount: 14, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Rhode Island capital with arts district', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 375, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'pvd-east-side', name: 'East Side', metroId: 'providence-ri', zipCodes: ['02906'], towerCount: 10, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Brown University area residential', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '02903', neighborhoodId: 'pvd-downtown', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '02906', neighborhoodId: 'pvd-east-side', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
