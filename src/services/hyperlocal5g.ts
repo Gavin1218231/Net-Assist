@@ -10207,68 +10207,6 @@ const METRO_AREAS: MetroArea[] = [
   // ─────────────────────────────────────────────────────────────────────────────
   // LINCOLN NE
   // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'lincoln-ne',
-    name: 'Lincoln',
-    stateCode: 'NE',
-    towerDensity: 'moderate',
-    avgDownload: 325,
-    avgUpload: 44,
-    avgLatency: 20,
-    neighborhoods: [
-      {
-        id: 'lnk-downtown',
-        name: 'Downtown Lincoln',
-        metroId: 'lincoln-ne',
-        zipCodes: ['68508', '68502'],
-        towerCount: 42,
-        buildingDensity: 'high',
-        terrainType: 'urban_core',
-        placementNotes: 'Haymarket district. State Capitol. Pinnacle Bank Arena.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-      {
-        id: 'lnk-unl',
-        name: 'UNL Campus / East Campus',
-        metroId: 'lincoln-ne',
-        zipCodes: ['68503', '68583'],
-        towerCount: 48,
-        buildingDensity: 'high',
-        terrainType: 'mixed_use',
-        placementNotes: 'University of Nebraska Lincoln. Memorial Stadium. Innovation Campus.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-        ],
-      },
-      {
-        id: 'lnk-south',
-        name: 'South Lincoln / Gateway',
-        metroId: 'lincoln-ne',
-        zipCodes: ['68506', '68516'],
-        towerCount: 45,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Gateway Mall. SouthPointe Pavilions. Holmes Lake area.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '68508', neighborhoodId: 'lnk-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-      { zip: '68503', neighborhoodId: 'lnk-unl', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
-      { zip: '68506', neighborhoodId: 'lnk-south', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
-    ],
-  },
-
   // ─────────────────────────────────────────────────────────────────────────────
   // MODESTO CA
   // ─────────────────────────────────────────────────────────────────────────────
@@ -13994,71 +13932,6 @@ const METRO_AREAS: MetroArea[] = [
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // PORTLAND ME
-  // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'portland-me',
-    name: 'Portland ME',
-    stateCode: 'ME',
-    towerDensity: 'moderate',
-    avgDownload: 318,
-    avgUpload: 42,
-    avgLatency: 21,
-    neighborhoods: [
-      {
-        id: 'pwm-downtown',
-        name: 'Downtown Portland / Old Port',
-        metroId: 'portland-me',
-        zipCodes: ['04101', '04102'],
-        towerCount: 35,
-        buildingDensity: 'medium',
-        terrainType: 'urban_core',
-        placementNotes: 'Old Port district. Congress Street. Arts District.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-      {
-        id: 'pwm-south-portland',
-        name: 'South Portland / Mall',
-        metroId: 'portland-me',
-        zipCodes: ['04106', '04107'],
-        towerCount: 42,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Maine Mall. Millcreek. Running Hill Road.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
-        ],
-      },
-      {
-        id: 'pwm-westbrook',
-        name: 'Westbrook / Scarborough',
-        metroId: 'portland-me',
-        zipCodes: ['04092', '04074'],
-        towerCount: 35,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Rock Row. Scarborough Gallery. Idexx area.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 358, avgUpload: 48, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 328, avgUpload: 44, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
-          { carrier: 'tmobile', avgDownload: 288, avgUpload: 40, avgLatency: 25, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '04101', neighborhoodId: 'pwm-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
-      { zip: '04106', neighborhoodId: 'pwm-south-portland', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-      { zip: '04092', neighborhoodId: 'pwm-westbrook', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
-    ],
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────────
   // BANGOR ME
   // ─────────────────────────────────────────────────────────────────────────────
   {
@@ -14104,136 +13977,6 @@ const METRO_AREAS: MetroArea[] = [
     zipCodes: [
       { zip: '04401', neighborhoodId: 'bgr-downtown', avgDownload: 328, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
       { zip: '04473', neighborhoodId: 'bgr-bangor-mall', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
-    ],
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────────
-  // MANCHESTER NH
-  // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'manchester-nh',
-    name: 'Manchester NH',
-    stateCode: 'NH',
-    towerDensity: 'moderate',
-    avgDownload: 325,
-    avgUpload: 44,
-    avgLatency: 20,
-    neighborhoods: [
-      {
-        id: 'mht-downtown',
-        name: 'Downtown Manchester',
-        metroId: 'manchester-nh',
-        zipCodes: ['03101', '03104'],
-        towerCount: 38,
-        buildingDensity: 'medium',
-        terrainType: 'urban_core',
-        placementNotes: 'Elm Street. Millyard. SNHU Arena.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-      {
-        id: 'mht-south',
-        name: 'South Manchester / Mall of NH',
-        metroId: 'manchester-nh',
-        zipCodes: ['03103', '03109'],
-        towerCount: 42,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Mall of New Hampshire. South Willow Street. I-293 corridor.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 388, avgUpload: 54, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 358, avgUpload: 50, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 318, avgUpload: 46, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-        ],
-      },
-      {
-        id: 'mht-nashua',
-        name: 'Nashua',
-        metroId: 'manchester-nh',
-        zipCodes: ['03060', '03063'],
-        towerCount: 42,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Pheasant Lane Mall. Main Street. Daniel Webster Highway.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '03101', neighborhoodId: 'mht-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
-      { zip: '03103', neighborhoodId: 'mht-south', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-      { zip: '03060', neighborhoodId: 'mht-nashua', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-    ],
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────────
-  // BURLINGTON VT
-  // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'burlington-vt',
-    name: 'Burlington VT',
-    stateCode: 'VT',
-    towerDensity: 'moderate',
-    avgDownload: 315,
-    avgUpload: 42,
-    avgLatency: 21,
-    neighborhoods: [
-      {
-        id: 'btv-downtown',
-        name: 'Downtown Burlington',
-        metroId: 'burlington-vt',
-        zipCodes: ['05401', '05402'],
-        towerCount: 32,
-        buildingDensity: 'medium',
-        terrainType: 'urban_core',
-        placementNotes: 'Church Street Marketplace. Waterfront Park. Lake Champlain.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-      {
-        id: 'btv-uvm',
-        name: 'UVM / University',
-        metroId: 'burlington-vt',
-        zipCodes: ['05405', '05401'],
-        towerCount: 38,
-        buildingDensity: 'medium',
-        terrainType: 'mixed_use',
-        placementNotes: 'University of Vermont. UVM Medical Center. Gutterson Fieldhouse.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 52, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 348, avgUpload: 48, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 308, avgUpload: 44, avgLatency: 23, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-        ],
-      },
-      {
-        id: 'btv-south',
-        name: 'South Burlington / Williston',
-        metroId: 'burlington-vt',
-        zipCodes: ['05403', '05495'],
-        towerCount: 38,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'University Mall. Williston Road. Taft Corners.',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 368, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'att', avgDownload: 338, avgUpload: 46, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 24, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '05401', neighborhoodId: 'btv-downtown', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 18 },
-      { zip: '05405', neighborhoodId: 'btv-uvm', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
-      { zip: '05403', neighborhoodId: 'btv-south', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
     ],
   },
 
@@ -15639,70 +15382,6 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '22902', neighborhoodId: 'cville-downtown', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
       { zip: '22904', neighborhoodId: 'cville-uva', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
       { zip: '22911', neighborhoodId: 'cville-pantops', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
-    ],
-  },
-  // ─────────────────────────────────────────────────────────────────────────────
-  // MORE MID-ATLANTIC METROS
-  // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'wilmington-de',
-    name: 'Wilmington',
-    stateCode: 'DE',
-    towerDensity: 'moderate',
-    avgDownload: 355,
-    avgUpload: 46,
-    avgLatency: 18,
-    neighborhoods: [
-      {
-        id: 'wil-downtown',
-        name: 'Downtown Wilmington',
-        metroId: 'wilmington-de',
-        zipCodes: ['19801', '19802'],
-        towerCount: 12,
-        buildingDensity: 'high',
-        terrainType: 'urban_core',
-        placementNotes: 'Corporate headquarters city with banking district; good coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 388, avgUpload: 51, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
-          { carrier: 'att', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
-          { carrier: 'tmobile', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
-        ],
-      },
-      {
-        id: 'wil-riverfront',
-        name: 'Riverfront',
-        metroId: 'wilmington-de',
-        zipCodes: ['19801'],
-        towerCount: 8,
-        buildingDensity: 'medium',
-        terrainType: 'mixed_use',
-        placementNotes: 'Revitalized waterfront with stadium and retail; good coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 375, avgUpload: 49, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
-          { carrier: 'att', avgDownload: 362, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
-          { carrier: 'tmobile', avgDownload: 348, avgUpload: 44, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
-        ],
-      },
-      {
-        id: 'wil-newark-de',
-        name: 'Newark',
-        metroId: 'wilmington-de',
-        zipCodes: ['19711', '19716'],
-        towerCount: 10,
-        buildingDensity: 'medium',
-        terrainType: 'mixed_use',
-        placementNotes: 'University of Delaware area; good coverage for students',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 50, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
-          { carrier: 'att', avgDownload: 365, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
-          { carrier: 'tmobile', avgDownload: 352, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '19801', neighborhoodId: 'wil-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
-      { zip: '19801', neighborhoodId: 'wil-riverfront', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
-      { zip: '19711', neighborhoodId: 'wil-newark-de', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
     ],
   },
   // ─────────────────────────────────────────────────────────────────────────────
@@ -17590,67 +17269,6 @@ const METRO_AREAS: MetroArea[] = [
   // ADDITIONAL NEW HAMPSHIRE METROS
   // ─────────────────────────────────────────────────────────────────────────────
   {
-    id: 'nashua-nh',
-    name: 'Nashua',
-    stateCode: 'NH',
-    towerDensity: 'moderate',
-    avgDownload: 362,
-    avgUpload: 46,
-    avgLatency: 17,
-    neighborhoods: [
-      {
-        id: 'nash-downtown',
-        name: 'Downtown Nashua',
-        metroId: 'nashua-nh',
-        zipCodes: ['03060'],
-        towerCount: 10,
-        buildingDensity: 'high',
-        terrainType: 'urban_core',
-        placementNotes: 'Historic Main Street; excellent downtown coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 392, avgUpload: 51, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
-          { carrier: 'att', avgDownload: 375, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
-          { carrier: 'tmobile', avgDownload: 358, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
-        ],
-      },
-      {
-        id: 'nash-south',
-        name: 'South Nashua',
-        metroId: 'nashua-nh',
-        zipCodes: ['03062'],
-        towerCount: 8,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Tech corridor near MA border; good business coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
-          { carrier: 'att', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
-          { carrier: 'tmobile', avgDownload: 345, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
-        ],
-      },
-      {
-        id: 'nash-merrimack',
-        name: 'Merrimack',
-        metroId: 'nashua-nh',
-        zipCodes: ['03054'],
-        towerCount: 7,
-        buildingDensity: 'low',
-        terrainType: 'suburban',
-        placementNotes: 'Corporate campus area; good tech coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
-          { carrier: 'att', avgDownload: 352, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
-          { carrier: 'tmobile', avgDownload: 335, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '03060', neighborhoodId: 'nash-downtown', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-      { zip: '03062', neighborhoodId: 'nash-south', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
-      { zip: '03054', neighborhoodId: 'nash-merrimack', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
-    ],
-  },
-  {
     id: 'concord-nh',
     name: 'Concord',
     stateCode: 'NH',
@@ -18218,118 +17836,6 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '89501', neighborhoodId: 'rno-downtown', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
       { zip: '89557', neighborhoodId: 'rno-unr', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 25 },
       { zip: '89431', neighborhoodId: 'rno-sparks', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-    ],
-  },
-  // ─────────────────────────────────────────────────────────────────────────────
-  // ADDITIONAL VERMONT METROS
-  // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'montpelier-vt',
-    name: 'Montpelier',
-    stateCode: 'VT',
-    towerDensity: 'sparse',
-    avgDownload: 325,
-    avgUpload: 40,
-    avgLatency: 21,
-    neighborhoods: [
-      {
-        id: 'mtp-downtown',
-        name: 'Downtown Montpelier',
-        metroId: 'montpelier-vt',
-        zipCodes: ['05602'],
-        towerCount: 6,
-        buildingDensity: 'medium',
-        terrainType: 'urban_core',
-        placementNotes: 'State Capitol; smallest state capital has limited tower density',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 355, avgUpload: 44, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
-          { carrier: 'att', avgDownload: 338, avgUpload: 42, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
-          { carrier: 'tmobile', avgDownload: 318, avgUpload: 38, avgLatency: 22, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'west' },
-        ],
-      },
-      {
-        id: 'mtp-barre',
-        name: 'Barre',
-        metroId: 'montpelier-vt',
-        zipCodes: ['05641'],
-        towerCount: 5,
-        buildingDensity: 'low',
-        terrainType: 'suburban',
-        placementNotes: 'Granite capital; hillier terrain affects signal',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 342, avgUpload: 42, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-          { carrier: 'att', avgDownload: 325, avgUpload: 40, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'southeast' },
-          { carrier: 'tmobile', avgDownload: 305, avgUpload: 36, avgLatency: 23, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '05602', neighborhoodId: 'mtp-downtown', avgDownload: 345, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
-      { zip: '05641', neighborhoodId: 'mtp-barre', avgDownload: 332, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 8 },
-    ],
-  },
-  // ─────────────────────────────────────────────────────────────────────────────
-  // ADDITIONAL DELAWARE METROS
-  // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'dover-de',
-    name: 'Dover',
-    stateCode: 'DE',
-    towerDensity: 'moderate',
-    avgDownload: 355,
-    avgUpload: 45,
-    avgLatency: 18,
-    neighborhoods: [
-      {
-        id: 'dov-downtown',
-        name: 'Downtown Dover',
-        metroId: 'dover-de',
-        zipCodes: ['19901'],
-        towerCount: 9,
-        buildingDensity: 'medium',
-        terrainType: 'urban_core',
-        placementNotes: 'State Capitol area; good government coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 385, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
-          { carrier: 'att', avgDownload: 368, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
-          { carrier: 'tmobile', avgDownload: 352, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
-        ],
-      },
-      {
-        id: 'dov-afb',
-        name: 'Dover AFB Area',
-        metroId: 'dover-de',
-        zipCodes: ['19902'],
-        towerCount: 8,
-        buildingDensity: 'low',
-        terrainType: 'suburban',
-        placementNotes: 'Military base area; good coverage for service members',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
-          { carrier: 'att', avgDownload: 358, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
-          { carrier: 'tmobile', avgDownload: 342, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
-        ],
-      },
-      {
-        id: 'dov-smyrna',
-        name: 'Smyrna',
-        metroId: 'dover-de',
-        zipCodes: ['19977'],
-        towerCount: 6,
-        buildingDensity: 'low',
-        terrainType: 'suburban',
-        placementNotes: 'Growing suburb; good residential coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 362, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-          { carrier: 'att', avgDownload: 345, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
-          { carrier: 'tmobile', avgDownload: 328, avgUpload: 40, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '19901', neighborhoodId: 'dov-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
-      { zip: '19902', neighborhoodId: 'dov-afb', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
-      { zip: '19977', neighborhoodId: 'dov-smyrna', avgDownload: 352, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
     ],
   },
   // ─────────────────────────────────────────────────────────────────────────────
@@ -22735,6 +22241,455 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '17602', neighborhoodId: 'lan-downtown', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
       { zip: '17601', neighborhoodId: 'lan-park-city', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
       { zip: '17543', neighborhoodId: 'lan-lititz', avgDownload: 355, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // Vermont metros
+  {
+    id: 'burlington-vt',
+    name: 'Burlington',
+    stateCode: 'VT',
+    towerDensity: 'moderate',
+    avgDownload: 345,
+    avgUpload: 42,
+    avgLatency: 19,
+    neighborhoods: [
+      { id: 'bur-downtown', name: 'Downtown Burlington', metroId: 'burlington-vt', zipCodes: ['05401'], towerCount: 10, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Church Street marketplace and waterfront', carriers: [
+        { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'bur-old-north', name: 'Old North End', metroId: 'burlington-vt', zipCodes: ['05401'], towerCount: 8, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Historic residential with diverse housing', carriers: [
+        { carrier: 'verizon', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 348, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 335, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'bur-south-end', name: 'South End', metroId: 'burlington-vt', zipCodes: ['05401'], towerCount: 9, buildingDensity: 'low', terrainType: 'mixed_use', placementNotes: 'Arts district with converted warehouses', carriers: [
+        { carrier: 'verizon', avgDownload: 368, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 340, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'bur-hill', name: 'The Hill Section', metroId: 'burlington-vt', zipCodes: ['05401'], towerCount: 7, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'UVM campus area with elevation', carriers: [
+        { carrier: 'verizon', avgDownload: 355, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 342, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 328, avgUpload: 38, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'west' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '05401', neighborhoodId: 'bur-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  {
+    id: 'montpelier-vt',
+    name: 'Montpelier',
+    stateCode: 'VT',
+    towerDensity: 'sparse',
+    avgDownload: 285,
+    avgUpload: 35,
+    avgLatency: 24,
+    neighborhoods: [
+      { id: 'mtp-downtown', name: 'Downtown Montpelier', metroId: 'montpelier-vt', zipCodes: ['05602'], towerCount: 5, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'State capital with historic buildings', carriers: [
+        { carrier: 'verizon', avgDownload: 305, avgUpload: 38, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 292, avgUpload: 36, avgLatency: 23, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 278, avgUpload: 33, avgLatency: 26, primaryBand: 'low_band', towerProximity: 'far', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+      { id: 'mtp-barre-rd', name: 'Barre Road Area', metroId: 'montpelier-vt', zipCodes: ['05602'], towerCount: 4, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Commercial corridor with valley terrain', carriers: [
+        { carrier: 'verizon', avgDownload: 295, avgUpload: 36, avgLatency: 22, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 282, avgUpload: 34, avgLatency: 24, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 268, avgUpload: 31, avgLatency: 27, primaryBand: 'low_band', towerProximity: 'far', signalQuality: 'fair', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '05602', neighborhoodId: 'mtp-downtown', avgDownload: 292, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  {
+    id: 'rutland-vt',
+    name: 'Rutland',
+    stateCode: 'VT',
+    towerDensity: 'sparse',
+    avgDownload: 275,
+    avgUpload: 34,
+    avgLatency: 25,
+    neighborhoods: [
+      { id: 'rut-downtown', name: 'Downtown Rutland', metroId: 'rutland-vt', zipCodes: ['05701'], towerCount: 5, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Mountain town commercial center', carriers: [
+        { carrier: 'verizon', avgDownload: 298, avgUpload: 37, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 285, avgUpload: 35, avgLatency: 24, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 268, avgUpload: 32, avgLatency: 27, primaryBand: 'low_band', towerProximity: 'far', signalQuality: 'fair', bestDirection: 'west' },
+      ]},
+      { id: 'rut-west', name: 'West Rutland', metroId: 'rutland-vt', zipCodes: ['05777'], towerCount: 3, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Residential area with marble quarry history', carriers: [
+        { carrier: 'verizon', avgDownload: 282, avgUpload: 34, avgLatency: 24, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 272, avgUpload: 32, avgLatency: 26, primaryBand: 'low_band', towerProximity: 'far', signalQuality: 'fair', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 258, avgUpload: 30, avgLatency: 29, primaryBand: 'low_band', towerProximity: 'far', signalQuality: 'weak', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '05701', neighborhoodId: 'rut-downtown', avgDownload: 285, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 8 },
+      { zip: '05777', neighborhoodId: 'rut-west', avgDownload: 272, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 6 },
+    ],
+  },
+  // Delaware metros
+  {
+    id: 'wilmington-de',
+    name: 'Wilmington',
+    stateCode: 'DE',
+    towerDensity: 'dense',
+    avgDownload: 385,
+    avgUpload: 48,
+    avgLatency: 15,
+    neighborhoods: [
+      { id: 'wil-downtown', name: 'Downtown Wilmington', metroId: 'wilmington-de', zipCodes: ['19801'], towerCount: 16, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Financial district and Riverfront', carriers: [
+        { carrier: 'verizon', avgDownload: 415, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 385, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+      ]},
+      { id: 'wil-trolley', name: 'Trolley Square', metroId: 'wilmington-de', zipCodes: ['19806'], towerCount: 11, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Historic neighborhood with shops and dining', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'wil-riverfront', name: 'Riverfront', metroId: 'wilmington-de', zipCodes: ['19801'], towerCount: 13, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Christina River development with minor league ballpark', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'wil-highlands', name: 'Highlands', metroId: 'wilmington-de', zipCodes: ['19802'], towerCount: 9, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Scenic residential with park access', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '19801', neighborhoodId: 'wil-downtown', avgDownload: 400, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+      { zip: '19806', neighborhoodId: 'wil-trolley', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '19802', neighborhoodId: 'wil-highlands', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  {
+    id: 'newark-de',
+    name: 'Newark',
+    stateCode: 'DE',
+    towerDensity: 'moderate',
+    avgDownload: 362,
+    avgUpload: 44,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'nwk-downtown', name: 'Downtown Newark', metroId: 'newark-de', zipCodes: ['19711'], towerCount: 11, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Main Street shopping and dining', carriers: [
+        { carrier: 'verizon', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'nwk-ud-campus', name: 'UD Campus Area', metroId: 'newark-de', zipCodes: ['19716'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'University of Delaware campus', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'nwk-christiana', name: 'Christiana', metroId: 'newark-de', zipCodes: ['19702'], towerCount: 12, buildingDensity: 'medium', terrainType: 'suburban', placementNotes: 'Major retail hub with Christiana Mall', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '19711', neighborhoodId: 'nwk-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '19716', neighborhoodId: 'nwk-ud-campus', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 25 },
+      { zip: '19702', neighborhoodId: 'nwk-christiana', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  {
+    id: 'dover-de',
+    name: 'Dover',
+    stateCode: 'DE',
+    towerDensity: 'moderate',
+    avgDownload: 348,
+    avgUpload: 42,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'dov-downtown', name: 'Downtown Dover', metroId: 'dover-de', zipCodes: ['19901'], towerCount: 9, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'State capital with historic green', carriers: [
+        { carrier: 'verizon', avgDownload: 375, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'dov-speedway', name: 'Dover Speedway Area', metroId: 'dover-de', zipCodes: ['19904'], towerCount: 8, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'NASCAR track and casino resort', carriers: [
+        { carrier: 'verizon', avgDownload: 365, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 352, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 338, avgUpload: 39, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'dov-afb', name: 'Dover AFB Area', metroId: 'dover-de', zipCodes: ['19902'], towerCount: 7, buildingDensity: 'low', terrainType: 'mixed_use', placementNotes: 'Near Dover Air Force Base', carriers: [
+        { carrier: 'verizon', avgDownload: 358, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 348, avgUpload: 41, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 332, avgUpload: 38, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '19901', neighborhoodId: 'dov-downtown', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '19904', neighborhoodId: 'dov-speedway', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 20 },
+      { zip: '19902', neighborhoodId: 'dov-afb', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 8 },
+    ],
+  },
+  // Washington DC area
+  {
+    id: 'washington-dc',
+    name: 'Washington',
+    stateCode: 'DC',
+    towerDensity: 'ultra_dense',
+    avgDownload: 425,
+    avgUpload: 55,
+    avgLatency: 12,
+    neighborhoods: [
+      { id: 'dc-downtown', name: 'Downtown DC', metroId: 'washington-dc', zipCodes: ['20001'], towerCount: 28, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Federal buildings and monuments', carriers: [
+        { carrier: 'verizon', avgDownload: 465, avgUpload: 62, avgLatency: 10, primaryBand: 'mmwave', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 448, avgUpload: 58, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 432, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+      ]},
+      { id: 'dc-capitol-hill', name: 'Capitol Hill', metroId: 'washington-dc', zipCodes: ['20003'], towerCount: 22, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Historic rowhouses near US Capitol', carriers: [
+        { carrier: 'verizon', avgDownload: 455, avgUpload: 59, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 438, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 422, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'dc-dupont', name: 'Dupont Circle', metroId: 'washington-dc', zipCodes: ['20036'], towerCount: 20, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Embassy row and vibrant nightlife', carriers: [
+        { carrier: 'verizon', avgDownload: 448, avgUpload: 57, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 435, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 418, avgUpload: 52, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+      ]},
+      { id: 'dc-georgetown', name: 'Georgetown', metroId: 'washington-dc', zipCodes: ['20007'], towerCount: 18, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Historic waterfront with university', carriers: [
+        { carrier: 'verizon', avgDownload: 442, avgUpload: 56, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 428, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 412, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'dc-adams-morgan', name: 'Adams Morgan', metroId: 'washington-dc', zipCodes: ['20009'], towerCount: 16, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Diverse neighborhood with nightlife', carriers: [
+        { carrier: 'verizon', avgDownload: 438, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 422, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 408, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'dc-navy-yard', name: 'Navy Yard', metroId: 'washington-dc', zipCodes: ['20374'], towerCount: 19, buildingDensity: 'high', terrainType: 'mixed_use', placementNotes: 'Waterfront development with Nationals Park', carriers: [
+        { carrier: 'verizon', avgDownload: 452, avgUpload: 58, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 435, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 418, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '20001', neighborhoodId: 'dc-downtown', avgDownload: 450, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '20003', neighborhoodId: 'dc-capitol-hill', avgDownload: 442, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '20036', neighborhoodId: 'dc-dupont', avgDownload: 438, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '20007', neighborhoodId: 'dc-georgetown', avgDownload: 432, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+      { zip: '20009', neighborhoodId: 'dc-adams-morgan', avgDownload: 428, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '20374', neighborhoodId: 'dc-navy-yard', avgDownload: 438, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 24 },
+    ],
+  },
+  // Maine metros
+  {
+    id: 'portland-me',
+    name: 'Portland',
+    stateCode: 'ME',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 44,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'pme-downtown', name: 'Downtown Portland', metroId: 'portland-me', zipCodes: ['04101'], towerCount: 12, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Old Port historic district and waterfront', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'pme-west-end', name: 'West End', metroId: 'portland-me', zipCodes: ['04102'], towerCount: 9, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Victorian neighborhood with Western Promenade', carriers: [
+        { carrier: 'verizon', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'pme-east-bayside', name: 'East Bayside', metroId: 'portland-me', zipCodes: ['04103'], towerCount: 10, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Emerging arts district and breweries', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'pme-deering', name: 'Deering Center', metroId: 'portland-me', zipCodes: ['04103'], towerCount: 8, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Residential with parks and schools', carriers: [
+        { carrier: 'verizon', avgDownload: 365, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 352, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 338, avgUpload: 39, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '04101', neighborhoodId: 'pme-downtown', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '04102', neighborhoodId: 'pme-west-end', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '04103', neighborhoodId: 'pme-east-bayside', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+  {
+    id: 'bangor-me',
+    name: 'Bangor',
+    stateCode: 'ME',
+    towerDensity: 'moderate',
+    avgDownload: 332,
+    avgUpload: 40,
+    avgLatency: 20,
+    neighborhoods: [
+      { id: 'ban-downtown', name: 'Downtown Bangor', metroId: 'bangor-me', zipCodes: ['04401'], towerCount: 8, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Historic downtown on Penobscot River', carriers: [
+        { carrier: 'verizon', avgDownload: 358, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 345, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 332, avgUpload: 39, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'ban-broadway', name: 'Broadway Area', metroId: 'bangor-me', zipCodes: ['04401'], towerCount: 7, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Commercial corridor with retail', carriers: [
+        { carrier: 'verizon', avgDownload: 348, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 335, avgUpload: 39, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 322, avgUpload: 37, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+      { id: 'ban-mall', name: 'Bangor Mall Area', metroId: 'bangor-me', zipCodes: ['04401'], towerCount: 9, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Major retail hub with restaurants', carriers: [
+        { carrier: 'verizon', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 338, avgUpload: 40, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 325, avgUpload: 38, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '04401', neighborhoodId: 'ban-downtown', avgDownload: 352, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  // New Hampshire metros
+  {
+    id: 'manchester-nh',
+    name: 'Manchester',
+    stateCode: 'NH',
+    towerDensity: 'moderate',
+    avgDownload: 365,
+    avgUpload: 45,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'mnh-downtown', name: 'Downtown Manchester', metroId: 'manchester-nh', zipCodes: ['03101'], towerCount: 13, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Millyard historic district on Merrimack River', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 362, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'mnh-south', name: 'South Manchester', metroId: 'manchester-nh', zipCodes: ['03103'], towerCount: 10, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Residential with local businesses', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'mnh-north', name: 'North End', metroId: 'manchester-nh', zipCodes: ['03104'], towerCount: 9, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Quiet residential near airport', carriers: [
+        { carrier: 'verizon', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'mnh-west', name: 'West Side', metroId: 'manchester-nh', zipCodes: ['03102'], towerCount: 11, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Commercial area with mall access', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '03101', neighborhoodId: 'mnh-downtown', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '03103', neighborhoodId: 'mnh-south', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '03104', neighborhoodId: 'mnh-north', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '03102', neighborhoodId: 'mnh-west', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+  {
+    id: 'nashua-nh',
+    name: 'Nashua',
+    stateCode: 'NH',
+    towerDensity: 'moderate',
+    avgDownload: 372,
+    avgUpload: 46,
+    avgLatency: 16,
+    neighborhoods: [
+      { id: 'nas-downtown', name: 'Downtown Nashua', metroId: 'nashua-nh', zipCodes: ['03060'], towerCount: 11, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Historic downtown on Nashua River', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 368, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'nas-south', name: 'South Nashua', metroId: 'nashua-nh', zipCodes: ['03062'], towerCount: 12, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Pheasant Lane Mall and retail corridor', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'nas-north', name: 'North Nashua', metroId: 'nashua-nh', zipCodes: ['03063'], towerCount: 9, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Quiet residential near Merrimack', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '03060', neighborhoodId: 'nas-downtown', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '03062', neighborhoodId: 'nas-south', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '03063', neighborhoodId: 'nas-north', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // Nebraska metros
+  {
+    id: 'omaha-ne',
+    name: 'Omaha',
+    stateCode: 'NE',
+    towerDensity: 'dense',
+    avgDownload: 385,
+    avgUpload: 48,
+    avgLatency: 15,
+    neighborhoods: [
+      { id: 'oma-downtown', name: 'Downtown Omaha', metroId: 'omaha-ne', zipCodes: ['68102'], towerCount: 18, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Old Market and Convention Center', carriers: [
+        { carrier: 'verizon', avgDownload: 418, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 402, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 388, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+      ]},
+      { id: 'oma-midtown', name: 'Midtown', metroId: 'omaha-ne', zipCodes: ['68131'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Historic Blackstone and Dundee', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 378, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'oma-aksarben', name: 'Aksarben', metroId: 'omaha-ne', zipCodes: ['68106'], towerCount: 15, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'UNO campus and new development', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 382, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'oma-west', name: 'West Omaha', metroId: 'omaha-ne', zipCodes: ['68144'], towerCount: 16, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Growing suburbs with retail centers', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 385, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 372, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'oma-benson', name: 'Benson', metroId: 'omaha-ne', zipCodes: ['68104'], towerCount: 11, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Trendy neighborhood with local shops', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '68102', neighborhoodId: 'oma-downtown', avgDownload: 402, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '68131', neighborhoodId: 'oma-midtown', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '68106', neighborhoodId: 'oma-aksarben', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '68144', neighborhoodId: 'oma-west', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '68104', neighborhoodId: 'oma-benson', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  {
+    id: 'lincoln-ne',
+    name: 'Lincoln',
+    stateCode: 'NE',
+    towerDensity: 'moderate',
+    avgDownload: 368,
+    avgUpload: 45,
+    avgLatency: 16,
+    neighborhoods: [
+      { id: 'lin-downtown', name: 'Downtown Lincoln', metroId: 'lincoln-ne', zipCodes: ['68508'], towerCount: 14, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'State Capitol and Haymarket District', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'lin-campus', name: 'UNL Campus', metroId: 'lincoln-ne', zipCodes: ['68503'], towerCount: 16, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'University of Nebraska campus', carriers: [
+        { carrier: 'verizon', avgDownload: 402, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 385, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'lin-south', name: 'South Lincoln', metroId: 'lincoln-ne', zipCodes: ['68506'], towerCount: 12, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Gateway Mall and residential', carriers: [
+        { carrier: 'verizon', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'lin-havelock', name: 'Havelock', metroId: 'lincoln-ne', zipCodes: ['68521'], towerCount: 9, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Historic rail community', carriers: [
+        { carrier: 'verizon', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '68508', neighborhoodId: 'lin-downtown', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 15 },
+      { zip: '68503', neighborhoodId: 'lin-campus', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 24 },
+      { zip: '68506', neighborhoodId: 'lin-south', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '68521', neighborhoodId: 'lin-havelock', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 8 },
     ],
   },
 ];
