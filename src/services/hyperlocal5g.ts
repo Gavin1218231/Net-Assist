@@ -8717,84 +8717,6 @@ const METRO_AREAS: MetroArea[] = [
   // ─────────────────────────────────────────────────────────────────────────────
   // FAYETTEVILLE AR
   // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'fayetteville-ar',
-    name: 'Fayetteville / Northwest Arkansas',
-    stateCode: 'AR',
-    towerDensity: 'moderate',
-    avgDownload: 335,
-    avgUpload: 46,
-    avgLatency: 19,
-    neighborhoods: [
-      {
-        id: 'nwa-fayetteville',
-        name: 'Fayetteville / U of A',
-        metroId: 'fayetteville-ar',
-        zipCodes: ['72701', '72703'],
-        towerCount: 45,
-        buildingDensity: 'medium',
-        terrainType: 'mixed_use',
-        placementNotes: 'University of Arkansas campus. Dickson Street entertainment. Downtown Square.',
-        carriers: [
-          { carrier: 'att', avgDownload: 378, avgUpload: 52, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'verizon', avgDownload: 348, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 308, avgUpload: 42, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-        ],
-      },
-      {
-        id: 'nwa-rogers',
-        name: 'Rogers / Pinnacle Hills',
-        metroId: 'fayetteville-ar',
-        zipCodes: ['72756', '72758'],
-        towerCount: 48,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Pinnacle Hills Promenade. Walmart AMP amphitheater. Downtown Rogers.',
-        carriers: [
-          { carrier: 'att', avgDownload: 388, avgUpload: 54, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'verizon', avgDownload: 358, avgUpload: 50, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 318, avgUpload: 44, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-        ],
-      },
-      {
-        id: 'nwa-bentonville',
-        name: 'Bentonville',
-        metroId: 'fayetteville-ar',
-        zipCodes: ['72712', '72713'],
-        towerCount: 55,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Walmart HQ. Crystal Bridges Museum. Downtown Square. Best coverage in region.',
-        carriers: [
-          { carrier: 'att', avgDownload: 408, avgUpload: 58, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 54, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 338, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-        ],
-      },
-      {
-        id: 'nwa-springdale',
-        name: 'Springdale',
-        metroId: 'fayetteville-ar',
-        zipCodes: ['72762', '72764'],
-        towerCount: 42,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Tyson Foods HQ. Arvest Ballpark. Downtown Springdale.',
-        carriers: [
-          { carrier: 'att', avgDownload: 368, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'verizon', avgDownload: 338, avgUpload: 46, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'any' },
-          { carrier: 'tmobile', avgDownload: 298, avgUpload: 42, avgLatency: 22, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '72701', neighborhoodId: 'nwa-fayetteville', avgDownload: 358, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
-      { zip: '72756', neighborhoodId: 'nwa-rogers', avgDownload: 368, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
-      { zip: '72712', neighborhoodId: 'nwa-bentonville', avgDownload: 388, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
-      { zip: '72762', neighborhoodId: 'nwa-springdale', avgDownload: 348, bestCarrier: 'att', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 14 },
-    ],
-  },
-
   // ─────────────────────────────────────────────────────────────────────────────
   // AUGUSTA GA
   // ─────────────────────────────────────────────────────────────────────────────
@@ -17490,70 +17412,6 @@ const METRO_AREAS: MetroArea[] = [
     ],
   },
   // ─────────────────────────────────────────────────────────────────────────────
-  // ADDITIONAL NEW MEXICO METROS
-  // ─────────────────────────────────────────────────────────────────────────────
-  {
-    id: 'santa-fe-nm',
-    name: 'Santa Fe',
-    stateCode: 'NM',
-    towerDensity: 'moderate',
-    avgDownload: 352,
-    avgUpload: 45,
-    avgLatency: 18,
-    neighborhoods: [
-      {
-        id: 'sfe-plaza',
-        name: 'Downtown Plaza',
-        metroId: 'santa-fe-nm',
-        zipCodes: ['87501'],
-        towerCount: 10,
-        buildingDensity: 'high',
-        terrainType: 'urban_core',
-        placementNotes: 'Historic plaza and Canyon Road; adobe buildings may affect signal',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 382, avgUpload: 49, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
-          { carrier: 'att', avgDownload: 365, avgUpload: 47, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
-          { carrier: 'tmobile', avgDownload: 348, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
-        ],
-      },
-      {
-        id: 'sfe-cerrillos',
-        name: 'Cerrillos Road',
-        metroId: 'santa-fe-nm',
-        zipCodes: ['87505'],
-        towerCount: 9,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Main commercial corridor; good retail coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 372, avgUpload: 48, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
-          { carrier: 'att', avgDownload: 355, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
-          { carrier: 'tmobile', avgDownload: 338, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
-        ],
-      },
-      {
-        id: 'sfe-eldorado',
-        name: 'Eldorado',
-        metroId: 'santa-fe-nm',
-        zipCodes: ['87508'],
-        towerCount: 6,
-        buildingDensity: 'low',
-        terrainType: 'suburban',
-        placementNotes: 'Planned community; some coverage challenges from terrain',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 355, avgUpload: 45, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
-          { carrier: 'att', avgDownload: 338, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northwest' },
-          { carrier: 'tmobile', avgDownload: 322, avgUpload: 39, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'north' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '87501', neighborhoodId: 'sfe-plaza', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
-      { zip: '87505', neighborhoodId: 'sfe-cerrillos', avgDownload: 362, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-      { zip: '87508', neighborhoodId: 'sfe-eldorado', avgDownload: 345, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 10 },
-    ],
-  },
-  // ─────────────────────────────────────────────────────────────────────────────
   // ADDITIONAL NEVADA METROS
   // ─────────────────────────────────────────────────────────────────────────────
   {
@@ -20447,128 +20305,6 @@ const METRO_AREAS: MetroArea[] = [
     ],
   },
   {
-    id: 'lexington-ky',
-    name: 'Lexington',
-    stateCode: 'KY',
-    towerDensity: 'moderate',
-    avgDownload: 358,
-    avgUpload: 44,
-    avgLatency: 18,
-    neighborhoods: [
-      {
-        id: 'lex-downtown',
-        name: 'Downtown Lexington',
-        metroId: 'lexington-ky',
-        zipCodes: ['40507'],
-        towerCount: 14,
-        buildingDensity: 'high',
-        terrainType: 'urban_core',
-        placementNotes: 'Horse country capital with strong urban 5G deployment',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 388, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
-          { carrier: 'att', avgDownload: 372, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
-          { carrier: 'tmobile', avgDownload: 358, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
-        ],
-      },
-      {
-        id: 'lex-university',
-        name: 'UK Campus',
-        metroId: 'lexington-ky',
-        zipCodes: ['40506'],
-        towerCount: 12,
-        buildingDensity: 'medium',
-        terrainType: 'mixed_use',
-        placementNotes: 'University of Kentucky campus with high-capacity network',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 378, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
-          { carrier: 'att', avgDownload: 362, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
-          { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-      {
-        id: 'lex-hamburg',
-        name: 'Hamburg',
-        metroId: 'lexington-ky',
-        zipCodes: ['40509'],
-        towerCount: 10,
-        buildingDensity: 'medium',
-        terrainType: 'suburban',
-        placementNotes: 'Major retail and residential area with good coverage',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 368, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
-          { carrier: 'att', avgDownload: 352, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
-          { carrier: 'tmobile', avgDownload: 338, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '40507', neighborhoodId: 'lex-downtown', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-      { zip: '40506', neighborhoodId: 'lex-university', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
-      { zip: '40509', neighborhoodId: 'lex-hamburg', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
-    ],
-  },
-  {
-    id: 'knoxville-tn',
-    name: 'Knoxville',
-    stateCode: 'TN',
-    towerDensity: 'moderate',
-    avgDownload: 355,
-    avgUpload: 43,
-    avgLatency: 18,
-    neighborhoods: [
-      {
-        id: 'knox-downtown',
-        name: 'Downtown Knoxville',
-        metroId: 'knoxville-tn',
-        zipCodes: ['37902'],
-        towerCount: 14,
-        buildingDensity: 'high',
-        terrainType: 'urban_core',
-        placementNotes: 'East Tennessee hub with growing tech sector driving 5G',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
-          { carrier: 'att', avgDownload: 368, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
-          { carrier: 'tmobile', avgDownload: 355, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
-        ],
-      },
-      {
-        id: 'knox-ut-campus',
-        name: 'UT Campus',
-        metroId: 'knoxville-tn',
-        zipCodes: ['37916'],
-        towerCount: 12,
-        buildingDensity: 'medium',
-        terrainType: 'mixed_use',
-        placementNotes: 'University of Tennessee campus with enhanced capacity',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 375, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
-          { carrier: 'att', avgDownload: 358, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
-          { carrier: 'tmobile', avgDownload: 345, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
-        ],
-      },
-      {
-        id: 'knox-west-hills',
-        name: 'West Hills',
-        metroId: 'knoxville-tn',
-        zipCodes: ['37919'],
-        towerCount: 8,
-        buildingDensity: 'low',
-        terrainType: 'residential',
-        placementNotes: 'Established residential area with hilly terrain',
-        carriers: [
-          { carrier: 'verizon', avgDownload: 365, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
-          { carrier: 'att', avgDownload: 348, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
-          { carrier: 'tmobile', avgDownload: 335, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'east' },
-        ],
-      },
-    ],
-    zipCodes: [
-      { zip: '37902', neighborhoodId: 'knox-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
-      { zip: '37916', neighborhoodId: 'knox-ut-campus', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
-      { zip: '37919', neighborhoodId: 'knox-west-hills', avgDownload: 355, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
-    ],
-  },
-  {
     id: 'savannah-ga',
     name: 'Savannah',
     stateCode: 'GA',
@@ -22787,6 +22523,485 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '29607', neighborhoodId: 'gvl-haywood', avgDownload: 405, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
       { zip: '29615', neighborhoodId: 'gvl-woodruff', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
       { zip: '29690', neighborhoodId: 'gvl-travelers-rest', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // Kentucky metros
+  {
+    id: 'louisville-ky',
+    name: 'Louisville',
+    stateCode: 'KY',
+    towerDensity: 'dense',
+    avgDownload: 378,
+    avgUpload: 47,
+    avgLatency: 16,
+    neighborhoods: [
+      { id: 'lou-downtown', name: 'Downtown Louisville', metroId: 'louisville-ky', zipCodes: ['40202'], towerCount: 16, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Fourth Street and waterfront', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'lou-highlands', name: 'The Highlands', metroId: 'louisville-ky', zipCodes: ['40205'], towerCount: 12, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Bardstown Road entertainment district', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 368, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'lou-nulu', name: 'NuLu', metroId: 'louisville-ky', zipCodes: ['40206'], towerCount: 11, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'New Louisville arts and dining', carriers: [
+        { carrier: 'verizon', avgDownload: 402, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 385, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'lou-st-matthews', name: 'St. Matthews', metroId: 'louisville-ky', zipCodes: ['40207'], towerCount: 14, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Mall St. Matthews shopping', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'lou-jeffersontown', name: 'Jeffersontown', metroId: 'louisville-ky', zipCodes: ['40299'], towerCount: 12, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Eastern suburb with business parks', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '40202', neighborhoodId: 'lou-downtown', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '40205', neighborhoodId: 'lou-highlands', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '40206', neighborhoodId: 'lou-nulu', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '40207', neighborhoodId: 'lou-st-matthews', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '40299', neighborhoodId: 'lou-jeffersontown', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  {
+    id: 'lexington-ky',
+    name: 'Lexington',
+    stateCode: 'KY',
+    towerDensity: 'moderate',
+    avgDownload: 368,
+    avgUpload: 45,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'lex-downtown', name: 'Downtown Lexington', metroId: 'lexington-ky', zipCodes: ['40507'], towerCount: 13, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Rupp Arena and Victorian Square', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'lex-uk', name: 'UK Campus', metroId: 'lexington-ky', zipCodes: ['40506'], towerCount: 16, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'University of Kentucky', carriers: [
+        { carrier: 'verizon', avgDownload: 412, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'lex-hamburg', name: 'Hamburg', metroId: 'lexington-ky', zipCodes: ['40509'], towerCount: 14, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Hamburg Pavilion retail center', carriers: [
+        { carrier: 'verizon', avgDownload: 402, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 385, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 372, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'lex-keeneland', name: 'Keeneland Area', metroId: 'lexington-ky', zipCodes: ['40511'], towerCount: 11, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Horse farms and race track', carriers: [
+        { carrier: 'verizon', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '40507', neighborhoodId: 'lex-downtown', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '40506', neighborhoodId: 'lex-uk', avgDownload: 402, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 24 },
+      { zip: '40509', neighborhoodId: 'lex-hamburg', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '40511', neighborhoodId: 'lex-keeneland', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // Tennessee metros
+  {
+    id: 'memphis-tn',
+    name: 'Memphis',
+    stateCode: 'TN',
+    towerDensity: 'dense',
+    avgDownload: 375,
+    avgUpload: 46,
+    avgLatency: 16,
+    neighborhoods: [
+      { id: 'mem-downtown', name: 'Downtown Memphis', metroId: 'memphis-tn', zipCodes: ['38103'], towerCount: 15, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Beale Street and FedExForum', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'mem-midtown', name: 'Midtown', metroId: 'memphis-tn', zipCodes: ['38104'], towerCount: 12, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Overton Square and Cooper-Young', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 368, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'mem-germantown', name: 'Germantown', metroId: 'memphis-tn', zipCodes: ['38138'], towerCount: 14, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Affluent eastern suburb', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'mem-collierville', name: 'Collierville', metroId: 'memphis-tn', zipCodes: ['38017'], towerCount: 12, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Historic town square suburb', carriers: [
+        { carrier: 'verizon', avgDownload: 402, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 385, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 372, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'mem-bartlett', name: 'Bartlett', metroId: 'memphis-tn', zipCodes: ['38134'], towerCount: 11, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Northeast suburb with retail', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '38103', neighborhoodId: 'mem-downtown', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '38104', neighborhoodId: 'mem-midtown', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '38138', neighborhoodId: 'mem-germantown', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '38017', neighborhoodId: 'mem-collierville', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '38134', neighborhoodId: 'mem-bartlett', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  {
+    id: 'knoxville-tn',
+    name: 'Knoxville',
+    stateCode: 'TN',
+    towerDensity: 'moderate',
+    avgDownload: 365,
+    avgUpload: 45,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'knx-downtown', name: 'Downtown Knoxville', metroId: 'knoxville-tn', zipCodes: ['37902'], towerCount: 12, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Market Square and Gay Street', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'knx-ut', name: 'UT Campus', metroId: 'knoxville-tn', zipCodes: ['37996'], towerCount: 15, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'University of Tennessee', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 53, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'knx-west', name: 'West Knoxville', metroId: 'knoxville-tn', zipCodes: ['37922'], towerCount: 14, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Turkey Creek shopping', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'knx-farragut', name: 'Farragut', metroId: 'knoxville-tn', zipCodes: ['37934'], towerCount: 11, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Upscale western suburb', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '37902', neighborhoodId: 'knx-downtown', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '37996', neighborhoodId: 'knx-ut', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 25 },
+      { zip: '37922', neighborhoodId: 'knx-west', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '37934', neighborhoodId: 'knx-farragut', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // Missouri metros
+  {
+    id: 'st-louis-mo',
+    name: 'St. Louis',
+    stateCode: 'MO',
+    towerDensity: 'dense',
+    avgDownload: 385,
+    avgUpload: 48,
+    avgLatency: 15,
+    neighborhoods: [
+      { id: 'stl-downtown', name: 'Downtown St. Louis', metroId: 'st-louis-mo', zipCodes: ['63101'], towerCount: 18, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Gateway Arch and Busch Stadium', carriers: [
+        { carrier: 'verizon', avgDownload: 418, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 402, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 388, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'stl-central-west', name: 'Central West End', metroId: 'st-louis-mo', zipCodes: ['63108'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Historic neighborhood near Forest Park', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'stl-clayton', name: 'Clayton', metroId: 'st-louis-mo', zipCodes: ['63105'], towerCount: 16, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'County seat with business district', carriers: [
+        { carrier: 'verizon', avgDownload: 415, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 398, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 385, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'stl-chesterfield', name: 'Chesterfield', metroId: 'st-louis-mo', zipCodes: ['63017'], towerCount: 14, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Chesterfield Mall and outlet shopping', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'stl-kirkwood', name: 'Kirkwood', metroId: 'st-louis-mo', zipCodes: ['63122'], towerCount: 11, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Historic suburb with downtown district', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '63101', neighborhoodId: 'stl-downtown', avgDownload: 408, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '63108', neighborhoodId: 'stl-central-west', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '63105', neighborhoodId: 'stl-clayton', avgDownload: 405, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '63017', neighborhoodId: 'stl-chesterfield', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '63122', neighborhoodId: 'stl-kirkwood', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  {
+    id: 'kansas-city-mo',
+    name: 'Kansas City',
+    stateCode: 'MO',
+    towerDensity: 'dense',
+    avgDownload: 382,
+    avgUpload: 47,
+    avgLatency: 15,
+    neighborhoods: [
+      { id: 'kc-downtown', name: 'Downtown Kansas City', metroId: 'kansas-city-mo', zipCodes: ['64105'], towerCount: 17, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Power and Light District', carriers: [
+        { carrier: 'verizon', avgDownload: 415, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 398, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 385, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+      ]},
+      { id: 'kc-plaza', name: 'Country Club Plaza', metroId: 'kansas-city-mo', zipCodes: ['64112'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Spanish-style shopping district', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'kc-westport', name: 'Westport', metroId: 'kansas-city-mo', zipCodes: ['64111'], towerCount: 12, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Entertainment and dining district', carriers: [
+        { carrier: 'verizon', avgDownload: 402, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 385, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 372, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'kc-overland-park', name: 'Overland Park', metroId: 'kansas-city-mo', zipCodes: ['66210'], towerCount: 16, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Oak Park Mall and corporate offices', carriers: [
+        { carrier: 'verizon', avgDownload: 412, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'kc-leawood', name: 'Leawood', metroId: 'kansas-city-mo', zipCodes: ['66211'], towerCount: 13, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Upscale suburb with Town Center', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '64105', neighborhoodId: 'kc-downtown', avgDownload: 405, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '64112', neighborhoodId: 'kc-plaza', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 20 },
+      { zip: '64111', neighborhoodId: 'kc-westport', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '66210', neighborhoodId: 'kc-overland-park', avgDownload: 402, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '66211', neighborhoodId: 'kc-leawood', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // Arkansas metros
+  {
+    id: 'little-rock-ar',
+    name: 'Little Rock',
+    stateCode: 'AR',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 44,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'lr-downtown', name: 'Downtown Little Rock', metroId: 'little-rock-ar', zipCodes: ['72201'], towerCount: 12, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'River Market District', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'lr-heights', name: 'The Heights', metroId: 'little-rock-ar', zipCodes: ['72205'], towerCount: 10, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Historic Hillcrest neighborhood', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'lr-west', name: 'West Little Rock', metroId: 'little-rock-ar', zipCodes: ['72211'], towerCount: 14, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Pleasant Ridge Town Center', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 368, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'lr-north-lr', name: 'North Little Rock', metroId: 'little-rock-ar', zipCodes: ['72114'], towerCount: 11, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Across Arkansas River from downtown', carriers: [
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 355, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '72201', neighborhoodId: 'lr-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '72205', neighborhoodId: 'lr-heights', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '72211', neighborhoodId: 'lr-west', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '72114', neighborhoodId: 'lr-north-lr', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  {
+    id: 'fayetteville-ar',
+    name: 'Fayetteville',
+    stateCode: 'AR',
+    towerDensity: 'moderate',
+    avgDownload: 362,
+    avgUpload: 44,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'fay-downtown', name: 'Downtown Fayetteville', metroId: 'fayetteville-ar', zipCodes: ['72701'], towerCount: 11, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Fayetteville Square and Dickson Street', carriers: [
+        { carrier: 'verizon', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 362, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'fay-uark', name: 'U of A Campus', metroId: 'fayetteville-ar', zipCodes: ['72701'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'University of Arkansas', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'fay-rogers', name: 'Rogers', metroId: 'fayetteville-ar', zipCodes: ['72756'], towerCount: 13, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Pinnacle Hills shopping area', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 368, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'fay-bentonville', name: 'Bentonville', metroId: 'fayetteville-ar', zipCodes: ['72712'], towerCount: 15, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Walmart HQ and Crystal Bridges', carriers: [
+        { carrier: 'verizon', avgDownload: 412, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '72701', neighborhoodId: 'fay-downtown', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '72756', neighborhoodId: 'fay-rogers', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '72712', neighborhoodId: 'fay-bentonville', avgDownload: 402, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+    ],
+  },
+  // Oklahoma metros
+  {
+    id: 'oklahoma-city-ok',
+    name: 'Oklahoma City',
+    stateCode: 'OK',
+    towerDensity: 'dense',
+    avgDownload: 375,
+    avgUpload: 46,
+    avgLatency: 16,
+    neighborhoods: [
+      { id: 'okc-downtown', name: 'Downtown OKC', metroId: 'oklahoma-city-ok', zipCodes: ['73102'], towerCount: 16, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Bricktown and Paycom Center', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'okc-midtown', name: 'Midtown', metroId: 'oklahoma-city-ok', zipCodes: ['73103'], towerCount: 12, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Automobile Alley and Plaza District', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 368, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'okc-edmond', name: 'Edmond', metroId: 'oklahoma-city-ok', zipCodes: ['73013'], towerCount: 14, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'UCO area and uptown retail', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'okc-norman', name: 'Norman', metroId: 'oklahoma-city-ok', zipCodes: ['73069'], towerCount: 15, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'University of Oklahoma campus', carriers: [
+        { carrier: 'verizon', avgDownload: 412, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'okc-moore', name: 'Moore', metroId: 'oklahoma-city-ok', zipCodes: ['73160'], towerCount: 11, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Southern suburb with Warren Theatre', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '73102', neighborhoodId: 'okc-downtown', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '73103', neighborhoodId: 'okc-midtown', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '73013', neighborhoodId: 'okc-edmond', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '73069', neighborhoodId: 'okc-norman', avgDownload: 402, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 24 },
+      { zip: '73160', neighborhoodId: 'okc-moore', avgDownload: 382, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // New Mexico metros
+  {
+    id: 'albuquerque-nm',
+    name: 'Albuquerque',
+    stateCode: 'NM',
+    towerDensity: 'moderate',
+    avgDownload: 358,
+    avgUpload: 44,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'abq-downtown', name: 'Downtown Albuquerque', metroId: 'albuquerque-nm', zipCodes: ['87102'], towerCount: 12, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Old Town and Convention Center', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'abq-unm', name: 'UNM Area', metroId: 'albuquerque-nm', zipCodes: ['87106'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'University and Nob Hill', carriers: [
+        { carrier: 'verizon', avgDownload: 402, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 385, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'abq-uptown', name: 'Uptown', metroId: 'albuquerque-nm', zipCodes: ['87110'], towerCount: 13, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Coronado Center shopping', carriers: [
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'abq-rio-rancho', name: 'Rio Rancho', metroId: 'albuquerque-nm', zipCodes: ['87124'], towerCount: 12, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Growing northwest suburb', carriers: [
+        { carrier: 'verizon', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '87102', neighborhoodId: 'abq-downtown', avgDownload: 375, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '87106', neighborhoodId: 'abq-unm', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '87110', neighborhoodId: 'abq-uptown', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '87124', neighborhoodId: 'abq-rio-rancho', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  {
+    id: 'santa-fe-nm',
+    name: 'Santa Fe',
+    stateCode: 'NM',
+    towerDensity: 'moderate',
+    avgDownload: 345,
+    avgUpload: 42,
+    avgLatency: 18,
+    neighborhoods: [
+      { id: 'sf-plaza', name: 'Santa Fe Plaza', metroId: 'santa-fe-nm', zipCodes: ['87501'], towerCount: 10, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Historic plaza and Canyon Road', carriers: [
+        { carrier: 'verizon', avgDownload: 372, avgUpload: 46, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 345, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'sf-railyard', name: 'Railyard District', metroId: 'santa-fe-nm', zipCodes: ['87501'], towerCount: 9, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Arts district and farmers market', carriers: [
+        { carrier: 'verizon', avgDownload: 368, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 355, avgUpload: 42, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 342, avgUpload: 40, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'north' },
+      ]},
+      { id: 'sf-south', name: 'South Santa Fe', metroId: 'santa-fe-nm', zipCodes: ['87505'], towerCount: 11, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Fashion Outlets and residential', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 348, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '87501', neighborhoodId: 'sf-plaza', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 18 },
+      { zip: '87505', neighborhoodId: 'sf-south', avgDownload: 368, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+    ],
+  },
+  // Nevada metros
+  {
+    id: 'las-vegas-nv',
+    name: 'Las Vegas',
+    stateCode: 'NV',
+    towerDensity: 'ultra_dense',
+    avgDownload: 412,
+    avgUpload: 53,
+    avgLatency: 13,
+    neighborhoods: [
+      { id: 'lv-strip', name: 'The Strip', metroId: 'las-vegas-nv', zipCodes: ['89109'], towerCount: 28, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Casino corridor and Convention Center', carriers: [
+        { carrier: 'verizon', avgDownload: 455, avgUpload: 60, avgLatency: 10, primaryBand: 'mmwave', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 438, avgUpload: 56, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 422, avgUpload: 54, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+      ]},
+      { id: 'lv-downtown', name: 'Downtown Las Vegas', metroId: 'las-vegas-nv', zipCodes: ['89101'], towerCount: 18, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Fremont Street Experience', carriers: [
+        { carrier: 'verizon', avgDownload: 435, avgUpload: 56, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 418, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 405, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+      ]},
+      { id: 'lv-summerlin', name: 'Summerlin', metroId: 'las-vegas-nv', zipCodes: ['89144'], towerCount: 16, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Master-planned community and Red Rock', carriers: [
+        { carrier: 'verizon', avgDownload: 425, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 408, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 395, avgUpload: 50, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'lv-henderson', name: 'Henderson', metroId: 'las-vegas-nv', zipCodes: ['89052'], towerCount: 15, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Green Valley and Lake Las Vegas', carriers: [
+        { carrier: 'verizon', avgDownload: 418, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 402, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 388, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'lv-north', name: 'North Las Vegas', metroId: 'las-vegas-nv', zipCodes: ['89031'], towerCount: 13, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Aliante and growing suburbs', carriers: [
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '89109', neighborhoodId: 'lv-strip', avgDownload: 445, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 25 },
+      { zip: '89101', neighborhoodId: 'lv-downtown', avgDownload: 425, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '89144', neighborhoodId: 'lv-summerlin', avgDownload: 415, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 12 },
+      { zip: '89052', neighborhoodId: 'lv-henderson', avgDownload: 408, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '89031', neighborhoodId: 'lv-north', avgDownload: 395, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
     ],
   },
 ];
