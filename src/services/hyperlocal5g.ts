@@ -24265,6 +24265,274 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '91730', neighborhoodId: 'rcu-central', avgDownload: 402, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
     ],
   },
+  // Massachusetts metros
+  {
+    id: 'cambridge-ma',
+    name: 'Cambridge',
+    stateCode: 'MA',
+    towerDensity: 'ultra_dense',
+    avgDownload: 432,
+    avgUpload: 56,
+    avgLatency: 11,
+    neighborhoods: [
+      { id: 'cam-harvard-sq', name: 'Harvard Square', metroId: 'cambridge-ma', zipCodes: ['02138'], towerCount: 20, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Harvard campus and Mass Ave', carriers: [
+        { carrier: 'verizon', avgDownload: 468, avgUpload: 62, avgLatency: 9, primaryBand: 'mmwave', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'tmobile', avgDownload: 452, avgUpload: 59, avgLatency: 10, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'att', avgDownload: 438, avgUpload: 56, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+      ]},
+      { id: 'cam-kendall-sq', name: 'Kendall Square', metroId: 'cambridge-ma', zipCodes: ['02142'], towerCount: 24, buildingDensity: 'high', terrainType: 'mixed_use', placementNotes: 'MIT and biotech hub', carriers: [
+        { carrier: 'verizon', avgDownload: 485, avgUpload: 65, avgLatency: 8, primaryBand: 'mmwave', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'tmobile', avgDownload: 468, avgUpload: 61, avgLatency: 9, primaryBand: 'mmwave', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'att', avgDownload: 452, avgUpload: 58, avgLatency: 10, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'cam-central-sq', name: 'Central Square', metroId: 'cambridge-ma', zipCodes: ['02139'], towerCount: 16, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Diverse neighborhood hub', carriers: [
+        { carrier: 'verizon', avgDownload: 452, avgUpload: 59, avgLatency: 10, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'tmobile', avgDownload: 438, avgUpload: 56, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'att', avgDownload: 422, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+      ]},
+      { id: 'cam-porter-sq', name: 'Porter Square', metroId: 'cambridge-ma', zipCodes: ['02140'], towerCount: 13, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Red Line stop and shops', carriers: [
+        { carrier: 'verizon', avgDownload: 438, avgUpload: 56, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'tmobile', avgDownload: 425, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'att', avgDownload: 412, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '02138', neighborhoodId: 'cam-harvard-sq', avgDownload: 458, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 24 },
+      { zip: '02142', neighborhoodId: 'cam-kendall-sq', avgDownload: 478, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 26 },
+      { zip: '02139', neighborhoodId: 'cam-central-sq', avgDownload: 445, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '02140', neighborhoodId: 'cam-porter-sq', avgDownload: 432, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+  {
+    id: 'somerville-ma',
+    name: 'Somerville',
+    stateCode: 'MA',
+    towerDensity: 'dense',
+    avgDownload: 408,
+    avgUpload: 52,
+    avgLatency: 13,
+    neighborhoods: [
+      { id: 'som-davis-sq', name: 'Davis Square', metroId: 'somerville-ma', zipCodes: ['02144'], towerCount: 14, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Red Line hub and restaurants', carriers: [
+        { carrier: 'verizon', avgDownload: 442, avgUpload: 57, avgLatency: 10, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'tmobile', avgDownload: 428, avgUpload: 55, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'att', avgDownload: 412, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'som-assembly-row', name: 'Assembly Row', metroId: 'somerville-ma', zipCodes: ['02145'], towerCount: 18, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'New development and Orange Line', carriers: [
+        { carrier: 'verizon', avgDownload: 458, avgUpload: 60, avgLatency: 9, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'tmobile', avgDownload: 442, avgUpload: 57, avgLatency: 10, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'att', avgDownload: 428, avgUpload: 55, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'west' },
+      ]},
+      { id: 'som-union-sq', name: 'Union Square', metroId: 'somerville-ma', zipCodes: ['02143'], towerCount: 13, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Green Line extension and dining', carriers: [
+        { carrier: 'verizon', avgDownload: 432, avgUpload: 56, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'tmobile', avgDownload: 418, avgUpload: 53, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'att', avgDownload: 405, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '02144', neighborhoodId: 'som-davis-sq', avgDownload: 435, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '02145', neighborhoodId: 'som-assembly-row', avgDownload: 448, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '02143', neighborhoodId: 'som-union-sq', avgDownload: 425, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+    ],
+  },
+  {
+    id: 'quincy-ma',
+    name: 'Quincy',
+    stateCode: 'MA',
+    towerDensity: 'dense',
+    avgDownload: 392,
+    avgUpload: 49,
+    avgLatency: 14,
+    neighborhoods: [
+      { id: 'qcy-downtown', name: 'Quincy Center', metroId: 'quincy-ma', zipCodes: ['02169'], towerCount: 15, buildingDensity: 'high', terrainType: 'urban_core', placementNotes: 'Red Line and city hall', carriers: [
+        { carrier: 'verizon', avgDownload: 428, avgUpload: 55, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'tmobile', avgDownload: 412, avgUpload: 52, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'att', avgDownload: 398, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'qcy-north-quincy', name: 'North Quincy', metroId: 'quincy-ma', zipCodes: ['02171'], towerCount: 13, buildingDensity: 'medium', terrainType: 'residential', placementNotes: 'Near Neponset River', carriers: [
+        { carrier: 'verizon', avgDownload: 415, avgUpload: 53, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'tmobile', avgDownload: 402, avgUpload: 50, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'qcy-south-shore', name: 'South Shore Plaza', metroId: 'quincy-ma', zipCodes: ['02184'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Regional mall and retail', carriers: [
+        { carrier: 'verizon', avgDownload: 422, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'tmobile', avgDownload: 408, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'att', avgDownload: 395, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '02169', neighborhoodId: 'qcy-downtown', avgDownload: 418, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '02171', neighborhoodId: 'qcy-north-quincy', avgDownload: 408, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '02184', neighborhoodId: 'qcy-south-shore', avgDownload: 412, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+    ],
+  },
+  // Nevada metros
+  {
+    id: 'henderson-nv',
+    name: 'Henderson',
+    stateCode: 'NV',
+    towerDensity: 'dense',
+    avgDownload: 402,
+    avgUpload: 51,
+    avgLatency: 13,
+    neighborhoods: [
+      { id: 'hen-downtown', name: 'Downtown Henderson', metroId: 'henderson-nv', zipCodes: ['89015'], towerCount: 14, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Water Street and arts district', carriers: [
+        { carrier: 'tmobile', avgDownload: 438, avgUpload: 57, avgLatency: 10, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'verizon', avgDownload: 422, avgUpload: 54, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'att', avgDownload: 408, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'hen-green-valley', name: 'Green Valley', metroId: 'henderson-nv', zipCodes: ['89052'], towerCount: 15, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Master-planned community', carriers: [
+        { carrier: 'tmobile', avgDownload: 428, avgUpload: 55, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'verizon', avgDownload: 412, avgUpload: 52, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'att', avgDownload: 398, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'hen-anthem', name: 'Anthem', metroId: 'henderson-nv', zipCodes: ['89052'], towerCount: 12, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Upscale hillside community', carriers: [
+        { carrier: 'tmobile', avgDownload: 418, avgUpload: 53, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'hen-galleria', name: 'Galleria at Sunset', metroId: 'henderson-nv', zipCodes: ['89014'], towerCount: 16, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Regional mall and retail', carriers: [
+        { carrier: 'tmobile', avgDownload: 442, avgUpload: 57, avgLatency: 10, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'verizon', avgDownload: 425, avgUpload: 54, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'att', avgDownload: 412, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '89015', neighborhoodId: 'hen-downtown', avgDownload: 428, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '89052', neighborhoodId: 'hen-green-valley', avgDownload: 418, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '89014', neighborhoodId: 'hen-galleria', avgDownload: 432, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+    ],
+  },
+  {
+    id: 'north-las-vegas-nv',
+    name: 'North Las Vegas',
+    stateCode: 'NV',
+    towerDensity: 'moderate',
+    avgDownload: 378,
+    avgUpload: 47,
+    avgLatency: 15,
+    neighborhoods: [
+      { id: 'nlv-downtown', name: 'Downtown North Las Vegas', metroId: 'north-las-vegas-nv', zipCodes: ['89030'], towerCount: 12, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Lake Mead and Las Vegas Blvd', carriers: [
+        { carrier: 'tmobile', avgDownload: 412, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'att', avgDownload: 385, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'nlv-aliante', name: 'Aliante', metroId: 'north-las-vegas-nv', zipCodes: ['89084'], towerCount: 13, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Master-planned with casino', carriers: [
+        { carrier: 'tmobile', avgDownload: 418, avgUpload: 53, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'verizon', avgDownload: 405, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'att', avgDownload: 392, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'nlv-eldorado', name: 'Eldorado', metroId: 'north-las-vegas-nv', zipCodes: ['89031'], towerCount: 11, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Growing family area', carriers: [
+        { carrier: 'tmobile', avgDownload: 405, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '89030', neighborhoodId: 'nlv-downtown', avgDownload: 402, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '89084', neighborhoodId: 'nlv-aliante', avgDownload: 412, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '89031', neighborhoodId: 'nlv-eldorado', avgDownload: 395, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  // Arizona metros
+  {
+    id: 'gilbert-az',
+    name: 'Gilbert',
+    stateCode: 'AZ',
+    towerDensity: 'dense',
+    avgDownload: 398,
+    avgUpload: 50,
+    avgLatency: 14,
+    neighborhoods: [
+      { id: 'gil-downtown', name: 'Downtown Gilbert', metroId: 'gilbert-az', zipCodes: ['85234'], towerCount: 14, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Heritage District dining', carriers: [
+        { carrier: 'verizon', avgDownload: 432, avgUpload: 56, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 418, avgUpload: 53, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 405, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'gil-santan', name: 'San Tan Village', metroId: 'gilbert-az', zipCodes: ['85295'], towerCount: 16, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'Regional mall and lifestyle', carriers: [
+        { carrier: 'verizon', avgDownload: 442, avgUpload: 57, avgLatency: 10, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 428, avgUpload: 55, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 412, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'gil-power-ranch', name: 'Power Ranch', metroId: 'gilbert-az', zipCodes: ['85297'], towerCount: 12, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Master-planned community', carriers: [
+        { carrier: 'verizon', avgDownload: 422, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 408, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 395, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'gil-agritopia', name: 'Agritopia', metroId: 'gilbert-az', zipCodes: ['85296'], towerCount: 11, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Farm-to-table community', carriers: [
+        { carrier: 'verizon', avgDownload: 415, avgUpload: 53, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 402, avgUpload: 50, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 388, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '85234', neighborhoodId: 'gil-downtown', avgDownload: 425, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '85295', neighborhoodId: 'gil-santan', avgDownload: 435, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '85297', neighborhoodId: 'gil-power-ranch', avgDownload: 415, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '85296', neighborhoodId: 'gil-agritopia', avgDownload: 408, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  {
+    id: 'peoria-az',
+    name: 'Peoria',
+    stateCode: 'AZ',
+    towerDensity: 'moderate',
+    avgDownload: 385,
+    avgUpload: 48,
+    avgLatency: 15,
+    neighborhoods: [
+      { id: 'peo-old-town', name: 'Old Town Peoria', metroId: 'peoria-az', zipCodes: ['85345'], towerCount: 12, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Historic downtown revitalized', carriers: [
+        { carrier: 'verizon', avgDownload: 418, avgUpload: 53, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 405, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 392, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'peo-sports-complex', name: 'Peoria Sports Complex', metroId: 'peoria-az', zipCodes: ['85382'], towerCount: 14, buildingDensity: 'low', terrainType: 'mixed_use', placementNotes: 'Spring training and P83', carriers: [
+        { carrier: 'verizon', avgDownload: 428, avgUpload: 55, avgLatency: 11, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 412, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 398, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'peo-vistancia', name: 'Vistancia', metroId: 'peoria-az', zipCodes: ['85383'], towerCount: 11, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Northwest master-planned', carriers: [
+        { carrier: 'verizon', avgDownload: 408, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 395, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 382, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '85345', neighborhoodId: 'peo-old-town', avgDownload: 408, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '85382', neighborhoodId: 'peo-sports-complex', avgDownload: 418, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '85383', neighborhoodId: 'peo-vistancia', avgDownload: 398, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
+  {
+    id: 'surprise-az',
+    name: 'Surprise',
+    stateCode: 'AZ',
+    towerDensity: 'moderate',
+    avgDownload: 378,
+    avgUpload: 47,
+    avgLatency: 16,
+    neighborhoods: [
+      { id: 'sur-original-town', name: 'Original Town', metroId: 'surprise-az', zipCodes: ['85378'], towerCount: 11, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Historic downtown area', carriers: [
+        { carrier: 'verizon', avgDownload: 412, avgUpload: 52, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 398, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 385, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'sur-stadium', name: 'Surprise Stadium', metroId: 'surprise-az', zipCodes: ['85374'], towerCount: 13, buildingDensity: 'low', terrainType: 'mixed_use', placementNotes: 'Spring training and recreation', carriers: [
+        { carrier: 'verizon', avgDownload: 422, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 408, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 395, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'sur-sun-city', name: 'Sun City Grand', metroId: 'surprise-az', zipCodes: ['85387'], towerCount: 10, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Active adult community', carriers: [
+        { carrier: 'verizon', avgDownload: 402, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 388, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 375, avgUpload: 46, avgLatency: 17, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '85378', neighborhoodId: 'sur-original-town', avgDownload: 402, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '85374', neighborhoodId: 'sur-stadium', avgDownload: 412, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 20 },
+      { zip: '85387', neighborhoodId: 'sur-sun-city', avgDownload: 392, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 8 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
