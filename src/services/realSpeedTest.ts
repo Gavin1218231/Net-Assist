@@ -38,7 +38,9 @@ const META_URL = 'https://speed.cloudflare.com/meta';
 function parseServerTiming(header: string | null): number {
   if (!header) return 0;
   const match = /cfRequestDuration;dur=([\d.]+)/.exec(header);
-  return match ? parseFloat(match[1]) : 0;
+  if (!match) return 0;
+  const value = parseFloat(match[1]);
+  return Number.isFinite(value) && value >= 0 ? value : 0;
 }
 
 async function measureLatency(samples = 20): Promise<{ latencyMs: number; jitterMs: number; lossPct: number; values: number[] }> {
@@ -75,12 +77,24 @@ async function measureLatency(samples = 20): Promise<{ latencyMs: number; jitter
 async function downloadChunk(bytes: number): Promise<SpeedSample> {
   const start = performance.now();
   const res = await fetch(`${DOWN_URL}?bytes=${bytes}&cacheBust=${Date.now()}-${Math.random()}`, { cache: 'no-store' });
-  const reader = res.body!.getReader();
+  if (!res.body) {
+    // Fall back to a single arrayBuffer read so we still get a measurement.
+    const buf = await res.arrayBuffer();
+    const total = performance.now() - start;
+    const serverTime = parseServerTiming(res.headers.get('server-timing'));
+    const transferMs = Math.max(1, total - serverTime);
+    return {
+      bytes: buf.byteLength,
+      durationMs: transferMs,
+      mbps: (buf.byteLength * 8) / (transferMs / 1000) / 1_000_000,
+    };
+  }
+  const reader = res.body.getReader();
   let received = 0;
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
-    received += value.byteLength;
+    if (value) received += value.byteLength;
   }
   const total = performance.now() - start;
   const serverTime = parseServerTiming(res.headers.get('server-timing'));

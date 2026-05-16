@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Activity, ArrowDown, ArrowUp, Clock, Gauge, MapPin,
   Play, Radio, RotateCcw, Server, Signal, Wifi, AlertCircle,
@@ -74,7 +74,6 @@ export default function RealTimeCoverage() {
   const [report, setReport] = useState<RealCoverageReport | null>(null);
   const [history, setHistory] = useState<RealCoverageReport[]>([]);
   const [testError, setTestError] = useState<string | null>(null);
-  const liveMbpsRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const cached = getCurrentCoverageReport();
@@ -100,7 +99,7 @@ export default function RealTimeCoverage() {
   }
 
   async function lookupManual() {
-    if (!manualInput.trim()) return;
+    if (locating || running || !manualInput.trim()) return;
     setLocating(true);
     setLocationError(null);
     try {
@@ -124,12 +123,7 @@ export default function RealTimeCoverage() {
     setProgress({ phase: 'latency', percent: 0 });
     try {
       const [speed, carrier] = await Promise.all([
-        runRealSpeedTest(p => {
-          setProgress(p);
-          if (liveMbpsRef.current && p.currentMbps) {
-            liveMbpsRef.current.textContent = `${p.currentMbps.toFixed(0)} Mbps`;
-          }
-        }),
+        runRealSpeedTest(setProgress),
         getCarrierSignal(),
       ]);
       setResult(speed);
@@ -138,11 +132,12 @@ export default function RealTimeCoverage() {
       setReport(built);
       saveCoverageReport(built);
       setHistory(getCoverageHistory());
+      setProgress({ phase: 'done', percent: 100 });
     } catch (err) {
       setTestError(err instanceof Error ? err.message : 'Speed test failed');
+      setProgress(null);
     } finally {
       setRunning(false);
-      setProgress({ phase: 'done', percent: 100 });
     }
   }
 
@@ -263,7 +258,7 @@ export default function RealTimeCoverage() {
             </div>
             <div className="text-center py-4">
               <div className="text-xs uppercase tracking-wide text-[var(--color-text-muted)]">Live throughput</div>
-              <span ref={liveMbpsRef} className="text-3xl font-bold text-[var(--color-text)]">
+              <span className="text-3xl font-bold text-[var(--color-text)]">
                 {progress.currentMbps ? `${progress.currentMbps.toFixed(0)} Mbps` : '— Mbps'}
               </span>
               {progress.latencyMs !== undefined && (

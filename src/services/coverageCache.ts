@@ -1,6 +1,6 @@
 // Lightweight localStorage cache for coverage / speed-test results.
-// Persists the last result and a short history so users see continuity
-// across navigations without re-running expensive tests.
+// Persists a rolling history so users see continuity across navigations
+// without re-running expensive tests.
 
 import type { RealCoverageReport } from './realCoverage';
 
@@ -8,17 +8,22 @@ const KEY = 'netassist:coverage:v1';
 const HISTORY_LIMIT = 20;
 
 interface CachedShape {
-  current?: RealCoverageReport;
   history: RealCoverageReport[];
+}
+
+function isReport(value: unknown): value is RealCoverageReport {
+  if (!value || typeof value !== 'object') return false;
+  const r = value as Partial<RealCoverageReport>;
+  return typeof r.generatedAt === 'string' && !!r.speed && !!r.location && !!r.grade;
 }
 
 function read(): CachedShape {
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { history: [] };
-    const parsed = JSON.parse(raw) as CachedShape;
-    if (!parsed.history) parsed.history = [];
-    return parsed;
+    const parsed = JSON.parse(raw) as Partial<CachedShape>;
+    const history = Array.isArray(parsed.history) ? parsed.history.filter(isReport) : [];
+    return { history };
   } catch {
     return { history: [] };
   }
@@ -34,13 +39,15 @@ function write(value: CachedShape): void {
 
 export function saveCoverageReport(report: RealCoverageReport): void {
   const state = read();
-  state.current = report;
-  state.history = [report, ...state.history.filter(r => r.generatedAt !== report.generatedAt)].slice(0, HISTORY_LIMIT);
+  state.history = [
+    report,
+    ...state.history.filter(r => r.generatedAt !== report.generatedAt),
+  ].slice(0, HISTORY_LIMIT);
   write(state);
 }
 
 export function getCurrentCoverageReport(): RealCoverageReport | undefined {
-  return read().current;
+  return read().history[0];
 }
 
 export function getCoverageHistory(): RealCoverageReport[] {

@@ -20,6 +20,18 @@ export interface RealLocation {
 
 const CENSUS_COORDS = 'https://geocoding.geo.census.gov/geocoder/geographies/coordinates';
 const CENSUS_ADDRESS = 'https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress';
+const ZIPPOPOTAM = 'https://api.zippopotam.us/us';
+const DEFAULT_TIMEOUT_MS = 10_000;
+
+async function fetchWithTimeout(url: string, ms = DEFAULT_TIMEOUT_MS): Promise<Response> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ms);
+  try {
+    return await fetch(url, { signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 export async function getBrowserLocation(): Promise<{ lat: number; lng: number; accuracy: number }> {
   if (!('geolocation' in navigator)) {
@@ -76,7 +88,7 @@ export async function reverseGeocode(lat: number, lng: number): Promise<Partial<
     layers: 'all',
     format: 'json',
   });
-  const res = await fetch(`${CENSUS_COORDS}?${params}`);
+  const res = await fetchWithTimeout(`${CENSUS_COORDS}?${params}`);
   if (!res.ok) throw new Error(`Census reverse geocode failed: ${res.status}`);
   const data: CensusGeographiesResponse = await res.json();
   const geos = data.result?.geographies;
@@ -107,7 +119,7 @@ export async function geocodeAddress(address: string): Promise<RealLocation> {
     layers: 'all',
     format: 'json',
   });
-  const res = await fetch(`${CENSUS_ADDRESS}?${params}`);
+  const res = await fetchWithTimeout(`${CENSUS_ADDRESS}?${params}`);
   if (!res.ok) throw new Error(`Census geocode failed: ${res.status}`);
   const data: CensusGeographiesResponse = await res.json();
   const match = data.result?.addressMatches?.[0];
@@ -145,11 +157,50 @@ export async function resolveCurrentLocation(): Promise<RealLocation> {
   };
 }
 
+// Public ZIP -> centroid service. No API key, CORS-enabled.
+// We only use this when the Census address endpoint can't resolve a bare ZIP
+// (which it often can't, since it's designed for street addresses).
+async function lookupZipCentroid(zip: string): Promise<RealLocation> {
+  const res = await fetchWithTimeout(`${ZIPPOPOTAM}/${zip}`);
+  if (!res.ok) throw new Error(`ZIP ${zip} not found`);
+  const data = await res.json() as {
+    'post code': string;
+    country: string;
+    places: Array<{
+      'place name': string;
+      state: string;
+      'state abbreviation': string;
+      latitude: string;
+      longitude: string;
+    }>;
+  };
+  const place = data.places?.[0];
+  if (!place) throw new Error(`ZIP ${zip} has no place data`);
+  const lat = parseFloat(place.latitude);
+  const lng = parseFloat(place.longitude);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    throw new Error(`ZIP ${zip} returned invalid coordinates`);
+  }
+  // Enrich with Census geographies if possible; otherwise return the ZIP-level data.
+  const enrich = await reverseGeocode(lat, lng).catch(() => ({}));
+  return {
+    lat,
+    lng,
+    source: 'zip',
+    zip: data['post code'],
+    zcta: data['post code'],
+    city: place['place name'],
+    state: place.state,
+    stateCode: place['state abbreviation'],
+    resolvedAt: new Date().toISOString(),
+    ...enrich,
+  };
+}
+
 export async function resolveZipOrAddress(input: string): Promise<RealLocation> {
   const trimmed = input.trim();
-  // A bare 5-digit ZIP -- use a centroid lookup via the address endpoint.
   if (/^\d{5}$/.test(trimmed)) {
-    return geocodeAddress(`${trimmed}, USA`);
+    return lookupZipCentroid(trimmed);
   }
   return geocodeAddress(trimmed);
 }
