@@ -14,6 +14,7 @@ import NetworkCheck from './pages/NetworkCheck';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import SetupGuides from './pages/SetupGuides';
+import RealTimeCoverage from './pages/RealTimeCoverage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
@@ -47,6 +48,7 @@ function AppRoutes() {
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
         <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
         <Route path="/guides" element={<ProtectedRoute><SetupGuides /></ProtectedRoute>} />
+        <Route path="/realtime" element={<ProtectedRoute><RealTimeCoverage /></ProtectedRoute>} />
 
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/" replace />} />
