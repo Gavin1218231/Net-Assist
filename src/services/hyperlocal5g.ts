@@ -23263,6 +23263,157 @@ const METRO_AREAS: MetroArea[] = [
       { zip: '99577', neighborhoodId: 'anc-eagle-river', avgDownload: 335, bestCarrier: 'att', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 8 },
     ],
   },
+  // New England metros
+  // Mid-Atlantic metros
+  // Mountain West metros
+  {
+    id: 'boise-id',
+    name: 'Boise',
+    stateCode: 'ID',
+    towerDensity: 'moderate',
+    avgDownload: 375,
+    avgUpload: 46,
+    avgLatency: 16,
+    neighborhoods: [
+      { id: 'boi-downtown', name: 'Downtown Boise', metroId: 'boise-id', zipCodes: ['83702'], towerCount: 15, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: '8th Street and capitol area', carriers: [
+        { carrier: 'tmobile', avgDownload: 408, avgUpload: 53, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'verizon', avgDownload: 395, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'southeast' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'boi-north-end', name: 'North End', metroId: 'boise-id', zipCodes: ['83703'], towerCount: 12, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Hyde Park and foothills', carriers: [
+        { carrier: 'tmobile', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'south' },
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'att', avgDownload: 362, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'boi-bench', name: 'The Bench', metroId: 'boise-id', zipCodes: ['83705'], towerCount: 11, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'South of downtown on plateau', carriers: [
+        { carrier: 'tmobile', avgDownload: 385, avgUpload: 49, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'verizon', avgDownload: 372, avgUpload: 46, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 43, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'boi-bsu', name: 'Boise State', metroId: 'boise-id', zipCodes: ['83706'], towerCount: 14, buildingDensity: 'medium', terrainType: 'mixed_use', placementNotes: 'University campus and stadium', carriers: [
+        { carrier: 'tmobile', avgDownload: 412, avgUpload: 54, avgLatency: 12, primaryBand: 'mid_band', towerProximity: 'very_close', signalQuality: 'excellent', bestDirection: 'west' },
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'northwest' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'boi-meridian', name: 'Meridian', metroId: 'boise-id', zipCodes: ['83642'], towerCount: 13, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Growing suburb west of Boise', carriers: [
+        { carrier: 'tmobile', avgDownload: 395, avgUpload: 51, avgLatency: 13, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'verizon', avgDownload: 382, avgUpload: 48, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'att', avgDownload: 368, avgUpload: 45, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '83702', neighborhoodId: 'boi-downtown', avgDownload: 398, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '83703', neighborhoodId: 'boi-north-end', avgDownload: 385, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '83705', neighborhoodId: 'boi-bench', avgDownload: 378, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '83706', neighborhoodId: 'boi-bsu', avgDownload: 402, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'high', peakHourImpact: 22 },
+      { zip: '83642', neighborhoodId: 'boi-meridian', avgDownload: 388, bestCarrier: 'tmobile', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+  {
+    id: 'billings-mt',
+    name: 'Billings',
+    stateCode: 'MT',
+    towerDensity: 'moderate',
+    avgDownload: 335,
+    avgUpload: 40,
+    avgLatency: 20,
+    neighborhoods: [
+      { id: 'bil-downtown', name: 'Downtown Billings', metroId: 'billings-mt', zipCodes: ['59101'], towerCount: 11, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Montana Avenue and brewery district', carriers: [
+        { carrier: 'verizon', avgDownload: 368, avgUpload: 45, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 352, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 335, avgUpload: 39, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'south' },
+      ]},
+      { id: 'bil-heights', name: 'The Heights', metroId: 'billings-mt', zipCodes: ['59105'], towerCount: 10, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Rimrocks area north of downtown', carriers: [
+        { carrier: 'verizon', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 342, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 328, avgUpload: 37, avgLatency: 22, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+      { id: 'bil-west-end', name: 'West End', metroId: 'billings-mt', zipCodes: ['59102'], towerCount: 12, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Shiloh Crossing and medical district', carriers: [
+        { carrier: 'verizon', avgDownload: 375, avgUpload: 46, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 358, avgUpload: 43, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 342, avgUpload: 40, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'bil-south-side', name: 'South Side', metroId: 'billings-mt', zipCodes: ['59101'], towerCount: 9, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Near zoo and airport', carriers: [
+        { carrier: 'verizon', avgDownload: 362, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 348, avgUpload: 41, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 332, avgUpload: 38, avgLatency: 22, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '59101', neighborhoodId: 'bil-downtown', avgDownload: 358, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '59105', neighborhoodId: 'bil-heights', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '59102', neighborhoodId: 'bil-west-end', avgDownload: 365, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+    ],
+  },
+  {
+    id: 'cheyenne-wy',
+    name: 'Cheyenne',
+    stateCode: 'WY',
+    towerDensity: 'sparse',
+    avgDownload: 315,
+    avgUpload: 38,
+    avgLatency: 22,
+    neighborhoods: [
+      { id: 'cys-downtown', name: 'Downtown Cheyenne', metroId: 'cheyenne-wy', zipCodes: ['82001'], towerCount: 9, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Capitol district and depot plaza', carriers: [
+        { carrier: 'verizon', avgDownload: 348, avgUpload: 42, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 332, avgUpload: 39, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 315, avgUpload: 36, avgLatency: 24, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'east' },
+      ]},
+      { id: 'cys-north', name: 'North Cheyenne', metroId: 'cheyenne-wy', zipCodes: ['82009'], towerCount: 8, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Near Warren AFB', carriers: [
+        { carrier: 'verizon', avgDownload: 358, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'south' },
+        { carrier: 'att', avgDownload: 342, avgUpload: 40, avgLatency: 20, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southwest' },
+        { carrier: 'tmobile', avgDownload: 325, avgUpload: 37, avgLatency: 23, primaryBand: 'low_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'south' },
+      ]},
+      { id: 'cys-south', name: 'South Cheyenne', metroId: 'cheyenne-wy', zipCodes: ['82007'], towerCount: 7, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Dell Range shopping area', carriers: [
+        { carrier: 'verizon', avgDownload: 342, avgUpload: 41, avgLatency: 19, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 328, avgUpload: 38, avgLatency: 21, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'fair', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 312, avgUpload: 35, avgLatency: 24, primaryBand: 'low_band', towerProximity: 'far', signalQuality: 'fair', bestDirection: 'north' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '82001', neighborhoodId: 'cys-downtown', avgDownload: 338, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '82009', neighborhoodId: 'cys-north', avgDownload: 348, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 8 },
+      { zip: '82007', neighborhoodId: 'cys-south', avgDownload: 332, bestCarrier: 'verizon', has5GUltra: false, congestionLevel: 'low', peakHourImpact: 8 },
+    ],
+  },
+  // Great Plains metros
+  {
+    id: 'sioux-falls-sd',
+    name: 'Sioux Falls',
+    stateCode: 'SD',
+    towerDensity: 'moderate',
+    avgDownload: 365,
+    avgUpload: 45,
+    avgLatency: 17,
+    neighborhoods: [
+      { id: 'fsd-downtown', name: 'Downtown Sioux Falls', metroId: 'sioux-falls-sd', zipCodes: ['57104'], towerCount: 13, buildingDensity: 'medium', terrainType: 'urban_core', placementNotes: 'Phillips Avenue and Falls Park', carriers: [
+        { carrier: 'verizon', avgDownload: 398, avgUpload: 51, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'east' },
+        { carrier: 'att', avgDownload: 382, avgUpload: 48, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'tmobile', avgDownload: 365, avgUpload: 44, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'east' },
+      ]},
+      { id: 'fsd-east-side', name: 'East Side', metroId: 'sioux-falls-sd', zipCodes: ['57103'], towerCount: 11, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Empire Mall and Louise Ave', carriers: [
+        { carrier: 'verizon', avgDownload: 385, avgUpload: 49, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+        { carrier: 'att', avgDownload: 372, avgUpload: 46, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northwest' },
+        { carrier: 'tmobile', avgDownload: 358, avgUpload: 43, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'west' },
+      ]},
+      { id: 'fsd-south', name: 'Southern Sioux Falls', metroId: 'sioux-falls-sd', zipCodes: ['57108'], towerCount: 12, buildingDensity: 'low', terrainType: 'residential', placementNotes: 'Newer developments and schools', carriers: [
+        { carrier: 'verizon', avgDownload: 392, avgUpload: 50, avgLatency: 14, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'excellent', bestDirection: 'north' },
+        { carrier: 'att', avgDownload: 378, avgUpload: 47, avgLatency: 16, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'northeast' },
+        { carrier: 'tmobile', avgDownload: 362, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'north' },
+      ]},
+      { id: 'fsd-northwest', name: 'Northwest Sioux Falls', metroId: 'sioux-falls-sd', zipCodes: ['57107'], towerCount: 10, buildingDensity: 'low', terrainType: 'suburban', placementNotes: 'Industrial and residential mix', carriers: [
+        { carrier: 'verizon', avgDownload: 378, avgUpload: 47, avgLatency: 15, primaryBand: 'mid_band', towerProximity: 'close', signalQuality: 'good', bestDirection: 'southeast' },
+        { carrier: 'att', avgDownload: 365, avgUpload: 44, avgLatency: 17, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'east' },
+        { carrier: 'tmobile', avgDownload: 352, avgUpload: 42, avgLatency: 18, primaryBand: 'mid_band', towerProximity: 'moderate', signalQuality: 'good', bestDirection: 'southeast' },
+      ]},
+    ],
+    zipCodes: [
+      { zip: '57104', neighborhoodId: 'fsd-downtown', avgDownload: 388, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 16 },
+      { zip: '57103', neighborhoodId: 'fsd-east-side', avgDownload: 378, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'medium', peakHourImpact: 14 },
+      { zip: '57108', neighborhoodId: 'fsd-south', avgDownload: 385, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+      { zip: '57107', neighborhoodId: 'fsd-northwest', avgDownload: 372, bestCarrier: 'verizon', has5GUltra: true, congestionLevel: 'low', peakHourImpact: 10 },
+    ],
+  },
 ];
 
 // ── Direction-based Placement Tips ──
