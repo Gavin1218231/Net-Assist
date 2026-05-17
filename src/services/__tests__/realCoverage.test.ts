@@ -63,4 +63,12 @@ describe('buildCoverageReport', () => {
     const report = buildCoverageReport(loc, speed({}));
     expect(report.grade.notes.some(n => n.includes('10001'))).toBe(true);
   });
+
+  it('generates unique ids for each report', () => {
+    const report1 = buildCoverageReport(loc, speed({}));
+    const report2 = buildCoverageReport(loc, speed({}));
+    expect(report1.id).toBeDefined();
+    expect(report2.id).toBeDefined();
+    expect(report1.id).not.toBe(report2.id);
+  });
 });

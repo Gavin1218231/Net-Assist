@@ -14,7 +14,7 @@ interface CachedShape {
 function isReport(value: unknown): value is RealCoverageReport {
   if (!value || typeof value !== 'object') return false;
   const r = value as Partial<RealCoverageReport>;
-  return typeof r.generatedAt === 'string' && !!r.speed && !!r.location && !!r.grade;
+  return typeof r.id === 'string' && typeof r.generatedAt === 'string' && !!r.speed && !!r.location && !!r.grade;
 }
 
 function read(): CachedShape {
@@ -41,7 +41,7 @@ export function saveCoverageReport(report: RealCoverageReport): void {
   const state = read();
   state.history = [
     report,
-    ...state.history.filter(r => r.generatedAt !== report.generatedAt),
+    ...state.history.filter(r => r.id !== report.id),
   ].slice(0, HISTORY_LIMIT);
   write(state);
 }

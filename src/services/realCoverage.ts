@@ -36,6 +36,7 @@ export interface CoverageGrade {
 }
 
 export interface RealCoverageReport {
+  id: string;
   generatedAt: string;
   location: RealLocation;
   carrier?: CarrierCoverageSignal;
@@ -160,8 +161,11 @@ export function buildCoverageReport(
     jitterGrade: gradeJitter(speed.jitterMs),
     notes: buildNotes(speed, location, connection),
   };
+  const timestamp = Date.now();
+  const random = Math.random().toString(36).slice(2, 10);
   return {
-    generatedAt: new Date().toISOString(),
+    id: `${timestamp}-${random}`,
+    generatedAt: new Date(timestamp).toISOString(),
     location,
     carrier,
     connection,
