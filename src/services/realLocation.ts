@@ -79,6 +79,16 @@ function pickGeo(geographies: Record<string, CensusGeography[]> | undefined, key
   return Array.isArray(arr) && arr.length > 0 ? arr[0] : undefined;
 }
 
+// Strip keys whose value is undefined so spreading an enrichment object can't
+// clobber already-resolved fields with `undefined`.
+function definedOnly<T extends object>(obj: T): Partial<T> {
+  const out: Partial<T> = {};
+  for (const key of Object.keys(obj) as (keyof T)[]) {
+    if (obj[key] !== undefined) out[key] = obj[key];
+  }
+  return out;
+}
+
 export async function reverseGeocode(lat: number, lng: number): Promise<Partial<RealLocation>> {
   const params = new URLSearchParams({
     x: String(lng),
@@ -153,7 +163,7 @@ export async function resolveCurrentLocation(): Promise<RealLocation> {
     source: 'gps',
     accuracy,
     resolvedAt: new Date().toISOString(),
-    ...details,
+    ...definedOnly(details),
   };
 }
 
@@ -182,6 +192,8 @@ async function lookupZipCentroid(zip: string): Promise<RealLocation> {
     throw new Error(`ZIP ${zip} returned invalid coordinates`);
   }
   // Enrich with Census geographies if possible; otherwise return the ZIP-level data.
+  // definedOnly() ensures Census fields that came back undefined don't overwrite
+  // the good ZIP-level city/state we already resolved from Zippopotam.
   const enrich = await reverseGeocode(lat, lng).catch(() => ({}));
   return {
     lat,
@@ -193,7 +205,7 @@ async function lookupZipCentroid(zip: string): Promise<RealLocation> {
     state: place.state,
     stateCode: place['state abbreviation'],
     resolvedAt: new Date().toISOString(),
-    ...enrich,
+    ...definedOnly(enrich),
   };
 }
 

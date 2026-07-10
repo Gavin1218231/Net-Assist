@@ -65,9 +65,22 @@ export function getConnectionClass(): ConnectionClass | undefined {
   };
 }
 
-export async function getCarrierSignal(): Promise<CarrierCoverageSignal | undefined> {
+export async function getCarrierSignal(signal?: AbortSignal): Promise<CarrierCoverageSignal | undefined> {
   try {
-    const res = await fetch('https://speed.cloudflare.com/meta', { cache: 'no-store' });
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10_000);
+    const onAbort = () => controller.abort(signal?.reason);
+    if (signal) {
+      if (signal.aborted) controller.abort(signal.reason);
+      else signal.addEventListener('abort', onAbort, { once: true });
+    }
+    let res: Response;
+    try {
+      res = await fetch('https://speed.cloudflare.com/meta', { cache: 'no-store', signal: controller.signal });
+    } finally {
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', onAbort);
+    }
     if (!res.ok) return undefined;
     const data = await res.json();
     if (!data.asOrganization) return undefined;

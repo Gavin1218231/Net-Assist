@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Activity, ArrowDown, ArrowUp, Clock, Gauge, MapPin,
   Play, Radio, RotateCcw, Server, Signal, Wifi, AlertCircle,
@@ -75,6 +75,11 @@ export default function RealTimeCoverage() {
   const [history, setHistory] = useState<RealCoverageReport[]>([]);
   const [testError, setTestError] = useState<string | null>(null);
 
+  // Guards so we never call setState after unmount and can cancel the in-flight
+  // speed test (100+ MB of transfers) if the user navigates away mid-run.
+  const mountedRef = useRef(true);
+  const abortRef = useRef<AbortController | null>(null);
+
   useEffect(() => {
     const cached = getCurrentCoverageReport();
     if (cached) {
@@ -85,16 +90,23 @@ export default function RealTimeCoverage() {
     setHistory(getCoverageHistory());
   }, []);
 
+  useEffect(() => {
+    return () => {
+      mountedRef.current = false;
+      abortRef.current?.abort();
+    };
+  }, []);
+
   async function locateMe() {
     setLocating(true);
     setLocationError(null);
     try {
       const loc = await resolveCurrentLocation();
-      setLocation(loc);
+      if (mountedRef.current) setLocation(loc);
     } catch (err) {
-      setLocationError(err instanceof Error ? err.message : 'Could not get your location');
+      if (mountedRef.current) setLocationError(err instanceof Error ? err.message : 'Could not get your location');
     } finally {
-      setLocating(false);
+      if (mountedRef.current) setLocating(false);
     }
   }
 
@@ -104,11 +116,11 @@ export default function RealTimeCoverage() {
     setLocationError(null);
     try {
       const loc = await resolveZipOrAddress(manualInput);
-      setLocation(loc);
+      if (mountedRef.current) setLocation(loc);
     } catch (err) {
-      setLocationError(err instanceof Error ? err.message : 'Could not resolve that location');
+      if (mountedRef.current) setLocationError(err instanceof Error ? err.message : 'Could not resolve that location');
     } finally {
-      setLocating(false);
+      if (mountedRef.current) setLocating(false);
     }
   }
 
@@ -117,15 +129,18 @@ export default function RealTimeCoverage() {
       setTestError('Choose a location first so the result can be tagged.');
       return;
     }
+    const controller = new AbortController();
+    abortRef.current = controller;
     setRunning(true);
     setTestError(null);
     setResult(null);
     setProgress({ phase: 'latency', percent: 0 });
     try {
       const [speed, carrier] = await Promise.all([
-        runRealSpeedTest(setProgress),
-        getCarrierSignal(),
+        runRealSpeedTest(p => { if (mountedRef.current) setProgress(p); }, controller.signal),
+        getCarrierSignal(controller.signal),
       ]);
+      if (!mountedRef.current) return;
       setResult(speed);
       const conn = getConnectionClass();
       const built = buildCoverageReport(location, speed, carrier, conn);
@@ -134,10 +149,13 @@ export default function RealTimeCoverage() {
       setHistory(getCoverageHistory());
       setProgress({ phase: 'done', percent: 100 });
     } catch (err) {
+      // A cancel from unmount/navigation isn't a user-facing error.
+      if (controller.signal.aborted || !mountedRef.current) return;
       setTestError(err instanceof Error ? err.message : 'Speed test failed');
       setProgress(null);
     } finally {
-      setRunning(false);
+      if (mountedRef.current) setRunning(false);
+      if (abortRef.current === controller) abortRef.current = null;
     }
   }
 
@@ -417,7 +435,7 @@ export default function RealTimeCoverage() {
               </thead>
               <tbody>
                 {history.map(h => (
-                  <tr key={h.generatedAt} className="border-t border-[var(--color-border)]">
+                  <tr key={h.id} className="border-t border-[var(--color-border)]">
                     <td className="py-2 pr-3 text-[var(--color-text-secondary)]">
                       {new Date(h.generatedAt).toLocaleString()}
                     </td>

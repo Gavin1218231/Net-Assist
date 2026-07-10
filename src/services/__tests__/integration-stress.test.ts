@@ -19,7 +19,10 @@ const TEST_LOCATIONS: RealLocation[] = [
 ];
 
 // Generate realistic speed test results with variation
-function generateSpeedResult(quality: 'excellent' | 'good' | 'fair' | 'poor'): RealSpeedTestResult {
+type Quality = 'excellent' | 'good' | 'fair' | 'poor';
+const QUALITIES: Quality[] = ['excellent', 'good', 'fair', 'poor'];
+
+function generateSpeedResult(quality: Quality): RealSpeedTestResult {
   const profiles = {
     excellent: { down: [200, 500], up: [50, 150], lat: [5, 15], jitter: [1, 5], loss: 0 },
     good: { down: [50, 150], up: [10, 40], lat: [15, 40], jitter: [5, 15], loss: 0.5 },
@@ -58,7 +61,7 @@ describe('Integration Stress Tests', () => {
       // Generate and save 50 reports rapidly
       for (let i = 0; i < 50; i++) {
         const loc = { ...TEST_LOCATIONS[i % TEST_LOCATIONS.length], resolvedAt: new Date().toISOString() };
-        const speed = generateSpeedResult(['excellent', 'good', 'fair', 'poor'][i % 4] as any);
+        const speed = generateSpeedResult(QUALITIES[i % 4]);
         const report = buildCoverageReport(loc, speed);
         reports.push(report);
         saveCoverageReport(report);
@@ -112,11 +115,11 @@ describe('Integration Stress Tests', () => {
 
   describe('Grading Consistency', () => {
     it('maintains grade consistency across varied inputs', () => {
-      const results: { quality: string; grade: string }[] = [];
+      const results: { quality: Quality; grade: string }[] = [];
 
       // Run 200 grading operations
       for (let i = 0; i < 200; i++) {
-        const quality = ['excellent', 'good', 'fair', 'poor'][i % 4] as any;
+        const quality = QUALITIES[i % 4];
         const loc = { ...TEST_LOCATIONS[i % TEST_LOCATIONS.length], resolvedAt: new Date().toISOString() };
         const speed = generateSpeedResult(quality);
         const report = buildCoverageReport(loc, speed);
