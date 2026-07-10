@@ -9,6 +9,7 @@ import {
   initiateNFCHandshake,
   type BLEConnectionState,
 } from '../ble';
+import type { DeviceInfo } from '../../types';
 
 describe('ble service', () => {
   describe('isBLESupported', () => {
@@ -49,8 +50,8 @@ describe('ble service', () => {
     it('should transition through scanning state', async () => {
       const states: BLEConnectionState[] = [];
       const onStateChange = vi.fn((state: BLEConnectionState) => states.push(state));
-      const devices: any[][] = [];
-      const onDevicesFound = vi.fn((d: any[]) => devices.push([...d]));
+      const devices: DeviceInfo[][] = [];
+      const onDevicesFound = vi.fn((d: DeviceInfo[]) => devices.push([...d]));
 
       await scanForDevices(onStateChange, onDevicesFound);
 
@@ -61,8 +62,8 @@ describe('ble service', () => {
     });
 
     it('should find devices progressively', async () => {
-      const devices: any[][] = [];
-      const onDevicesFound = vi.fn((d: any[]) => devices.push([...d]));
+      const devices: DeviceInfo[][] = [];
+      const onDevicesFound = vi.fn((d: DeviceInfo[]) => devices.push([...d]));
 
       await scanForDevices(() => {}, onDevicesFound);
 
@@ -76,7 +77,7 @@ describe('ble service', () => {
     });
 
     it('should find valid device objects', async () => {
-      let foundDevices: any[] = [];
+      let foundDevices: DeviceInfo[] = [];
       await scanForDevices(() => {}, (d) => { foundDevices = d; });
 
       expect(foundDevices.length).toBeGreaterThan(0);

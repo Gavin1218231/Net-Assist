@@ -21,9 +21,11 @@ export default function GlobalAIAssistant() {
   } = useAIAssistant();
 
   const [input, setInput] = useState('');
-  const [showSuggestions, setShowSuggestions] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Derived, not stored: suggestions show only until the user's first message.
+  const showSuggestions = messages.every(m => m.role !== 'user');
 
   // Auto-scroll to bottom when messages change
   useEffect(() => {
@@ -37,17 +39,6 @@ export default function GlobalAIAssistant() {
     }
   }, [isOpen, isMinimized]);
 
-  // Hide suggestions after first user message, show again when cleared
-  useEffect(() => {
-    const userMessageCount = messages.filter(m => m.role === 'user').length;
-    if (userMessageCount > 0) {
-      setShowSuggestions(false);
-    } else {
-      // Reset suggestions when chat is cleared (only welcome message remains)
-      setShowSuggestions(true);
-    }
-  }, [messages]);
-
   // Don't show for non-authenticated users
   if (!isAuthenticated) return null;
 
@@ -59,7 +50,6 @@ export default function GlobalAIAssistant() {
   };
 
   const handleSuggestionClick = async (suggestion: string) => {
-    setShowSuggestions(false);
     await sendMessage(suggestion);
   };
 
