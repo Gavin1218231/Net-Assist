@@ -8,3 +8,15 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 )
+
+// Service-worker registration. Kept here (bundled) rather than as an inline
+// <script> in index.html so the production Content-Security-Policy can use a
+// strict `script-src 'self'` with no 'unsafe-inline'. BASE_URL keeps the path
+// correct under the app's deploy sub-path.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => {
+      // Registration failure is non-fatal; the app works without the SW.
+    })
+  })
+}

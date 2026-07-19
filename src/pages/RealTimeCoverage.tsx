@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import {
   Activity, ArrowDown, ArrowUp, Clock, Gauge, MapPin,
-  Play, Radio, RotateCcw, Server, Signal, Wifi, AlertCircle,
+  Play, Radio, RotateCcw, Server, Signal, Wifi, AlertCircle, Trash2, ShieldCheck,
 } from 'lucide-react';
 import { runRealSpeedTest } from '../services/realSpeedTest';
 import type { RealSpeedTestProgress, RealSpeedTestResult } from '../services/realSpeedTest';
@@ -14,7 +14,7 @@ import {
 } from '../services/realCoverage';
 import type { RealCoverageReport } from '../services/realCoverage';
 import {
-  saveCoverageReport, getCurrentCoverageReport, getCoverageHistory,
+  saveCoverageReport, getCurrentCoverageReport, getCoverageHistory, clearCoverageHistory,
 } from '../services/coverageCache';
 
 function formatMbps(value: number): string {
@@ -122,6 +122,11 @@ export default function RealTimeCoverage() {
     } finally {
       if (mountedRef.current) setLocating(false);
     }
+  }
+
+  function clearHistory() {
+    clearCoverageHistory();
+    setHistory([]);
   }
 
   async function runTest() {
@@ -420,7 +425,15 @@ export default function RealTimeCoverage() {
 
       {history.length > 1 && (
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-4 sm:p-5">
-          <h2 className="font-semibold text-[var(--color-text)] mb-3">Recent tests</h2>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="font-semibold text-[var(--color-text)]">Recent tests</h2>
+            <button
+              onClick={clearHistory}
+              className="text-sm flex items-center gap-1 text-[var(--color-text-secondary)] hover:text-red-500 transition-colors"
+            >
+              <Trash2 size={14} /> Clear history
+            </button>
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -459,6 +472,14 @@ export default function RealTimeCoverage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-4 flex items-start gap-2 text-xs text-[var(--color-text-muted)]">
+            <ShieldCheck size={14} className="mt-0.5 flex-shrink-0" />
+            <span>
+              Test history — including approximate location — is stored only in this
+              browser (never uploaded), and your public IP is not saved. Use “Clear
+              history” to remove it at any time.
+            </span>
+          </p>
         </section>
       )}
     </div>

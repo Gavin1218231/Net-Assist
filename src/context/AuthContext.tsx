@@ -1,4 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
+// ⚠️ DEMO AUTHENTICATION ONLY — NOT SECURE. login()/signup() ignore the
+// password and accept any input, resolving to a fixed demo user. There is no
+// session token and no server-side authorization; ProtectedRoute gates
+// rendering only. Safe for a demo (protected routes expose no server secrets),
+// but MUST be replaced with a real identity provider before production. See
+// SECURITY.md. The Login/Signup pages surface a visible "Demo mode" banner.
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import type { User, AuthState } from '../types';
 

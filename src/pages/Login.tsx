@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Wifi, Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
+import { Wifi, Mail, Lock, Eye, EyeOff, ArrowRight, AlertTriangle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
@@ -55,6 +55,16 @@ export default function Login() {
           </div>
           <h1 className="text-2xl font-bold text-[var(--color-text)]">Welcome back</h1>
           <p className="text-[var(--color-text-secondary)] mt-1">Sign in to your NetAssist account</p>
+        </div>
+
+        {/* Demo-mode notice: this build ships mock authentication only. */}
+        <div className="mb-6 flex items-start gap-2 rounded-xl border border-amber-300 bg-amber-50 dark:border-amber-500/40 dark:bg-amber-900/20 p-3 text-sm text-amber-700 dark:text-amber-300">
+          <AlertTriangle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+          <span>
+            <strong>Demo mode.</strong> Authentication is simulated — any email and
+            password will sign you in, and no credentials are sent anywhere. Don’t
+            enter a real password.
+          </span>
         </div>
 
         {/* Social login buttons */}

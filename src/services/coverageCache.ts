@@ -37,10 +37,21 @@ function write(value: CachedShape): void {
   }
 }
 
+// Data minimization: the client's public IP is captured for the in-session
+// report but is never displayed, so we strip it before it's written to
+// localStorage. Precise coordinates are kept because location tagging is the
+// point of the history — users can purge it via clearCoverageHistory().
+function sanitizeForStorage(report: RealCoverageReport): RealCoverageReport {
+  if (!report.carrier?.ip) return report;
+  const carrier = { ...report.carrier };
+  delete carrier.ip;
+  return { ...report, carrier };
+}
+
 export function saveCoverageReport(report: RealCoverageReport): void {
   const state = read();
   state.history = [
-    report,
+    sanitizeForStorage(report),
     ...state.history.filter(r => r.id !== report.id),
   ].slice(0, HISTORY_LIMIT);
   write(state);

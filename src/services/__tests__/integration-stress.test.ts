@@ -54,6 +54,27 @@ describe('Integration Stress Tests', () => {
     clearCoverageHistory();
   });
 
+  describe('Privacy', () => {
+    it('does not persist the public IP to storage', () => {
+      const loc = { ...TEST_LOCATIONS[0], resolvedAt: new Date().toISOString() };
+      const report = buildCoverageReport(loc, generateSpeedResult('good'), {
+        carrier: 'Test ISP',
+        asn: '13335',
+        ip: '203.0.113.7',
+        source: 'cloudflare-meta',
+      });
+      // The in-memory report keeps the IP for this session...
+      expect(report.carrier?.ip).toBe('203.0.113.7');
+
+      saveCoverageReport(report);
+
+      // ...but the persisted copy must have it stripped.
+      const stored = getCoverageHistory()[0];
+      expect(stored.carrier?.carrier).toBe('Test ISP');
+      expect(stored.carrier?.ip).toBeUndefined();
+    });
+  });
+
   describe('Cache Stress', () => {
     it('handles rapid sequential writes without data loss', () => {
       const reports: RealCoverageReport[] = [];
