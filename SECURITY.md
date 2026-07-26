@@ -61,5 +61,38 @@ If clickjacking protection is required, set `frame-ancestors` (and/or
 
 ## Dependencies
 
-`npm audit` is expected to report **0 vulnerabilities**. Run `npm audit` (and
-`npm audit fix` for non-breaking updates) as part of routine maintenance.
+Run `npm audit` as routine maintenance, and `npm audit fix` (non-`--force`) to
+take semver-compatible updates.
+
+### ⚠️ Do NOT run `npm audit fix --force` for react-router
+
+`npm audit` currently reports one advisory against `react-router`
+(GHSA-qwww-vcr4-c8h2, "RSC Mode CSRF Bypass", affecting 7.12.0–8.2.0) and
+proposes "fixing" it by installing `react-router-dom@7.11.0`. **That downgrade
+is a severe net regression and must not be applied:**
+
+- **The advisory does not apply to this app.** It requires RSC (React Server
+  Components) mode with server actions. This is a client-only SPA using the
+  declarative API (`BrowserRouter`, `Routes`, `Route`, `Link`, `useNavigate`,
+  `useLocation`, `Outlet`) — no `createBrowserRouter`, no loaders/actions, no
+  server, no RSC.
+- **The proposed version is far more vulnerable.** Verified empirically:
+  `react-router-dom@7.11.0` carries ~14 advisories (vulnerable range
+  6.0.0–7.17.0), several of which *are* directly applicable here — notably
+  GHSA-wrjc-x8rr-h8h6 (open redirect via backslash in `<Link>` and
+  `useNavigate`, APIs this app uses heavily), plus XSS via open redirects and
+  the turbo-stream deserialization RCE.
+- npm's resolver picks 7.11.0 only because it escapes the *newest* advisory's
+  range; it does not notice that it re-enters an older, broader one.
+
+`7.18.1` is the latest published version and the correct one to stay on. Revisit
+if a release above 8.2.0 ships.
+
+### Remaining advisories are dev-only
+
+The other advisories all stem from one root cause — `brace-expansion`
+(GHSA-mh99-v99m-4gvg, DoS) reached via `minimatch` → `eslint` →
+`typescript-eslint`. These are **build/lint tooling only and are not in the
+production bundle**; exploitation would require a hostile glob pattern in your
+own ESLint config. Clearing them requires a breaking `eslint@10` major upgrade,
+which is deferred as higher-risk than the issue it resolves.
