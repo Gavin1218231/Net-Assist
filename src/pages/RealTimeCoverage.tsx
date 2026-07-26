@@ -63,32 +63,30 @@ function StatCard({ icon, label, value, subtext, accent }: StatCardProps) {
 }
 
 export default function RealTimeCoverage() {
-  const [location, setLocation] = useState<RealLocation | null>(null);
+  // Hydrate from the local cache once, during the initial render. Reading
+  // localStorage is synchronous, so a lazy initializer is both correct and
+  // cheaper than a mount effect (which would cause a second render pass).
+  const [cachedInit] = useState(() => ({
+    report: getCurrentCoverageReport() ?? null,
+    history: getCoverageHistory(),
+  }));
+
+  const [location, setLocation] = useState<RealLocation | null>(cachedInit.report?.location ?? null);
   const [locating, setLocating] = useState(false);
   const [locationError, setLocationError] = useState<string | null>(null);
   const [manualInput, setManualInput] = useState('');
 
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState<RealSpeedTestProgress | null>(null);
-  const [result, setResult] = useState<RealSpeedTestResult | null>(null);
-  const [report, setReport] = useState<RealCoverageReport | null>(null);
-  const [history, setHistory] = useState<RealCoverageReport[]>([]);
+  const [result, setResult] = useState<RealSpeedTestResult | null>(cachedInit.report?.speed ?? null);
+  const [report, setReport] = useState<RealCoverageReport | null>(cachedInit.report);
+  const [history, setHistory] = useState<RealCoverageReport[]>(cachedInit.history);
   const [testError, setTestError] = useState<string | null>(null);
 
   // Guards so we never call setState after unmount and can cancel the in-flight
   // speed test (100+ MB of transfers) if the user navigates away mid-run.
   const mountedRef = useRef(true);
   const abortRef = useRef<AbortController | null>(null);
-
-  useEffect(() => {
-    const cached = getCurrentCoverageReport();
-    if (cached) {
-      setReport(cached);
-      setResult(cached.speed);
-      setLocation(cached.location);
-    }
-    setHistory(getCoverageHistory());
-  }, []);
 
   useEffect(() => {
     return () => {

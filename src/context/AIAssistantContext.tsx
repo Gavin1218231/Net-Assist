@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState, useCallback, useEffect, useRef, type ReactNode } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect, useMemo, useRef, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useProvider } from './ProviderContext';
 import { sendComprehensiveMessage, getQuickSuggestions, resetResponseIndex, type AppContext } from '../services/comprehensiveAI';
@@ -53,8 +53,9 @@ export function AIAssistantProvider({ children }: { children: ReactNode }) {
   const [speedTestResult, setSpeedTestResult] = useState<SpeedTestResult | undefined>();
   const [recommendations, setRecommendations] = useState<Recommendation[] | undefined>();
 
-  // Build app context - memoize to avoid stale closures
-  const appContextRef = useRef<AppContext>({
+  // App context is a pure derivation of reactive values, so compute it during
+  // render rather than reading a ref (refs must not be read while rendering).
+  const appContext = useMemo<AppContext>(() => ({
     currentPage: location.pathname,
     connectionType: connectionType || undefined,
     providerName: provider?.name,
@@ -62,30 +63,22 @@ export function AIAssistantProvider({ children }: { children: ReactNode }) {
     speedTestResult,
     recommendations,
     setupCompleted,
-  });
+  }), [location.pathname, connectionType, provider?.name, networkStatus, speedTestResult, recommendations, setupCompleted]);
 
-  // Keep ref updated
+  // Mirror into a ref purely so async callbacks (sendMessage) can read the
+  // latest value without taking appContext as a dependency.
+  const appContextRef = useRef(appContext);
   useEffect(() => {
-    appContextRef.current = {
-      currentPage: location.pathname,
-      connectionType: connectionType || undefined,
-      providerName: provider?.name,
-      networkStatus,
-      speedTestResult,
-      recommendations,
-      setupCompleted,
-    };
-  }, [location.pathname, connectionType, provider?.name, networkStatus, speedTestResult, recommendations, setupCompleted]);
+    appContextRef.current = appContext;
+  }, [appContext]);
 
   // Get suggestions based on context
-  const suggestions = getQuickSuggestions(appContextRef.current);
+  const suggestions = useMemo(() => getQuickSuggestions(appContext), [appContext]);
 
-  // Reset unread when opening
-  useEffect(() => {
-    if (isOpen && !isMinimized) {
-      setUnreadCount(0);
-    }
-  }, [isOpen, isMinimized]);
+  // NOTE: unreadCount is intentionally NOT reset via an effect here. Every path
+  // that opens or restores the panel (openAssistant, toggleAssistant,
+  // maximizeAssistant) already zeroes it in the handler itself, which avoids
+  // the extra render pass a state-sync effect would cause.
 
   const openAssistant = useCallback(() => {
     setIsOpen(true);

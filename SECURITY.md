@@ -88,11 +88,19 @@ is a severe net regression and must not be applied:**
 `7.18.1` is the latest published version and the correct one to stay on. Revisit
 if a release above 8.2.0 ships.
 
-### Remaining advisories are dev-only
+The manifest floor is `^7.18.1` (not `^7.13.0`) so that even a fresh
+resolution without the lockfile cannot land inside the old vulnerable range.
 
-The other advisories all stem from one root cause — `brace-expansion`
-(GHSA-mh99-v99m-4gvg, DoS) reached via `minimatch` → `eslint` →
-`typescript-eslint`. These are **build/lint tooling only and are not in the
-production bundle**; exploitation would require a hostile glob pattern in your
-own ESLint config. Clearing them requires a breaking `eslint@10` major upgrade,
-which is deferred as higher-risk than the issue it resolves.
+### Dev-tooling advisories: resolved
+
+A `brace-expansion` DoS (GHSA-mh99-v99m-4gvg) previously reached the tree via
+`minimatch` → `eslint` → `typescript-eslint`, accounting for 12 advisories.
+These were build/lint tooling only (never in the production bundle) and are now
+cleared by upgrading to `eslint@10` + `typescript-eslint@8.65`.
+
+That upgrade also enabled stricter `react-hooks` rules, which surfaced three
+genuine issues since fixed: a ref read during render and two state-syncing
+effects (replaced by a `useMemo` derivation, lazy `useState` initializers, and
+removal of a redundant unread-count effect).
+
+The only advisory that remains is the non-applicable react-router one above.
